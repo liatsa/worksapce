@@ -43,21 +43,21 @@
 										<xs:element name="tg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="rg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="tr" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -70,21 +70,21 @@
 										<xs:element name="tg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="rg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="tr" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -97,21 +97,21 @@
 										<xs:element name="tg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="rg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="tr" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -124,21 +124,21 @@
 										<xs:element name="tg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="rg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="tr" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -225,42 +225,42 @@
 										<xs:element name="maxUp" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="minUp" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="plannedUp" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="maxDown" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="minDown" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="plannedDown" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -273,28 +273,28 @@
 										<xs:element name="capacity" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="3"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="max" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="nm" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="4"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="attenuation" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -307,28 +307,28 @@
 										<xs:element name="capacity" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="3"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="max" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="nm" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="4"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
 										<xs:element name="attenuation" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													<xs:totalDigits value="5"/>
+													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
