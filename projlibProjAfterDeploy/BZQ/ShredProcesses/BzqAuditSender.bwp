@@ -838,8 +838,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    x="64"
+                                    xsi:type="notation:Bounds" y="28"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -855,9 +855,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity"/>
                                     <layoutConstraint
-                                    height="108" width="400"
-                                    x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    height="173" width="417" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -978,7 +976,7 @@
                                 type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                 <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:pfx6=&quot;http://www.bezeq.co.il/XMLSchema/ADT&quot; xmlns:pfx7=&quot;http://www.tibco.com/ns/no_namespace_schema_location/processes/bsa_adt/ADT.xsd&quot; xmlns:pfx8=&quot;http://www.tibco.com/ns/no_namespace_schema_location/BZQ/SharedResources/schemas/Audit.xsd&quot; xmlns:pfx=&quot;http://www.bezeq.co.il/XMLSchema/CustomerMessage&quot; xmlns:pfx2=&quot;http://tempuri.org/MT_BILLING_IN_SET_CUST_MSG.xsd&quot; xmlns:ns=&quot;http://www.bezeq.co.il/XMLSchema/BzqHeader&quot; xmlns:pfx3=&quot;http://www.tibco.com/ns/no_namespace_schema_location/processes/Customer/UpdateCustomer/Resources/CRMCustomerUpdate.xsd&quot; xmlns:pfx4=&quot;http://www.bezeq.co.il/XMLSchema/KRTErrorMessage&quot; xmlns:pfx5=&quot;http://www.bezeq.co.il/XMLSchema/HLPError&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jms&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; xmlns:ns1=&quot;http://www.bezeq.co.il/XMLSchema/Customer&quot; xmlns:ns4=&quot;http://www.tibco.com/pe/DeployedVarsType&quot; xmlns:ns3=&quot;http://www.tibco.com/pe/EngineTypes&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns5=&quot;http://www.bezeq.co.il/XMLSchema/BzqError&quot; xmlns:ansbw6=&quot;/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqErrorHandler-Start-Input.xsd&quot; xmlns:pd=&quot;http://xmlns.tibco.com/bw/process/2003&quot; version=&quot;1.0&quot;>&#xa;    &lt;xsl:param name=&quot;_error&quot;/>&#xa;    &lt;xsl:param name=&quot;_error&quot;/>&#xa;    &lt;xsl:param name=&quot;FaultDetails&quot;/>&#xa;    &lt;xsl:template name=&quot;BzqErrorHandlerAll-Input&quot; match=&quot;/&quot;>&#xa;        &lt;ansbw6:root>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails)&quot;/>&#xa;            &lt;/message>&#xa;            &lt;xsl:if test=&quot;$_error/MsgCode&quot;>&#xa;                &lt;msgCode>&#xa;                    &lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&#xa;                &lt;/msgCode>&#xa;            &lt;/xsl:if>&#xa;        &lt;/ansbw6:root>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ansbw6=&quot;/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqErrorHandler-Start-Input.xsd&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;1.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;BzqErrorHandlerAll-Input&quot; match=&quot;/&quot;>&lt;ansbw6:root>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($FaultDetails)&quot;/>&lt;/message>&lt;xsl:if test=&quot;$_error/MsgCode&quot;>&lt;msgCode>&lt;xsl:value-of select=&quot;$_error/MsgCode&quot;/>&lt;/msgCode>&lt;/xsl:if>&lt;/ansbw6:root>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:CallProcess
                                     subProcessName="BZQ.ShredProcesses.BzqErrorHandler" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
