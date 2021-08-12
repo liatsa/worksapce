@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateActivation05="http://www.bezeq.co.il/XMLSchema/UpdateActivation05" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateActivation05">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="processId" type="string"/>
+							<element minOccurs="0" name="componentId" type="string"/>
+							<element minOccurs="0" name="componentProcessId" type="string"/>
+							<element minOccurs="0" name="phoneNumber" type="string"/>
+							<element minOccurs="0" name="customerName" type="string"/>
+							<element minOccurs="0" name="customerId" type="string"/>
+							<element minOccurs="0" name="orderNum" type="string"/>
+							<element minOccurs="0" name="system" type="string"/>
+							<element minOccurs="0" name="creationDate" type="dateTime"/>
+							<element minOccurs="0" name="handleErrorAllowed" type="string"/>
+							<element minOccurs="0" name="priority" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="component">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="type" type="string"/>
+										<element minOccurs="0" name="function" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="param">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="name" type="string"/>
+													<element minOccurs="0" name="value" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="processId" type="string"/>
+							<element minOccurs="0" name="orderNum" type="string"/>
+							<element minOccurs="0" name="phoneNumber" type="string"/>
+							<element minOccurs="0" name="sendDate" type="dateTime"/>
+							<element minOccurs="0" name="status" type="string"/>
+							<element minOccurs="0" name="errorId" type="string"/>
+		<element minOccurs="0" name="errorDesc" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="component">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="type" type="string"/>
+										<element minOccurs="0" name="ServiceType" type="string"/>
+										<element minOccurs="0" name="ServiceSubType" type="string"/>
+										<element minOccurs="0" name="ServiceId" type="string"/>
+										<element minOccurs="0" name="status" type="string"/>
+										<element minOccurs="0" name="errorId" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="param">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="name" type="string"/>
+													<element minOccurs="0" name="value" type="string"/>
+													<element minOccurs="0" name="status" type="string"/>
+													<element minOccurs="0" name="errorDesc" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

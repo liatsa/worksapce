@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:GiponActivation01="http://www.bezeq.co.il/XMLSchema/GiponActivation01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/GiponActivation01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="requestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestType" type="xs:string"/>
+							<xs:element name="taskId" type="xs:string"/>
+							<xs:element minOccurs="0" name="rootNetNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="coordDate" type="xs:string"/>
+							<xs:element minOccurs="0" name="projectManagerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="rootDeviceNum" type="xs:string"/>
+							<xs:element name="oltDeviceNum" type="xs:string"/>
+							<xs:element name="buildingCnt" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="BuildingArray">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="buildingProjectId" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="buildingNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="buildingNetNo" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="requestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestType" type="xs:string"/>
+							<xs:element name="taskId" type="xs:string"/>
+							<xs:element name="errorCnt" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="errorsArray">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="additionalDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="buildingProjectId" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="activationCnt" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="openedHHArray">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="activationNumber" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

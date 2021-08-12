@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SendExtension02="http://www.bezeq.co.il/XMLSchema/SendExtension02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SendExtension02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="orderNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderSuffix" type="xs:integer"/>
+							<xs:element name="orderType" type="xs:integer"/>
+							<xs:element name="serviceType" type="xs:integer"/>
+							<xs:element name="projectId" type="xs:integer"/>
+							<xs:element name="customerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misOved" type="xs:integer"/>
+							<xs:element name="msgDateTime" type="xs:dateTime"/>
+							<xs:element name="rangeCount" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="range">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="fromRange" type="xs:string"/>
+										<xs:element minOccurs="0" name="ToRange" type="xs:string"/>
+										<xs:element minOccurs="0" name="rangeAction" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="extCount" type="xs:integer"/>
+							<xs:element minOccurs="0" name="extOperationalCount" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ServicePackCountTotal" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="servicePack">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="servicePackCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="servicePackCount" type="xs:integer"/>
+										<xs:element minOccurs="0" name="servicePackAction" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="serviceCountTotal" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="service">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="serviceCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceCount" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceAction" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="callsSimultaneousPayed" type="xs:integer"/>
+							<xs:element minOccurs="0" name="numbersSavedPayed" type="xs:integer"/>
+							<xs:element minOccurs="0" name="numOfDigitForDialing" type="xs:integer"/>
+							<xs:element minOccurs="0" name="internationalOperator" type="xs:integer"/>
+							<xs:element minOccurs="0" name="branchPrefix" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:BILSubscriber="http://www.bezeq.co.il/XMLSchema/BILSubscriber"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/BILSubscriber"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="BILSubscriber">
+		<complexType>
+			<sequence>
+				<element name="RecordIdentifier" type="xsd:string" minOccurs="0"/>
+				<element name="MsgDatetime" type="xsd:dateTime" minOccurs="0"/>
+				<element name="ActvCode" type="xsd:string" minOccurs="0"/>
+				<element name="ActvRsnCode" type="xsd:string" minOccurs="0"/>
+				<element name="IssueDate" type="xsd:date" minOccurs="0"/>
+				<element name="TrxSeqNo" type="xsd:string" minOccurs="0"/>
+				<element name="CustId" type="xsd:string"/>
+				<element name="SubscriberId" type="xsd:string"/>
+				<element name="BezeqSubId" type="xsd:string" minOccurs="0"/>
+				<element name="ProductType" type="xsd:string" minOccurs="0"/>
+				<element name="ProductSubType" type="xsd:string" minOccurs="0"/>
+				<element name="InitActivationDate" type="xsd:date" minOccurs="0"/>
+				<element name="PersonalId" type="xsd:string" minOccurs="0"/>
+				<element name="SecurityClassifiscation" type="xsd:string" minOccurs="0"/>
+				<element name="SubStatusLastAct" type="xsd:string" minOccurs="0"/>
+				<element name="LastActvReason" type="xsd:string" minOccurs="0"/>
+				<element name="SubStatus" type="xsd:string" minOccurs="0"/>
+				<element name="SubStatusDate" type="xsd:date" minOccurs="0"/>
+				<element name="DirPublishInd" type="xsd:string" minOccurs="0"/>
+				<element name="AdrType" type="xsd:string" minOccurs="0"/>
+				<element name="AdrPostCode" type="xsd:string" minOccurs="0"/>
+				<element name="AdrCity" type="xsd:string" minOccurs="0"/>
+				<element name="AdrAptFloor" type="xsd:string" minOccurs="0"/>
+				<element name="ApartmentNumber" type="xsd:string" minOccurs="0"/>
+				<element name="AdrAptEntrance" type="xsd:string" minOccurs="0"/>
+				<element name="AdditionalHouseLetter" type="xsd:string" minOccurs="0"/>
+				<element name="AdrHouseNo" type="xsd:string" minOccurs="0"/>
+				<element name="AdrStreetName" type="xsd:string" minOccurs="0"/>
+				<element name="FirstName" type="xsd:string"/>
+				<element name="LastName" type="xsd:string" minOccurs="0"/>
+				<element name="AdditionalCityCd" type="xsd:string" minOccurs="0"/>
+				<element name="AdditionalStreetCd" type="xsd:string" minOccurs="0"/>
+				<element name="MainSubno" type="xsd:string" minOccurs="0"/>
+				<element name="SuspRestCandSts" type="xsd:string" minOccurs="0"/>
+				<element name="PersonalId2nd" type="xsd:string" minOccurs="0"/>
+				<element name="DebtSource" type="xsd:string" minOccurs="0"/>
+				<element name="DealerCode" type="xsd:string" minOccurs="0"/>
+				<element name="integrator" type="xsd:string" minOccurs="0"/>
+				<element name="OldSubno" type="xsd:string" minOccurs="0"/>
+				<element name="OldBezeqSubid" type="xsd:string" minOccurs="0"/>
+				<element name="OldBan" type="xsd:string" minOccurs="0"/>
+				<element name="PortoutCandind" type="xsd:string" minOccurs="0"/>
+				<element name="PortoutReqDate" type="xsd:string" minOccurs="0"/>
+				<element name="Porequestid" type="xsd:string" minOccurs="0"/>
+				<element name = "Armyorderno" type = "string" minOccurs = "0"/>
+                                <element name="ArmyAddress" minOccurs="0" maxOccurs="10">
+                                   <complexType>
+                                      <sequence>
+                                         <element name="ArmyMk" type="string" minOccurs="0"/>
+                                         <element name="ArmyBuilding" type="string" minOccurs="0"/>
+                                         <element name="ArmyFloor" type="string" minOccurs="0"/>
+                                         <element name="ArmyRoom" type="string" minOccurs="0"/>
+                                      </sequence>
+                                   </complexType>
+                                </element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

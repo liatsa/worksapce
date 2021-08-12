@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqErrorHandler-Start-Input.xsd" xmlns:ns="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns1="http://www.tibco.com/pe/DeployedVarsType" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqErrorHandler-Start-Input.xsd">
+    <xsd:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../SharedResources/schemas/BzqError.xsd"/>
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="message" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="msgCode" type="xsd:string"/>
+                <xsd:element minOccurs="0" ref="pfx:BzqError"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

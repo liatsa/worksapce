@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SubscriberDiscount0101="http://www.bezeq.co.il/XMLSchema/SubscriberDiscount0101" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SubscriberDiscount0101">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="requestType" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="subscriberNo" type="string"/>
+							<element name="numBufRec" type="integer"/>
+							<element maxOccurs="200" minOccurs="0" name="socFtrPrmArr">
+								<complexType>
+									<sequence>
+										<element name="recNumber" type="integer"/>
+										<element name="soc" type="string"/>
+										<element name="socRelated" type="string"/>
+										<element minOccurs="0" name="cmp" type="string"/>
+										<element name="periodNo" type="integer"/>
+										<element name="fromPeriod" type="integer"/>
+										<element name="toPeriod" type="integer"/>
+										<element name="featureCode" type="string"/>
+										<element name="combinationNo" type="integer"/>
+										<element name="quantity" type="integer"/>
+										<element name="rcRate" type="float"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="requestType" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="subscriberNo" type="string"/>
+							<element name="numBufRec" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="discRateArr">
+								<complexType>
+									<sequence>
+										<element name="recNumber" type="integer"/>
+										<element name="soc" type="string"/>
+										<element name="discountRate" type="float"/>
+										<element name="fromPeriod" type="integer"/>
+										<element name="toPeriod" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="DtlnumBufRec" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="featureDiscountArr">
+								<complexType>
+									<sequence>
+										<element name="recNumber" type="integer"/>
+										<element name="discountSoc" type="string"/>
+										<element name="discountRate" type="float"/>
+										<element name="fromPeriod" type="integer"/>
+										<element name="toPeriod" type="integer"/>
+										<element name="soc" type="string"/>
+										<element name="featureCode" type="string"/>
+										<element name="combinationNo" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="status" type="integer"/>
+							<element minOccurs="0" name="msgCode" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

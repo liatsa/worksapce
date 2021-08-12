@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:EquipmentList="http://www.bezeq.co.il/XMLSchema/EquipmentList" xmlns:KRTTask="http://www.bezeq.co.il/XMLSchema/KRTTask" xmlns:LastTest="http://www.bezeq.co.il/XMLSchema/LastTest" xmlns:N1Lines="http://www.bezeq.co.il/XMLSchema/N1Lines" xmlns:NetWork="http://www.bezeq.co.il/XMLSchema/NetWork" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTask">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/EquipmentList" schemaLocation="EquipmentList.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NetWork" schemaLocation="NetWork.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/N1Lines" schemaLocation="N1Lines.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/LastTest" schemaLocation="LastTest.xsd"/>
+	<xs:element name="Task">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mission">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="tecnicId" type="xs:string"/>
+							<xs:element name="workOrderSource" type="xs:string"/>
+							<xs:element minOccurs="0" name="createMissionDate" type="xs:dateTime"/>
+							<xs:element name="soId" type="xs:int"/>
+							<xs:element name="workOrderType" type="xs:string"/>
+							<xs:element minOccurs="0" name="ServiceId" type="xs:string"/>
+							<xs:element name="workOrderNote" type="xs:string"/>
+							<xs:element minOccurs="0" name="side" type="xs:string"/>
+							<xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="rowLastmantOprid" type="xs:string"/>
+							<xs:element name="soLine" type="xs:string"/>
+							<xs:element name="missionType" type="xs:string"/>
+							<xs:element minOccurs="0" name="activityCode" type="xs:string"/>
+							<xs:element name="missionStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionRemark" type="xs:string"/>
+							<xs:element name="startDate" type="xs:dateTime"/>
+							<xs:element name="endDate" type="xs:dateTime"/>
+							<xs:element name="startDateMission" type="xs:dateTime"/>
+							<xs:element name="endDateMission" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="prevMissionStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionCoordinate" type="xs:string"/>
+							<xs:element minOccurs="0" name="endSla" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="slaDescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="team" type="xs:string"/>
+							<xs:element minOccurs="0" name="techName" type="xs:string"/>
+							<xs:element minOccurs="0" name="techPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="lMissClosed" type="xs:string"/>
+							<xs:element minOccurs="0" name="lSolutionClosed" type="xs:string"/>
+							<xs:element minOccurs="0" name="lTechName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lTechPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="baseMisInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="baseMisStatus" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="recommendedSolutions">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="recomendedSolution" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="defectLocation" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="customer">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="custId" type="xs:string"/>
+							<xs:element minOccurs="0" name="bsa" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="id" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName2" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName2" type="xs:string"/>
+							<xs:element minOccurs="0" name="id2" type="xs:string"/>
+							<xs:element minOccurs="0" name="custValue" type="xs:string"/>
+							<xs:element minOccurs="0" name="custGrade" type="xs:string"/>
+							<xs:element minOccurs="0" name="custDebt" type="xs:int"/>
+							<xs:element minOccurs="0" name="debtStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="custDept" type="xs:string"/>
+							<xs:element minOccurs="0" name="custMail" type="xs:string"/>
+							<xs:element name="asign">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+										<xs:element minOccurs="0" name="id" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="addresserRecord">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+										<xs:element minOccurs="0" name="phone" type="xs:string"/>
+										<xs:element minOccurs="0" name="otherData" type="xs:string"/>
+										<xs:element minOccurs="0" name="powerOfAttorney" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="custMagrRecord">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+										<xs:element minOccurs="0" name="phone" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="projMngr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="projectName" type="xs:string"/>
+										<xs:element minOccurs="0" name="projectManager" type="xs:string"/>
+										<xs:element minOccurs="0" name="pOffice" type="xs:string"/>
+										<xs:element minOccurs="0" name="pCell" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="subscriber">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="manuiNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="id" type="xs:string"/>
+							<xs:element minOccurs="0" name="hekerNumber" type="xs:int"/>
+							<xs:element minOccurs="0" name="sugKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="manuiType" type="xs:string"/>
+							<xs:element minOccurs="0" name="manuiAv" type="xs:string"/>
+							<xs:element minOccurs="0" name="manuiMekushar" type="xs:string"/>
+							<xs:element minOccurs="0" name="manuiMekusharType" type="xs:string"/>
+							<xs:element minOccurs="0" name="address" type="xs:string"/>
+							<xs:element minOccurs="0" name="citySymbol" type="xs:string"/>
+							<xs:element minOccurs="0" name="mikum" type="xs:string"/>
+							<xs:element minOccurs="0" name="secured" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceType1" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceType2" type="xs:string"/>
+							<xs:element minOccurs="0" name="paymentmethhod" type="xs:string"/>
+							<xs:element minOccurs="0" name="remarkTech" type="xs:string"/>
+							<xs:element name="subCommentRecord">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="comment" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" ref="EquipmentList:EquipmentList"/>
+							<xs:element minOccurs="0" name="equip_error">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="message_set_number" type="xs:int"/>
+										<xs:element name="message_nbr" type="xs:int"/>
+										<xs:element minOccurs="0" name="message_descr" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="prblm">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="caseId" type="xs:int"/>
+							<xs:element minOccurs="0" name="custComplaint" type="xs:string"/>
+							<xs:element minOccurs="0" name="problemDescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="returnDefct" type="xs:int"/>
+							<xs:element minOccurs="0" name="numRetSoDefect" type="xs:integer"/>
+							<xs:element minOccurs="0" name="caseDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="caseNote" type="xs:string"/>
+							<xs:element name="lastDefctDetaildRecord">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="caseId" type="xs:int"/>
+										<xs:element minOccurs="0" name="defctDateTime" type="xs:date"/>
+										<xs:element minOccurs="0" name="custComplaint" type="xs:string"/>
+										<xs:element minOccurs="0" name="problemDescr" type="xs:string"/>
+										<xs:element minOccurs="0" name="techName" type="xs:string"/>
+										<xs:element minOccurs="0" name="closeDetails" type="xs:string"/>
+										<xs:element minOccurs="0" name="closeSolution" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" ref="NetWork:NetWork"/>
+							<xs:element minOccurs="0" name="lineNumber" type="xs:string"/>
+							<xs:element minOccurs="0" ref="N1Lines:n1Lines"/>
+							<xs:element minOccurs="0" name="network_error">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="message_set_number" type="xs:int"/>
+										<xs:element name="message_nbr" type="xs:int"/>
+										<xs:element minOccurs="0" name="message_descr" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" ref="LastTest:LastTest"/>
+							<xs:element minOccurs="0" name="lasttest_error">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="message_set_number" type="xs:int"/>
+										<xs:element name="message_nbr" type="xs:int"/>
+										<xs:element minOccurs="0" name="message_descr" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="order">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="orderId" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderRunId" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderType" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="accessType" type="xs:string"/>
+							<xs:element minOccurs="0" ref="NetWork:NetWork"/>
+							<xs:element minOccurs="0" name="linesNumber" type="xs:string"/>
+							<xs:element minOccurs="0" ref="N1Lines:n1Lines"/>
+							<xs:element minOccurs="0" name="lastPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="address" type="xs:string"/>
+							<xs:element maxOccurs="5" minOccurs="0" name="technicianComments" type="xs:string"/>
+							<xs:element maxOccurs="5" minOccurs="0" name="orderComments" type="xs:string"/>
+							<xs:element maxOccurs="30" minOccurs="0" name="equipDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="kitId" type="xs:string"/>
+										<xs:element minOccurs="0" name="kitName" type="xs:string"/>
+										<xs:element minOccurs="0" name="kitAmaount" type="xs:string"/>
+										<xs:element minOccurs="0" name="label" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="lineRouting" type="xs:string"/>
+							<xs:element minOccurs="0" name="lenPreviousline">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="center" type="xs:string"/>
+										<xs:element minOccurs="0" name="telephoneExchange" type="xs:string"/>
+										<xs:element minOccurs="0" name="system" type="xs:string"/>
+										<xs:element minOccurs="0" name="tag" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="portPreviousline">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="center" type="xs:string"/>
+										<xs:element minOccurs="0" name="telephoneExchange" type="xs:string"/>
+										<xs:element minOccurs="0" name="system" type="xs:string"/>
+										<xs:element minOccurs="0" name="tag" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="executionOrderError">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="message_set_number" type="xs:int"/>
+										<xs:element name="message_nbr" type="xs:int"/>
+										<xs:element minOccurs="0" name="message_descr" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="repeatAllRecord">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="repeatSoIdRecord">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="workOrderSource" type="xs:string"/>
+										<xs:element name="workOrderType" type="xs:string"/>
+										<xs:element name="solution" type="xs:string"/>
+										<xs:element name="lastMissionTechName" type="xs:string"/>
+										<xs:element minOccurs="0" name="complaint" type="xs:string"/>
+										<xs:element minOccurs="0" name="closeDate" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="statusDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="repeatInstanceRecord" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="7" minOccurs="0" name="custHours">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="day" type="xs:string"/>
+							<xs:element minOccurs="0" name="startHour" type="xs:time"/>
+							<xs:element minOccurs="0" name="finishHour" type="xs:time"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="bz24Hours">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="hour24" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="siteContact">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="phone" type="xs:string"/>
+							<xs:element minOccurs="0" name="phone2" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="sideBDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="soidB" type="xs:string"/>
+							<xs:element minOccurs="0" name="midB" type="xs:string"/>
+							<xs:element minOccurs="0" name="mytypeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="sideBAddress" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="connectedSo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="connectedSo" type="xs:string"/>
+							<xs:element minOccurs="0" name="connectedMission" type="xs:string"/>
+							<xs:element minOccurs="0" name="prvgrp" type="xs:string"/>
+							<xs:element minOccurs="0" name="prvgrpMng" type="xs:string"/>
+							<xs:element minOccurs="0" name="telMngtTeam" type="xs:string"/>
+							<xs:element minOccurs="0" name="telTech" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="2" minOccurs="0" name="order35Details">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="misHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="misRatz" type="xs:string"/>
+							<xs:element minOccurs="0" name="order35DetailsGeneral">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="shehutHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="tarHazmana" type="xs:date"/>
+										<xs:element minOccurs="0" name="tarPticha" type="xs:date"/>
+										<xs:element minOccurs="0" name="kodSugHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurSugHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="sugSherut" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurSugSherut" type="xs:string"/>
+										<xs:element minOccurs="0" name="sugKav" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurSugKav" type="xs:string"/>
+										<xs:element minOccurs="0" name="misPniyaCrm" type="xs:string"/>
+										<xs:element minOccurs="0" name="misOvedSogerP" type="xs:string"/>
+										<xs:element minOccurs="0" name="misHazmanaZara" type="xs:string"/>
+										<xs:element minOccurs="0" name="MIS_TELEFON_ATAR" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="projectDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="misEged" type="xs:string"/>
+										<xs:element minOccurs="0" name="shemEged" type="xs:string"/>
+										<xs:element minOccurs="0" name="projectManager" type="xs:string"/>
+										<xs:element minOccurs="0" name="pmCellular" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastPlanner" type="xs:string"/>
+										<xs:element minOccurs="0" name="communicationConsultana" type="xs:string"/>
+										<xs:element minOccurs="0" name="LAST_DEFINER" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="orderDetailsPrallelSide">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="tzad" type="xs:string"/>
+										<xs:element minOccurs="0" name="eizorMetapel" type="xs:string"/>
+										<xs:element minOccurs="0" name="menahelEzor" type="xs:string"/>
+										<xs:element minOccurs="0" name="missionNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="coordinateDate" type="xs:dateTime"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="contactPersonDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="shemMazmin" type="xs:string"/>
+										<xs:element minOccurs="0" name="mazminEmail" type="xs:string"/>
+										<xs:element minOccurs="0" name="shemNatzig" type="xs:string"/>
+										<xs:element minOccurs="0" name="misTelephonNatzig" type="xs:string"/>
+										<xs:element minOccurs="0" name="shemMetaem" type="xs:string"/>
+										<xs:element minOccurs="0" name="misTelephoneMetaem" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="lineDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="swTzad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="kavMegube" type="xs:string"/>
+										<xs:element minOccurs="0" name="kodMehirutN" type="xs:string"/>
+										<xs:element minOccurs="0" name="sla" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurSla" type="xs:string"/>
+										<xs:element minOccurs="0" name="sherut24Shaot" type="xs:string"/>
+										<xs:element minOccurs="0" name="merchakBenAtarimN" type="xs:string"/>
+										<xs:element minOccurs="0" name="tEichutSherut" type="xs:string"/>
+										<xs:element minOccurs="0" name="havila" type="xs:string"/>
+										<xs:element minOccurs="0" name="tziudHavila" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurTziudHavila" type="xs:string"/>
+										<xs:element minOccurs="0" name="merkaz6" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurKodMehirut" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurMehirutBe" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="10" minOccurs="0" name="LogicLineDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="kodKavLog" type="xs:string"/>
+										<xs:element minOccurs="0" name="misHazmana" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misRatz" type="xs:integer"/>
+										<xs:element minOccurs="0" name="subnetMask" type="xs:string"/>
+										<xs:element minOccurs="0" name="mehirut1" type="xs:string"/>
+										<xs:element minOccurs="0" name="mehirut2" type="xs:string"/>
+										<xs:element minOccurs="0" name="mehirut3" type="xs:string"/>
+										<xs:element minOccurs="0" name="ip" type="xs:string"/>
+										<xs:element minOccurs="0" name="svlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="cvlanVlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="VC" type="xs:string"/>
+										<xs:element minOccurs="0" name="VP" type="xs:string"/>
+										<xs:element minOccurs="0" name="dlci" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="20" minOccurs="0" name="equipmentForInstalation">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="misHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="misRatz" type="xs:string"/>
+										<xs:element minOccurs="0" name="characterDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="kamutKayam" type="xs:integer"/>
+										<xs:element minOccurs="0" name="kamutHassara" type="xs:integer"/>
+										<xs:element minOccurs="0" name="kodTziud4" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurTziud" type="xs:string"/>
+										<xs:element minOccurs="0" name="kamutHosaffa" type="xs:integer"/>
+										<xs:element minOccurs="0" name="bmSide" type="xs:string"/>
+										<xs:element minOccurs="0" name="makat" type="xs:string"/>
+										<xs:element minOccurs="0" name="kodKiyum" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

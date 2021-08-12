@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Notification02="http://www.bezeq.co.il/XMLSchema/Notification02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Notification02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="messageSw" type="integer"/>
+							<element name="timeStamp" type="string"/>
+							<element name="orderId" type="integer"/>
+							<element minOccurs="0" name="componenetId" type="integer"/>
+							<element minOccurs="0" name="componentNumber" type="string"/>
+							<element minOccurs="0" name="componentActivationDate" type="string"/>
+							<element minOccurs="0" name="stepDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="stepId" type="integer"/>
+										<element minOccurs="0" name="stepDesc" type="string"/>
+										<element minOccurs="0" name="stepStatusId" type="integer"/>
+										<element minOccurs="0" name="stepStatusDescription" type="string"/>
+										<element minOccurs="0" name="supplyNotificationInd" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="activityDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="processId" type="string"/>
+										<element minOccurs="0" name="toDoActivityId" type="integer"/>
+										<element minOccurs="0" name="toDoActivityDesc" type="string"/>
+										<element minOccurs="0" name="automaticClosureInd" type="integer"/>
+										<element minOccurs="0" name="unitInCharge" type="integer"/>
+										<element minOccurs="0" name="operatorId" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="activityErrors">
+											<complexType>
+												<sequence>
+													<element name="errorCodeId" type="integer"/>
+													<element name="erroMsg" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="services">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="serviceId" type="integer"/>
+										<element name="serviceName" type="string"/>
+										<element minOccurs="0" name="serviceAction" type="string"/>
+										<element minOccurs="0" name="subServiceName" type="string"/>
+										<element minOccurs="0" name="serviceStatusId" type="integer"/>
+										<element minOccurs="0" name="serviceStatusDescription" type="string"/>
+										<element minOccurs="0" name="activationServiceDate" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="serviceParams">
+											<complexType>
+												<sequence>
+													<element name="serviceParamName" type="string"/>
+													<element minOccurs="0" name="serviceParamValue" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="params">
+								<complexType>
+									<sequence>
+										<element name="paramName" type="string"/>
+										<element minOccurs="0" name="paramValue" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ActivateDistribute01="http://www.bezeq.co.il/XMLSchema/ActivateDistribute01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ActivateDistribute01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="misHazmana" type="integer"/>
+							<element name="misRatz" type="integer"/>
+							<element name="sugHazmana" type="integer"/>
+							<element name="sugSherut" type="integer"/>
+							<element name="projectId" type="integer"/>
+							<element name="customerId" type="integer"/>
+							<element name="misOved" type="integer"/>
+							<element name="status" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:NTLAtar="http://www.bezeq.co.il/XMLSchema/NTLAtar" xmlns:NTLAtars="http://www.bezeq.co.il/XMLSchema/NTLAtars" xmlns:NTLMitkan="http://www.bezeq.co.il/XMLSchema/NTLMitkan" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLAtars">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NTLAtar" schemaLocation="NTLAtar.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NTLMitkan" schemaLocation="NTLMitkan.xsd"/>
+	<xs:element name="Atars">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="userLastName" type="xs:string"/>
+				<xs:element name="userFirstName" type="xs:string"/>
+				<xs:element maxOccurs="2" ref="NTLAtar:Atar"/>
+				<xs:element maxOccurs="2" minOccurs="0" ref="NTLMitkan:Mitkan"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

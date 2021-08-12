@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:VasSupply01="http://www.bezeq.co.il/XMLSchema/VasSupply01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/VasSupply01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="creationTimeStamp" type="xs:string"/>
+							<xs:element minOccurs="0" name="cmOrderNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="componentAction" type="xs:string"/>
+							<xs:element minOccurs="0" name="componentNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="newComponentNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="ActivationDate" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="services">
+			<xs:complexType>
+									<xs:sequence>
+							<xs:element minOccurs="0" name="serviceAction" type="xs:string"/>
+							<xs:element minOccurs="0" name="billingServiceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="service" type="xs:string"/>
+							<xs:element minOccurs="0" name="subService" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="attributes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="attributeAction" type="xs:string"/>
+										<xs:element minOccurs="0" name="attributeName" type="xs:string"/>
+										<xs:element minOccurs="0" name="attributeValue" type="xs:string"/>
+										<xs:element minOccurs="0" name="billingAttributeValue" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+	</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

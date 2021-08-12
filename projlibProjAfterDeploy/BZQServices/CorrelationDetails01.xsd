@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CorrelationDetails01="http://www.bezeq.co.il/XMLSchema/CorrelationDetails01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CorrelationDetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderType" type="xs:integer"/>
+							<xs:element name="orderNumber" type="xs:integer"/>
+							<xs:element name="orderSuffix" type="xs:integer"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="groupId" type="xs:string"/>
+							<xs:element name="correlationStatus" type="xs:integer"/>
+							<xs:element minOccurs="0" name="projectId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="servicePackCountTotal" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="servicePack">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="servicePackCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="servicePackCount" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="serviceCountTotal" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="service">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="serviceCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceCount" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="rangeCount" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="range">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="fromRange" type="xs:integer"/>
+										<xs:element name="toRange" type="xs:integer"/>
+										<xs:element name="rangeType" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

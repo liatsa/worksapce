@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:LdapDetails01="http://www.bezeq.co.il/XMLSchema/LdapDetails01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/LdapDetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="service4i" type="xs:string"/>
+							<xs:element name="selectParam" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustomerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="service4i" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountBundleCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountBundleCodeNgn" type="xs:string"/>
+							<xs:element minOccurs="0" name="rateUp" type="xs:string"/>
+							<xs:element minOccurs="0" name="rateDown" type="xs:string"/>
+							<xs:element minOccurs="0" name="slid" type="xs:string"/>
+							<xs:element minOccurs="0" name="hpbx" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceRA" type="xs:string"/>
+							<xs:element minOccurs="0" name="blockService" type="xs:string"/>
+							<xs:element minOccurs="0" name="blockBusiness" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="raStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="hpbxStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="ngnDslam" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderFlag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="optionalField1" type="xs:string"/>
+							<xs:element minOccurs="0" name="optionalField2" type="xs:string"/>
+							<xs:element name="statusCode" type="xs:string"/>
+							<xs:element name="errorCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorType" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

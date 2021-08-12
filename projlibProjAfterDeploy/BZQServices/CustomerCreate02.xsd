@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CustomerCreate02="http://www.bezeq.co.il/XMLSchema/CustomerCreate02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CustomerCreate02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="transactionId" type="xs:string"/>
+							<xs:element name="actionMode" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="firstName" type="xs:string"/>
+										<xs:element name="lastName" type="xs:string"/>
+										<xs:element minOccurs="0" name="businessName" type="xs:string"/>
+										<xs:element name="personalId" type="xs:string"/>
+										<xs:element name="emailAddress" type="xs:string"/>
+										<xs:element name="contactPhoneNum" type="xs:string"/>
+										<xs:element name="addressType" type="xs:string"/>
+										<xs:element name="city" type="xs:string"/>
+										<xs:element name="cityCode" type="xs:string"/>
+										<xs:element name="street" type="xs:string"/>
+										<xs:element name="streetId" type="xs:string"/>
+										<xs:element minOccurs="0" name="houseNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="adressEntrance" type="xs:string"/>
+										<xs:element minOccurs="0" name="zipCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="adressFloor" type="xs:string"/>
+										<xs:element minOccurs="0" name="adressLetter" type="xs:string"/>
+										<xs:element minOccurs="0" name="adressApt" type="xs:string"/>
+										<xs:element minOccurs="0" name="pob" type="xs:string"/>
+										<xs:element minOccurs="0" name="districtMail" type="xs:string"/>
+										<xs:element minOccurs="0" name="chosenPhoneNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="abendonedOperator" type="xs:string"/>
+										<xs:element minOccurs="0" name="portInNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="paymentMethod" type="xs:string"/>
+										<xs:element minOccurs="0" name="bankId" type="xs:string"/>
+										<xs:element minOccurs="0" name="bankBranchId" type="xs:string"/>
+										<xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="accountOwnerName" type="xs:string"/>
+										<xs:element minOccurs="0" name="directDebitMandateStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="directDebitMandateDate" type="xs:date"/>
+										<xs:element name="creditCardType" type="xs:string"/>
+										<xs:element name="creditCardOwnerName" type="xs:string"/>
+										<xs:element name="creditCardOwnerPersonalId" type="xs:string"/>
+										<xs:element name="creditCardEncryptedData" type="xs:string"/>
+										<xs:element name="creditCardExpirationMonth" type="xs:string"/>
+										<xs:element name="creditCardExpirationYear" type="xs:string"/>
+										<xs:element minOccurs="0" name="cvv" type="xs:string"/>
+										<xs:element name="benNum" type="xs:string"/>
+										<xs:element name="commitDate" type="xs:date"/>
+										<xs:element name="mailSpamFlag" type="xs:string"/>
+										<xs:element name="addSpamFlag" type="xs:string"/>
+										<xs:element name="phoneSpamFlag" type="xs:string"/>
+										<xs:element name="smsSpamFlag" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerGrade" type="xs:string"/>
+										<xs:element name="customerType" type="xs:string"/>
+										<xs:element name="customerSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="actionReason" type="xs:string"/>
+										<xs:element minOccurs="0" name="divisionId" type="xs:integer"/>
+										<xs:element name="segment" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerDepartmentId" type="xs:integer"/>
+										<xs:element name="noTaxIndication" type="xs:string"/>
+										<xs:element minOccurs="0" name="idType" type="xs:string"/>
+										<xs:element name="companyTypeCode" type="xs:string"/>
+										<xs:element name="billPeriodPreq" type="xs:integer"/>
+										<xs:element minOccurs="0" name="billCycle" type="xs:integer"/>
+										<xs:element minOccurs="0" name="riskLevel" type="xs:string"/>
+										<xs:element minOccurs="0" name="branchId" type="xs:string"/>
+										<xs:element minOccurs="0" name="primaryIndication" type="xs:string"/>
+										<xs:element minOccurs="0" name="payerPersonalId" type="xs:string"/>
+										<xs:element minOccurs="0" name="payerPersonalIdType" type="xs:string"/>
+										<xs:element name="ordApplicationId" type="xs:string"/>
+										<xs:element name="bilApplicationId" type="xs:string"/>
+										<xs:element minOccurs="0" name="representativeId" type="xs:string"/>
+										<xs:element minOccurs="0" name="dealer" type="xs:string"/>
+										<xs:element name="openUserId" type="xs:string"/>
+										<xs:element minOccurs="0" name="numType" type="xs:integer"/>
+										<xs:element name="hitachnutFlag" type="xs:string"/>
+										<xs:element name="orderType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="adslOrderType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceType" type="xs:integer"/>
+										<xs:element name="lineType" type="xs:integer"/>
+										<xs:element name="publishFlag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="portInReason" type="xs:integer"/>
+										<xs:element minOccurs="0" name="basicSoc" type="xs:string"/>
+										<xs:element minOccurs="0" name="basicPackage" type="xs:string"/>
+										<xs:element minOccurs="0" name="internationalOperator" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="extraDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="serviceTypeInt" type="xs:string"/>
+										<xs:element minOccurs="0" name="selectedCampaignCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="hasMultipleCustomers" type="xs:integer"/>
+										<xs:element minOccurs="0" name="isVoiceFeasibilityOK" type="xs:integer"/>
+										<xs:element minOccurs="0" name="isADSLFeasibilityOK" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="techDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="techCoordinationDate" type="xs:date"/>
+										<xs:element name="techCoordinationHoursRange" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="deliveryDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="routerDeliveryMethod" type="xs:string"/>
+										<xs:element name="routerDeliveryMethodKod" type="xs:integer"/>
+										<xs:element minOccurs="0" name="deliveryCity" type="xs:string"/>
+										<xs:element minOccurs="0" name="deliveryStreetName" type="xs:string"/>
+										<xs:element minOccurs="0" name="deliveryHouseNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="deliveryHouseLetter" type="xs:string"/>
+										<xs:element minOccurs="0" name="deliveryAddressFloor" type="xs:string"/>
+										<xs:element minOccurs="0" name="deliveryAddressAptNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="deliveryPrice" type="xs:float"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="selfServiceInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="hasSelfServiceUser" type="xs:integer"/>
+										<xs:element minOccurs="0" name="selfServiceUserName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="30" minOccurs="0" name="services">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="serviceCode" type="xs:string"/>
+										<xs:element name="serviceDescription" type="xs:string"/>
+										<xs:element name="optionalSoc" type="xs:string"/>
+										<xs:element minOccurs="0" name="optionalPackage" type="xs:string"/>
+										<xs:element maxOccurs="30" minOccurs="0" name="serviceAttributes">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="attributeName" type="xs:string"/>
+													<xs:element name="attributeValue" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="30" minOccurs="0" name="equipmentCodes">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="equipmentCode" type="xs:integer"/>
+													<xs:element minOccurs="0" name="installationQty" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="10" minOccurs="0" name="benefits">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="sapEquipCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="promotionCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="bonusInd" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="transactionId" type="xs:string"/>
+							<xs:element name="responseDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="customerNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="phoneNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="processStep" type="xs:string"/>
+							<xs:element minOccurs="0" name="hekerNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="serviceOrderType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderStatus" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderDesc" type="xs:string"/>
+							<xs:element name="requestSts" type="xs:integer"/>
+							<xs:element minOccurs="0" name="RequestStsRsn" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ErrorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

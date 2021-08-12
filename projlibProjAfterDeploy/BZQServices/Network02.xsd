@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Network02="http://www.bezeq.co.il/XMLSchema/Network02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Network02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="phone" type="xs:string"/>
+							<xs:element name="accessType" type="xs:integer"/>
+							<xs:element name="requestType" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="messageNbr" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="netCenter" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lineType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lineDescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="multiSubsRouteMark" type="xs:string"/>
+							<xs:element minOccurs="0" name="maagedNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="maagedType" type="xs:string"/>
+							<xs:element minOccurs="0" name="maagedSysNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="maagedPortNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="maagedCenter" type="xs:integer"/>
+							<xs:element minOccurs="0" name="routingNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="editRoute" type="xs:string"/>
+							<xs:element minOccurs="0" name="totalRoutePoint" type="xs:integer"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="saafPoint">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="saafPointCenter" type="xs:integer"/>
+										<xs:element minOccurs="0" name="saafPointFrame" type="xs:integer"/>
+										<xs:element minOccurs="0" name="saafPointTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="saafPointFrameType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="saafPointTypeDescr" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="6" minOccurs="0" name="addressFrame">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="addressFrameTypeDescr" type="xs:string"/>
+										<xs:element minOccurs="0" name="addressFrame" type="xs:integer"/>
+										<xs:element minOccurs="0" name="addressFrameStreet" type="xs:string"/>
+										<xs:element minOccurs="0" name="addressFrameHouseNum" type="xs:integer"/>
+										<xs:element minOccurs="0" name="addressFrameLocationDescr" type="xs:string"/>
+										<xs:element minOccurs="0" name="addressFramePlaceDescr" type="xs:string"/>
+										<xs:element minOccurs="0" name="addressFrameCity" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="lineNbr" type="xs:integer"/>
+							<xs:element maxOccurs="11" minOccurs="0" name="phoneNumbers">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="secuClassCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="secuClassDescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="date" type="xs:date"/>
+							<xs:element minOccurs="0" name="phoneType" type="xs:string"/>
+							<xs:element minOccurs="0" name="centerAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="meracezetAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="equipCodeAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sysNumAdslSlot" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sysNumAdslShelf" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sysNumAdslDslam" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tagNumAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugTagAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sideBlockLenAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sysNumLenAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tagNumLenAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sideBlockFuseAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sysNumFuseAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tagNameFuseAdsl" type="xs:integer"/>
+							<xs:element maxOccurs="3" minOccurs="0" name="meracezet">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="centertMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="mreacezetMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="equipCodeMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="unitMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="cageMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="slotMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tagNumMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sugTagMsag" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="10" minOccurs="3" name="special">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="specialEquipCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="specialEquipFrame" type="xs:integer"/>
+										<xs:element minOccurs="0" name="specialEquipTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="specialEquipName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="lenCenter" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lenFrame" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lenSystem" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lenTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lenSugTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ipDslam" type="xs:string"/>
+							<xs:element minOccurs="0" name="ipRu" type="xs:string"/>
+							<xs:element minOccurs="0" name="vpdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="vc" type="xs:integer"/>
+							<xs:element minOccurs="0" name="svlan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cvlan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="adslType" type="xs:string"/>
+							<xs:element minOccurs="0" name="dataType" type="xs:string"/>
+							<xs:element minOccurs="0" name="i4Rb" type="xs:integer"/>
+							<xs:element minOccurs="0" name="i4Port" type="xs:string"/>
+							<xs:element minOccurs="0" name="i4VP" type="xs:integer"/>
+							<xs:element minOccurs="0" name="i4Vc" type="xs:integer"/>
+							<xs:element minOccurs="0" name="interfaceType" type="xs:string"/>
+							<xs:element minOccurs="0" name="i4RbIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="i4PortIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="i4VpIp" type="xs:integer"/>
+							<xs:element minOccurs="0" name="i4VcIp" type="xs:integer"/>
+							<xs:element minOccurs="0" name="i4SvlanIp" type="xs:integer"/>
+							<xs:element minOccurs="0" name="i4CvlanIp" type="xs:integer"/>
+							<xs:element maxOccurs="2" minOccurs="0" name="ipvpnPhysical">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="endEquipAddr" type="xs:string"/>
+										<xs:element minOccurs="0" name="endEquipType" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="5" minOccurs="0" name="ipvpnLogical">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="vcNumber" type="xs:integer"/>
+										<xs:element minOccurs="0" name="vcConfiguration" type="xs:string"/>
+										<xs:element minOccurs="0" name="peAddress" type="xs:string"/>
+										<xs:element minOccurs="0" name="peType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="peTypeDescr" type="xs:string"/>
+										<xs:element minOccurs="0" name="peUp" type="xs:integer"/>
+										<xs:element minOccurs="0" name="peUpCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="peDown" type="xs:integer"/>
+										<xs:element minOccurs="0" name="peDownCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="vpModem" type="xs:integer"/>
+										<xs:element minOccurs="0" name="vcModem" type="xs:integer"/>
+										<xs:element minOccurs="0" name="vpSvlanDslam" type="xs:integer"/>
+										<xs:element minOccurs="0" name="vcCvlanDslam" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns:AutoTest="http://www.bezeq.co.il/XMLSchema/AutoTest"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/AutoTest"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="AutoTest">
+		<complexType>
+			<sequence>
+				<element name="userIp" type="xsd:string" minOccurs="0"/>
+				<element name="phone" type="xsd:string"/>
+				<element name="dataSource" type="xsd:string" minOccurs="0"/>
+				<element name="package" type="xsd:string" minOccurs="0"/>
+				<element name="vc" type="xsd:int" minOccurs="0"/>
+				<element name="vpdsl" type="xsd:int" minOccurs="0"/>
+				<element name="comptest" type="xsd:string" minOccurs="0"/>
+				<element name="dsltest" type="xsd:string"/>
+				<element name="qdntest" type="xsd:string"/>
+				<element name="netcenter" type="xsd:int" minOccurs="0"/>
+				<element name="switchcode" type="xsd:int" minOccurs="0"/>
+				<element name="switchtype" type="xsd:int" minOccurs="0"/>
+				<element name="linetype" type="xsd:int" minOccurs="0"/>
+				<element name="linedesc" type="xsd:string" minOccurs="0"/>
+				<element name="dslam" type="xsd:int" minOccurs="0"/>
+				<element name="shelfslot" type="xsd:int" minOccurs="0"/>
+				<element name="port" type="xsd:int" minOccurs="0"/>
+				<element name="ipaddress" type="xsd:string" minOccurs="0"/>
+				<element name="equipcode" type="xsd:int" minOccurs="0"/>
+				<element name="frame" type="xsd:int" minOccurs="0"/>
+				<element name="equipname" type="xsd:string" minOccurs="0"/>
+				<element name="tldno" type="xsd:int" minOccurs="0"/>
+				<element name="tldtype" type="xsd:string" minOccurs="0"/>
+				<element name="cageslot" type="xsd:int" minOccurs="0"/>
+				<element name="maagedport" type="xsd:int" minOccurs="0"/>
+				<element name="center" type="xsd:int" minOccurs="0"/>
+				<element name="ru" type="xsd:int" minOccurs="0"/>
+				<element name="metalicTest" type="xsd:string" minOccurs="0"/>
+				<element name="unit" type="xsd:int" minOccurs="0"/>
+				<element name="equipType" type="xsd:string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

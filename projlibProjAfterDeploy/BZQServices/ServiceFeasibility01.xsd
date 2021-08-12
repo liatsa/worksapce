@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ServiceFeasibility01="http://www.bezeq.co.il/XMLSchema/ServiceFeasibility01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ServiceFeasibility01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="requestTimestamp" type="xs:string"/>
+							<xs:element name="fullComponentNumber" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" name="billingServicesArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="billingServiceId" type="xs:integer"/>
+										<xs:element maxOccurs="unbounded" name="requestsArr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="requestType" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="fullComponentNumber" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" name="billingServicesArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="billingServiceId" type="xs:integer"/>
+										<xs:element maxOccurs="unbounded" name="requestArr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="requestType" type="xs:integer"/>
+													<xs:element minOccurs="0" name="responseId" type="xs:integer"/>
+													<xs:element minOccurs="0" name="detailResponseId" type="xs:integer"/>
+													<xs:element minOccurs="0" name="responseDesc" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="responseParams">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="paramName" type="xs:string"/>
+													<xs:element minOccurs="0" name="paramValue" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="returnCodeDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderDetails06="http://www.bezeq.co.il/XMLSchema/OrderDetails06" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderDetails06">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="orderNumber" type="string"/>
+							<element minOccurs="0" name="wholesaleRequestId" type="string"/>
+							<element minOccurs="0" name="subscriberNumber" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="recognizeId" type="integer"/>
+							<element minOccurs="0" name="orderId" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="customerName" type="string"/>
+							<element minOccurs="0" name="customerGrade" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element maxOccurs="20" minOccurs="0" name="orderDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderNumber" type="integer"/>
+										<element minOccurs="0" name="subscriberNumber" type="string"/>
+										<element minOccurs="0" name="orderTypeDesc" type="string"/>
+										<element minOccurs="0" name="recognizeId" type="integer"/>
+										<element minOccurs="0" name="orderSource" type="string"/>
+										<element minOccurs="0" name="orderDate" type="date"/>
+										<element minOccurs="0" name="orderStatus" type="integer"/>
+										<element minOccurs="0" name="orderStatusDescription" type="string"/>
+										<element minOccurs="0" name="contactPhoneNumber" type="string"/>
+										<element minOccurs="0" name="wholesaleCode" type="string"/>
+										<element minOccurs="0" name="citySymbol" type="string"/>
+										<element minOccurs="0" name="cityName" type="string"/>
+										<element minOccurs="0" name="streetSymbol" type="string"/>
+										<element minOccurs="0" name="streetName" type="string"/>
+										<element minOccurs="0" name="houseNumber" type="string"/>
+										<element minOccurs="0" name="letter" type="string"/>
+										<element minOccurs="0" name="center" type="string"/>
+										<element minOccurs="0" name="floor" type="string"/>
+										<element minOccurs="0" name="apartment" type="string"/>
+										<element minOccurs="0" name="completionDate" type="date"/>
+										<element minOccurs="0" name="responsibleParty" type="string"/>
+										<element minOccurs="0" name="categoryClassId" type="string"/>
+										<element minOccurs="0" name="sellerId" type="string"/>
+										<element minOccurs="0" name="dealerCode" type="string"/>
+										<element minOccurs="0" name="endDate" type="date"/>
+										<element minOccurs="0" name="startTime" type="time"/>
+										<element minOccurs="0" name="endTime" type="time"/>
+										<element minOccurs="0" name="removeDate" type="date"/>
+										<element minOccurs="0" name="requestDate" type="date"/>
+										<element name="serviceOrderTypeId" type="integer"/>
+										<element name="lineTypeId" type="integer"/>
+										<element minOccurs="0" name="yesBundle" type="string"/>
+										<element minOccurs="0" name="abendonedOperator" type="string"/>
+										<element minOccurs="0" name="portableNumber" type="string"/>
+										<element minOccurs="0" name="isExists" type="string"/>
+										<element minOccurs="0" name="wholesaleRequestId" type="string"/>
+										<element minOccurs="0" name="previousSubscriberNubmer" type="string"/>
+										<element minOccurs="0" name="projectNumber" type="string"/>
+										<element minOccurs="0" name="noteInterface1" type="string"/>
+										<element minOccurs="0" name="noteInterface2" type="string"/>
+										<element minOccurs="0" name="noteInterface3" type="string"/>
+										<element minOccurs="0" name="noteImplemenet1" type="string"/>
+										<element minOccurs="0" name="noteImplemenet2" type="string"/>
+										<element minOccurs="0" name="noteImplemenet3" type="string"/>
+										<element minOccurs="0" name="noteImplemenet4" type="string"/>
+										<element minOccurs="0" name="noteImplemenet5" type="string"/>
+										<element minOccurs="0" name="noteOrder1" type="string"/>
+										<element minOccurs="0" name="noteOrder2" type="string"/>
+										<element minOccurs="0" name="equipmentCodes" type="string"/>
+										<element minOccurs="0" name="equipmentQuantities" type="string"/>
+										<element minOccurs="0" name="actionCodes" type="string"/>
+										<element minOccurs="0" name="waitingDays" type="string"/>
+										<element minOccurs="0" name="orderType" type="integer"/>
+										<element minOccurs="0" name="futurePhone" type="string"/>
+										<element minOccurs="0" name="actionDate" type="date"/>
+										<element minOccurs="0" name="subOrderType" type="integer"/>
+										<element minOccurs="0" name="yesCombinedInstallation" type="string"/>
+										<element minOccurs="0" name="reservedNetworkPhoneNumber" type="string"/>
+										<element minOccurs="0" name="reservedNetworkEntryDate" type="date"/>
+										<element minOccurs="0" name="reservedNetworkHekerNo" type="integer"/>
+										<element minOccurs="0" name="serviceExecutionDate" type="date"/>
+										<element minOccurs="0" name="buildingType" type="string"/>
+										<element minOccurs="0" name="assetFiberInd" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="10" minOccurs="0" name="OrderServices">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderNumber" type="string"/>
+										<element minOccurs="0" name="serviceType" type="integer"/>
+										<element minOccurs="0" name="additionalServiceAction" type="string"/>
+										<element minOccurs="0" name="quantityForInstallation" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="messageSetNumber" type="integer"/>
+							<element name="messageNumber" type="integer"/>
+							<element minOccurs="0" name="messageDescription" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:VoicMailRegistration01="http://www.bezeq.co.il/XMLSchema/VoicMailRegistration01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/VoicMailRegistration01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="validationToken" type="xs:string"/>
+							<xs:element name="authAppID" type="xs:string"/>
+							<xs:element name="authAppPassword" type="xs:string"/>
+							<xs:element name="voiceMailType" type="xs:string"/>
+							<xs:element name="voiceMailLanguage" type="xs:string"/>
+							<xs:element name="voiceMailMessageType" type="xs:string"/>
+							<xs:element name="voiceMailRingNumbers" type="xs:string"/>
+							<xs:element name="voiceMailBackToSender" type="xs:string"/>
+							<xs:element name="voiceMailFromHomeNoPassword" type="xs:string"/>
+							<xs:element name="voiceMailIsFamily" type="xs:string"/>
+							<xs:element name="voiceMailIsExpanded" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

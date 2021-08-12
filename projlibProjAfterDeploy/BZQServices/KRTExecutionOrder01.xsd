@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTExecutionOrder01="http://www.bezeq.co.il/XMLSchema/KRTExecutionOrder01" xmlns:N1Lines="http://www.bezeq.co.il/XMLSchema/N1Lines" xmlns:NetWork="http://www.bezeq.co.il/XMLSchema/NetWork" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTExecutionOrder01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NetWork" schemaLocation="../BZQSchemas/NetWork.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/N1Lines" schemaLocation="../BZQSchemas/N1Lines.xsd"/>
+	<xs:element name="executionorder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTExecutionOrder01:request"/>
+				<xs:element ref="KRTExecutionOrder01:reply"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="phoneNumber" type="xs:string"/>
+							<xs:element name="hekerNumber" type="xs:string"/>
+							<xs:element name="mainOrderNumber" type="xs:string"/>
+							<xs:element name="runOrderNumber" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="accessType" type="xs:string"/>
+							<xs:element minOccurs="0" ref="NetWork:NetWork"/>
+							<xs:element minOccurs="0" name="linesNumber" type="xs:string"/>
+							<xs:element minOccurs="0" ref="N1Lines:n1Lines"/>
+							<xs:element minOccurs="0" name="lastPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="address" type="xs:string"/>
+							<xs:element maxOccurs="5" minOccurs="0" name="technicianComments" type="xs:string"/>
+							<xs:element maxOccurs="5" minOccurs="0" name="orderComments" type="xs:string"/>
+							<xs:element maxOccurs="1" minOccurs="0" name="sellerId" type="xs:string"/>
+							<xs:element maxOccurs="30" minOccurs="0" name="equipDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="kitId" type="xs:string"/>
+										<xs:element minOccurs="0" name="kitName" type="xs:string"/>
+										<xs:element minOccurs="0" name="kitAmaount" type="xs:string"/>
+										<xs:element minOccurs="0" name="label" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="lineRouting" type="xs:string"/>
+							<xs:element minOccurs="0" name="lenPreviousline">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="center" type="xs:string"/>
+										<xs:element minOccurs="0" name="telephoneExchange" type="xs:string"/>
+										<xs:element minOccurs="0" name="system" type="xs:string"/>
+										<xs:element minOccurs="0" name="tag" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="portPreviousline">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="center" type="xs:string"/>
+										<xs:element minOccurs="0" name="telephoneExchange" type="xs:string"/>
+										<xs:element minOccurs="0" name="system" type="xs:string"/>
+										<xs:element minOccurs="0" name="tag" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="isNewCustomer" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageNbr" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

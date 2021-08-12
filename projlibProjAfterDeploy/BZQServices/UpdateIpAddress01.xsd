@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateIpAddress01="http://www.bezeq.co.il/XMLSchema/UpdateIpAddress01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateIpAddress01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="actionCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="client" type="xs:string"/>
+							<xs:element minOccurs="0" name="ipAddressCountTotal" type="xs:integer"/>
+							<xs:element name="ipAddressDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="10" minOccurs="0" name="ipAddress">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="ip" type="xs:string"/>
+													<xs:element minOccurs="0" name="details" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="maskBits" type="xs:string"/>
+							<xs:element minOccurs="0" name="root" type="xs:string"/>
+							<xs:element minOccurs="0" name="propertiesCountTotal" type="xs:integer"/>
+							<xs:element name="PropertiesList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="10" minOccurs="0" name="PropertiesDetails">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="property" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="elementsCountTotal" type="xs:integer"/>
+							<xs:element name="ElementList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="10" minOccurs="0" name="ElementsDetails">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="Element" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="description" type="xs:string"/>
+							<xs:element minOccurs="0" name="status" type="xs:string"/>
+							<xs:element minOccurs="0" name="contact" type="xs:string"/>
+							<xs:element minOccurs="0" name="treatment" type="xs:string"/>
+							<xs:element minOccurs="0" name="protectedIP" type="xs:string"/>
+							<xs:element minOccurs="0" name="userId" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="ipAddressCountTotal" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ipAddressDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="10" minOccurs="0" name="ipAddress">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="ip" type="xs:string"/>
+													<xs:element minOccurs="0" name="details" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="userId" type="xs:string"/>
+							<xs:element name="returnCode" type="xs:string"/>
+							<xs:element name="errorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

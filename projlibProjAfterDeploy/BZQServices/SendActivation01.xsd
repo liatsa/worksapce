@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SendActivation01="http://www.bezeq.co.il/XMLSchema/SendActivation01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SendActivation01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="50" minOccurs="0" name="eq">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="deviceEq" type="xs:string"/>
+										<xs:element name="eqType" type="xs:string"/>
+										<xs:element name="ipeq" type="xs:string"/>
+										<xs:element name="protocolEq" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="50" minOccurs="0" name="ext">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dnphnr" type="xs:string"/>
+										<xs:element name="userId" type="xs:string"/>
+										<xs:element name="dnenfn" type="xs:string"/>
+										<xs:element name="dnenln" type="xs:string"/>
+										<xs:element name="clifn" type="xs:string"/>
+										<xs:element name="cliln" type="xs:string"/>
+										<xs:element name="clipHnr" type="xs:string"/>
+										<xs:element name="pswv" type="xs:string"/>
+										<xs:element name="pswi" type="xs:string"/>
+										<xs:element name="pswd" type="xs:string"/>
+										<xs:element minOccurs="0" name="spackName" type="xs:string"/>
+										<xs:element name="funDial" type="xs:integer"/>
+										<xs:element name="anonimousCallReject" type="xs:integer"/>
+										<xs:element name="remoteOffice" type="xs:integer"/>
+										<xs:element name="attendantConsole" type="xs:integer"/>
+										<xs:element name="outlook" type="xs:integer"/>
+										<xs:element name="bargein" type="xs:integer"/>
+										<xs:element name="pushtoTalk" type="xs:integer"/>
+										<xs:element name="waitingCall" type="xs:integer"/>
+										<xs:element name="voiceMsg" type="xs:integer"/>
+										<xs:element name="vmrings" type="xs:integer"/>
+										<xs:element name="callForwardBussy" type="xs:integer"/>
+										<xs:element name="callForwardNoanswer" type="xs:integer"/>
+										<xs:element name="restrictMobile" type="xs:integer"/>
+										<xs:element name="restrictIntl" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ffu" type="xs:string"/>
+										<xs:element minOccurs="0" name="devtrkName" type="xs:string"/>
+										<xs:element minOccurs="0" name="devtrk" type="xs:integer"/>
+										<xs:element minOccurs="1" name="devName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="projectId" type="xs:integer"/>
+							<xs:element name="order35" type="xs:integer"/>
+							<xs:element name="customerId" type="xs:integer"/>
+							<xs:element name="customerName" type="xs:string"/>
+							<xs:element name="grName" type="xs:string"/>
+							<xs:element name="spId" type="xs:string"/>
+							<xs:element name="clusterId" type="xs:integer"/>
+							<xs:element name="merkaz" type="xs:integer"/>
+							<xs:element name="language" type="xs:string"/>
+							<xs:element name="misOved" type="xs:integer"/>
+							<xs:element name="totalExtCountAllMsg" type="xs:integer"/>
+							<xs:element name="totalEqCountAllMsg" type="xs:integer"/>
+							<xs:element name="eqCount" type="xs:integer"/>
+							<xs:element name="extCount" type="xs:integer"/>
+							<xs:element name="domain" type="xs:string"/>
+							<xs:element name="sbc" type="xs:string"/>
+							<xs:element name="timeZone" type="xs:string"/>
+							<xs:element minOccurs="0" name="callingLineId" type="xs:string"/>
+							<xs:element minOccurs="0" name="contactName" type="xs:string"/>
+							<xs:element minOccurs="0" name="contactMail" type="xs:string"/>
+							<xs:element minOccurs="0" name="contactPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="adId" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastMsg" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

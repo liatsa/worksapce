@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:Apartment02="http://www.bezeq.co.il/XMLSchema/Apartment02" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Apartment02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="kodPeula" type="xs:string"/>
+							<xs:element name="ezChiyugKodBzq" type="xs:string"/>
+							<xs:element name="misparKodBzq" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shluchaKodBzq" type="xs:integer"/>
+							<xs:element minOccurs="0" name="matzavKodBzq" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparHazmana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ratzHazmana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ezChiyugHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparTelHazmana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shluchaHazmana" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

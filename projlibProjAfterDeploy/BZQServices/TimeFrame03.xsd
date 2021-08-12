@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:TimeFrame03="http://www.bezeq.co.il/XMLSchema/TimeFrame03" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/TimeFrame03">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceID" type="string"/>
+							<element name="assignType" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="taskDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="serviceOrderNumber" type="integer"/>
+										<element minOccurs="0" name="taskNumber" type="integer"/>
+										<element minOccurs="0" name="cmTaskID" type="integer"/>
+										<element name="categoryTypeID" type="integer"/>
+										<element name="slaServiceLevelID" type="integer"/>
+										<element name="securityLevelID" type="integer"/>
+										<element name="serviceOrderSourceTypeID" type="integer"/>
+										<element name="orgUnitID" type="integer"/>
+										<element name="earlyStartDate" type="string"/>
+										<element name="lateStartDate" type="string"/>
+										<element name="isException" type="string"/>
+										<element minOccurs="0" name="cityID" type="integer"/>
+										<element minOccurs="0" name="street" type="string"/>
+										<element minOccurs="0" name="subscriberNumber" type="string"/>
+										<element minOccurs="0" name="customerId" type="integer"/>
+										<element minOccurs="0" name="projectNumber" type="string"/>
+										<element name="isSohoSMB" type="string"/>
+										<element minOccurs="0" name="eqpLadderTypeID" type="integer"/>
+										<element name="taskTypeID" type="integer"/>
+										<element name="durationMultiplication" type="integer"/>
+										<element name="securityEquipmentTypeID" type="integer"/>
+										<element name="longitude" type="integer"/>
+										<element name="latitude" type="integer"/>
+										<element minOccurs="0" name="additionalTechnicianCMTaskID" type="integer"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="equipmentDetails">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="equipmentCatalogNumber" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="unbounded" minOccurs="0" name="missionAttributes">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="taskAttributeId" type="string"/>
+													<element minOccurs="0" name="amount" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceID" type="string"/>
+							<element minOccurs="0" name="calculatedDuration" type="integer"/>
+							<element minOccurs="0" name="additionalTechnicianMissionDuration" type="integer"/>
+							<element maxOccurs="100" minOccurs="0" name="timeFrameArray">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="timeFrameStart" type="string"/>
+										<element minOccurs="0" name="timeFrameEnd" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="returnStatus" type="integer"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:YesOrder01="http://www.bezeq.co.il/XMLSchema/YesOrder01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/YesOrder01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceid" type="xs:string"/>
+							<xs:element name="misparlakoachyes" type="xs:integer"/>
+							<xs:element name="misparhazmana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparpniyacm" type="xs:string"/>
+							<xs:element name="sugpeula" type="xs:integer"/>
+							<xs:element minOccurs="0" name="statushazmana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sughazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparmuktze" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparmanuy" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sibatnayadut" type="xs:integer"/>
+							<xs:element minOccurs="0" name="telefonrashi" type="xs:integer"/>
+							<xs:element minOccurs="0" name="telefonleberur" type="xs:integer"/>
+							<xs:element minOccurs="0" name="maslulmodem" type="xs:integer"/>
+							<xs:element minOccurs="0" name="isp" type="xs:string"/>
+							<xs:element minOccurs="0" name="technaitashtit" type="xs:string"/>
+							<xs:element minOccurs="0" name="taarichmetoam" type="xs:date"/>
+							<xs:element minOccurs="0" name="meshaa" type="xs:string"/>
+							<xs:element minOccurs="0" name="adshaa" type="xs:string"/>
+							<xs:element name="technologia" type="xs:string"/>
+							<xs:element minOccurs="0" name="ketzev" type="xs:string"/>
+							<xs:element minOccurs="0" name="ishuv" type="xs:string"/>
+							<xs:element minOccurs="0" name="rechov" type="xs:string"/>
+							<xs:element minOccurs="0" name="bait" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sug" type="xs:string"/>
+							<xs:element minOccurs="0" name="ot" type="xs:string"/>
+							<xs:element minOccurs="0" name="knisa" type="xs:string"/>
+							<xs:element minOccurs="0" name="koma" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dira" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teivaalamud" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparteiva" type="xs:integer"/>
+							<xs:element minOccurs="0" name="mispartag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ishuvmisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shemishuvmisgeret" type="xs:string"/>
+							<xs:element minOccurs="0" name="rechovmisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shemrechovmisgeret" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugbaitmisgeret" type="xs:string"/>
+							<xs:element minOccurs="0" name="baitmisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="otmisgeret" type="xs:string"/>
+							<xs:element minOccurs="0" name="statusmesima" type="xs:integer"/>
+							<xs:element minOccurs="0" name="heara1" type="xs:string"/>
+							<xs:element minOccurs="0" name="heara2" type="xs:string"/>
+							<xs:element minOccurs="0" name="heara3" type="xs:string"/>
+							<xs:element minOccurs="0" name="heara4" type="xs:string"/>
+							<xs:element minOccurs="0" name="heara5" type="xs:string"/>
+							<xs:element name="messagenbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messagedescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

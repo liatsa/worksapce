@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BzqMFHeader="http://www.bezeq.co.il/XMLSchema/BzqMFHeader" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_vusycPqYEeuc-43zW8XOWA" name="BZQ.SharedResources.MFResources.DataFormatMFHeader" type="dataformat:DataFormat">
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_vusycfqYEeuc-43zW8XOWA" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" schemaElement="BzqMFHeader.xsd#//MFHeader;XSDElementDeclaration" schemaElementQName="BzqMFHeader:MFHeader" lineLength="60" fieldOffsetsStr="User(4,13)&#xA;Password(13,19)&#xA;MessageCode(19,23)&#xA;Message(23,43)&#xA;ApplicationId(43,46)">
+    <fieldOffsets xmi:id="_vusycvqYEeuc-43zW8XOWA" name="User" start="4" end="13"/>
+    <fieldOffsets xmi:id="_vusyc_qYEeuc-43zW8XOWA" name="Password" start="13" end="19"/>
+    <fieldOffsets xmi:id="_vusydPqYEeuc-43zW8XOWA" name="MessageCode" start="19" end="23"/>
+    <fieldOffsets xmi:id="_vusydfqYEeuc-43zW8XOWA" name="Message" start="23" end="43"/>
+    <fieldOffsets xmi:id="_vusydvqYEeuc-43zW8XOWA" name="ApplicationId" start="43" end="46"/>
+  </jndi:configuration>
+</jndi:namedResource>

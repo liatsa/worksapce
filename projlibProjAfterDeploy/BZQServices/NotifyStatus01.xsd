@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NotifyStatus01="http://www.bezeq.co.il/XMLSchema/NotifyStatus01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NotifyStatus01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="providerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="providerMessageSendTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="providerRequestId" type="xs:string"/>
+							<xs:element name="processType" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderRequestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="referralNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscriberNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="updateType" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceOrderNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="slaTo" type="xs:date"/>
+							<xs:element minOccurs="0" name="closeState" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionCloseReason" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionSolutionDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceOrderTypeDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="continueMissionTypeCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="continueMissionTypeDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestedPackage" type="xs:string"/>
+							<xs:element minOccurs="0" name="technicianType" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderOpenDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="serviceOrderTypeCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="estimatedTimeFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="estimatedTimeTo" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="actualTimeArrival" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="orderClosingDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="box" type="xs:string"/>
+							<xs:element minOccurs="0" name="tag" type="xs:string"/>
+							<xs:element minOccurs="0" name="actualBitRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="maxAttainable" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineAttenuation" type="xs:string"/>
+							<xs:element minOccurs="0" name="noise" type="xs:string"/>
+							<xs:element minOccurs="0" name="distance" type="xs:string"/>
+							<xs:element minOccurs="0" name="upActualBitRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="upMaxAttainable" type="xs:string"/>
+							<xs:element minOccurs="0" name="upLineAttenuation" type="xs:string"/>
+							<xs:element minOccurs="0" name="upNoise" type="xs:string"/>
+							<xs:element minOccurs="0" name="modemType" type="xs:string"/>
+							<xs:element minOccurs="0" name="bezeqOwnedModem" type="xs:string"/>
+							<xs:element minOccurs="0" name="currProviderId" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderStatusCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderStatusDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerAppruval" type="xs:string"/>
+							<xs:element minOccurs="0" name="processEndNotification" type="xs:string"/>
+							<xs:element minOccurs="0" name="boxLocation" type="xs:string"/>
+							<xs:element minOccurs="0" name="boxAdrress" type="xs:string"/>
+							<xs:element minOccurs="0" name="entryPoint" type="xs:string"/>
+							<xs:element minOccurs="0" name="specificBoxLocation" type="xs:string"/>
+							<xs:element minOccurs="0" name="solutionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="solutionDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="voltageRgAc" type="xs:string"/>
+							<xs:element minOccurs="0" name="voltageTgAc" type="xs:string"/>
+							<xs:element minOccurs="0" name="voltageTrAc" type="xs:string"/>
+							<xs:element minOccurs="0" name="voltageRgDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="voltageTgDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="voltageTrDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="resistanceRgDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="resistanceTgDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="resistanceTrDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="capacitanceRgDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="capacitanceTgDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="capacitanceTrDc" type="xs:string"/>
+							<xs:element minOccurs="0" name="removalInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestedLineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="portOrderId" type="xs:string"/>
+							<xs:element minOccurs="0" name="reservedNetwork" type="xs:string"/>
+							<xs:element minOccurs="0" name="gponInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="gponLinkageStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="gponLinkageStatusDescription" type="xs:string"/>
+										<xs:element maxOccurs="20" minOccurs="0" name="gponParams">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="paramName" type="xs:string"/>
+													<xs:element minOccurs="0" name="paramValue" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="techicalMessageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="technicalMessageDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,12 @@
+/*
+ * Created on 26/06/2006
+ *
+ */
+
+import java.io.*;
+public class BzqUtils implements Serializable {
+	public static String bzqFormatError(String messageCode,String message,String request)
+	{
+		return "--- Error is: " +  messageCode + " "  + message + " --- Request is: "  +  request;
+	}
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:PortoutNotification01="http://www.bezeq.co.il/XMLSchema/PortoutNotification01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/PortoutNotification01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="messageSendTimestamp" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="crmReqId" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmFormId" type="xs:string"/>
+							<xs:element minOccurs="0" name="portedDn" type="xs:string"/>
+							<xs:element minOccurs="0" name="fromNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="toNumber" type="xs:string"/>
+							<xs:element name="numberType" type="xs:string"/>
+							<xs:element name="npgRequestId" type="xs:string"/>
+							<xs:element name="requestType" type="xs:string"/>
+							<xs:element name="processType" type="xs:string"/>
+							<xs:element name="processStateCode" type="xs:string"/>
+							<xs:element name="processStateDesc" type="xs:string"/>
+							<xs:element name="processTransCode" type="xs:string"/>
+							<xs:element name="processTransDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="approvalIndication" type="xs:string"/>
+							<xs:element minOccurs="0" name="rejectReasonCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="rejectReasonMessage" type="xs:string"/>
+							<xs:element minOccurs="0" name="portingTime" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

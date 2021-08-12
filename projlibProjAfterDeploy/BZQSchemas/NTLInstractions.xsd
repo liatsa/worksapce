@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:NTLInstractions="http://www.bezeq.co.il/XMLSchema/NTLInstractions" xmlns:NTLItem="http://www.bezeq.co.il/XMLSchema/NTLItem" xmlns:NTLServiceRout="http://www.bezeq.co.il/XMLSchema/NTLServiceRout" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLInstractions">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NTLServiceRout" schemaLocation="NTLServiceRout.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NTLItem" schemaLocation="NTLItem.xsd"/>
+	<xs:element name="Instractions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="code" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element maxOccurs="10" minOccurs="0" ref="NTLServiceRout:ServiceRout"/>
+				<xs:element maxOccurs="20" minOccurs="0" ref="NTLItem:Item"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

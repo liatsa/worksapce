@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ServiceDetails01="http://www.bezeq.co.il/XMLSchema/ServiceDetails01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ServiceDetails01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="subscriberNo" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="histInd" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="subscriberNo" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="subPersonalId" type="string"/>
+							<element minOccurs="0" name="subStatus" type="string"/>
+							<element minOccurs="0" name="subName" type="string"/>
+							<element minOccurs="0" name="subStatusRsnCode" type="string"/>
+							<element minOccurs="0" name="securityClass" type="integer"/>
+							<element name="recCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="serviceArr">
+								<complexType>
+									<sequence>
+										<element name="serviceId" type="integer"/>
+										<element minOccurs="0" name="effDate" type="date"/>
+										<element minOccurs="0" name="expDate" type="date"/>
+										<element name="service" type="string"/>
+										<element name="serviceDesc" type="string"/>
+										<element minOccurs="0" name="subService" type="string"/>
+										<element minOccurs="0" name="subServiceDesc" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="attrArr">
+											<complexType>
+												<sequence>
+													<element name="attrName" type="string"/>
+													<element name="attrDesc" type="string"/>
+													<element maxOccurs="unbounded" minOccurs="0" name="attrValueArr">
+														<complexType>
+															<sequence>
+																<element name="attrValue" type="string"/>
+																<element name="attrValueDesc" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="status" type="integer"/>
+							<element minOccurs="0" name="msgCode" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

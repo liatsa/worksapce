@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CustomerAlarms03="http://www.bezeq.co.il/XMLSchema/CustomerAlarms03" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CustomerAlarms03">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="customerId" type="string"/>
+							<element minOccurs="0" name="alarmTypes" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="customerId" type="string"/>
+							<element minOccurs="0" name="alarmTypes" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="alarms">
+								<complexType>
+									<sequence>
+										<element name="lineCode" type="string"/>
+										<element minOccurs="0" name="logicalLineCode" type="string"/>
+										<element minOccurs="0" name="groupId" type="string"/>
+										<element minOccurs="0" name="siteName" type="string"/>
+										<element minOccurs="0" name="address" type="string"/>
+										<element name="serviceType" type="string"/>
+										<element name="upTime" type="dateTime"/>
+										<element minOccurs="0" name="downTime" type="dateTime"/>
+										<element name="alarmType" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="returnCode" type="integer"/>
+							<element minOccurs="0" name="errorDescription" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Workorder06="http://www.bezeq.co.il/XMLSchema/Workorder06" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Workorder06">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="messageSw" type="integer"/>
+							<element name="ceationDate" type="dateTime"/>
+							<element name="orderHeaderId" type="integer"/>
+							<element minOccurs="0" name="productId" type="integer"/>
+							<element minOccurs="0" name="componentId" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="orderHeaderId" type="integer"/>
+							<element maxOccurs="10" minOccurs="0" name="productData">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="productId" type="integer"/>
+										<element minOccurs="0" name="productStatusDescription" type="string"/>
+										<element maxOccurs="10" minOccurs="0" name="componentData">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="componentId" type="integer"/>
+													<element minOccurs="0" name="componentNumber" type="string"/>
+													<element minOccurs="0" name="componentStatusDescription" type="string"/>
+													<element maxOccurs="2" minOccurs="0" name="componentProcess">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="componentProcessId" type="integer"/>
+																<element minOccurs="0" name="action" type="string"/>
+																<element minOccurs="0" name="serviceOrderId" type="integer"/>
+																<element minOccurs="0" name="stepId" type="integer"/>
+																<element minOccurs="0" name="stepDescription" type="string"/>
+																<element minOccurs="0" name="stepStatusDescription" type="string"/>
+																<element maxOccurs="10" minOccurs="0" name="missionData">
+																	<complexType>
+																		<sequence>
+																			<element minOccurs="0" name="recomendedAdmition" type="integer"/>
+																			<element minOccurs="0" name="amount" type="integer"/>
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="requestStatus" type="integer"/>
+							<element minOccurs="0" name="errorCode" type="integer"/>
+							<element minOccurs="0" name="errorMessage" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

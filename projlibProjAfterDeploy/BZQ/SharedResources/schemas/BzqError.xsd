@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/BzqError"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="BzqError">
+		<complexType>
+			<sequence>
+				<element name="MessageCode" type="xsd:string"/>
+				<element name="Message" type="xsd:string"/>
+				<element name="Type" type="xsd:string"/>
+				<element name="User" type="xsd:string"/>
+				<element name="ApplicationId" type="xsd:string" minOccurs="0"/>
+				<element name="Date" type="xsd:string" minOccurs="0"/>
+				<element name="Jms" minOccurs="0">
+					<complexType>
+						<sequence>
+							<element name="DestinationQueue" type="xsd:string"/>
+							<element name="ReplyToQ" type="xsd:string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DetailedError" type="xsd:string" minOccurs="0"/>
+				<element name="ProcessInput" type="xsd:string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTTechnicianMsg="http://www.bezeq.co.il/XMLSchema/KRTTechnicianMsg" xmlns:KRTTechnicianMsgMessage="http://www.bezeq.co.il/XMLSchema/KRTTechnicianMsgMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTechnicianMsgMessage">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/KRTTechnicianMsg" schemaLocation="KRTTechnicianMsg.xsd"/>
+	<xs:element name="KRTTechnicianMsgMessage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" ref="KRTTechnicianMsg:KRTTechnicianMsg"/>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

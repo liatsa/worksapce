@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTAppointedTime01="http://www.bezeq.co.il/XMLSchema/KRTAppointedTime01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTAppointedTime01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="appointedTask">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTAppointedTime01:request"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNumber" type="xs:int"/>
+							<xs:element name="hekerNumber" type="xs:int"/>
+							<xs:element name="mainOrderNumber" type="xs:int"/>
+							<xs:element name="runOrderNumber" type="xs:int"/>
+							<xs:element name="startDate" type="xs:date"/>
+							<xs:element name="startTime" type="xs:time"/>
+							<xs:element name="finishDate" type="xs:date"/>
+							<xs:element name="finishTime" type="xs:time"/>
+							<xs:element name="updateId" type="xs:int"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

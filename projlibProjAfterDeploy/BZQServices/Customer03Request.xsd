@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Customer03Request="http://www.bezeq.co.il/XMLSchema/Customer03Request" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Customer03Request">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="reqMsgType" type="string"/>
+							<element name="customerId" type="string"/>
+							<element minOccurs="0" name="portInd" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="repMsgType" type="string"/>
+							<element name="returnCode" type="string"/>
+							<element minOccurs="0" name="errorCode" type="string"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+							<element minOccurs="0" name="customerId" type="string"/>
+							<element minOccurs="0" name="lastName" type="string"/>
+							<element minOccurs="0" name="firstName" type="string"/>
+							<element minOccurs="0" name="shortName" type="string"/>
+							<element minOccurs="0" name="letterName" type="string"/>
+							<element minOccurs="0" name="adrType" type="string"/>
+							<element minOccurs="0" name="city" type="string"/>
+							<element minOccurs="0" name="houseNo" type="string"/>
+							<element minOccurs="0" name="street" type="string"/>
+							<element minOccurs="0" name="pob" type="string"/>
+							<element minOccurs="0" name="mailBox" type="string"/>
+							<element minOccurs="0" name="aptNo" type="string"/>
+							<element minOccurs="0" name="floor" type="string"/>
+							<element minOccurs="0" name="entrance" type="string"/>
+							<element minOccurs="0" name="cityCd" type="string"/>
+							<element minOccurs="0" name="streetCd" type="string"/>
+							<element minOccurs="0" name="ot" type="string"/>
+							<element minOccurs="0" name="postCode" type="string"/>
+							<element minOccurs="0" name="letterCity" type="string"/>
+							<element minOccurs="0" name="letterHouseNo" type="string"/>
+							<element minOccurs="0" name="letterStreet" type="string"/>
+							<element minOccurs="0" name="letterPob" type="string"/>
+							<element minOccurs="0" name="letterMailBox" type="integer"/>
+							<element minOccurs="0" name="letterAptNo" type="integer"/>
+							<element minOccurs="0" name="letterFloor" type="string"/>
+							<element minOccurs="0" name="letterEntrance" type="string"/>
+							<element minOccurs="0" name="letterCityCd" type="string"/>
+							<element minOccurs="0" name="letterStreetCd" type="integer"/>
+							<element minOccurs="0" name="letterOt" type="string"/>
+							<element minOccurs="0" name="letterPostCode" type="integer"/>
+							<element minOccurs="0" name="personalId" type="integer"/>
+							<element minOccurs="0" name="custGrade" type="string"/>
+							<element minOccurs="0" name="custGradeDate" type="date"/>
+							<element minOccurs="0" name="businessRsn" type="string"/>
+							<element minOccurs="0" name="etamInd" type="string"/>
+							<element minOccurs="0" name="debtMark" type="string"/>
+							<element minOccurs="0" name="custDebt" type="integer"/>
+							<element minOccurs="0" name="incomeMark" type="string"/>
+							<element minOccurs="0" name="income" type="integer"/>
+							<element minOccurs="0" name="incomeDate" type="date"/>
+							<element minOccurs="0" name="division" type="integer"/>
+							<element minOccurs="0" name="region" type="integer"/>
+							<element minOccurs="0" name="legalSts" type="string"/>
+							<element minOccurs="0" name="custSts" type="integer"/>
+							<element minOccurs="0" name="custStsDate" type="date"/>
+							<element minOccurs="0" name="custOpenDate" type="date"/>
+							<element minOccurs="0" name="corporotionId" type="integer"/>
+							<element minOccurs="0" name="contactName" type="string"/>
+							<element minOccurs="0" name="contactNo" type="integer"/>
+							<element minOccurs="0" name="contactFax" type="integer"/>
+							<element minOccurs="0" name="mngrName" type="string"/>
+							<element minOccurs="0" name="mngrCode" type="integer"/>
+							<element minOccurs="0" name="mngrId" type="integer"/>
+							<element minOccurs="0" name="publishInd" type="string"/>
+							<element minOccurs="0" name="MosadInd" type="string"/>
+							<element minOccurs="0" name="accountType" type="string"/>
+							<element minOccurs="0" name="accountSubType" type="string"/>
+							<element minOccurs="0" name="tiyuvInd" type="string"/>
+							<element minOccurs="0" name="tiyuvDate" type="date"/>
+							<element minOccurs="0" name="bzqBillInd" type="string"/>
+							<element minOccurs="0" name="bzqBillDate" type="date"/>
+							<element minOccurs="0" name="adminCanInd" type="string"/>
+							<element minOccurs="0" name="personalId2" type="integer"/>
+							<element minOccurs="0" name="lastName2" type="string"/>
+							<element minOccurs="0" name="firstName2" type="string"/>
+							<element minOccurs="0" name="custValue" type="string"/>
+							<element minOccurs="0" name="portReqSts" type="string"/>
+							<element minOccurs="0" name="portReqDate" type="dateTime"/>
+							<element minOccurs="0" name="portSubNo" type="string"/>
+							<element minOccurs="0" name="portRejRsn" type="string"/>
+							<element minOccurs="0" name="portRejDate" type="date"/>
+							<element minOccurs="0" name="abandValue" type="string"/>
+							<element minOccurs="0" name="custSector" type="string"/>
+							<element minOccurs="0" name="preventOrderInd" type="string"/>
+							<element minOccurs="0" name="preventSellInd" type="string"/>
+							<element minOccurs="0" name="questionCd1" type="integer"/>
+							<element minOccurs="0" name="answerDesc1" type="string"/>
+							<element minOccurs="0" name="questionCd2" type="integer"/>
+							<element minOccurs="0" name="answerDesc2" type="string"/>
+							<element minOccurs="0" name="banCrm" type="string"/>
+							<element minOccurs="0" name="EmergencyCustInd" type="string"/>
+ 							<element minOccurs="0" name="benQty" type="string"/>
+							<element minOccurs="0" name="benArr" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

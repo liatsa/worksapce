@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CalculateDiscount01="http://www.bezeq.co.il/XMLSchema/CalculateDiscount01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CalculateDiscount01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="requestType" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element name="numBufRec" type="xs:integer"/>
+							<xs:element maxOccurs="100" minOccurs="0" name="socFtrPrmArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="recNumber" type="xs:integer"/>
+										<xs:element name="soc" type="xs:string"/>
+										<xs:element name="featureCode" type="xs:string"/>
+										<xs:element name="combinationNo" type="xs:integer"/>
+										<xs:element name="crossBanInd" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="numBufRecInstl" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="installmentArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="instlRecNumber" type="xs:integer"/>
+										<xs:element name="instlSoc" type="xs:string"/>
+										<xs:element name="instlFtrCode" type="xs:string"/>
+										<xs:element name="instlCombNo" type="xs:integer"/>
+										<xs:element name="instlQuantity" type="xs:integer"/>
+										<xs:element name="noOfInstl" type="xs:integer"/>
+										<xs:element name="instlAmt" type="xs:float"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="requestType" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element name="numBufRec" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="instCrdtArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="instlRecNumber" type="xs:integer"/>
+										<xs:element name="instlSoc" type="xs:string"/>
+										<xs:element name="instlFtrCode" type="xs:string"/>
+										<xs:element name="instlCombNo" type="xs:integer"/>
+										<xs:element name="instlQuantity" type="xs:integer"/>
+										<xs:element name="noOfInstl" type="xs:integer"/>
+										<xs:element name="instlAmtIncIntrst" type="xs:float"/>
+										<xs:element name="interestAmt" type="xs:float"/>
+										<xs:element name="firstPym" type="xs:float"/>
+										<xs:element name="onePeriodPym" type="xs:float"/>
+										<xs:element name="firstCrdt" type="xs:float"/>
+										<xs:element name="onePymCrdt" type="xs:float"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="status" type="xs:integer"/>
+							<xs:element minOccurs="0" name="msgCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="msgDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

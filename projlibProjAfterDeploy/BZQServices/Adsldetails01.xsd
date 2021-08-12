@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:Adsldetails01="http://www.bezeq.co.il/XMLSchema/Adsldetails01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Adsldetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugGisha" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="simunAdsl" type="xs:string"/>
+							<xs:element minOccurs="0" name="statusHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="taarichPtihatHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="taarichSgiratHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodDiler" type="xs:string"/>
+							<xs:element minOccurs="0" name="moneTochniyotTimhur" type="xs:string"/>
+							<xs:element maxOccurs="6" minOccurs="0" name="TochniotTimhur">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="tochnitTimhur" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="moneKodeyTziyud" type="xs:string"/>
+							<xs:element maxOccurs="60" minOccurs="0" name="KodeyTziyud">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="kodTziyud" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageNbr" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTTechnicianSale01="http://www.bezeq.co.il/XMLSchema/KRTTechnicianSale01" xmlns:SaleEquipmentList="http://www.bezeq.co.il/XMLSchema/SaleEquipmentList" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTechnicianSale01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/SaleEquipmentList" schemaLocation="../BZQSchemas/SaleEquipmentList.xsd"/>
+	<xs:element name="techniciansale">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTTechnicianSale01:request"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="sotype" type="xs:string"/>
+							<xs:element minOccurs="0" name="soid" type="xs:string"/>
+							<xs:element minOccurs="0" name="mid" type="xs:string"/>
+							<xs:element minOccurs="0" name="mainOrderId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="problemId" type="xs:string"/>
+							<xs:element minOccurs="0" name="techId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="salerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="date" type="xs:date"/>
+							<xs:element minOccurs="0" name="time" type="xs:time"/>
+							<xs:element minOccurs="0" name="storeNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cid" type="xs:integer"/>
+							<xs:element minOccurs="0" name="phone" type="xs:integer"/>
+							<xs:element minOccurs="0" name="crecord" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cnum" type="xs:integer"/>
+							<xs:element minOccurs="0" ref="SaleEquipmentList:saleequipmentlist"/>
+							<xs:element minOccurs="0" name="payType" type="xs:string"/>
+							<xs:element minOccurs="0" name="message">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="code" type="xs:string"/>
+										<xs:element minOccurs="0" name="title" type="xs:string"/>
+										<xs:element minOccurs="0" name="text" type="xs:string"/>
+										<xs:element minOccurs="0" name="so" type="xs:string"/>
+										<xs:element name="paramList">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element maxOccurs="unbounded" name="param">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="id" type="xs:integer"/>
+																<xs:element minOccurs="0" name="name" type="xs:string"/>
+																<xs:element minOccurs="0" name="value" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

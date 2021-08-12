@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:AddressSurvey01="http://www.bezeq.co.il/XMLSchema/AddressSurvey01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AddressSurvey01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+<element minOccurs="1" name="actionType" type="integer"/>
+							<element name="id" type="integer"/>
+							<element name="buildingUfid" type="integer"/>
+							<element name="addressUfid" type="integer"/>
+							<element minOccurs="0" name="incorrectAddressInd" type="integer"/>
+							<element minOccurs="0" name="incorectAddressReasonDesc" type="string"/>
+							<element minOccurs="0" name="addressComment" type="string"/>
+							<element minOccurs="0" name="entrancesNum" type="integer"/>
+							<element minOccurs="0" name="groundHouseInd" type="integer"/>
+							<element minOccurs="0" name="internalFeedingInd" type="integer"/>
+							<element minOccurs="0" name="floorsNum" type="integer"/>
+							<element minOccurs="0" name="apartmentsNum" type="integer"/>
+							<element minOccurs="0" name="pictureLink" type="string"/>
+							<element name="gponCompetitorsCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="gponCompetitorsArray">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="gponCompetitorId" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="createdOn" type="dateTime"/>
+							<element minOccurs="0" name="createdBy" type="string"/>
+<element minOccurs="0" name="updateOn" type="string"/>
+		
+				
+				<element minOccurs="0" name="updateBy" type="string"/>
+		
+				<element minOccurs="0" name="gponAppartmentInfrastructureTypeId" type="integer"/>
+		
+			
+				<element minOccurs="1" name="missionId" type="integer"/>
+		
+			
+				<element minOccurs="0" name="lonLat" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

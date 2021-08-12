@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SystemCare01="http://www.bezeq.co.il/XMLSchema/SystemCare01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SystemCare01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="phone" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndIcRec" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndItRec" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndPcRec" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndTcRec" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndGviyaCas" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndSoCheck" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phone" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtDiscnctOnDebt" type="xs:string"/>
+							<xs:element minOccurs="0" name="indSoExist" type="xs:string"/>
+							<xs:element minOccurs="0" name="ivrSoStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="businessUnit" type="xs:string"/>
+							<xs:element minOccurs="0" name="slaEndDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="startDateMission" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="endDateMission" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="ivrMnuiTyp" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtTimeReq" type="xs:string"/>
+							<xs:element minOccurs="0" name="soId" type="xs:string"/>
+							<xs:element minOccurs="0" name="soLine" type="xs:string"/>
+							<xs:element minOccurs="0" name="cancelInd" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="invoicesList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="shivronCd" type="xs:string"/>
+										<xs:element minOccurs="0" name="recordCd1" type="xs:string"/>
+										<xs:element minOccurs="0" name="recordCd2" type="xs:string"/>
+										<xs:element minOccurs="0" name="recordCd3" type="xs:string"/>
+										<xs:element minOccurs="0" name="recordCd4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

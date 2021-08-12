@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:NTLAtar="http://www.bezeq.co.il/XMLSchema/NTLAtar"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLAtar"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Atar">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customerNumber" type="xs:integer"/>
+				<xs:element name="customerName" type="xs:string" minOccurs="0"/>
+				<xs:element name="military" type="xs:integer" minOccurs="0"/>
+				<xs:element name="semelIshuv" type="xs:integer" minOccurs="0"/>
+				<xs:element name="shemIshuv" type="xs:string" minOccurs="0"/>
+				<xs:element name="semelRechov" type="xs:integer" minOccurs="0"/>
+				<xs:element name="shemRechov" type="xs:string" minOccurs="0"/>
+				<xs:element name="misparBait" type="xs:integer" minOccurs="0"/>
+				<xs:element name="otBait" type="xs:string" minOccurs="0"/>
+				<xs:element name="knisa" type="xs:string" minOccurs="0"/>
+				<xs:element name="koma" type="xs:integer" minOccurs="0"/>
+				<xs:element name="dira" type="xs:integer" minOccurs="0"/>
+				<xs:element name="atarId" type="xs:integer" minOccurs="0"/>
+				<xs:element name="ishKesher1Name" type="xs:string" minOccurs="0"/>
+				<xs:element name="ishKesher1EzorChiyug1" type="xs:string" minOccurs="0"/>
+				<xs:element name="ishKesher1Telephone1" type="xs:integer" minOccurs="0"/>
+				<xs:element name="ishKesher2Name" type="xs:string" minOccurs="0"/>
+				<xs:element name="ishKesher2EzorChiyug1" type="xs:string" minOccurs="0"/>
+				<xs:element name="ishKesher2Telephone1" type="xs:integer" minOccurs="0"/>
+				<xs:element name="code" type="xs:string" minOccurs="0"/>
+				<xs:element name="description" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

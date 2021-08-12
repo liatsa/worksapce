@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Orderdetails07="http://www.bezeq.co.il/XMLSchema/Orderdetails07" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Orderdetails07">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+
+				<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+				<xs:element minOccurs="1" name="projectNo" type="xs:integer"/>
+				<xs:element minOccurs="1" name="orderHeaderId" type="xs:integer"/>
+				<xs:element minOccurs="1" name="orderNumber35" type="xs:integer"/>
+				<xs:element minOccurs="1" name="misRaz" type="xs:integer"/>
+				<xs:element minOccurs="1" name="customerId" type="xs:integer"/>
+				<xs:element minOccurs="0" name="customerName" type="xs:string"/>
+				<xs:element minOccurs="1" name="phoneNumber" type="xs:string"/>
+				<xs:element minOccurs="1" name="phoneNumberZ" type="xs:string"/>
+				<xs:element minOccurs="1" name="lineType" type="xs:integer"/>
+				<xs:element minOccurs="0" name="lineTypeDesc" type="xs:string"/>
+				<xs:element minOccurs="1" name="productId" type="xs:integer"/>
+				<xs:element minOccurs="1" name="componentId" type="xs:integer"/>
+				<xs:element minOccurs="1" name="action" type="xs:string"/>
+				<xs:element minOccurs="1" name="componentProcessId" type="xs:integer"/>
+				<xs:element minOccurs="0" name="orderventiveId" type="xs:integer"/>
+				<xs:element minOccurs="1" name="orderType" type="xs:integer"/>
+				<xs:element minOccurs="1" name="serviceType" type="xs:integer"/>
+				<xs:element minOccurs="1" name="orderStatus" type="xs:integer"/>
+				<xs:element minOccurs="0" name="orderStatusDesc" type="xs:string"/>
+				<xs:element minOccurs="0" name="contactName" type="xs:string"/>
+				<xs:element minOccurs="0" name="backupLine" type="xs:string"/>
+				<xs:element minOccurs="0" name="backupLineZ" type="xs:string"/>
+				<xs:element minOccurs="0" name="vpnNumber" type="xs:string"/>
+				<xs:element minOccurs="0" name="vpnNumberZ" type="xs:string"/>
+				<xs:element minOccurs="1" name="orderDate" type="xs:dateTime"/>
+				<xs:element minOccurs="1" name="creatoinDateBpm" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="requestDate" type="xs:dateTime"/>				
+				<xs:element minOccurs="0" name="servicePath" type="xs:integer"/>
+				<xs:element minOccurs="0" name="militaryOrder" type="xs:string"/>
+				<xs:element minOccurs="1" name="swtzad" type="xs:integer"/>
+				 <xs:element maxOccurs="2" minOccurs="1" name="sideDetails"> 
+				     <xs:complexType> 
+						<xs:sequence> 
+						     <xs:element minOccurs="1" name="sideIndex" type="xs:integer"/>
+							 <xs:element minOccurs="0" name="repName" type="xs:string"/>
+				             <xs:element minOccurs="0" name="repPhone" type="xs:string"/>
+				             <xs:element minOccurs="0" name="repPhoneZ" type="xs:string"/>
+				             <xs:element minOccurs="0" name="coardinatorName" type="xs:string"/>
+				             <xs:element minOccurs="0" name="coardinatorPNo" type="xs:string"/>
+				             <xs:element minOccurs="0" name="coardinatorPNoZ" type="xs:string"/>
+				             <xs:element minOccurs="0" name="websitePhone" type="xs:string"/>
+				             <xs:element minOccurs="0" name="websitePhoneZ" type="xs:string"/>
+				             <xs:element minOccurs="1" name="facility" type="xs:integer"/>
+				             <xs:element minOccurs="1" name="cityName" type="xs:string"/>
+				             <xs:element minOccurs="1" name="streetName" type="xs:string"/>
+				             <xs:element minOccurs="1" name="houseNumber" type="xs:integer"/>
+				             <xs:element minOccurs="0" name="letter" type="xs:string"/>
+				             <xs:element minOccurs="0" name="entrance" type="xs:string"/>
+				             <xs:element minOccurs="0" name="apartment" type="xs:integer"/>
+			              	 <xs:element minOccurs="0" name="floor" type="xs:integer"/>
+				             <xs:element minOccurs="1" name="district" type="xs:integer"/>
+				             <xs:element minOccurs="1" name="division" type="xs:integer"/>
+				             <xs:element minOccurs="1" name="rova" type="xs:integer"/>
+				             <xs:element minOccurs="0" name="techVisit" type="xs:string"/>			             
+						</xs:sequence> 
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="1" name="isLogi" type="xs:integer"/>
+			    <xs:element minOccurs="1" name="accessLineExist" type="xs:integer"/>
+				<xs:element minOccurs="0" name="lineA" type="xs:string"/>
+				<xs:element minOccurs="0" name="lineAZ" type="xs:string"/>
+				<xs:element minOccurs="0" name="linePe" type="xs:string"/>
+				<xs:element minOccurs="0" name="linePeZ" type="xs:string"/>							
+				 <xs:element maxOccurs="20" minOccurs="0" name="equipments"> 
+				     <xs:complexType> 
+						<xs:sequence> 
+						     <xs:element minOccurs="0" name="equipCode" type="xs:integer"/>
+				             <xs:element minOccurs="0" name="equipDesc" type="xs:string"/>
+				             <xs:element minOccurs="0" name="equipQun" type="xs:string"/>
+				             <xs:element minOccurs="0" name="equipSide" type="xs:string"/>
+				             <xs:element minOccurs="0" name="equCatalog" type="xs:integer"/>
+		 				</xs:sequence> 
+					</xs:complexType>
+				</xs:element>				
+				<xs:element minOccurs="0" name="statusDate" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="orderSpent" type="xs:integer"/>
+				<xs:element minOccurs="0" name="statusSpent" type="xs:integer"/>
+				<xs:element minOccurs="0" name="activeDate" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="speedUp" type="xs:integer"/>
+				<xs:element minOccurs="0" name="speedUpDesc" type="xs:string"/>
+				<xs:element minOccurs="0" name="speedDown" type="xs:integer"/>
+				<xs:element minOccurs="0" name="speedDownDesc" type="xs:string"/>
+				<xs:element minOccurs="0" name="speed" type="xs:integer"/>
+				<xs:element minOccurs="0" name="speedDesc" type="xs:string"/>										
+				<xs:element minOccurs="0" name="operatExtNum" type="xs:integer"/>
+				<xs:element minOccurs="0" name="operatlExtNo" type="xs:integer"/>
+				 <xs:element maxOccurs="20" minOccurs="0" name="activities"> 
+				     <xs:complexType> 
+						<xs:sequence> 				
+				           <xs:element minOccurs="0" name="processId" type="xs:integer"/>
+				           <xs:element minOccurs="0" name="activityCode" type="xs:integer"/>
+				           <xs:element minOccurs="0" name="activityDate" type="xs:dateTime"/>
+				           <xs:element minOccurs="0" name="activityEndDate" type="xs:dateTime"/>
+				           <xs:element minOccurs="0" name="unit" type="xs:integer"/>			  
+						</xs:sequence> 
+					</xs:complexType>
+				</xs:element>
+						</xs:sequence> 
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

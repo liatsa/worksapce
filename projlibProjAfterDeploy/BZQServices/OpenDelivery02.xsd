@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OpenDelivery02="http://www.bezeq.co.il/XMLSchema/OpenDelivery02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OpenDelivery02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="userName" type="string"/>
+							<element minOccurs="0" name="password" type="string"/>
+							<element minOccurs="0" name="customerNumber" type="string"/>
+							<element name="supplierCode" type="string"/>
+							<element name="deliveryId" type="integer"/>
+							<element name="updSeqNo" type="integer"/>
+							<element name="cancelInd" type="string"/>
+							<element minOccurs="0" name="personalId" type="integer"/>
+							<element name="banName" type="string"/>
+							<element minOccurs="0" name="cityNo" type="integer"/>
+							<element minOccurs="0" name="cityName" type="string"/>
+							<element minOccurs="0" name="streetNo" type="integer"/>
+							<element minOccurs="0" name="streetName" type="string"/>
+							<element minOccurs="0" name="houseNumber" type="int"/>
+							<element minOccurs="0" name="zipcode" type="integer"/>
+							<element name="cellContactNo" type="string"/>
+							<element minOccurs="0" name="cellContactNo2" type="string"/>
+							<element minOccurs="0" name="cellContactNo3" type="string"/>
+							<element minOccurs="0" name="windowDate" type="date"/>
+							<element minOccurs="0" name="fromHour" type="string"/>
+							<element minOccurs="0" name="toHour" type="string"/>
+							<element minOccurs="0" name="supplierStatus" type="integer"/>
+							<element name="supplierPriority" type="integer"/>
+							<element minOccurs="0" name="insertDate" type="string"/>
+							<element minOccurs="0" name="deliveryType" type="integer"/>
+							<element minOccurs="0" name="aptEntrance" type="string"/>
+							<element minOccurs="0" name="aptFloor" type="string"/>
+							<element minOccurs="0" name="aptNumber" type="string"/>
+							<element minOccurs="0" name="remarkForSupplier" type="string"/>
+							<element minOccurs="0" name="itemAmount" type="integer"/>
+							<element minOccurs="0" name="custTaskNumber" type="string"/>
+							<element minOccurs="0" name="docReference" type="string"/>
+							<element minOccurs="0" name="dlvShowIdInd" type="integer"/>
+							<element minOccurs="0" name="thirdPartySupplier" type="string"/>
+							<element minOccurs="0" name="thirdPartyRefNo" type="string"/>
+							<element minOccurs="0" name="thirdPartyDate" type="string"/>
+							<element minOccurs="0" name="packageType" type="integer"/>
+							<element minOccurs="0" name="packageSize" type="integer"/>
+							<element minOccurs="0" name="packageLength" type="integer"/>
+							<element minOccurs="0" name="packageWidth" type="integer"/>
+							<element minOccurs="0" name="packageHeight" type="integer"/>
+							<element minOccurs="0" name="packageWeight" type="integer"/>
+							<element minOccurs="0" name="distribCode" type="integer"/>
+							<element minOccurs="0" name="distPointCode" type="integer"/>
+							<element minOccurs="0" name="saleChannelCd" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="dlvGenCodes">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="extCode" type="string"/>
+										<element minOccurs="0" name="extDesc" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="equipArr">
+								<complexType>
+									<sequence>
+										<element name="intSeqNo" type="integer"/>
+										<element name="actionType" type="string"/>
+										<element name="equipmentCode" type="string"/>
+										<element name="equipmentDesc" type="string"/>
+										<element name="quantity" type="integer"/>
+										<element minOccurs="0" name="serialNoIND" type="string"/>
+										<element minOccurs="0" name="itemSupplier" type="string"/>
+										<element minOccurs="0" name="itemOrderSuplier" type="string"/>
+										<element minOccurs="0" name="itemDatePickup" type="string"/>
+										<element minOccurs="0" name="itemCode" type="integer"/>
+										<element minOccurs="0" name="parentItem" type="string"/>
+										<element minOccurs="0" name="itemPrice" type="float"/>
+										<element minOccurs="0" name="serialNo" type="string"/>
+										<element minOccurs="0" name="itemRemark" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="equipCdArr">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="equipmentCode" type="string"/>
+													<element minOccurs="0" name="equipmentDesc" type="string"/>
+													<element minOccurs="0" name="serialInd" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="unbounded" minOccurs="0" name="dlvEqpGenCodes">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="itemExtCode" type="string"/>
+													<element minOccurs="0" name="itemExtDesc" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

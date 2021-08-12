@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CaseDetails02="http://www.bezeq.co.il/XMLSchema/CaseDetails02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CaseDetails02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="providerId" type="string"/>
+							<element name="interfaceId" type="string"/>
+							<element name="providerRequestId" type="string"/>
+							<element name="providerMessageSendTime" type="dateTime"/>
+							<element minOccurs="0" name="lineCode" type="string"/>
+							<element minOccurs="0" name="taskId" type="string"/>
+							<element minOccurs="0" name="techMessageCode" type="string"/>
+							<element minOccurs="0" name="techMessageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="providerId" type="string"/>
+							<element name="interfaceId" type="string"/>
+							<element name="providerRequestId" type="string"/>
+							<element name="providerMessageSendTime" type="dateTime"/>
+							<element minOccurs="0" name="messageSendTimeReturn" type="dateTime"/>
+							<element minOccurs="0" name="lineCode" type="string"/>
+							<element minOccurs="0" name="taskId" type="string"/>
+							<element minOccurs="0" name="activityType" type="string"/>
+							<element minOccurs="0" name="requestOpenDate" type="string"/>
+							<element minOccurs="0" name="requestedDateStart" type="string"/>
+							<element minOccurs="0" name="requestedDateFinish" type="string"/>
+							<element minOccurs="0" name="technicianDateArrived" type="string"/>
+							<element minOccurs="0" name="technicianDateFinished" type="string"/>
+							<element minOccurs="0" name="technicianName" type="string"/>
+							<element minOccurs="0" name="technicianPhoneNum" type="string"/>
+							<element minOccurs="0" name="requestStatusCode" type="string"/>
+							<element minOccurs="0" name="requestStatusDesc" type="string"/>
+							<element minOccurs="0" name="requestStatusDate" type="string"/>
+							<element minOccurs="0" name="paymentDate" type="string"/>
+							<element minOccurs="0" name="cableBillingLength" type="string"/>
+							<element minOccurs="0" name="infrastructureIdA" type="string"/>
+							<element minOccurs="0" name="locationCodeA" type="string"/>
+							<element minOccurs="0" name="streetCodeA" type="string"/>
+							<element minOccurs="0" name="houseNumA" type="string"/>
+							<element minOccurs="0" name="infrastructureIdB" type="string"/>
+							<element minOccurs="0" name="locationCodeB" type="string"/>
+							<element minOccurs="0" name="streetCodeB" type="string"/>
+							<element minOccurs="0" name="houseNumB" type="string"/>
+							<element maxOccurs="50" minOccurs="0" name="transitionInfrastructure">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="infrastructureIdTransition" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="cableSizeCode" type="string"/>
+							<element minOccurs="0" name="cableSizeDesc" type="string"/>
+							<element minOccurs="0" name="cableType" type="string"/>
+							<element maxOccurs="5" minOccurs="0" name="elements">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="elementCode" type="string"/>
+										<element minOccurs="0" name="elementDesc" type="string"/>
+										<element minOccurs="0" name="elementAmount" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="contactName" type="string"/>
+							<element minOccurs="0" name="contactPhoneNum" type="string"/>
+							<element name="messageCode" type="string"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+							<element minOccurs="0" name="techMessageCode" type="string"/>
+							<element minOccurs="0" name="techMessageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

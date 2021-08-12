@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ConversionControl01="http://www.bezeq.co.il/XMLSchema/ConversionControl01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ConversionControl01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="semelMaarechet" type="xs:string"/>
+							<xs:element name="merkaz" type="xs:string"/>
+							<xs:element name="shana" type="xs:string"/>
+							<xs:element name="misparProyect" type="xs:string"/>
+							<xs:element name="misparShalav" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodAtar" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodMishtamesh" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodIbud" type="xs:string"/>
+							<xs:element minOccurs="0" name="shigurAdsDateTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="startExecDateTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="endExecDateTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="manuyKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="makorKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="pitronKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="statusRitza" type="xs:string"/>
+							<xs:element minOccurs="0" name="failureReason" type="xs:string"/>
+							<xs:element minOccurs="0" name="totalKavBehamara" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalKavReshet" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalKavReshetImPitaron" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalKavReshetBliPitaron" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalKavTziud" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalKavTziudImPitaron" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalKavTziudBliPitaron" type="xs:integer"/>
+							<xs:element minOccurs="0" name="hodaaMqs" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTError="http://www.bezeq.co.il/XMLSchema/KRTError"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTError"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="KRTError">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="interfaceId" type="xs:string" minOccurs="0"/>
+				<xs:element name="SourceInterfaceId" type="xs:string"/>
+				<xs:element name="fastCode" type="xs:string"/>
+				<xs:element name="equipmentCode" type="xs:string"/>
+				<xs:element name="comment" type="xs:string"/>
+				<xs:element name="errorDate" type="xs:dateTime"/>
+				<xs:element name="messageSetNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="messageNumber" type="xs:integer"/>
+				<xs:element name="messageDescription" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

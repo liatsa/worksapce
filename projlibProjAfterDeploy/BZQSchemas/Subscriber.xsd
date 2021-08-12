@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Subscriber="http://www.bezeq.co.il/XMLSchema/Subscriber"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/Subscriber"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="Subscriber">
+		<complexType>
+			<sequence>
+				<element name="OrderId" type="xsd:string" minOccurs="0"/>
+				<element name="SubscriberId" type="xsd:string"/>
+				<element name="FirstName" type="xsd:string" minOccurs="0"/>
+				<element name="LastName" type="xsd:string" minOccurs="0"/>
+				<element name="BoName" type="xsd:string" minOccurs="0"/>
+				<element name="City" type="xsd:string" minOccurs="0"/>
+				<element name="Address1" type="xsd:string" minOccurs="0"/>
+				<element name="Num1" type="xsd:string" minOccurs="0"/>
+				<element name="Address2" type="xsd:string" minOccurs="0"/>
+				<element name="Mircezet" type="xsd:string" minOccurs="0"/>
+				<element name="Center2" type="xsd:string" minOccurs="0"/>
+				<element name="Heker" type="xsd:string" minOccurs="0"/>
+				<element name="CustId" type="xsd:string" minOccurs="0"/>
+				<element name="Secured" type="xsd:string" minOccurs="0"/>
+				<element name="AcssesType" type="xsd:string" minOccurs="0"/>
+				<element name="CityCode" type="xsd:string" minOccurs="0"/>
+				<element name="AddressCode" type="xsd:string" minOccurs="0"/>
+				<element name="ReturnCode" type="xsd:string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

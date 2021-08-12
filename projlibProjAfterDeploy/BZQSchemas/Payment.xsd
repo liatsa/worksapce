@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Payment="http://www.bezeq.co.il/XMLSchema/Payment"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/Payment"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="payment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ban" type="xs:string" minOccurs="0"/>
+				<xs:element name="numOfInvoices" type="xs:string"/>
+				<xs:element name="invToPay" type="xs:string" maxOccurs="unbounded"/>
+				<xs:element name="pymSourceId" type="xs:string" minOccurs="0"/>
+				<xs:element name="pymType" type="xs:string" minOccurs="0"/>
+				<xs:element name="creditCardType" type="xs:string" minOccurs="0"/>
+				<xs:element name="paymentAmt" type="xs:string" minOccurs="0"/>
+				<xs:element name="creditCardNum" type="xs:string" minOccurs="0"/>
+				<xs:element name="creditCardExprDt" type="xs:string" minOccurs="0"/>
+				<xs:element name="ccMethod" type="xs:string" minOccurs="0"/>
+				<xs:element name="personalId" type="xs:string" minOccurs="0"/>
+				<xs:element name="numOfInstalments" type="xs:string" minOccurs="0"/>
+				<xs:element name="ccHolderName" type="xs:string" minOccurs="0"/>
+				<xs:element name="creditCardIssueNo" type="xs:string" minOccurs="0"/>
+				<xs:element name="keyField" type="xs:string"/>
+				<xs:element name="activityStatus" type="xs:string" minOccurs="0"/>
+				<xs:element name="crCardAuthCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="totPymAmt" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:NTLMitkan="http://www.bezeq.co.il/XMLSchema/NTLMitkan"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLMitkan"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Mitkan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mitkanNumber" type="xs:integer" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

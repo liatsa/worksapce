@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SubscribersByAddress01="http://www.bezeq.co.il/XMLSchema/SubscribersByAddress01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SubscribersByAddress01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="cityCode" type="integer"/>
+							<element name="streetCode" type="string"/>
+							<element name="houseNo" type="string"/>
+							<element minOccurs="0" name="apartmentNo" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element maxOccurs="99" minOccurs="0" name="subDetArr">
+								<complexType>
+									<sequence>
+										<element name="ban" type="integer"/>
+										<element name="subscriberNo" type="string"/>
+										<element minOccurs="0" name="firstName" type="string"/>
+										<element minOccurs="0" name="lastName" type="string"/>
+										<element name="subStatus" type="string"/>
+										<element minOccurs="0" name="subStatusRsnCode" type="string"/>
+										<element minOccurs="0" name="subStatusRsnDesc" type="string"/>
+							<element minOccurs="0" name="apartmentNo" type="string"/>
+							<element minOccurs="0" name="adrAptFloor" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="subsCount" type="integer"/>
+							<element name="requestSts" type="string"/>
+							<element minOccurs="0" name="requestStsRsn" type="string"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

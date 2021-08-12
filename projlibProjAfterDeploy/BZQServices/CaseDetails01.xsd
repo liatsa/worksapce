@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CaseDetails01="http://www.bezeq.co.il/XMLSchema/CaseDetails01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CaseDetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dialRegion" type="xs:string"/>
+							<xs:element minOccurs="0" name="telephoneNo" type="xs:string"/>
+							<xs:element name="caseNo" type="xs:integer"/>
+							<xs:element name="creationDate" type="xs:date"/>
+							<xs:element name="creationTime" type="xs:time"/>
+							<xs:element minOccurs="0" name="annonyanceNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="futureDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="recognitionNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="center" type="xs:integer"/>
+							<xs:element minOccurs="0" name="district" type="xs:integer"/>
+							<xs:element minOccurs="0" name="area" type="xs:integer"/>
+							<xs:element minOccurs="0" name="areaDesc" type="xs:string"/>
+							<xs:element name="stockNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="stockName" type="xs:string"/>
+							<xs:element name="operator" type="xs:integer"/>
+							<xs:element minOccurs="0" name="operatorName" type="xs:string"/>
+							<xs:element name="stockNoOwner" type="xs:integer"/>
+							<xs:element minOccurs="0" name="stockNameOwner" type="xs:string"/>
+							<xs:element minOccurs="0" name="caseStatus" type="xs:string"/>
+							<xs:element name="employeeID" type="xs:integer"/>
+							<xs:element minOccurs="0" name="caseSubjectCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="caseSubjectDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="caseCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="caseDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="handlingCode" type="xs:integer"/>
+							<xs:element name="launchingCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="updateDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="updateTime" type="xs:time"/>
+							<xs:element minOccurs="0" name="contactDialRegion" type="xs:string"/>
+							<xs:element minOccurs="0" name="contactTelephoneNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerGrade" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerGradeDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscriberName" type="xs:string"/>
+							<xs:element minOccurs="0" name="contactName" type="xs:string"/>
+							<xs:element minOccurs="0" name="contactMail" type="xs:integer"/>
+							<xs:element minOccurs="0" name="city" type="xs:string"/>
+							<xs:element minOccurs="0" name="street" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberType" type="xs:string"/>
+							<xs:element minOccurs="0" name="returnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="mainComment" type="xs:string"/>
+							<xs:element minOccurs="0" name="comment" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Customer05="http://www.bezeq.co.il/XMLSchema/Customer05" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Customer05">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="InterfaceId" type="xs:string"/>
+							<xs:element name="RequestType" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustomerID" type="xs:integer"/>
+							<xs:element minOccurs="0" name="EquipmentInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="QuestionCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="EquipPriceInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SpamInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubListInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenListInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="CMInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="CmdiscountInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="Ben" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ChkAdslSubInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="prdTpInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="debitInd" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="InterfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustomerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SubUpdDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="InternetoInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="EffectiveDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="InitActDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="SubStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="FutureSocInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubStatusRsnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubStatusLastAct" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubStatusDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="LastActvDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="prvCtn" type="xs:string"/>
+							<xs:element minOccurs="0" name="UcBen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="OcBen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="RcBen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ProductType" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProductSubType" type="xs:string"/>
+							<xs:element minOccurs="0" name="DirPublishInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="PersonalId" type="xs:string"/>
+							<xs:element minOccurs="0" name="CityTaxInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="Heker" type="xs:integer"/>
+							<xs:element minOccurs="0" name="InterOpr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="EmergencyCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="NumOfSusp" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SecurityClass" type="xs:integer"/>
+							<xs:element minOccurs="0" name="TaxInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SuspType" type="xs:string"/>
+							<xs:element minOccurs="0" name="SusResCandSts" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="RenewalDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="DebtSource" type="xs:string"/>
+							<xs:element minOccurs="0" name="Integrator" type="xs:integer"/>
+							<xs:element minOccurs="0" name="Portoutcandind" type="xs:string"/>
+							<xs:element minOccurs="0" name="Armyorderno" type="xs:string"/>
+							<xs:element minOccurs="0" name="SocialDisInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubAdrId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SubAdrType" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubAdrPostCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SubAdrCity" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubAdrAptFloor" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SubApartmentNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SubAdrAptEntrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubAdrHouseNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subAdditionalHouseLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubAdrStreetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="Longitud" type="xs:double"/>
+							<xs:element minOccurs="0" name="Latitude" type="xs:double"/>
+							<xs:element minOccurs="0" name="SubNameId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SubNameType" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubLastBusinessName" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubFirstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubAdditionalCityCd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SubAdditionalStreetCd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="MainSubno" type="xs:string"/>
+							<xs:element minOccurs="0" name="LastInvoiceSum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="AccountType" type="xs:string"/>
+							<xs:element minOccurs="0" name="AccountSubType" type="xs:string"/>
+							<xs:element minOccurs="0" name="OtherTelNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="BanStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="StatusLastDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="StatusActvCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="StatusActvRsnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="CycleCloseDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="BillPeriod" type="xs:string"/>
+							<xs:element minOccurs="0" name="AvgMonthlyIncomeAmt" type="xs:float"/>
+							<xs:element minOccurs="0" name="CustPersonalId" type="xs:string"/>
+							<xs:element minOccurs="0" name="custPersonalIdTyp" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustPersonalId2nd" type="xs:string"/>
+							<xs:element minOccurs="0" name="custPersonalId2ndType" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustomerGrade" type="xs:string"/>
+							<xs:element minOccurs="0" name="RegionCd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="DefaultBen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CustContactMngr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CustNameMngr" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustTelMngr" type="xs:string"/>
+							<xs:element minOccurs="0" name="IdCustCsr" type="xs:string"/>
+							<xs:element minOccurs="0" name="OrderingCustCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="BusinessFamilyCd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="BusinessSubFaml" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ContactTelNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="CompanyType" type="xs:string"/>
+							<xs:element minOccurs="0" name="BlCorporateId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CorporateName" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustNameId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CustNameType" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusLastBusinessName" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusFirstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusAdrAttention" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustAdrType" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustAdrId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusAdrCity" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusAdrHouseNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusAdrStreetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusAdrDistrict" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusAdrPob" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusApartmentNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusAdrAptFloor" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusAdrAptEntrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusAdditionalHouseLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusAdrPostCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusAdditionalStreetCd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusAdditionalCityCd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="AtSecClass" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CreditClass" type="xs:string"/>
+							<xs:element minOccurs="0" name="StartServiceDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="MaxDatetime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="IndActRsnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustNameId2nd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="LastBusinessName2nd" type="xs:string"/>
+							<xs:element minOccurs="0" name="FirstName2nd" type="xs:string"/>
+							<xs:element minOccurs="0" name="HomeTelno" type="xs:string"/>
+							<xs:element minOccurs="0" name="FaxTelno" type="xs:string"/>
+							<xs:element minOccurs="0" name="EmailAddr" type="xs:string"/>
+							<xs:element minOccurs="0" name="BanCRM" type="xs:string"/>
+							<xs:element minOccurs="0" name="ArBalance" type="xs:double"/>
+							<xs:element minOccurs="0" name="InstallmentInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="DebitBalance" type="xs:double"/>
+							<xs:element minOccurs="0" name="ParentBan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="DeliveryInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="MoreSubscriberExistsInd" type="xs:string"/>
+							<xs:element maxOccurs="200" minOccurs="0" name="BenArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="Ben" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenNameId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenLastBusinessName" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenFirstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenPaymentMethod" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenSpamInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenBankCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenBankAcctNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenBankAcctHolders" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenDdMandateSts" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenDdMandateStsDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="BenCreditCardType" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenCreditCardNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenCreditCardExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="BenCreditCardAuthCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenSendByEmailInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenEmail" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenCreditCardPersonalId" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenCityTaxInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenPersonalIdType" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenPersonalId" type="xs:string"/>
+										<xs:element minOccurs="0" name="SpecialColStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="NameFormat" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenArrAdrId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenArrAdrType" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenArrAdrPostCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenArrAdrCity" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenArrAdrStreetName" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenArrAdrHouseNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenArrAdrAptEntrance" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenArrAdditionalHouseLetter" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenArrAdrAptFloor" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenArrApartmentNumber" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenArrAdditionalCityCd" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenArrAdditionalStreetCd" type="xs:integer"/>
+										<xs:element minOccurs="0" name="BenArrAdrDistrict" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenArrAdrPob" type="xs:integer"/>
+										<xs:element minOccurs="0" name="CellPhoneNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="BenCellPhoneNoDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="BusinessRegisterNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="IpostNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="manHoldRsn" type="xs:string"/>
+										<xs:element minOccurs="0" name="SendMailErr" type="xs:string"/>
+										<xs:element minOccurs="0" name="SendMailErrRsn" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="EquipQty" type="xs:integer"/>
+							<xs:element maxOccurs="150" minOccurs="0" name="EquipArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="EquipCd" type="xs:integer"/>
+										<xs:element minOccurs="0" name="EquipCdQty" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="50" minOccurs="0" name="PricePlanArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="PricePlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="ServiceType" type="xs:string"/>
+										<xs:element minOccurs="0" name="EffectiveDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="ExpirationDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="SocSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="SocGroup" type="xs:string"/>
+										<xs:element minOccurs="0" name="OrigEffdate" type="xs:date"/>
+										<xs:element minOccurs="0" name="OrigExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="CommitStartDt" type="xs:date"/>
+										<xs:element minOccurs="0" name="CommtEndDt" type="xs:date"/>
+										<xs:element minOccurs="0" name="SocRelated" type="xs:string"/>
+										<xs:element minOccurs="0" name="LinkedSoc" type="xs:string"/>
+										<xs:element minOccurs="0" name="SocDescription" type="xs:string"/>
+										<xs:element minOccurs="0" name="Cmp" type="xs:string"/>
+										<xs:element minOccurs="0" name="CmpSts" type="xs:string"/>
+										<xs:element minOccurs="0" name="CmpStsDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="WSCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="openedBy" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="100" minOccurs="0" name="FeatureArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="PricePlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="FeatureCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="FeatureEffDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="FeatureExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="FtrOrigEffDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="FtrOrigExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="SocSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ServiceFtrSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="FamilyGroup" type="xs:string"/>
+										<xs:element minOccurs="0" name="ftrReveneCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="RcBan" type="xs:integer"/>
+										<xs:element minOccurs="0" name="RcBen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="CombinationNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="EquipCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="FtrDealerCd" type="xs:integer"/>
+										<xs:element minOccurs="0" name="RcRate" type="xs:float"/>
+										<xs:element minOccurs="0" name="FeatureDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="Cmp" type="xs:string"/>
+										<xs:element minOccurs="0" name="CmpSts" type="xs:string"/>
+										<xs:element minOccurs="0" name="CmpStsDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="PrevSoc" type="xs:string"/>
+										<xs:element minOccurs="0" name="PrevFtr" type="xs:string"/>
+										<xs:element minOccurs="0" name="PrevCombNo" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="200" minOccurs="0" name="FeatureParamArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="PricePlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="FeatureCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="FtrParamCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="ftrPrmEffDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="ftrPrmExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="FtrPrmOrigEffDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="FtrPrmOrigExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="ValueFrom" type="xs:string"/>
+										<xs:element minOccurs="0" name="ValueTo" type="xs:string"/>
+										<xs:element minOccurs="0" name="PrmValueCd" type="xs:string"/>
+										<xs:element minOccurs="0" name="ParameterDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="SubActInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubSusInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubMsnInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubTaxdnInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubArmyInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubTamacInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubSmsInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubPubInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubNgnInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubSerialNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubCatalogNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="ExistAdslSubCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="PromoCd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CallDetInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="WSInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="natavSaleInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="guaranteeInd" type="xs:string"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="AnswersArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="Soc" type="xs:string"/>
+										<xs:element minOccurs="0" name="SocDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="SocStartDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="SocExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="EndCommitDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="FtrCd" type="xs:string"/>
+										<xs:element minOccurs="0" name="FtrDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="FtrStartDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="FtrExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="RcBan" type="xs:integer"/>
+										<xs:element minOccurs="0" name="RcBen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="FtrPrice" type="xs:float"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="BenAdrId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="BenAdrType" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrPostCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrCity" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrStreetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrHouseNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrAptEntrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdditionalHouseLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrAptFloor" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenApartmentNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdditionalCityCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdditionalStreetCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrDistrict" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenAdrPob" type="xs:string"/>
+							<xs:element minOccurs="0" name="PaymentMethod" type="xs:string"/>
+							<xs:element minOccurs="0" name="MandataStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenEmailInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="BenEmailAdr" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusColDelinqInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusEmergencyInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="CusBillCycle" type="xs:integer"/>
+							<xs:element minOccurs="0" name="CusBillFreq" type="xs:integer"/>
+							<xs:element maxOccurs="5" minOccurs="0" name="SpamArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="Media" type="xs:string"/>
+										<xs:element minOccurs="0" name="ApprovalInd" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="100" minOccurs="0" name="SubArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="SubscriberNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubProdType" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubProdSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubArmyInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubTamacInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubPortInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubNgnInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubName" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="BentoInd" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="200" minOccurs="0" name="DiscountArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="DiscSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="DiscountBan" type="xs:integer"/>
+										<xs:element minOccurs="0" name="DiscountSubscriber" type="xs:string"/>
+										<xs:element minOccurs="0" name="DiscountBen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="DiscProductType" type="xs:string"/>
+										<xs:element minOccurs="0" name="DiscProductSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="DiscFtrRevenueCd" type="xs:string"/>
+										<xs:element minOccurs="0" name="DiscountPercent" type="xs:float"/>
+										<xs:element minOccurs="0" name="DiscountFixAmt" type="xs:float"/>
+										<xs:element minOccurs="0" name="DiscEffDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="DiscExpDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="GrantBan" type="xs:integer"/>
+										<xs:element minOccurs="0" name="GrantBen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="DiscAdjReson" type="xs:string"/>
+										<xs:element minOccurs="0" name="DiscAdjReasonDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="DiscountSoc" type="xs:string"/>
+										<xs:element minOccurs="0" name="DiscountLevel" type="xs:string"/>
+										<xs:element minOccurs="0" name="Cmp" type="xs:string"/>
+										<xs:element minOccurs="0" name="CmpSts" type="xs:string"/>
+										<xs:element minOccurs="0" name="CmpStsDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="NoOfOccrs" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="PrdTypeArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ProductType" type="xs:string"/>
+										<xs:element minOccurs="0" name="ArrProductSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="NoOfSubscribers" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="NoOfSubscribers" type="xs:integer"/>
+							<xs:element name="RequestSts" type="xs:string"/>
+							<xs:element minOccurs="0" name="RequestStsRsn" type="xs:string"/>
+							<xs:element minOccurs="0" name="ErrorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

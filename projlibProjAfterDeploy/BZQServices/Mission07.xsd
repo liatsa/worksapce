@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Mission07="http://www.bezeq.co.il/XMLSchema/Mission07" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Mission07">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="interfaceType" type="integer"/>
+							<element name="actionCode" type="integer"/>
+							<element minOccurs="0" name="workTaskId" type="integer"/>
+							<element minOccurs="0" name="providerId" type="integer"/>
+							<element minOccurs="0" name="oldSection" type="integer"/>
+							<element minOccurs="0" name="center" type="integer"/>
+							<element maxOccurs="unbounded" name="taskStructure">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="pmTaskId" type="integer"/>
+										<element minOccurs="0" name="implementDateStart" type="dateTime"/>
+										<element minOccurs="0" name="implementDate" type="dateTime"/>
+										<element minOccurs="0" name="pmTaskDescription" type="string"/>
+										<element minOccurs="0" name="infrastructureTypeA" type="integer"/>
+										<element minOccurs="0" name="infrastructureIdA" type="integer"/>
+										<element minOccurs="0" name="cityId" type="integer"/>
+										<element minOccurs="0" name="streetId" type="integer"/>
+										<element minOccurs="0" name="houseNumA" type="integer"/>
+										<element minOccurs="0" name="infrastructureTypeB" type="integer"/>
+										<element minOccurs="0" name="infrastructureIdB" type="integer"/>
+										<element minOccurs="0" name="cityBId" type="integer"/>
+										<element minOccurs="0" name="streetBId" type="integer"/>
+										<element minOccurs="0" name="houseNumB" type="integer"/>
+										<element minOccurs="0" name="contactName" type="string"/>
+										<element minOccurs="0" name="contactPhoneNum" type="string"/>
+										<element minOccurs="0" name="workType" type="integer"/>
+										<element minOccurs="0" name="providerTechnicianStatus" type="integer"/>
+										<element minOccurs="0" name="cableType" type="integer"/>
+										<element minOccurs="0" name="plannedLength" type="integer"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="infrastructure">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="infrastructureId" type="integer"/>
+													<element minOccurs="0" name="infrastructureType" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="50" minOccurs="0" name="elements">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="elementCode" type="integer"/>
+													<element minOccurs="0" name="elementAmount" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

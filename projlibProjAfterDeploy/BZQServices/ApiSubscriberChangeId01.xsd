@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ApiSubscriberChangeId01="http://www.bezeq.co.il/XMLSchema/ApiSubscriberChangeId01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ApiSubscriberChangeId01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interface_id" type="xs:string"/>
+							<xs:element name="transaction_id" type="xs:string"/>
+							<xs:element name="ban_id" type="xs:integer"/>
+							<xs:element name="subscriber_no" type="xs:string"/>
+							<xs:element minOccurs="0" name="activity_code" type="xs:string"/>
+							<xs:element minOccurs="0" name="activity_rsn_code" type="xs:string"/>
+							<xs:element minOccurs="0" name="business_name" type="xs:string"/>
+							<xs:element minOccurs="0" name="first_name" type="xs:string"/>
+							<xs:element minOccurs="0" name="as_id_type" type="xs:string"/>
+							<xs:element minOccurs="0" name="personal_id" type="xs:string"/>
+							<xs:element minOccurs="0" name="installments" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

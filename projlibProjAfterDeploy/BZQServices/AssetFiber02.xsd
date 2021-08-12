@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:AssetFiber02="http://www.bezeq.co.il/XMLSchema/AssetFiber02" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AssetFiber02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="requestTimestamp" type="dateTime"/>
+							<element name="cityCode" type="integer"/>
+							<element name="streetCode" type="integer"/>
+							<element name="buildingNumber" type="integer"/>
+							<element minOccurs="0" name="buildingLetter" type="string"/>
+							<element name="apartmentNumber" type="integer"/>
+							<element name="addressUfid" type="integer"/>
+							<element minOccurs="0" name="buildingUfid" type="integer"/>
+							<element name="serviceOrderId" type="integer"/>
+							<element name="technicianId" type="string"/>
+							<element minOccurs="0" name="remark" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ApiCustomerPayer01="http://www.bezeq.co.il/XMLSchema/ApiCustomerPayer01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ApiCustomerPayer01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="amdCustMsg">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+										<xs:element name="transactionId" type="xs:string"/>
+										<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+										<xs:element minOccurs="0" name="custId" type="xs:string"/>
+										<xs:element minOccurs="0" name="companyId" type="xs:string"/>
+										<xs:element minOccurs="0" name="divisionCd" type="xs:integer"/>
+										<xs:element minOccurs="0" name="segment" type="xs:string"/>
+										<xs:element minOccurs="0" name="concat" type="xs:string"/>
+										<xs:element minOccurs="0" name="custDept" type="xs:integer"/>
+										<xs:element minOccurs="0" name="descr80" type="xs:string"/>
+										<xs:element minOccurs="0" name="amdVatExem">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="noTax" type="xs:string"/>
+													<xs:element minOccurs="0" name="allSubsInd" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdNmNId">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="idType" type="xs:string"/>
+													<xs:element minOccurs="0" name="id" type="xs:string"/>
+													<xs:element minOccurs="0" name="idType2" type="xs:string"/>
+													<xs:element minOccurs="0" name="id2" type="xs:string"/>
+													<xs:element minOccurs="0" name="boName" type="xs:string"/>
+													<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+													<xs:element minOccurs="0" name="firstNameSrch" type="xs:string"/>
+													<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+													<xs:element minOccurs="0" name="lastNameSrch" type="xs:string"/>
+													<xs:element minOccurs="0" name="legalStatusCd" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdCustGrd">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="assessDescription" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdBilFreq">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="prodFreq" type="xs:string"/>
+										<xs:element minOccurs="0" name="billCycle" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdCustType">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="custType" type="xs:string"/>
+													<xs:element minOccurs="0" name="custSubType" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdRiskLevel">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="riskLevel" type="xs:string"/>
+													<xs:element minOccurs="0" name="changeDate" type="xs:date"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdBranch">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="branchCd" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdCustCls">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="closeDt" type="xs:date"/>
+													<xs:element minOccurs="0" name="closeRsn" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdCustCorporate">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="corporateGrpDescription" type="xs:string"/>
+													<xs:element minOccurs="0" name="corporateDescription" type="xs:string"/>
+													<xs:element minOccurs="0" name="corporate" type="xs:string"/>
+													<xs:element minOccurs="0" name="corporateGrp" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdChangeAccount">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="rbtAcctNo" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="amdCstAddr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" ref="ApiCustomerPayer01:customerAddress"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdAdvMail">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="rcvAdvAdd" type="xs:string"/>
+													<xs:element minOccurs="0" name="addEffDt" type="xs:date"/>
+													<xs:element minOccurs="0" name="rcvAdvMail" type="xs:string"/>
+													<xs:element minOccurs="0" name="mailEffDt" type="xs:date"/>
+													<xs:element minOccurs="0" name="rcvAdvPho" type="xs:string"/>
+													<xs:element minOccurs="0" name="phnDffDt" type="xs:date"/>
+													<xs:element minOccurs="0" name="rcvAdvSms" type="xs:string"/>
+													<xs:element minOccurs="0" name="smsEffDt" type="xs:date"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdCstDept">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="actvMode" type="xs:string"/>
+													<xs:element minOccurs="0" name="depOrdr" type="xs:integer"/>
+													<xs:element minOccurs="0" name="depOrdrNew" type="xs:integer"/>
+													<xs:element minOccurs="0" name="descr80" type="xs:string"/>
+													<xs:element minOccurs="0" name="cstDptBill" type="xs:string"/>
+													<xs:element minOccurs="0" name="endDt" type="xs:date"/>
+													<xs:element minOccurs="0" name="startDt" type="xs:date"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="amdAcctDtl">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="rbtAcctNo" type="xs:integer"/>
+													<xs:element minOccurs="0" name="amdAcctNam">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtAcctNameFirstName" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtAcctNameLastName" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtAcctName" type="xs:string"/>
+																<xs:element minOccurs="0" name="mtIdType" type="xs:string"/>
+																<xs:element minOccurs="0" name="mtId" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="amdAcctAdd">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" ref="ApiCustomerPayer01:benAddress"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="amdAcctPay">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtPayMethod" type="xs:string"/>
+																<xs:element minOccurs="0" name="bank" type="xs:string"/>
+																<xs:element minOccurs="0" name="branch" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtBankAccNo" type="xs:string"/>
+																<xs:element minOccurs="0" name="name" type="xs:string"/>
+																<xs:element minOccurs="0" name="bankStatus" type="xs:string"/>
+																<xs:element minOccurs="0" name="statusDt" type="xs:date"/>
+																<xs:element minOccurs="0" name="cardType" type="xs:string"/>
+																<xs:element minOccurs="0" name="cardNbr" type="xs:string"/>
+																<xs:element minOccurs="0" name="cardExpMo" type="xs:string"/>
+																<xs:element minOccurs="0" name="cardExpYr" type="xs:string"/>
+																<xs:element minOccurs="0" name="cardFirstName" type="xs:string"/>
+																<xs:element minOccurs="0" name="cardLastName" type="xs:string"/>
+																<xs:element minOccurs="0" name="cvv" type="xs:integer"/>
+																<xs:element minOccurs="0" name="mtIdType2" type="xs:string"/>
+																<xs:element minOccurs="0" name="mtId2" type="xs:string"/>
+																<xs:element minOccurs="0" name="custNoAccount" type="xs:string"/>
+																<xs:element minOccurs="0" name="dealerCode" type="xs:string"/>
+																<xs:element minOccurs="0" name="salesManEmpId" type="xs:string"/>
+																<xs:element minOccurs="0" name="okFromSent" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="amdBilDtl">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" name="printCat" type="xs:string"/>
+																<xs:element minOccurs="0" name="payCondition" type="xs:string"/>
+																<xs:element minOccurs="0" name="billOption" type="xs:string"/>
+																<xs:element minOccurs="0" name="billFormat" type="xs:string"/>
+																<xs:element minOccurs="0" name="brodcstAdd" type="xs:string"/>
+																<xs:element minOccurs="0" name="hideManui" type="xs:string"/>
+																<xs:element minOccurs="0" name="printInd" type="xs:string"/>
+																<xs:element minOccurs="0" name="sendNegligible" type="xs:string"/>
+																<xs:element minOccurs="0" name="kolanBlock" type="xs:string"/>
+																<xs:element minOccurs="0" name="mailInvoice" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="amdAcctDly">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" name="delayStartDt" type="xs:date"/>
+																<xs:element minOccurs="0" name="delayEndDt" type="xs:date"/>
+																<xs:element minOccurs="0" name="manHoldRsn" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="amdAcctCls">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtEndDate" type="xs:date"/>
+																<xs:element minOccurs="0" name="closeRsn" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="amdBillQty">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" name="numBillCopies" type="xs:integer"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- TYPE  Declerations-->
+	<xs:element name="customerAddress" type="ApiCustomerPayer01:TypeCustomerAddress"/>
+	<xs:element name="benAddress" type="ApiCustomerPayer01:TypeBenAddress"/>
+
+	<!-- ADDRESS TYPE -->
+	<xs:complexType name="TypeCustomerAddress">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:primaryInd"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:nameDisplay"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:nameDisplayFirstName"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:nameDisplayLastName"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:adrFormat"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:city"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:cityAc"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address1"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address1Ac"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:num1"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:addrField3"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:addrField2"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:num2"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address3"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:postal"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address2"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address4Ac"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:geoCode"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TypeBenAddress">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:adrFormat"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:city"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:cityAc"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address1"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address1Ac"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:num1"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:addrField3"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:addrField2"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:num2"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address3"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:postal"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address2"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:address4Ac"/>
+			<xs:element minOccurs="0" ref="ApiCustomerPayer01:geoCode"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- ADDRESS FIELDS -->
+	<xs:element name="primaryInd" type="xs:string"/>
+	<xs:element name="nameDisplayFirstName" type="xs:string"/>
+	<xs:element name="nameDisplayLastName" type="xs:string"/>
+	<xs:element name="nameDisplay" type="xs:string"/>
+	<xs:element name="adrFormat" type="xs:string"/>
+	<xs:element name="city" type="xs:string"/>
+	<xs:element name="cityAc" type="xs:string"/>
+	<xs:element name="address1" type="xs:string"/>
+	<xs:element name="address1Ac" type="xs:string"/>
+	<xs:element name="num1" type="xs:string"/>
+	<xs:element name="addrField3" type="xs:string"/>
+	<xs:element name="addrField2" type="xs:string"/>
+	<xs:element name="num2" type="xs:string"/>
+	<xs:element name="address3" type="xs:string"/>
+	<xs:element name="postal" type="xs:string"/>
+	<xs:element name="address2" type="xs:string"/>
+	<xs:element name="address4Ac" type="xs:string"/>
+	<xs:element name="geoCode" type="xs:string"/>
+</xs:schema>

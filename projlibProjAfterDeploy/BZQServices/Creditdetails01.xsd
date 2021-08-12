@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Creditdetails01="http://www.bezeq.co.il/XMLSchema/Creditdetails01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Creditdetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="mode" type="xs:string"/>
+							<xs:element minOccurs="0" name="ordPaymentMethod" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderId" type="xs:long"/>
+							<xs:element minOccurs="0" name="supplyChannel" type="xs:long"/>
+							<xs:element minOccurs="0" name="distributeChannel" type="xs:long"/>
+							<xs:element minOccurs="0" name="distPointCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="deliveryAddress">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastBusinessName" type="xs:string"/>
+										<xs:element minOccurs="0" name="firstName2" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastName2" type="xs:string"/>
+										<xs:element minOccurs="0" name="addressType" type="xs:string"/>
+										<xs:element minOccurs="0" name="city" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="street" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="houseNum" type="xs:integer"/>
+										<xs:element minOccurs="0" name="houseLetter" type="xs:string"/>
+										<xs:element minOccurs="0" name="appartmentNum" type="xs:integer"/>
+										<xs:element minOccurs="0" name="poBox" type="xs:string"/>
+										<xs:element minOccurs="0" name="district" type="xs:string"/>
+										<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="customerId" type="xs:long"/>
+							<xs:element minOccurs="0" name="custIdentityNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="ben" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="ordName" type="xs:string"/>
+							<xs:element minOccurs="0" name="ordIdentiyNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="ordEmail" type="xs:string"/>
+							<xs:element minOccurs="0" name="ordCellNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="ordCreditCard">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="creditCardType" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditCardNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditCardIssueDate" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditCardExpirationDate" type="xs:string"/>
+										<xs:element minOccurs="0" name="ccIssueNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditCardAuthCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditCardOwnerName" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditCardIdentityNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditCardOwnerEmail" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="dealData">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="recNumber" type="xs:long"/>
+										<xs:element minOccurs="0" name="catalogNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="itemQuantity" type="xs:integer"/>
+										<xs:element minOccurs="0" name="itemTotalAmt" type="xs:double"/>
+										<xs:element minOccurs="0" name="noOfInstalments" type="xs:integer"/>
+										<xs:element minOccurs="0" name="itemPaymentMethod" type="xs:string"/>
+										<xs:element minOccurs="0" name="itemSupplyChannel" type="xs:integer"/>
+										<xs:element minOccurs="0" name="itemDistributeChannel" type="xs:integer"/>
+										<xs:element minOccurs="0" name="itemDistPointCd" type="xs:string"/>
+										<xs:element minOccurs="0" name="itemDeliveryAddress">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+													<xs:element minOccurs="0" name="lastBusinessName" type="xs:string"/>
+													<xs:element minOccurs="0" name="firstName2" type="xs:string"/>
+													<xs:element minOccurs="0" name="lastName2" type="xs:string"/>
+													<xs:element minOccurs="0" name="addressType" type="xs:string"/>
+													<xs:element minOccurs="0" name="city" type="xs:string"/>
+													<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+													<xs:element minOccurs="0" name="street" type="xs:string"/>
+													<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+													<xs:element minOccurs="0" name="houseNum" type="xs:integer"/>
+													<xs:element minOccurs="0" name="houseLetter" type="xs:string"/>
+													<xs:element minOccurs="0" name="appartmentNum" type="xs:integer"/>
+													<xs:element minOccurs="0" name="poBox" type="xs:string"/>
+													<xs:element minOccurs="0" name="district" type="xs:string"/>
+													<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="ItemDeliveryId" type="xs:long"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="statusCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="reasonDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="creditAllowSum" type="xs:double"/>
+							<xs:element minOccurs="0" name="creditAllowId" type="xs:double"/>
+							<xs:element minOccurs="0" name="caseNo" type="xs:long"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

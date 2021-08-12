@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderInfo03="http://www.bezeq.co.il/XMLSchema/OrderInfo03" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderInfo03">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="projectNo" type="integer"/>
+							<element minOccurs="0" name="cityId" type="string"/>
+							<element minOccurs="0" name="streetId" type="string"/>
+							<element minOccurs="0" name="house" type="string"/>
+							<element minOccurs="0" name="houseIndication" type="string"/>
+							<element minOccurs="0" name="service" type="integer"/>
+							<element minOccurs="0" name="orderStatus" type="string"/>
+							<element minOccurs="0" name="pagesize" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="projectNo" type="integer"/>
+							<element minOccurs="0" name="projectOrderCounter" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="orders">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderData" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="messageNum" type="integer"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

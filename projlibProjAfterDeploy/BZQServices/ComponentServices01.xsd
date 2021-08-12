@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ComponentServices01="http://www.bezeq.co.il/XMLSchema/ComponentServices01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ComponentServices01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="transactionId" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="orders">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="orderHeaderId" type="xs:integer"/>
+										<xs:element name="versionNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="messageSendTimeStamp" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="requestType" type="xs:string"/>
+										<xs:element name="orderAction" type="xs:integer"/>
+										<xs:element minOccurs="0" name="bdeskProjectNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="contactName" type="xs:string"/>
+										<xs:element minOccurs="0" name="contactMobileNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="contactPhoneNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerId" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerFirstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerLastName" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerGrade" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerType" type="xs:string"/>
+										<xs:element maxOccurs="10" name="productsInOrder">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="productAction" type="xs:string"/>
+													<xs:element minOccurs="0" name="productId" type="xs:integer"/>
+													<xs:element minOccurs="0" name="productType" type="xs:string"/>
+													<xs:element minOccurs="0" name="parentProductType" type="xs:string"/>
+													<xs:element minOccurs="0" name="requestedDate" type="xs:dateTime"/>
+													<xs:element minOccurs="0" name="requestedRemovalDate" type="xs:dateTime"/>
+													<xs:element maxOccurs="2" name="installationAddress">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="addressLocation" type="xs:string"/>
+																<xs:element minOccurs="0" name="addressUfid" type="xs:long"/>
+																<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+																<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+																<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+																<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+																<xs:element minOccurs="0" name="houseNumber" type="xs:integer"/>
+																<xs:element minOccurs="0" name="entrance" type="xs:string"/>
+																<xs:element minOccurs="0" name="floor" type="xs:integer"/>
+																<xs:element minOccurs="0" name="letter" type="xs:string"/>
+																<xs:element minOccurs="0" name="apartment" type="xs:integer"/>
+																<xs:element minOccurs="0" name="merkaz" type="xs:integer"/>
+																<xs:element minOccurs="0" name="coordinatorName" type="xs:string"/>
+																<xs:element minOccurs="0" name="coordinatorPhoneNo" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="50" minOccurs="0" name="productParams">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="productParamAction" type="xs:string"/>
+																<xs:element minOccurs="0" name="productParamId" type="xs:integer"/>
+																<xs:element minOccurs="0" name="productParamName" type="xs:string"/>
+																<xs:element minOccurs="0" name="productParamValue" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="10" name="components">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="componentAction" type="xs:string"/>
+																<xs:element minOccurs="0" name="componentId" type="xs:integer"/>
+																<xs:element minOccurs="0" name="productSubType" type="xs:string"/>
+																<xs:element minOccurs="0" name="componentNumber" type="xs:string"/>
+																<xs:element minOccurs="0" name="heker" type="xs:integer"/>
+																<xs:element maxOccurs="unbounded" minOccurs="0" name="componentParams">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element minOccurs="0" name="componentParamAction" type="xs:string"/>
+																			<xs:element minOccurs="0" name="componentParamId" type="xs:integer"/>
+																			<xs:element minOccurs="0" name="ParamRowNo" type="xs:integer"/>
+																			<xs:element minOccurs="0" name="ParamGroupRowNo" type="xs:integer"/>
+																			<xs:element minOccurs="0" name="socProdType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="socProdSubType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="ftrProdType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="ftrProdSubType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="componentParamName" type="xs:string"/>
+																			<xs:element minOccurs="0" name="componentParamValue" type="xs:string"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element maxOccurs="50" minOccurs="0" name="componentFeatures">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element minOccurs="0" name="featureId" type="xs:integer"/>
+																			<xs:element minOccurs="0" name="socAction" type="xs:string"/>
+																			<xs:element minOccurs="0" name="soc" type="xs:string"/>
+																			<xs:element minOccurs="0" name="socProdType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="socProdSubType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="featureAction" type="xs:string"/>
+																			<xs:element minOccurs="0" name="featureCode" type="xs:string"/>
+																			<xs:element minOccurs="0" name="ftrProdType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="ftrProdSubType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="equipmentFlag" type="xs:string"/>
+																			<xs:element minOccurs="0" name="equipmentCode" type="xs:string"/>
+																			<xs:element minOccurs="0" name="featureBzqEquipCd" type="xs:string"/>
+																			<xs:element minOccurs="0" name="addressLocation" type="xs:string"/>
+																			<xs:element maxOccurs="20" minOccurs="0" name="featureParams">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element minOccurs="0" name="featureParamId" type="xs:integer"/>
+																						<xs:element minOccurs="0" name="featureParamAction" type="xs:string"/>
+																						<xs:element minOccurs="0" name="featureParamName" type="xs:string"/>
+																						<xs:element minOccurs="0" name="featureParamValue" type="xs:string"/>
+																						<xs:element minOccurs="0" name="featureParamBzqEquipCd" type="xs:string"/>
+																						<xs:element minOccurs="0" name="billingFeatureParamValue" type="xs:string"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="componentZoneNo" type="xs:string"/>
+							<xs:element name="componentNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerName" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerNumber" type="xs:string"/>
+							<xs:element maxOccurs="5" minOccurs="0" name="linesParams">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="logiZoneNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="logiNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="actionCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="upRate" type="xs:string"/>
+										<xs:element minOccurs="0" name="upUnit" type="xs:string"/>
+										<xs:element minOccurs="0" name="downRate" type="xs:string"/>
+										<xs:element minOccurs="0" name="downUnit" type="xs:string"/>
+										<xs:element minOccurs="0" name="expProductType" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="cityId" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetId" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="houserNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="entrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="zipCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="floor" type="xs:string"/>
+							<xs:element minOccurs="0" name="letter" type="xs:string"/>
+							<xs:element minOccurs="0" name="apartment" type="xs:string"/>
+							<xs:element minOccurs="0" name="bpmMessageSetNumber" type="xs:string"/>
+							<xs:element name="bpmMessageNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="bpmMessageDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

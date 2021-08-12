@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Debt="http://www.bezeq.co.il/XMLSchema/Debt"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/Debt"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="debt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="invToPay" type="xs:string" minOccurs="0"/>
+				<xs:element name="invBalance" type="xs:string" minOccurs="0"/>
+				<xs:element name="invDueDate" type="xs:string" minOccurs="0"/>
+				<xs:element name="ben" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

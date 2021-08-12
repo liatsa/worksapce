@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Alarms01="http://www.bezeq.co.il/XMLSchema/Alarms01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Alarms01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="alarmid" type="string"/>
+							<element name="alarmSource" type="string"/>
+							<element minOccurs="0" name="subAlarmSource" type="string"/>
+							<element minOccurs="0" name="alarmType" type="string"/>
+							<element name="upDown" type="string"/>
+							<element minOccurs="0" name="upTime" type="string"/>
+							<element minOccurs="0" name="downTime" type="string"/>
+							<element minOccurs="0" name="ipParit" type="string"/>
+							<element minOccurs="0" name="shelf" type="string"/>
+							<element minOccurs="0" name="slot" type="string"/>
+							<element minOccurs="0" name="port" type="string"/>
+							<element minOccurs="0" name="groupLineNumber" type="string"/>
+							<element minOccurs="0" name="logicalLineNumber" type="string"/>
+							<element minOccurs="0" name="lineNumber" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="alarmFieldsArr">
+								<complexType>
+									<sequence>
+										<element name="fieldname" type="string"/>
+										<element name="fieldvalue" type="string"/>
+										<element name="fieldadd" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

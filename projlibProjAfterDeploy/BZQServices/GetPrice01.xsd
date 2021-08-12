@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:GetPrice01="http://www.bezeq.co.il/XMLSchema/GetPrice01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/GetPrice01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="intLine">
+											<xs:complexType>
+												<xs:sequence>
+
+							<xs:element name="lineNo" type="xs:string"/>
+							<xs:element name="intPriceType" type="xs:string"/>
+							<xs:element minOccurs="0" name="billingService" type="xs:string"/>
+							<xs:element minOccurs="0" name="billingServSc" type="xs:string"/>
+							<xs:element minOccurs="0" name="activityCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="actvRsnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="csaChrgeCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="csaChrgeLevel" type="xs:string"/>
+							<xs:element name="bmDate" type="xs:date"/>
+							<xs:element name="intPricSoc">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="billingSoc" type="xs:string"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="intPricFtr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="billingAttrCod" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="intPricPrm">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="billingAttrCod" type="xs:string"/>
+																<xs:element name="attrType" type="xs:string"/>
+																<xs:element minOccurs="0" name="bilPrmValOld" type="xs:string"/>
+																<xs:element minOccurs="0" name="bilPrmValue" type="xs:string"/>
+																<xs:element minOccurs="0" name="attrValueOld" type="xs:string"/>
+																<xs:element minOccurs="0" name="attributeValue" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="intPromSoc">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="billingSoc" type="xs:string"/>
+													<xs:element name="campaignPeriod" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="intLine">
+											<xs:complexType>
+												<xs:sequence>
+
+							<xs:element name="lineNo" type="xs:string"/>
+
+
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="priceSocRp">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="billingSoc" type="xs:string"/>
+										<xs:element minOccurs="0" name="totalOc" type="xs:float"/>
+										<xs:element minOccurs="0" name="totalRc" type="xs:float"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="priceFtrRc">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="billingAttr" type="xs:string"/>
+													<xs:element name="priceInd" type="xs:string"/>
+													<xs:element minOccurs="0" name="intPrice" type="xs:float"/>
+													<xs:element minOccurs="0" name="pricePerQty" type="xs:float"/>
+													<xs:element minOccurs="0" name="priceFormula" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="tierRcRp">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="tierNum" type="xs:integer"/>
+																<xs:element name="tierDesc" type="xs:string"/>
+																<xs:element name="fromTier" type="xs:integer"/>
+																<xs:element name="toTier" type="xs:integer"/>
+																<xs:element minOccurs="0" name="intPrice" type="xs:float"/>
+																<xs:element minOccurs="0" name="pricePerQty" type="xs:float"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="priceFtrOc">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="billingAttr" type="xs:string"/>
+													<xs:element name="priceInd" type="xs:string"/>
+													<xs:element minOccurs="0" name="intPrice" type="xs:float"/>
+													<xs:element minOccurs="0" name="pricePerQty" type="xs:float"/>
+													<xs:element minOccurs="0" name="priceFormula" type="xs:string"/>
+													<xs:element minOccurs="0" name="amdSpecialOc" type="xs:float"/>
+													<xs:element minOccurs="0" name="creditPrice" type="xs:float"/>
+													<xs:element minOccurs="0" name="creditPercent" type="xs:float"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="tierOcRp">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="tierNum" type="xs:integer"/>
+																<xs:element name="tierDesc" type="xs:string"/>
+																<xs:element name="fromTier" type="xs:integer"/>
+																<xs:element name="toTier" type="xs:integer"/>
+																<xs:element minOccurs="0" name="intPrice" type="xs:float"/>
+																<xs:element minOccurs="0" name="pricePerQty" type="xs:float"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="priceFtrUc">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="billingAttr" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" name="tierUcRp">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="periodBilCode" type="xs:string"/>
+																<xs:element minOccurs="0" name="tierNum" type="xs:integer"/>
+																<xs:element minOccurs="0" name="tierDesc" type="xs:string"/>
+																<xs:element minOccurs="0" name="fromTier" type="xs:integer"/>
+																<xs:element minOccurs="0" name="toTier" type="xs:integer"/>
+																<xs:element name="intPrice" type="xs:float"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="penaltyRp">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="penaltyInd" type="xs:string"/>
+													<xs:element minOccurs="0" name="penaltyType" type="xs:string"/>
+													<xs:element minOccurs="0" name="penaltyAmount" type="xs:float"/>
+													<xs:element minOccurs="0" name="billingSoc" type="xs:string"/>
+													<xs:element minOccurs="0" name="billSocDescr" type="xs:string"/>
+													<xs:element minOccurs="0" name="addPenaltyAmt" type="xs:float"/>
+													<xs:element minOccurs="0" name="penaltyAmtMin" type="xs:float"/>
+													<xs:element minOccurs="0" name="penaltyAmtMax" type="xs:float"/>
+													<xs:element name="payByOther" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="tierPenRp">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="fromMonth" type="xs:integer"/>
+																<xs:element name="toMonth" type="xs:integer"/>
+																<xs:element minOccurs="0" name="penaltyAmount" type="xs:float"/>
+																<xs:element minOccurs="0" name="penaltyPercent" type="xs:float"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="billingMsg">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="billingApi" type="xs:string"/>
+										<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+										<xs:element name="messageNbr" type="xs:integer"/>
+										<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

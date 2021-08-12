@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateLead01="http://www.bezeq.co.il/XMLSchema/UpdateLead01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateLead01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="requestId" type="string"/>
+							<element name="actionType" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="customerName" type="string"/>
+							<element name="referralMethod" type="integer"/>
+							<element name="referralSource" type="integer"/>
+							<element minOccurs="0" name="subscriberNo" type="string"/>
+							<element minOccurs="0" name="subscriberPersonalId" type="string"/>
+							<element minOccurs="0" name="customerComments" type="string"/>
+							<element minOccurs="0" name="isWs" type="string"/>
+							<element minOccurs="0" name="optional1" type="string"/>
+							<element minOccurs="0" name="contactDetails">
+								<complexType>
+									<sequence>
+										<element name="contactName" type="string"/>
+										<element name="contactPhoneNumber" type="string"/>
+										<element minOccurs="0" name="contactLng" type="integer"/>
+										<element minOccurs="0" name="contactEmail" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="5" minOccurs="0" name="businessLeadDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="leadTypeId" type="integer"/>
+										<element minOccurs="0" name="productCategoryId" type="integer"/>
+										<element minOccurs="0" name="productId" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="5" minOccurs="0" name="privateLeadDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="serviceId" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="repositoryId" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="requestId" type="string"/>
+							<element minOccurs="0" name="referralId" type="integer"/>
+							<element name="status" type="integer"/>
+							<element minOccurs="0" name="msgCode" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

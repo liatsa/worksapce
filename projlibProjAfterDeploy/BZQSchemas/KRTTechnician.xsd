@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTTechnician="http://www.bezeq.co.il/XMLSchema/KRTTechnician"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTechnician"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="KRTTechnician">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="interfaceId" type="xs:string" minOccurs="0"/>
+				<xs:element name="id" type="xs:string"/>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="lastName" type="xs:string"/>
+				<xs:element name="phoneNumber" type="xs:string" minOccurs="0"/>
+				<xs:element name="MobilePhoneNumber" type="xs:string" minOccurs="0"/>
+				<xs:element name="phoneNumberPda" type="xs:string"/>
+				<xs:element name="active" type="xs:string"/>
+				<xs:element name="actionType" type="xs:string"/>
+				<xs:element name="destination" type="xs:string"/>
+				<xs:element name="city" type="xs:string" minOccurs="0"/>
+				<xs:element name="street" type="xs:string" minOccurs="0"/>
+				<xs:element name="postCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="region" type="xs:string"/>
+				<xs:element name="district" type="xs:string"/>
+				<xs:element name="subDistrict" type="xs:string"/>
+				<xs:element name="team" type="xs:string"/>
+				<xs:element name="contractor" type="xs:string"/>
+				<xs:element name="Tools" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Tool" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="calendar" type="xs:string" minOccurs="0"/>
+				<xs:element name="EngineerSkill" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="skillNumber" type="xs:string"/>
+							<xs:element name="skillLevel" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="longitude" type="xs:int"/>
+				<xs:element name="latitude" type="xs:int"/>
+				<xs:element name="countryId" type="xs:string" default="IL" minOccurs="0"/>
+				<xs:element name="gisDataSource" type="xs:int" default="0" minOccurs="0"/>
+				<xs:element name="engineerType" type="xs:string"/>
+				<xs:element name="handlingTeamCode" type="xs:string"/>
+				<xs:element name="handlingTeamName" type="xs:string" minOccurs="0"/>
+				<xs:element name="messageSetNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="messageNumber" type="xs:integer"/>
+				<xs:element name="messageDescription" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

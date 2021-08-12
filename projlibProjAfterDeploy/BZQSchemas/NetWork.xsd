@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:NetWork="http://www.bezeq.co.il/XMLSchema/NetWork"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/NetWork"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="NetWork">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="netCenter" type="xs:int" minOccurs="0"/>
+				<xs:element name="switchNumber" type="xs:int" minOccurs="0"/>
+				<xs:element name="switchType" type="xs:int" minOccurs="0"/>
+				<xs:element name="lineType" type="xs:int" minOccurs="0"/>
+				<xs:element name="lineDescription" type="xs:string" minOccurs="0"/>
+				<xs:element name="multiSubsRouteMark" type="xs:string" minOccurs="0"/>
+				<xs:element name="centerAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="switchAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="equipCodeAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="systemNumberAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="tagNumberAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="sideBlockLenAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="systemNumberLenAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="tagNumberLenAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="sideBlockFuseAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="systemNumberFuseAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="tagNameFuseAdsl" type="xs:integer" minOccurs="0"/>
+				<xs:element name="ipAdsl" type="xs:string" minOccurs="0"/>
+				<xs:element name="specialEquipCode" type="xs:integer" minOccurs="0"/>
+				<xs:element name="specialEquipFrame" type="xs:integer" minOccurs="0"/>
+				<xs:element name="specialEquipTag" type="xs:integer" minOccurs="0"/>
+				<xs:element name="specialEquipName" type="xs:string" minOccurs="0"/>
+				<xs:element name="unionNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="unionType" type="xs:string" minOccurs="0"/>
+				<xs:element name="unionSystemNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="unionPortNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="unionCenter" type="xs:integer" minOccurs="0"/>
+				<xs:element name="routingNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="editRoute" type="xs:string" minOccurs="0"/>
+				<xs:element name="totalRoutePoint" type="xs:integer" minOccurs="0"/>
+				<xs:element name="detailedRouting" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="branchingPointCenter" type="xs:int" minOccurs="0"/>
+							<xs:element name="branchingPointFrame" type="xs:int" minOccurs="0"/>
+							<xs:element name="branchingPointTag" type="xs:int" minOccurs="0"/>
+							<xs:element name="branchingPointFrameType" type="xs:int" minOccurs="0"/>
+							<xs:element name="branchingPointTypeDescription" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="len" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="center" type="xs:int" minOccurs="0"/>
+							<xs:element name="frame" type="xs:int" minOccurs="0"/>
+							<xs:element name="system" type="xs:int" minOccurs="0"/>
+							<xs:element name="tag" type="xs:int" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="frameAddress" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="addressFrameTypeDescr" type="xs:string" minOccurs="0"/>
+							<xs:element name="addressFrame" type="xs:int" minOccurs="0"/>
+							<xs:element name="addressFrameStreet" type="xs:string" minOccurs="0"/>
+							<xs:element name="addressFrameHouseNum" type="xs:int" minOccurs="0"/>
+							<xs:element name="addressFrameLocationDescr" type="xs:string" minOccurs="0"/>
+							<xs:element name="addressFramePlaceDescr" type="xs:string" minOccurs="0"/>
+							<xs:element name="addressFrameCity" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="securityClassCode" type="xs:integer" minOccurs="0"/>
+				<xs:element name="securityClassDescr" type="xs:string" minOccurs="0"/>
+				<xs:element name="updateDate" type="xs:date" minOccurs="0"/>
+				<xs:element name="vpdsl" type="xs:string" minOccurs="0"/>
+				<xs:element name="vc" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

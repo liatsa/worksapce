@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:PendingCase01="http://www.bezeq.co.il/XMLSchema/PendingCase01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/PendingCase01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element name="smlId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dialRegion" type="xs:string"/>
+							<xs:element minOccurs="0" name="telephoneNo" type="xs:string"/>
+							<xs:element name="caseNo" type="xs:integer"/>
+							<xs:element name="creationDate" type="xs:date"/>
+							<xs:element name="creationTime" type="xs:time"/>
+							<xs:element minOccurs="0" name="annonyanceNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="recognitionNo" type="xs:integer"/>
+							<xs:element name="stockNo" type="xs:integer"/>
+							<xs:element name="operator" type="xs:integer"/>
+							<xs:element name="employeeID" type="xs:integer"/>
+							<xs:element minOccurs="0" name="handlingCode" type="xs:integer"/>
+							<xs:element name="launchingCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="comment" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element name="smlId" type="xs:integer"/>
+							<xs:element name="stockNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="stockName" type="xs:string"/>
+							<xs:element name="operator" type="xs:integer"/>
+							<xs:element minOccurs="0" name="operatorName" type="xs:string"/>
+							<xs:element minOccurs="0" name="errCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="message" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

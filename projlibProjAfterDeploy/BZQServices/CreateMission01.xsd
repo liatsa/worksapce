@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CreateMission01="http://www.bezeq.co.il/XMLSchema/CreateMission01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CreateMission01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="area" type="xs:string"/>
+							<xs:element minOccurs="0" name="keyword" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentName" type="xs:string"/>
+							<xs:element minOccurs="0" name="deviceName" type="xs:string"/>
+							<xs:element minOccurs="0" name="deviceType" type="xs:string"/>
+							<xs:element minOccurs="0" name="moduleType" type="xs:string"/>
+							<xs:element minOccurs="0" name="logicId" type="xs:string"/>
+							<xs:element minOccurs="0" name="description" type="xs:string"/>
+							<xs:element name="upTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="moduleName" type="xs:string"/>
+							<xs:element minOccurs="0" name="type" type="xs:string"/>
+							<xs:element minOccurs="0" name="fromSite" type="xs:string"/>
+							<xs:element name="priority" type="xs:integer"/>
+							<xs:element minOccurs="0" name="additionalInfo2" type="xs:string"/>
+							<xs:element minOccurs="0" name="shelfNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cardNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cardType" type="xs:string"/>
+							<xs:element name="alarmId" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscribersNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="msagType" type="xs:string"/>
+							<xs:element minOccurs="0" name="failureId" type="xs:string"/>
+							<xs:element minOccurs="0" name="failureStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="businessSubscribers" type="xs:integer"/>
+							<xs:element minOccurs="0" name="emergencySubscribers" type="xs:integer"/>
+							<xs:element minOccurs="0" name="internetSubscribers" type="xs:integer"/>
+							<xs:element minOccurs="0" name="voiceSubscribers" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalSubscribers" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="alarmId" type="xs:string"/>
+							<xs:element name="success" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

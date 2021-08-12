@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Splitter02="http://www.bezeq.co.il/XMLSchema/Splitter02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Splitter02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="actionCode" type="string"/>
+							<element name="mitkanCode" type="string"/>
+							<element name="equipTypeCode" type="string"/>
+							<element name="splitterNum" type="string"/>
+							<element minOccurs="0" name="futureRouting" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="errorCode" type="string"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+							<element minOccurs="0" name="mitkanCode" type="string"/>
+							<element minOccurs="0" name="mitkanName" type="string"/>
+							<element minOccurs="0" name="equipTypeCode" type="string"/>
+							<element minOccurs="0" name="equipTypeName" type="string"/>
+							<element minOccurs="0" name="splitterNum" type="string"/>
+							<element minOccurs="0" name="splitterCapacity" type="string"/>
+							<element minOccurs="0" name="odfType" type="string"/>
+							<element minOccurs="0" name="odfName" type="string"/>
+							<element minOccurs="0" name="oltMitkanCode" type="string"/>
+							<element minOccurs="0" name="oltMitkanName" type="string"/>
+							<element minOccurs="0" name="oltEquipTypeCode" type="string"/>
+							<element minOccurs="0" name="oltEquipTypeName" type="string"/>
+							<element minOccurs="0" name="oltSplitterNum" type="string"/>
+							<element minOccurs="0" name="oltIpAddress" type="string"/>
+							<element minOccurs="0" name="oltShelf" type="string"/>
+							<element minOccurs="0" name="oltSlot" type="string"/>
+							<element minOccurs="0" name="oltPort" type="string"/>
+							<element minOccurs="0" name="oltCardType" type="string"/>
+							<element minOccurs="0" name="oltOptionCode" type="string"/>
+							<element minOccurs="0" name="oltOptionDesc" type="string"/>
+							<element minOccurs="0" name="oltAddressCityCode" type="string"/>
+							<element minOccurs="0" name="oltAddressStreetCode" type="string"/>
+							<element minOccurs="0" name="oltAddressHouseCode" type="string"/>
+							<element minOccurs="0" name="oltAddressHouseIndication" type="string"/>
+							<element minOccurs="0" name="oltOrganizerConnectorType" type="string"/>
+							<element minOccurs="0" name="oltOrganizerType" type="string"/>
+							<element minOccurs="0" name="oltOrganizerName" type="string"/>
+							<element minOccurs="0" name="oltOrganizerTag" type="string"/>
+							<element minOccurs="0" name="oltCable" type="string"/>
+							<element minOccurs="0" name="oltCableThread" type="string"/>
+							<element minOccurs="0" name="oltTagStatus" type="string"/>
+							<element minOccurs="0" name="rootOrganizerConnectorType" type="string"/>
+							<element minOccurs="0" name="rootOrganizerType" type="string"/>
+							<element minOccurs="0" name="rootOrganizerName" type="string"/>
+							<element minOccurs="0" name="rootOrganizerTag" type="string"/>
+							<element minOccurs="0" name="rootCable" type="string"/>
+							<element minOccurs="0" name="rootCableThread" type="string"/>
+							<element minOccurs="0" name="rootTagStatus" type="string"/>
+				<element maxOccurs="1" minOccurs="0" name="oltRootCableLength" type="string"/>
+							<element minOccurs="0" name="splitterTagCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="portsInRoot">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="portLinkType" type="string"/>
+										<element minOccurs="0" name="splitterPort" type="string"/>
+										<element minOccurs="0" name="portStateCode" type="string"/>
+										<element minOccurs="0" name="odfPortNumber" type="string"/>
+										<element minOccurs="0" name="organizerConnectorType" type="string"/>
+										<element minOccurs="0" name="organizerType" type="string"/>
+										<element minOccurs="0" name="organizerName" type="string"/>
+										<element minOccurs="0" name="organizerTag" type="string"/>
+										<element minOccurs="0" name="cableNumber" type="string"/>
+										<element minOccurs="0" name="cableThreadNumber" type="string"/>
+										<element minOccurs="0" name="cableTagStatus" type="string"/>
+										<element minOccurs="0" name="beam" type="string"/>
+										<element minOccurs="0" name="beamStatusCode" type="string"/>
+										<element minOccurs="0" name="beamMarketingCode" type="string"/>
+										<element minOccurs="0" name="installOrder" type="string"/>
+										<element minOccurs="0" name="endAddressCityCode" type="string"/>
+										<element minOccurs="0" name="endAddressStreetCode" type="string"/>
+										<element minOccurs="0" name="endAddressHouseCode" type="string"/>
+										<element minOccurs="0" name="endAddressHouseIndication" type="string"/>
+
+				<element maxOccurs="1" minOccurs="0" name="endMitkanCode" type="string"/>
+							<element maxOccurs="1" minOccurs="0" name="endEquipTypeCode" type="string"/>
+							<element maxOccurs="1" minOccurs="0" name="endSplitterNum" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

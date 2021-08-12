@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:EngFeasibility01="http://www.bezeq.co.il/XMLSchema/EngFeasibility01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/EngFeasibility01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="rbtActionId" type="xs:string"/>
+							<xs:element name="actionReason" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="phoneNbr" type="xs:integer"/>
+							<xs:element name="prvnPhoneExst" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityAc" type="xs:integer"/>
+							<xs:element minOccurs="0" name="address1Ac" type="xs:integer"/>
+							<xs:element minOccurs="0" name="num1" type="xs:integer"/>
+							<xs:element minOccurs="0" name="num2" type="xs:string"/>
+							<xs:element minOccurs="0" name="addrField3" type="xs:string"/>
+							<xs:element minOccurs="0" name="addrField2" type="xs:integer"/>
+							<xs:element minOccurs="0" name="address3" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lineSpeedCh" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="voice">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ithntCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ithntDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="ngn" type="xs:string"/>
+										<xs:element minOccurs="0" name="meracezetType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ezorShirut" type="xs:string"/>	
+										<xs:element maxOccurs="10" minOccurs="0" name="category">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="ithntCategory" type="xs:integer"/>
+													<xs:element minOccurs="0" name="date" type="xs:date"/>
+													<xs:element minOccurs="0" name="descr40" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="adsl">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ithntCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ithntDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="ithntTech" type="xs:string"/>
+										<xs:element minOccurs="0" name="lineSpeedCh" type="xs:string"/>
+										<xs:element minOccurs="0" name="ngn" type="xs:string"/>
+										<xs:element minOccurs="0" name="meracezetType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ezorShirut" type="xs:string"/>
+										<xs:element maxOccurs="10" minOccurs="0" name="category">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="lineSpeedCh" type="xs:string"/>
+													<xs:element minOccurs="0" name="ithntCategory" type="xs:integer"/>
+													<xs:element minOccurs="0" name="date" type="xs:date"/>
+													<xs:element minOccurs="0" name="descr40" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

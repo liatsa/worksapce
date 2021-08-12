@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:DeliveryDetails02="http://www.bezeq.co.il/XMLSchema/DeliveryDetails02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/DeliveryDetails02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+	
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="reqBan" type="integer"/>
+							<element minOccurs="0" name="reqSubNo" type="string"/>
+							<element minOccurs="0" name="reqIdntNo" type="string"/>
+							<element minOccurs="0" name="reqDeliveryId" type="integer"/>
+							<element minOccurs="0" name="status" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+							<element maxOccurs="50" minOccurs="0" name="subsArr">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="subNo" type="string"/>
+										<element minOccurs="0" name="idntNo" type="string"/>
+										<element maxOccurs="50" minOccurs="0" name="subDlvsArr">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="deliveryId" type="integer"/>
+													<element minOccurs="0" name="updateSeq" type="integer"/>
+													<element minOccurs="0" name="returnStatus" type="string"/>
+													<element minOccurs="0" name="processId" type="integer"/>
+													<element minOccurs="0" name="distPointCode" type="string"/>
+													<element minOccurs="0" name="supplyCd" type="string"/>
+													<element minOccurs="0" name="distribCd" type="string"/>
+													<element minOccurs="0" name="delCreationDate" type="date"/>
+													<element minOccurs="0" name="dlvCost" type="float"/>
+													<element minOccurs="0" name="eqpDlvCost" type="string"/>
+													<element minOccurs="0" name="eqpDlvSocCost" type="string"/>
+													<element minOccurs="0" name="banName" type="string"/>
+													<element minOccurs="0" name="city" type="string"/>
+													<element minOccurs="0" name="streetName" type="string"/>
+													<element minOccurs="0" name="houseNo" type="string"/>
+													<element minOccurs="0" name="aptFloor" type="integer"/>
+													<element minOccurs="0" name="aptNumber" type="string"/>
+													<element minOccurs="0" name="aptEntrance" type="string"/>
+													<element minOccurs="0" name="postCode" type="string"/>
+													<element minOccurs="0" name="celContactNo" type="string"/>
+													<element minOccurs="0" name="celContactNo2" type="string"/>
+													<element minOccurs="0" name="deliveryDateFrom" type="dateTime"/>
+													<element minOccurs="0" name="deliveryDateTo" type="dateTime"/>
+													<element minOccurs="0" name="dateSentToSup" type="dateTime"/>
+													<element minOccurs="0" name="dateAnswered" type="dateTime"/>
+													<element minOccurs="0" name="orderId" type="integer"/>
+													<element minOccurs="0" name="requestNum" type="integer"/>
+													<element minOccurs="0" name="supplierStatus" type="string"/>
+													<element minOccurs="0" name="supplierPriority" type="string"/>
+													<element minOccurs="0" name="deliveryType" type="string"/>
+													<element minOccurs="0" name="addRtrnEqpInd" type="string"/>
+													<element minOccurs="0" name="dlvShowIdInd" type="string"/>
+													<element minOccurs="0" name="dlvGenCode1" type="string"/>
+													<element minOccurs="0" name="dlvGenCode2" type="string"/>
+													<element minOccurs="0" name="dlvGenCode3" type="string"/>
+													<element minOccurs="0" name="dlvGenCode4" type="string"/>
+													<element minOccurs="0" name="dlvGenCode5" type="string"/>
+													<element minOccurs="0" name="dlvGenCode6" type="string"/>
+													<element minOccurs="0" name="dlvGenCode7" type="string"/>
+													<element minOccurs="0" name="dlvGenCode8" type="string"/>
+													<element minOccurs="0" name="dlvGenCode9" type="string"/>
+													<element minOccurs="0" name="nazigComments" type="string"/>
+													<element minOccurs="0" name="logistComments" type="string"/>
+													<element minOccurs="0" name="remarkForSupplier" type="string"/>
+													<element minOccurs="0" name="userConfirmId" type="string"/>
+													<element minOccurs="0" name="delStsId" type="integer"/>
+													<element minOccurs="0" name="delStsRsnId" type="integer"/>
+													<element maxOccurs="20" minOccurs="0" name="dlvItmsArr">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="equipCd" type="string"/>
+																<element minOccurs="0" name="actionType" type="string"/>
+																<element minOccurs="0" name="promoSeqNo" type="integer"/>
+																<element minOccurs="0" name="quantity" type="integer"/>
+																<element minOccurs="0" name="soc" type="string"/>
+																<element minOccurs="0" name="featureCode" type="string"/>
+																<element minOccurs="0" name="discountSoc" type="string"/>
+																<element minOccurs="0" name="cmp" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="50" minOccurs="0" name="dlvStsArr">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="suppDlvSts" type="string"/>
+																<element minOccurs="0" name="bzqDlvSts" type="string"/>
+																<element minOccurs="0" name="statusDate" type="dateTime"/>
+																<element minOccurs="0" name="bzqDlvDesc" type="string"/>
+																<element minOccurs="0" name="displayDlvDesc" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+	
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="reqBan" type="integer"/>
+							<element minOccurs="0" name="reqSubNo" type="string"/>
+							<element minOccurs="0" name="reqIdntNo" type="string"/>
+							<element minOccurs="0" name="reqDeliveryId" type="integer"/>
+							<element minOccurs="0" name="status" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+							<element maxOccurs="50" minOccurs="0" name="subsArr">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="subNo" type="string"/>
+										<element minOccurs="0" name="idntNo" type="string"/>
+										<element maxOccurs="50" minOccurs="0" name="subDlvsArr">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="deliveryId" type="integer"/>
+													<element minOccurs="0" name="updateSeq" type="integer"/>
+													<element minOccurs="0" name="returnStatus" type="string"/>
+													<element minOccurs="0" name="processId" type="integer"/>
+													<element minOccurs="0" name="distPointCode" type="string"/>
+													<element minOccurs="0" name="supplyCd" type="string"/>
+													<element minOccurs="0" name="distribCd" type="string"/>
+													<element minOccurs="0" name="delCreationDate" type="date"/>
+													<element minOccurs="0" name="dlvCost" type="float"/>
+													<element minOccurs="0" name="eqpDlvCost" type="string"/>
+													<element minOccurs="0" name="eqpDlvSocCost" type="string"/>
+													<element minOccurs="0" name="banName" type="string"/>
+													<element minOccurs="0" name="city" type="string"/>
+													<element minOccurs="0" name="streetName" type="string"/>
+													<element minOccurs="0" name="houseNo" type="string"/>
+													<element minOccurs="0" name="aptFloor" type="integer"/>
+													<element minOccurs="0" name="aptNumber" type="string"/>
+													<element minOccurs="0" name="aptEntrance" type="string"/>
+													<element minOccurs="0" name="postCode" type="string"/>
+													<element minOccurs="0" name="celContactNo" type="string"/>
+													<element minOccurs="0" name="celContactNo2" type="string"/>
+													<element minOccurs="0" name="deliveryDateFrom" type="dateTime"/>
+													<element minOccurs="0" name="deliveryDateTo" type="dateTime"/>
+													<element minOccurs="0" name="dateSentToSup" type="dateTime"/>
+													<element minOccurs="0" name="dateAnswered" type="dateTime"/>
+													<element minOccurs="0" name="orderId" type="integer"/>
+													<element minOccurs="0" name="requestNum" type="integer"/>
+													<element minOccurs="0" name="supplierStatus" type="string"/>
+													<element minOccurs="0" name="supplierPriority" type="string"/>
+													<element minOccurs="0" name="deliveryType" type="string"/>
+													<element minOccurs="0" name="addRtrnEqpInd" type="string"/>
+													<element minOccurs="0" name="dlvShowIdInd" type="string"/>
+													<element minOccurs="0" name="dlvGenCode1" type="string"/>
+													<element minOccurs="0" name="dlvGenCode2" type="string"/>
+													<element minOccurs="0" name="dlvGenCode3" type="string"/>
+													<element minOccurs="0" name="dlvGenCode4" type="string"/>
+													<element minOccurs="0" name="dlvGenCode5" type="string"/>
+													<element minOccurs="0" name="dlvGenCode6" type="string"/>
+													<element minOccurs="0" name="dlvGenCode7" type="string"/>
+													<element minOccurs="0" name="dlvGenCode8" type="string"/>
+													<element minOccurs="0" name="dlvGenCode9" type="string"/>
+													<element minOccurs="0" name="nazigComments" type="string"/>
+													<element minOccurs="0" name="logistComments" type="string"/>
+													<element minOccurs="0" name="remarkForSupplier" type="string"/>
+													<element minOccurs="0" name="userConfirmId" type="string"/>
+													<element minOccurs="0" name="delStsId" type="integer"/>
+													<element minOccurs="0" name="delStsRsnId" type="integer"/>
+													<element maxOccurs="20" minOccurs="0" name="dlvItmsArr">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="equipCd" type="string"/>
+																<element minOccurs="0" name="actionType" type="string"/>
+																<element minOccurs="0" name="promoSeqNo" type="integer"/>
+																<element minOccurs="0" name="quantity" type="integer"/>
+																<element minOccurs="0" name="soc" type="string"/>
+																<element minOccurs="0" name="featureCode" type="string"/>
+																<element minOccurs="0" name="discountSoc" type="string"/>
+																<element minOccurs="0" name="cmp" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="50" minOccurs="0" name="dlvStsArr">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="suppDlvSts" type="string"/>
+																<element minOccurs="0" name="bzqDlvSts" type="string"/>
+																<element minOccurs="0" name="statusDate" type="dateTime"/>
+																<element minOccurs="0" name="bzqDlvDesc" type="string"/>
+																<element minOccurs="0" name="displayDlvDesc" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

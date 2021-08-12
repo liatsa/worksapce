@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:NKKAddress="http://www.bezeq.co.il/XMLSchema/NKKAddress" xmlns:NTLOrder="http://www.bezeq.co.il/XMLSchema/NTLOrder" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLOrder">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NKKAddress" schemaLocation="NKKAddress.xsd"/>
+	<xs:element name="Order">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customerNumber" type="xs:integer"/>
+				<xs:element minOccurs="0" name="atarId" type="xs:integer"/>
+				<xs:element minOccurs="0" ref="NKKAddress:Address"/>
+				<xs:element minOccurs="0" name="hazmanaNumber" type="xs:integer"/>
+				<xs:element minOccurs="0" name="hazmanaSequence" type="xs:integer"/>
+				<xs:element minOccurs="0" name="hazmanaKav" type="xs:integer"/>
+				<xs:element minOccurs="0" name="hazmanaKavType" type="xs:string"/>
+				<xs:element minOccurs="0" name="hazmanaType" type="xs:integer"/>
+				<xs:element minOccurs="0" name="hazmanaGroupNumber" type="xs:integer"/>
+				<xs:element minOccurs="0" name="sherutType" type="xs:string"/>
+				<xs:element maxOccurs="5" minOccurs="0" name="logicalNumber" type="xs:string"/>
+				<xs:element minOccurs="0" name="userLastName" type="xs:string"/>
+				<xs:element minOccurs="0" name="userFirstName" type="xs:string"/>
+				<xs:element minOccurs="0" name="code" type="xs:string"/>
+				<xs:element minOccurs="0" name="description" type="xs:string"/>
+				<xs:element minOccurs="0" name="actionCode" type="xs:string"/>
+				<xs:element minOccurs="0" name="userId" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

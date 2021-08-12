@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ApiBillingFeedback01="http://www.bezeq.co.il/XMLSchema/ApiBillingFeedback01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ApiBillingFeedback01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="cycleStrtDdt" type="xs:date"/>
+							<xs:element minOccurs="0" name="nxtCycleStrtDt" type="xs:date"/>
+							<xs:element minOccurs="0" name="reinvoiceFailureInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="ban" type="xs:integer"/>
+							<xs:element minOccurs="0" name="banCrm" type="xs:string"/>
+							<xs:element minOccurs="0" name="ben" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="billCycle" type="xs:integer"/>
+							<xs:element minOccurs="0" name="creditCardAuthCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="extOrderNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="billingActualDt" type="xs:date"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="billingMessages">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="billingApi" type="xs:string"/>
+										<xs:element minOccurs="0" name="status" type="xs:string"/>
+										<xs:element minOccurs="0" name="msgCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="msgDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

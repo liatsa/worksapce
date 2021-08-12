@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:WorkTask04="http://www.bezeq.co.il/XMLSchema/WorkTask04" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/WorkTask04">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="workTaskId" type="integer"/>
+							<element minOccurs="0" name="ContractorFinishImplementDate" type="dateTime"/>
+							<element minOccurs="0" name="transactionId" type="string"/>
+							<element minOccurs="0" name="contractorApartmentsAmount" type="integer"/>
+							<element minOccurs="0" name="contractorFloorAmount" type="integer"/>
+							<element minOccurs="0" name="contractorBoxsAmount" type="integer"/>
+							<element minOccurs="0" name="contractorDetail" type="string"/>
+		
+							<element minOccurs="0" name="contractorCableTypeId" type="integer"/>
+							<element minOccurs="0" name="blueCable" type="integer"/>
+							<element minOccurs="0" name="suCmActivityStatus" type="integer"/>
+							<element minOccurs="0" name="suReasonPaused" type="integer"/>
+			<element maxOccurs="unbounded" minOccurs="0" name="contractorBoardTypes">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="contractorBoardTypeId" type="integer"/>
+					
+						</sequence>
+					</complexType>
+				</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="params">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="paramName" type="string"/>
+										<element minOccurs="0" name="paramValue" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="workTaskId" type="integer"/>
+							<element minOccurs="0" name="transactionId" type="string"/>
+							<element minOccurs="0" name="isStatusOk" type="integer"/>
+							<element minOccurs="0" name="description" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

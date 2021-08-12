@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:AreaFailure02="http://www.bezeq.co.il/XMLSchema/AreaFailure02" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AreaFailure02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="type" type="xs:string"/>
+							<xs:element minOccurs="0" name="shortDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="svrnStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="frameType" type="xs:string"/>
+							<xs:element minOccurs="0" name="fullDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="svrnType" type="xs:string"/>
+							<xs:element minOccurs="0" name="cancelSO" type="xs:string"/>
+							<xs:element minOccurs="0" name="cancelSendSms" type="xs:string"/>
+							<xs:element minOccurs="0" name="recordCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="svrnResponsible" type="xs:string"/>
+							<xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="isp" type="xs:string"/>
+							<xs:element minOccurs="0" name="rb" type="xs:string"/>
+							<xs:element minOccurs="0" name="rbPort" type="xs:string"/>
+							<xs:element minOccurs="0" name="rbVp" type="xs:string"/>
+							<xs:element minOccurs="0" name="centerReshet" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frame" type="xs:integer"/>
+							<xs:element minOccurs="0" name="fromTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="toTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="port" type="xs:string"/>
+							<xs:element minOccurs="0" name="centerSequip" type="xs:integer"/>
+							<xs:element minOccurs="0" name="site" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="fromSystem" type="xs:string"/>
+							<xs:element minOccurs="0" name="toSystem" type="xs:string"/>
+							<xs:element minOccurs="0" name="system1" type="xs:string"/>
+							<xs:element minOccurs="0" name="system2" type="xs:string"/>
+							<xs:element minOccurs="0" name="system3" type="xs:string"/>
+							<xs:element minOccurs="0" name="system4" type="xs:string"/>
+							<xs:element minOccurs="0" name="system5" type="xs:string"/>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element name="svrnIdBdiag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="opt1" type="xs:string"/>
+							<xs:element minOccurs="0" name="opt2" type="xs:string"/>
+							<xs:element minOccurs="0" name="opt3" type="xs:string"/>
+							<xs:element minOccurs="0" name="ip" type="xs:string"/>
+							<xs:element minOccurs="0" name="slotName" type="xs:string"/>
+							<xs:element minOccurs="0" name="shelfNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="slotNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="alarmProfile" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzNewCust" type="xs:string"/>
+							<xs:element minOccurs="0" name="suspecion" type="xs:integer"/>
+							<xs:element minOccurs="0" name="area" type="xs:integer"/>
+							<xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="address" type="xs:string"/>
+							<xs:element minOccurs="0" name="ufid" type="xs:string"/>
+							<xs:element minOccurs="0" name="ufidName" type="xs:string"/>
+							<xs:element minOccurs="0" name="ufidElement" type="xs:string"/>
+							<xs:element minOccurs="0" name="planetLocation" type="xs:string"/>
+							<xs:element minOccurs="0" name="wazeLocation" type="xs:string"/>
+							<xs:element minOccurs="0" name="remark" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="svrnNumberCrm" type="xs:string"/>
+							<xs:element name="svrnIdBdiag" type="xs:integer"/>
+							<xs:element name="failureStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="counter" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

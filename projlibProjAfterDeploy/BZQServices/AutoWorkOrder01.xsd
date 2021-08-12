@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:AutoWorkOrder01="http://www.bezeq.co.il/XMLSchema/AutoWorkOrder01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AutoWorkOrder01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="actionType" type="string"/>
+							<element minOccurs="0" name="mainOrderNum" type="string"/>
+							<element minOccurs="0" name="runOrderNum" type="string"/>
+							<element name="orderStatus" type="string"/>
+							<element minOccurs="0" name="openOrderDate" type="date"/>
+							<element minOccurs="0" name="workOrderBus" type="string"/>
+							<element minOccurs="0" name="workOrderPriv" type="string"/>
+							<element name="requestType" type="string"/>
+							<element minOccurs="0" name="phoneNum" type="string"/>
+							<element minOccurs="0" name="groupPhoneNum" type="string"/>
+							<element minOccurs="0" name="customerId" type="string"/>
+							<element minOccurs="0" name="orderTypeCode" type="string"/>
+							<element minOccurs="0" name="serviceTypeCode" type="string"/>
+							<element minOccurs="0" name="lineTypeCode" type="string"/>
+							<element minOccurs="0" name="projectNumber" type="string"/>
+							<element minOccurs="0" name="PrefRemoveDate" type="date"/>
+							<element maxOccurs="2" minOccurs="0" name="installAdress">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="side" type="string"/>
+										<element minOccurs="0" name="citySymbol" type="string"/>
+										<element minOccurs="0" name="cityName" type="string"/>
+										<element minOccurs="0" name="streetSymbol" type="string"/>
+										<element minOccurs="0" name="streetName" type="string"/>
+										<element minOccurs="0" name="houseNumber" type="string"/>
+										<element minOccurs="0" name="letter" type="string"/>
+										<element minOccurs="0" name="center" type="string"/>
+										<element minOccurs="0" name="district" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="contactsDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="coordinatorContactPerson" type="string"/>
+										<element minOccurs="0" name="coordinatorPhone" type="string"/>
+										<element maxOccurs="2" minOccurs="0" name="sideContactDestails">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="contactsToSide" type="string"/>
+													<element minOccurs="0" name="siteContactPerson" type="string"/>
+													<element minOccurs="0" name="siteContactPhone" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="1" minOccurs="0" name="IsConversionOrder" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Subscriber04="http://www.bezeq.co.il/XMLSchema/Subscriber04" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Subscriber04">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+				<element minOccurs="1" name="Destination" type="string"/>
+				<element minOccurs="1" name="Mode" type="string"/>
+				<element minOccurs="0" name="RecordIdentifier" type="string"/>
+				<element minOccurs="0" name="MsgDatetime" type="dateTime"/>
+				<element minOccurs="0" name="ActvCode" type="string"/>
+				<element minOccurs="0" name="ActvRsnCode" type="string"/>
+				<element minOccurs="0" name="IssueDate" type="date"/>
+				<element minOccurs="0" name="TrxSeqNo" type="string"/>
+				<element name="CustId" type="string"/>
+				<element name="SubscriberId" type="string"/>
+				<element minOccurs="0" name="BezeqSubId" type="string"/>
+				<element minOccurs="0" name="ProductType" type="string"/>
+				<element minOccurs="0" name="ProductSubType" type="string"/>
+				<element minOccurs="0" name="InitActivationDate" type="date"/>
+				<element minOccurs="0" name="PersonalId" type="string"/>
+				<element minOccurs="0" name="SecurityClassifiscation" type="string"/>
+				<element minOccurs="0" name="SubStatusLastAct" type="string"/>
+				<element minOccurs="0" name="LastActvReason" type="string"/>
+				<element minOccurs="0" name="SubStatus" type="string"/>
+				<element minOccurs="0" name="SubStatusDate" type="date"/>
+				<element minOccurs="0" name="DirPublishInd" type="string"/>
+				<element minOccurs="0" name="AdrType" type="string"/>
+				<element minOccurs="0" name="AdrPostCode" type="string"/>
+				<element minOccurs="0" name="AdrCity" type="string"/>
+				<element minOccurs="0" name="AdrAptFloor" type="string"/>
+				<element minOccurs="0" name="ApartmentNumber" type="string"/>
+				<element minOccurs="0" name="AdrAptEntrance" type="string"/>
+				<element minOccurs="0" name="AdditionalHouseLetter" type="string"/>
+				<element minOccurs="0" name="AdrHouseNo" type="string"/>
+				<element minOccurs="0" name="AdrStreetName" type="string"/>
+				<element name="FirstName" type="string"/>
+				<element minOccurs="0" name="LastName" type="string"/>
+				<element minOccurs="0" name="AdditionalCityCd" type="string"/>
+				<element minOccurs="0" name="AdditionalStreetCd" type="string"/>
+				<element minOccurs="0" name="MainSubno" type="string"/>
+				<element minOccurs="0" name="SuspRestCandSts" type="string"/>
+				<element minOccurs="0" name="PersonalId2nd" type="string"/>
+				<element minOccurs="0" name="DebtSource" type="string"/>
+				<element minOccurs="0" name="DealerCode" type="string"/>
+				<element minOccurs="0" name="integrator" type="string"/>
+				<element minOccurs="0" name="OldSubno" type="string"/>
+				<element minOccurs="0" name="OldBezeqSubid" type="string"/>
+				<element minOccurs="0" name="OldBan" type="string"/>
+				<element minOccurs="0" name="PortoutCandind" type="string"/>
+				<element minOccurs="0" name="PortoutReqDate" type="string"/>
+				<element minOccurs="0" name="Porequestid" type="string"/>
+				<element minOccurs="0" name="Armyorderno" type="string"/>
+				<element maxOccurs="10" minOccurs="0" name="ArmyAddress">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="ArmyMk" type="string"/>
+							<element minOccurs="0" name="ArmyBuilding" type="string"/>
+							<element minOccurs="0" name="ArmyFloor" type="string"/>
+							<element minOccurs="0" name="ArmyRoom" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ApiOrders01="http://www.tibco.com/schemas/BZQSchemasProject/BZQServices/ApiOrders01" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:EquipmentCodes02="http://www.bezeq.co.il/XMLSchema/EquipmentCodes02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/BZQSchemasProject/BZQServices/ApiOrders01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/EquipmentCodes02" schemaLocation="EquipmentCodes02.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+
+	<!-- ONE API -->
+	<element name="oneAPI">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" ref="ApiOrders01:orderCRMHeader"/>
+							<element name="ordSysTyp">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderingSyst" type="string"/>
+										<element name="orderInfo">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" ref="ApiOrders01:orderInfoHeader"/>
+													<element minOccurs="0" ref="ApiOrders01:orderActionAU"/>
+													<element minOccurs="0" ref="ApiOrders01:orderActionR"/>
+													<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordBilAct"/>
+													<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordBilAdsl"/>
+													<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordEqpBill"/>
+													<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordEqpAdsl"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<!-- MF DATA -->
+	<element name="MfOrder">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" ref="ApiOrders01:orderCRMHeader"/>
+				<element minOccurs="0" ref="ApiOrders01:orderInfoHeader"/>
+				<element minOccurs="0" name="ActionAU">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" ref="ApiOrders01:orderLine"/>
+							<element minOccurs="0" ref="ApiOrders01:tibcoAttributes"/>
+							<element minOccurs="0" ref="ApiOrders01:tibcoAttributes35"/>
+							<element minOccurs="0" ref="ApiOrders01:orderMakatA"/>
+							<element minOccurs="0" ref="ApiOrders01:orderMakatB"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" name="ActionR">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" ref="ApiOrders01:orderLine"/>
+							<element minOccurs="0" ref="ApiOrders01:tibcoAttributes"/>
+							<element minOccurs="0" ref="ApiOrders01:tibcoAttributes35"/>
+							<element minOccurs="0" ref="ApiOrders01:orderMakatA"/>
+							<element minOccurs="0" ref="ApiOrders01:orderMakatB"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" name="Action">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" ref="ApiOrders01:orderLine"/>
+							<element minOccurs="0" ref="ApiOrders01:tibcoAttributes"/>
+							<element minOccurs="0" ref="ApiOrders01:tibcoAttributes35"/>
+							<element minOccurs="0" ref="ApiOrders01:orderMakatA"/>
+							<element minOccurs="0" ref="ApiOrders01:orderMakatB"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordEqpBill"/>
+				<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordEqpAdsl"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<!-- CRM ATTRIBUTES -->
+	<element name="CRMAttributes">
+		<complexType>
+			<sequence>
+				<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordCrmAttr"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<!-- TYPE  Declerations-->
+	<element name="orderLine" type="ApiOrders01:TypeLine"/>
+	<element name="orderLineAddressA" type="ApiOrders01:TypeLineAddress"/>
+	<element name="orderLineAddressB" type="ApiOrders01:TypeLineAddress"/>
+	<element name="orderMakatA" type="ApiOrders01:TypeMakat"/>
+	<element name="orderMakatB" type="ApiOrders01:TypeMakat"/>
+	<element name="orderMakatSide" type="ApiOrders01:TypeMakatSide"/>
+	<element name="ordCrmAttr" type="ApiOrders01:TypeOrdCrmAttr"/>
+	<element name="orderAction" type="ApiOrders01:TypeOrderAction"/>
+	<element name="orderActionAU" type="ApiOrders01:TypeOrderAction"/>
+	<element name="orderActionR" type="ApiOrders01:TypeOrderAction"/>
+	<element name="ordBillAtt" type="ApiOrders01:TypeBillingAttr"/>
+	<element name="ordAdslAtt" type="ApiOrders01:TypeBillingAttr"/>
+	<element name="ordBilAct" type="ApiOrders01:TypeOrdBilAct"/>
+	<element name="ordBilAdsl" type="ApiOrders01:TypeOrdBilAdsl"/>
+	<element name="ordEqpBill" type="ApiOrders01:TypeordEqp"/>
+	<element name="ordEqpAdsl" type="ApiOrders01:TypeordEqp"/>
+	<element name="orderInfoHeader" type="ApiOrders01:TypeOrderInfoHeader"/>
+	<element name="orderCRMHeader" type="ApiOrders01:TypeOrderCRMHeader"/>
+	<element name="tibcoAttributes" type="ApiOrders01:TypeTibcoAttributes"/>
+	<element name="tibcoAttributes35" type="ApiOrders01:TypeTibcoAttributes35"/>
+	<element name="mfAttributes" type="ApiOrders01:TypeMFAttributes"/>
+	<element name="mfAttributes35" type="ApiOrders01:TypeMFAttributes35"/>
+
+	<!-- ORDER SYST HEADER TYPE -->
+	<complexType name="TypeOrderCRMHeader">
+		<sequence>
+			<element minOccurs="0" ref="ApiOrders01:interfaceId"/>
+			<element ref="ApiOrders01:captureId"/>
+			<element ref="ApiOrders01:custId"/>
+			<element minOccurs="0" ref="ApiOrders01:nameCust"/>
+			<element minOccurs="0" ref="ApiOrders01:idfNbr"/>
+			<element ref="ApiOrders01:currentDate"/>
+			<element minOccurs="0" ref="ApiOrders01:rbtacctno"/>
+			<element minOccurs="0" ref="ApiOrders01:projectNum"/>
+			<element minOccurs="0" ref="ApiOrders01:priority"/>
+			<element minOccurs="0" ref="ApiOrders01:name"/>
+		</sequence>
+	</complexType>
+
+	<!-- ORDER INFO HEADER TYPE -->
+	<complexType name="TypeOrderInfoHeader">
+		<sequence>
+			<element ref="ApiOrders01:lines"/>
+			<element ref="ApiOrders01:extOrderType"/>
+			<element minOccurs="0" ref="ApiOrders01:ordeActType"/>
+			<element minOccurs="0" ref="ApiOrders01:ordeServType"/>
+		</sequence>
+	</complexType>
+
+	<!-- ORDER ACTION TYPE -->
+	<complexType name="TypeOrderAction">
+		<sequence>
+			<element ref="ApiOrders01:actionType"/>
+			<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:orderLine"/>
+			<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordCrmAttr"/>
+			<element minOccurs="0" ref="ApiOrders01:orderMakatA"/>
+			<element minOccurs="0" ref="ApiOrders01:orderMakatB"/>
+		</sequence>
+	</complexType>
+
+	<!-- CRM ATTR TYPE -->
+	<complexType name="TypeOrdCrmAttr">
+		<sequence>
+			<element ref="ApiOrders01:attributeId"/>
+			<element ref="ApiOrders01:attrName"/>
+			<element ref="ApiOrders01:attributeValue"/>
+		</sequence>
+	</complexType>
+
+	<!-- ORDER BILLING TYPE -->
+	<complexType name="TypeOrdBilAct">
+		<sequence>
+			<element ref="ApiOrders01:ordBilActMod"/>
+			<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordBillAtt"/>
+		</sequence>
+	</complexType>
+
+	<!-- ORDER BILLING ADSL TYPE -->
+	<complexType name="TypeOrdBilAdsl">
+		<sequence>
+			<element ref="ApiOrders01:ordBilActMod"/>
+			<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:ordAdslAtt"/>
+		</sequence>
+	</complexType>
+
+	<!-- BILLING ATTR TYPE -->
+	<complexType name="TypeBillingAttr">
+		<sequence>
+			<element minOccurs="0" ref="ApiOrders01:billingAttrNb"/>
+			<element ref="ApiOrders01:admStypeMain"/>
+			<element minOccurs="0" ref="ApiOrders01:admStypeSub"/>
+			<element minOccurs="0" ref="ApiOrders01:billingAttrcod"/>
+			<element minOccurs="0" ref="ApiOrders01:billingAttr"/>
+			<element minOccurs="0" name="intOper" type="string"/>
+		</sequence>
+	</complexType>
+
+	<!-- EQUIPMENT TYPE -->
+	<complexType name="TypeordEqp">
+		<sequence>
+			<element minOccurs="0" ref="EquipmentCodes02:RepData"/>
+		</sequence>
+	</complexType>
+
+	<!-- LINE TYPE -->
+	<complexType name="TypeLine">
+		<sequence>
+			<element ref="ApiOrders01:extOrderType"/>
+			<element minOccurs="0" ref="ApiOrders01:ordeActType"/>
+			<element minOccurs="0" ref="ApiOrders01:ordeServType"/>
+			<element ref="ApiOrders01:rbtactionCode"/>
+			<element ref="ApiOrders01:lineActionReason"/>
+			<element minOccurs="0" ref="ApiOrders01:subsType"/>
+			<element ref="ApiOrders01:startDt"/>
+			<element minOccurs="0" ref="ApiOrders01:beginTime"/>
+			<element minOccurs="0" ref="ApiOrders01:endTime"/>
+			<element ref="ApiOrders01:captureDate"/>
+			<element ref="ApiOrders01:areaCode"/>
+			<element ref="ApiOrders01:phoneNbr"/>
+			<element minOccurs="0" ref="ApiOrders01:areaPhnWr"/>
+			<element minOccurs="0" ref="ApiOrders01:phoneWr"/>
+			<element ref="ApiOrders01:emplId"/>
+			<element minOccurs="0" ref="ApiOrders01:areaSvNet"/>
+			<element minOccurs="0" ref="ApiOrders01:phoneSvNet"/>
+			<element minOccurs="0" ref="ApiOrders01:moveCode"/>
+			<element minOccurs="0" ref="ApiOrders01:lineTypeSys35"/>
+			<element minOccurs="0" ref="ApiOrders01:sibatNayadut"/>
+			<element minOccurs="0" ref="ApiOrders01:reasonRemove"/>
+			<element minOccurs="0" ref="ApiOrders01:meracezetNum"/>
+			<element minOccurs="0" ref="ApiOrders01:egedGroup"/>
+			<element minOccurs="0" ref="ApiOrders01:parentLineNbr"/>
+			<element minOccurs="0" ref="ApiOrders01:infSideA"/>
+			<element minOccurs="0" ref="ApiOrders01:infSideB"/>
+			<element minOccurs="0" ref="ApiOrders01:copy"/>
+			<element minOccurs="0" ref="ApiOrders01:orderLineAddressA"/>
+			<element minOccurs="0" ref="ApiOrders01:orderLineAddressB"/>
+		</sequence>
+	</complexType>
+
+	<!-- LINE ADDRESS TYPE -->
+	<complexType name="TypeLineAddress">
+		<sequence>
+			<element ref="ApiOrders01:equipmentSide"/>
+			<element ref="ApiOrders01:cityAc"/>
+			<element ref="ApiOrders01:city"/>
+			<element ref="ApiOrders01:address1Ac"/>
+			<element ref="ApiOrders01:address1"/>
+			<element ref="ApiOrders01:num1"/>
+			<element minOccurs="0" ref="ApiOrders01:num2"/>
+			<element minOccurs="0" ref="ApiOrders01:addrField3"/>
+			<element minOccurs="0" ref="ApiOrders01:addrField2"/>
+			<element ref="ApiOrders01:address3"/>
+			<element minOccurs="0" ref="ApiOrders01:merkaz4"/>
+			<element minOccurs="0" ref="ApiOrders01:idSite"/>
+			<element minOccurs="0" ref="ApiOrders01:misparMitkan"/>
+			<element ref="ApiOrders01:nameContact"/>
+			<element ref="ApiOrders01:areaContact"/>
+			<element ref="ApiOrders01:phoneContact"/>
+			<element minOccurs="0" ref="ApiOrders01:nameCust"/>
+			<element minOccurs="0" ref="ApiOrders01:areaCode"/>
+			<element minOccurs="0" ref="ApiOrders01:phoneNbr"/>
+		</sequence>
+	</complexType>
+
+	<!-- MAKAT TYPE -->
+	<complexType name="TypeMakat">
+		<sequence>
+			<element minOccurs="0" ref="ApiOrders01:equipmentSide"/>
+			<element maxOccurs="unbounded" minOccurs="0" ref="ApiOrders01:orderMakatSide"/>
+		</sequence>
+	</complexType>
+
+	<!-- MAKAT SIDE TYPE -->
+	<complexType name="TypeMakatSide">
+		<sequence>
+			<element minOccurs="0" ref="ApiOrders01:mktQuantity"/>
+			<element minOccurs="0" ref="ApiOrders01:makat"/>
+			<element minOccurs="0" ref="ApiOrders01:inventoryGeometricalCode"/>
+		</sequence>
+	</complexType>
+
+	<!-- 01 TIBCO ATTRIBUTES TYPE -->
+	<complexType name="TypeTibcoAttributes">
+		<sequence>
+			<element minOccurs="0" ref="ApiOrders01:connectVpnGrpEzor"/>
+			<element minOccurs="0" ref="ApiOrders01:connectVpnGrpMispar"/>
+			<element minOccurs="0" ref="ApiOrders01:baltmdm"/>
+			<element minOccurs="0" ref="ApiOrders01:instler"/>
+			<element minOccurs="0" ref="ApiOrders01:internetBlock"/>
+			<element minOccurs="0" ref="ApiOrders01:destNoEzor"/>
+			<element minOccurs="0" ref="ApiOrders01:destNoMispar"/>
+			<element minOccurs="0" ref="ApiOrders01:destNo1193Ezor"/>
+			<element minOccurs="0" ref="ApiOrders01:destNo1193Mispar"/>
+			<element minOccurs="0" ref="ApiOrders01:install"/>
+			<element minOccurs="0" ref="ApiOrders01:leadingNoEzor"/>
+			<element minOccurs="0" ref="ApiOrders01:leadingNoMispar"/>
+			<element minOccurs="0" ref="ApiOrders01:numberType"/>
+			<element minOccurs="0" ref="ApiOrders01:contractorEzor"/>
+			<element minOccurs="0" ref="ApiOrders01:contractorMispar"/>
+			<element minOccurs="0" ref="ApiOrders01:ApilineType"/>
+			<element minOccurs="0" ref="ApiOrders01:intOper"/>
+			<element minOccurs="0" ref="ApiOrders01:destNo"/>
+		</sequence>
+	</complexType>
+
+	<!-- 01 MF ATTRIBUTES TYPE -->
+	<complexType name="TypeMFAttributes">
+		<all>
+			<element minOccurs="0" ref="ApiOrders01:connectVpnGrp"/>
+			<element minOccurs="0" ref="ApiOrders01:baltmdm"/>
+			<element minOccurs="0" ref="ApiOrders01:instler"/>
+			<element minOccurs="0" ref="ApiOrders01:internetBlock"/>
+			<element minOccurs="0" ref="ApiOrders01:destNo"/>
+			<element minOccurs="0" ref="ApiOrders01:destNo1193"/>
+			<element minOccurs="0" ref="ApiOrders01:install"/>
+			<element minOccurs="0" ref="ApiOrders01:leadingNo"/>
+			<element minOccurs="0" ref="ApiOrders01:numberType"/>
+			<element minOccurs="0" ref="ApiOrders01:contractor"/>
+			<element minOccurs="0" ref="ApiOrders01:lineType"/>
+			<element minOccurs="0" ref="ApiOrders01:sugKavTa"/>
+			<element minOccurs="0" ref="ApiOrders01:sugKavAkov"/>
+			<element minOccurs="0" ref="ApiOrders01:sug"/>
+			<element minOccurs="0" ref="ApiOrders01:sugKavNeto"/>
+			<element minOccurs="0" ref="ApiOrders01:sugKavNaki"/>
+			<element minOccurs="0" ref="ApiOrders01:intOper"/>
+		</all>
+	</complexType>
+
+	<!-- 35 TIBCO ATTRIBUTES TYPE -->
+	<complexType name="TypeTibcoAttributes35">
+		<sequence>
+
+			<!-- API-35-680-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugTim"/>
+			<element minOccurs="0" ref="ApiOrders01:maslul"/>
+			<element minOccurs="0" ref="ApiOrders01:lenkhf1"/>
+			<element minOccurs="0" ref="ApiOrders01:lenkhf2"/>
+			<element minOccurs="0" ref="ApiOrders01:lentms1"/>
+			<element minOccurs="0" ref="ApiOrders01:lentmsEth"/>
+			<element minOccurs="0" ref="ApiOrders01:lentmsDirect"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshkEth"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshkTime1"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshkSun"/>
+			<element minOccurs="0" ref="ApiOrders01:thSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:e1Speed"/>
+			<element minOccurs="0" ref="ApiOrders01:directSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:sugGibui"/>
+			<element minOccurs="0" ref="ApiOrders01:kodMerchak"/>
+			<element minOccurs="0" ref="ApiOrders01:drisha"/>
+			<element minOccurs="0" ref="ApiOrders01:ofiKav"/>
+
+			<!-- API-35-980-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugVpnGrp"/>
+			<element minOccurs="0" ref="ApiOrders01:fromIp"/>
+			<element minOccurs="0" ref="ApiOrders01:toIp"/>
+			<element minOccurs="0" ref="ApiOrders01:ipDnsMain"/>
+			<element minOccurs="0" ref="ApiOrders01:ipDnsSec"/>
+
+			<!-- API-35-720-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugBol"/>
+			<element minOccurs="0" ref="ApiOrders01:bolAcSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshk"/>
+
+			<!-- API-35-450-950-710-960-17 -->
+			<element minOccurs="0" ref="ApiOrders01:qosAtmlogi"/>
+			<element minOccurs="0" ref="ApiOrders01:atmdlogiSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:atmlogiSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:qosSfr"/>
+			<element minOccurs="0" ref="ApiOrders01:qosAtmd"/>
+			<element minOccurs="0" ref="ApiOrders01:qosVcas"/>
+			<element minOccurs="0" ref="ApiOrders01:frCirSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:fr128CirSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:frMaxSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:sfrlogiMaxSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:vcaslogiSpeed"/>
+
+			<!-- API-35-450-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugFr"/>
+			<element minOccurs="0" ref="ApiOrders01:mishtar"/>
+			<element minOccurs="0" ref="ApiOrders01:ziudLakoh"/>
+			<element minOccurs="0" ref="ApiOrders01:mshkManui"/>
+			<element minOccurs="0" ref="ApiOrders01:frSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:mshkReshet"/>
+
+			<!-- API-35-777-17 -->
+			<element minOccurs="0" ref="ApiOrders01:ipLogiSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:qosIp"/>
+
+			<!-- API-35-777-10 -->
+			<element minOccurs="0" ref="ApiOrders01:acGibuy"/>
+			<element minOccurs="0" ref="ApiOrders01:sugIpvpnIntra"/>
+			<element minOccurs="0" ref="ApiOrders01:ipAcSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:acMgube"/>
+		</sequence>
+	</complexType>
+
+	<!-- 35 MF ATTRIBUTES TYPE -->
+	<complexType name="TypeMFAttributes35">
+		<all>
+
+			<!-- API-35-680-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugTim"/>
+			<element minOccurs="0" ref="ApiOrders01:maslul"/>
+			<element minOccurs="0" ref="ApiOrders01:lenkhf1"/>
+			<element minOccurs="0" ref="ApiOrders01:lenkhf2"/>
+			<element minOccurs="0" ref="ApiOrders01:lentms1"/>
+			<element minOccurs="0" ref="ApiOrders01:lentmsEth"/>
+			<element minOccurs="0" ref="ApiOrders01:lentmsDirect"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshkEth"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshkTime1"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshkSun"/>
+			<element minOccurs="0" ref="ApiOrders01:thSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:e1Speed"/>
+			<element minOccurs="0" ref="ApiOrders01:directSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:sugGibui"/>
+			<element minOccurs="0" ref="ApiOrders01:kodMerchak"/>
+			<element minOccurs="0" ref="ApiOrders01:drisha"/>
+			<element minOccurs="0" ref="ApiOrders01:ofiKav"/>
+
+			<!-- API-35-980-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugVpnGrp"/>
+			<element minOccurs="0" ref="ApiOrders01:fromIp"/>
+			<element minOccurs="0" ref="ApiOrders01:toIp"/>
+			<element minOccurs="0" ref="ApiOrders01:ipDnsMain"/>
+			<element minOccurs="0" ref="ApiOrders01:ipDnsSec"/>
+
+			<!-- API-35-720-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugBol"/>
+			<element minOccurs="0" ref="ApiOrders01:bolAcSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:sugMshk"/>
+
+			<!-- API-35-450-950-710-960-17 -->
+			<element minOccurs="0" ref="ApiOrders01:qosAtmlogi"/>
+			<element minOccurs="0" ref="ApiOrders01:atmdlogiSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:atmlogiSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:qosSfr"/>
+			<element minOccurs="0" ref="ApiOrders01:qosAtmd"/>
+			<element minOccurs="0" ref="ApiOrders01:qosVcas"/>
+			<element minOccurs="0" ref="ApiOrders01:frCirSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:fr128CirSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:frMaxSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:sfrlogiMaxSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:vcaslogiSpeed"/>
+
+			<!-- API-35-450-10 -->
+			<element minOccurs="0" ref="ApiOrders01:sugFr"/>
+			<element minOccurs="0" ref="ApiOrders01:mishtar"/>
+			<element minOccurs="0" ref="ApiOrders01:ziudLakoh"/>
+			<element minOccurs="0" ref="ApiOrders01:mshkManui"/>
+			<element minOccurs="0" ref="ApiOrders01:frSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:mshkReshet"/>
+
+			<!-- API-35-777-17 -->
+			<element minOccurs="0" ref="ApiOrders01:ipLogiSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:qosIp"/>
+
+			<!-- API-35-777-10 -->
+			<element minOccurs="0" ref="ApiOrders01:acGibuy"/>
+			<element minOccurs="0" ref="ApiOrders01:sugIpvpnIntra"/>
+			<element minOccurs="0" ref="ApiOrders01:ipAcSpeed"/>
+			<element minOccurs="0" ref="ApiOrders01:acMgube"/>
+		</all>
+	</complexType>
+
+	<!-- LINE FIELDS -->
+	<element name="extOrderType" type="integer"/>
+	<element name="ordeActType" type="integer"/>
+	<element name="ordeServType" type="integer"/>
+	<element name="rbtactionCode" type="string"/>
+	<element name="lineActionReason" type="string"/>
+	<element name="subsType" type="integer"/>
+	<element name="startDt" type="date"/>
+	<element name="beginTime" type="time"/>
+	<element name="endTime" type="time"/>
+	<element name="captureDate" type="date"/>
+	<element name="areaCode" type="integer"/>
+	<element name="phoneNbr" type="integer"/>
+	<element name="areaPhnWr" type="integer"/>
+	<element name="phoneWr" type="integer"/>
+	<element name="emplId" type="integer"/>
+	<element name="areaSvNet" type="integer"/>
+	<element name="phoneSvNet" type="integer"/>
+	<element name="moveCode" type="integer"/>
+	<element name="lineTypeSys35" type="integer"/>
+	<element name="sibatNayadut" type="integer"/>
+	<element name="reasonRemove" type="integer"/>
+	<element name="meracezetNum" type="integer"/>
+	<element name="egedGroup" type="integer"/>
+	<element name="parentLineNbr" type="string"/>
+	<element name="infSideA" type="string"/>
+	<element name="infSideB" type="string"/>
+	<element name="copy" type="string"/>
+
+	<!-- LINE ADDRESS FIELDS -->
+	<element name="equipmentSide" type="string"/>
+	<element name="cityAc" type="string"/>
+	<element name="city" type="string"/>
+	<element name="address1Ac" type="string"/>
+	<element name="address1" type="string"/>
+	<element name="num1" type="integer"/>
+	<element name="num2" type="string"/>
+	<element name="addrField3" type="string"/>
+	<element name="addrField2" type="integer"/>
+	<element name="address3" type="integer"/>
+	<element name="merkaz4" type="integer"/>
+	<element name="idSite" type="integer"/>
+	<element name="misparMitkan" type="integer"/>
+	<element name="nameContact" type="string"/>
+	<element name="areaContact" type="integer"/>
+	<element name="phoneContact" type="integer"/>
+	<element name="nameCust" type="string"/>
+
+	<!-- MAKAT FIELDS -->
+	<element name="mktQuantity" type="integer"/>
+	<element name="makat" type="integer"/>
+	<element name="inventoryGeometricalCode" type="string"/>
+
+	<!-- CRM ATTR FIELDS -->
+	<element name="attributeId" type="string"/>
+	<element name="attrName" type="string"/>
+	<element name="attributeValue" type="string"/>
+
+	<!-- ORDER ACTION FIELDS -->
+	<element name="actionType" type="string"/>
+
+	<!-- ORDER SYST HEADER FIELDS -->
+	<element name="interfaceId" type="string"/>
+	<element name="captureId" type="string"/>
+	<element name="custId" type="integer"/>
+	<element name="idfNbr" type="integer"/>
+	<element name="currentDate" type="date"/>
+	<element name="rbtacctno" type="integer"/>
+	<element name="projectNum" type="integer"/>
+	<element name="priority" type="string"/>
+	<element name="name" type="string"/>
+
+	<!-- ORDER INFO HEADER FIELDS -->
+	<element name="lines" type="string"/>
+
+	<!-- ORDER BILLING FIELDS -->
+	<element name="ordBilActMod" type="string"/>
+
+	<!-- BILLING ATTR FIELDS -->
+	<element name="billingAttrNb" type="string"/>
+	<element name="admStypeMain" type="string"/>
+	<element name="admStypeSub" type="string"/>
+	<element name="billingAttrcod" type="string"/>
+	<element name="billingAttr" type="string"/>
+	<element name="intOper" type="string"/>
+
+	<!-- 01 MF + TIBCO ATTRIBUTES FIELDS -->
+	<element name="connectVpnGrp">
+		<simpleType>
+			<restriction base="string">
+				<minLength value="9"/>
+				<maxLength value="10"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="connectVpnGrpEzor" type="string"/>
+	<element name="connectVpnGrpMispar" type="string"/>
+	<element name="baltmdm" type="string"/>
+	<element name="instler" type="string"/>
+	<element name="internetBlock" type="string"/>
+	<element name="destNo">
+		<simpleType>
+			<restriction base="string">
+				<minLength value="9"/>
+				<maxLength value="10"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="destNoEzor" type="string"/>
+	<element name="destNoMispar" type="string"/>
+	<element name="destNo1193">
+		<simpleType>
+			<restriction base="string">
+				<minLength value="9"/>
+				<maxLength value="10"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="destNo1193Ezor" type="string"/>
+	<element name="destNo1193Mispar" type="string"/>
+	<element name="install" type="string"/>
+	<element name="leadingNo">
+		<simpleType>
+			<restriction base="string">
+				<minLength value="9"/>
+				<maxLength value="10"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="leadingNoEzor" type="string"/>
+	<element name="leadingNoMispar" type="string"/>
+	<element name="numberType" type="string"/>
+	<element name="contractor">
+		<simpleType>
+			<restriction base="string">
+				<minLength value="9"/>
+				<maxLength value="10"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="contractorEzor" type="string"/>
+	<element name="contractorMispar" type="string"/>
+	<element name="ApilineType" type="string"/>
+	<element name="lineType" type="string"/>
+	<element name="sugKavTa" type="string"/>
+	<element name="sugKavAkov" type="string"/>
+	<element name="sug" type="string"/>
+	<element name="sugKavNeto" type="string"/>
+	<element name="sugKavNaki" type="string"/>
+
+	<!-- 35 MF ATTRIBUTES FIELDS -->
+	<!-- API-35-680-10 -->
+	<element name="sugTim" type="string"/>
+	<element name="maslul" type="string"/>
+	<element name="lenkhf1" type="string"/>
+	<element name="lenkhf2" type="string"/>
+	<element name="lentms1" type="string"/>
+	<element name="lentmsEth" type="string"/>
+	<element name="lentmsDirect" type="string"/>
+	<element name="sugMshkEth" type="string"/>
+	<element name="sugMshkTime1" type="string"/>
+	<element name="sugMshkSun" type="string"/>
+	<element name="thSpeed" type="string"/>
+	<element name="e1Speed" type="string"/>
+	<element name="directSpeed" type="string"/>
+	<element name="sugGibui" type="string"/>
+	<element name="kodMerchak" type="string"/>
+	<element name="drisha" type="string"/>
+	<element name="ofiKav" type="string"/>
+
+	<!-- API-35-980-10 -->
+	<element name="sugVpnGrp" type="string"/>
+	<element name="fromIp" type="string"/>
+	<element name="toIp" type="string"/>
+	<element name="ipDnsMain" type="string"/>
+	<element name="ipDnsSec" type="string"/>
+
+	<!-- API-35-720-10 -->
+	<element name="sugBol" type="string"/>
+	<element name="bolAcSpeed" type="string"/>
+	<element name="sugMshk" type="string"/>
+
+	<!-- API-35-450-950-710-960-17 -->
+	<element name="qosAtmlogi" type="string"/>
+	<element name="atmdlogiSpeed" type="string"/>
+	<element name="atmlogiSpeed" type="string"/>
+	<element name="qosSfr" type="string"/>
+	<element name="qosAtmd" type="string"/>
+	<element name="qosVcas" type="string"/>
+	<element name="frCirSpeed" type="string"/>
+	<element name="fr128CirSpeed" type="string"/>
+	<element name="frMaxSpeed" type="string"/>
+	<element name="sfrlogiMaxSpeed" type="string"/>
+	<element name="vcaslogiSpeed" type="string"/>
+
+	<!-- API-35-720-10 -->
+	<element name="sugFr" type="string"/>
+	<element name="mishtar" type="string"/>
+	<element name="ziudLakoh" type="string"/>
+	<element name="mshkManui" type="string"/>
+	<element name="frSpeed" type="string"/>
+	<element name="mshkReshet" type="string"/>
+
+	<!-- API-35-777-17 -->
+	<element name="ipLogiSpeed" type="string"/>
+	<element name="qosIp" type="string"/>
+
+	<!-- API-35-777-10 -->
+	<element name="acGibuy" type="string"/>
+	<element name="sugIpvpnIntra" type="string"/>
+	<element name="ipAcSpeed" type="string"/>
+	<element name="acMgube" type="string"/>
+</schema>

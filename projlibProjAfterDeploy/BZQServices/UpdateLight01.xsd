@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateLight01="http://www.bezeq.co.il/XMLSchema/UpdateLight01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateLight01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="updateType" type="string"/>
+							<element minOccurs="0" name="subscriberNumber" type="string"/>
+							<element minOccurs="0" name="endCenter" type="string"/>
+							<element minOccurs="0" name="endFrame" type="string"/>
+							<element minOccurs="0" name="endMitkan" type="string"/>
+							<element minOccurs="0" name="endType" type="string"/>
+							<element minOccurs="0" name="endNum" type="string"/>
+							<element minOccurs="0" name="lastEndPortNum" type="string"/>
+							<element minOccurs="0" name="lastOltIpAddress" type="string"/>
+							<element minOccurs="0" name="oltShelf" type="string"/>
+							<element minOccurs="0" name="oltSlot" type="string"/>
+							<element minOccurs="0" name="oltPort" type="string"/>
+							<element minOccurs="0" name="lastEndPortLightPower" type="string"/>
+							<element minOccurs="0" name="lastEndTestUserID" type="string"/>
+							<element minOccurs="0" name="lastEndTestDate" type="string"/>
+							<element minOccurs="0" name="chainCount" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="endData">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="equipMitkanNameStart" type="string"/>
+										<element minOccurs="0" name="equipMitkanCodeStart" type="string"/>
+										<element minOccurs="0" name="equipNameStart" type="string"/>
+										<element minOccurs="0" name="equipTypeStart" type="string"/>
+										<element minOccurs="0" name="equipNumStart" type="string"/>
+										<element minOccurs="0" name="equipDescStart" type="string"/>
+										<element minOccurs="0" name="equipPortsCountStart" type="string"/>
+										<element minOccurs="0" name="equipPortOutStart" type="string"/>
+										<element minOccurs="0" name="cableStart" type="string"/>
+										<element minOccurs="0" name="cablePlanetStart" type="string"/>
+										<element minOccurs="0" name="fiberStart" type="string"/>
+										<element minOccurs="0" name="cableEnd" type="string"/>
+										<element minOccurs="0" name="cablePlanetEnd" type="string"/>
+										<element minOccurs="0" name="fiberEnd" type="string"/>
+										<element minOccurs="0" name="equipMitkanNameEnd" type="string"/>
+										<element minOccurs="0" name="equipMitkanCodeEnd" type="string"/>
+										<element minOccurs="0" name="equipNameEnd" type="string"/>
+										<element minOccurs="0" name="equipTypeEnd" type="string"/>
+										<element minOccurs="0" name="equipNumEnd" type="string"/>
+										<element minOccurs="0" name="equipDescEnd" type="string"/>
+										<element minOccurs="0" name="equipPortsCountEnd" type="string"/>
+										<element minOccurs="0" name="equipPortInEnd" type="string"/>
+										<element minOccurs="0" name="beam" type="string"/>
+										<element minOccurs="0" name="beamTimeCode" type="string"/>
+										<element minOccurs="0" name="beamTimeDesc" type="string"/>
+										<element minOccurs="0" name="beamStatusCode" type="string"/>
+										<element minOccurs="0" name="beamStatusDesc" type="string"/>
+										<element minOccurs="0" name="beamMarketingCode" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="errorCode" type="string"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

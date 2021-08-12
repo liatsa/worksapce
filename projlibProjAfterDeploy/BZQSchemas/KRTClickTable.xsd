@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTClickTable="http://www.bezeq.co.il/XMLSchema/KRTClickTable"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTClickTable"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="KRTClickTable">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="interfaceId" type="xs:string" minOccurs="0"/>
+				<xs:element name="actiontype" type="xs:string"/>
+				<xs:element name="typeId" type="xs:string"/>
+				<xs:element name="code" type="xs:string"/>
+				<xs:element name="name" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

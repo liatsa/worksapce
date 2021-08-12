@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderInfo04="http://www.bezeq.co.il/XMLSchema/OrderInfo04" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderInfo04">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="projectId" type="integer"/>
+							<element minOccurs="0" name="cityId" type="integer"/>
+							<element minOccurs="0" name="streetId" type="integer"/>
+							<element minOccurs="0" name="houseNumber" type="integer"/>
+							<element minOccurs="0" name="letter" type="string"/>
+							<element minOccurs="0" name="productType" type="string"/>
+							<element minOccurs="0" name="orderStatus" type="string"/>
+							<element minOccurs="0" name="pagesize" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="projectId" type="integer"/>
+							<element minOccurs="0" name="projectOrderCounter" type="integer"/>
+							<element name="messageId" type="integer"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="orderDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderId" type="integer"/>
+										<element maxOccurs="1" minOccurs="0" name="productId" type="integer"/>
+										<element maxOccurs="1" minOccurs="0" name="productAction" type="integer"/>					
+										<element minOccurs="0" name="parentProductType" type="string"/>
+										<element maxOccurs="1" minOccurs="0" name="ComponentId" type="integer"/>
+										<element maxOccurs="1" minOccurs="0" name="ComponentAction" type="integer"/>
+										<element minOccurs="0" name="productSubType" type="string"/>
+										<element minOccurs="0" name="requestActionId" type="string"/>
+										<element minOccurs="0" name="lineType" type="string"/>
+										<element minOccurs="0" name="orderStatus" type="integer"/>
+										<element minOccurs="0" name="orderStatusDesc" type="string"/>
+										<element minOccurs="0" name="componentNumber" type="string"/>
+										<element minOccurs="0" name="cItyId" type="integer"/>
+										<element minOccurs="0" name="side" type="string"/>
+										<element minOccurs="0" name="cityName" type="string"/>
+										<element minOccurs="0" name="streetId" type="integer"/>
+										<element minOccurs="0" name="streetName" type="string"/>
+										<element minOccurs="0" name="houseNumber" type="integer"/>
+										<element minOccurs="0" name="letter" type="string"/>
+										<element minOccurs="0" name="orderDate" type="dateTime"/>
+										<element minOccurs="0" name="mobilityType" type="string"/>
+										<element minOccurs="0" name="pageNo" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

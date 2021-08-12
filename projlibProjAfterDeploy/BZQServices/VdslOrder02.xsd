@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:VdslOrder02="http://www.bezeq.co.il/XMLSchema/VdslOrder02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/VdslOrder02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="InterfaceId" type="xs:string"/>
+							<xs:element name="OrderCount" type="xs:string"/>
+							<xs:element maxOccurs="10" name="Order">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="OrderDate" type="xs:string"/>
+										<xs:element minOccurs="0" name="Division" type="xs:integer"/>
+										<xs:element minOccurs="0" name="Core" type="xs:integer"/>
+										<xs:element minOccurs="0" name="PhoneNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="AccuntName" type="xs:string"/>
+										<xs:element minOccurs="0" name="SettelmentName" type="xs:string"/>
+										<xs:element minOccurs="0" name="StreetName" type="xs:string"/>
+										<xs:element minOccurs="0" name="HouseNumber" type="xs:string"/>
+										<xs:element name="OrderNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="OrderStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="OrderType" type="xs:string"/>
+										<xs:element name="ActionCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="Core1" type="xs:integer"/>
+										<xs:element minOccurs="0" name="Exchange" type="xs:integer"/>
+										<xs:element minOccurs="0" name="Equipment" type="xs:integer"/>
+										<xs:element minOccurs="0" name="Frame" type="xs:string"/>
+										<xs:element minOccurs="0" name="Tag" type="xs:string"/>
+										<xs:element minOccurs="0" name="onuid" type="xs:string"/>
+										<xs:element minOccurs="0" name="serialnumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="Rb" type="xs:string"/>
+										<xs:element minOccurs="0" name="Port" type="xs:string"/>
+										<xs:element minOccurs="0" name="Vp" type="xs:string"/>
+										<xs:element minOccurs="0" name="Vc" type="xs:string"/>
+										<xs:element minOccurs="0" name="VpD" type="xs:string"/>
+										<xs:element minOccurs="0" name="Bundle" type="xs:string"/>
+										<xs:element minOccurs="0" name="CallCenter" type="xs:string"/>
+										<xs:element minOccurs="0" name="PhoneNumberNew" type="xs:string"/>
+										<xs:element minOccurs="0" name="IpAddress" type="xs:string"/>
+										<xs:element minOccurs="0" name="FromVp" type="xs:string"/>
+										<xs:element minOccurs="0" name="FromVc" type="xs:string"/>
+										<xs:element minOccurs="0" name="OrderGroup" type="xs:string"/>
+										<xs:element minOccurs="0" name="ServiceBlock" type="xs:string"/>
+										<xs:element minOccurs="0" name="BusinessBlock" type="xs:string"/>
+										<xs:element minOccurs="0" name="IpMaster" type="xs:string"/>
+										<xs:element minOccurs="0" name="SlotTani" type="xs:string"/>
+										<xs:element minOccurs="0" name="PortTani" type="xs:string"/>
+										<xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="PCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="BundleNew" type="xs:string"/>
+										<xs:element minOccurs="0" name="ServiceType" type="xs:string"/>
+										<xs:element minOccurs="0" name="Downstream" type="xs:string"/>
+										<xs:element minOccurs="0" name="UpStream" type="xs:string"/>
+										<xs:element minOccurs="0" name="Split" type="xs:string"/>
+										<xs:element minOccurs="0" name="TdUp" type="xs:string"/>
+										<xs:element minOccurs="0" name="TdDown" type="xs:string"/>
+										<xs:element minOccurs="0" name="VpConcate" type="xs:string"/>
+										<xs:element minOccurs="0" name="VcConcate" type="xs:string"/>
+										<xs:element minOccurs="0" name="TdUpConcate" type="xs:string"/>
+										<xs:element minOccurs="0" name="TdDownConcate" type="xs:string"/>
+										<xs:element minOccurs="0" name="AdslType" type="xs:string"/>
+										<xs:element minOccurs="0" name="AtmGbe" type="xs:string"/>
+										<xs:element minOccurs="0" name="ActionCodeOriginal" type="xs:string"/>
+										<xs:element minOccurs="0" name="Project" type="xs:string"/>
+										<xs:element minOccurs="0" name="Destination" type="xs:string"/>
+										<xs:element minOccurs="0" name="SugSal" type="xs:string"/>
+										<xs:element minOccurs="0" name="OrderSource" type="xs:string"/>
+										<xs:element minOccurs="0" name="SmsPhone" type="xs:string"/>
+										<xs:element minOccurs="0" name="Meser" type="xs:string"/>
+										<xs:element minOccurs="0" name="Moed" type="xs:string"/>
+										<xs:element minOccurs="0" name="TlmReserva1" type="xs:string"/>
+										<xs:element minOccurs="0" name="GPON" type="xs:string"/>
+				<xs:element minOccurs="0" name="heker" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

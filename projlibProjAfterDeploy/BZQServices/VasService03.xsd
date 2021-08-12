@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:VasService03="http://www.bezeq.co.il/XMLSchema/VasService03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/VasService03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="nasFlag" type="xs:string"/>
+							<xs:element name="phoneNumber" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="services">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="billingServiceId" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="params">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="paramName" type="xs:string"/>
+										<xs:element minOccurs="0" name="paramValue" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="phoneNumber" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="services">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="billingServiceId" type="xs:integer"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="serviceAttributes">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="serviceAttributeName" type="xs:string"/>
+													<xs:element minOccurs="0" name="serviceAttributeValue" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="providerData" type="xs:string"/>
+										<xs:element minOccurs="0" name="ossServiceStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="ossServiceReturnCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="ossServiceReturnDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="providerServiceStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="providerServiceReturnCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="providerServiceReturnDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="status" type="xs:string"/>
+							<xs:element minOccurs="0" name="returnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="returnDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

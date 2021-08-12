@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:DpDetails01="http://www.bezeq.co.il/XMLSchema/DpDetails01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/DpDetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interface" type="xs:string"/>
+							<xs:element name="misparMerkaz" type="xs:integer"/>
+							<xs:element name="misparMisgeret" type="xs:integer"/>
+							<xs:element name="miTag" type="xs:integer"/>
+							<xs:element name="adTag" type="xs:integer"/>
+							<xs:element name="teudatZehut" type="xs:string"/>
+							<xs:element name="firstName" type="xs:string"/>
+							<xs:element name="lastName" type="xs:string"/>
+							<xs:element name="systemName" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interface" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="miTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="adTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="systemName" type="xs:string"/>
+							<xs:element minOccurs="0" name="teudatZehut" type="xs:string"/>
+							<xs:element name="moneZugot" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="zugot">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="misparTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tchunatTag" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurStatusTag" type="xs:string"/>
+										<xs:element minOccurs="0" name="cabel" type="xs:integer"/>
+										<xs:element minOccurs="0" name="natich" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misparTagGishur" type="xs:integer"/>
+										<xs:element minOccurs="0" name="merkazYaad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgeretYaad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tagYaad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurMisgeretYaad" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparManuy" type="xs:string"/>
+										<xs:element minOccurs="0" name="sugKav" type="xs:integer"/>
+										<xs:element minOccurs="0" name="yeshuvManuy" type="xs:string"/>
+										<xs:element minOccurs="0" name="rechovManuy" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparBaitManuy" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparDiraManuy" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="messageNbr" type="xs:string"/>
+							<xs:element name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

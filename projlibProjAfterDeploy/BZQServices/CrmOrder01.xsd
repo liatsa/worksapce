@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CrmOrder01="http://www.bezeq.co.il/XMLSchema/CrmOrder01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CrmOrder01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceID" type="xs:string"/>
+							<xs:element name="setupCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtId" type="xs:string"/>
+							<xs:element minOccurs="0" name="custId" type="xs:string"/>
+							<xs:element minOccurs="0" name="payCustId" type="xs:string"/>
+							<xs:element minOccurs="0" name="rbtAcctNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="idfNbr" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="orderData">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="fullPhoneNbr" type="xs:string"/>
+										<xs:element name="payCustId" type="xs:string"/>
+										<xs:element name="rbtAcctNo" type="xs:string"/>
+										<xs:element name="startDt" type="xs:date"/>
+										<xs:element name="empId" type="xs:string"/>
+										<xs:element minOccurs="0" name="notes254" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

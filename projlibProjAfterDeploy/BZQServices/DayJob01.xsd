@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:DayJob01="http://www.bezeq.co.il/XMLSchema/DayJob01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/DayJob01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+				<xs:element name="actionType" type="xs:integer"/>
+				<xs:element name="dayJobId" type="xs:integer"/>
+				<xs:element minOccurs="0" name="taskId" type="xs:integer"/>
+				<xs:element minOccurs="0" name="description" type="xs:string"/>
+				<xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+				<xs:element minOccurs="0" name="areaCode" type="xs:integer"/>
+				<xs:element minOccurs="0" name="frameType  " type="xs:integer"/>
+				<xs:element minOccurs="0" name="center" type="xs:integer"/>
+				<xs:element minOccurs="0" name="status" type="xs:integer"/>
+				<xs:element minOccurs="0" name="activityTypeCode" type="xs:integer"/>
+				<xs:element minOccurs="0" name="activitySubtypeCode" type="xs:integer"/>
+				<xs:element minOccurs="0" name="frame" type="xs:integer"/>
+				<xs:element minOccurs="0" name="tagStart" type="xs:integer"/>
+				<xs:element minOccurs="0" name="tagEnd" type="xs:integer"/>
+				<xs:element minOccurs="0" name="cableLocationCode" type="xs:integer"/>
+				<xs:element minOccurs="0" name="cableSizeCode" type="xs:integer"/>
+				<xs:element minOccurs="0" name="cableLength" type="xs:integer"/>
+				<xs:element minOccurs="0" name="remark" type="xs:string"/>
+				<xs:element minOccurs="0" name="createdBy" type="xs:string"/>	
+				</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

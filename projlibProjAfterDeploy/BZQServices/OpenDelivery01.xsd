@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OpenDelivery01="http://www.bezeq.co.il/XMLSchema/OpenDelivery01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OpenDelivery01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="runDate" type="date"/>
+							<element name="ban" type="integer"/>
+							<element name="subscriberNo" type="string"/>
+							<element minOccurs="0" name="customerType" type="string"/>
+							<element minOccurs="0" name="emailAddress" type="string"/>
+							<element minOccurs="0" name="personalId" type="string"/>
+							<element minOccurs="0" name="banName" type="string"/>
+							<element minOccurs="0" name="banAddress" type="string"/>
+							<element minOccurs="0" name="storeCode" type="integer"/>
+							<element minOccurs="0" name="cashRegCode" type="integer"/>
+							<element minOccurs="0" name="zNum" type="integer"/>
+							<element minOccurs="0" name="saleChannelCd" type="string"/>
+							<element minOccurs="0" name="requestNumber" type="integer"/>
+							<element minOccurs="0" name="deliveryId" type="integer"/>
+							<element minOccurs="0" name="updateSeq" type="integer"/>
+							<element minOccurs="0" name="dlvActivity" type="string"/>
+							<element minOccurs="0" name="orderId" type="integer"/>
+							<element minOccurs="0" name="pcrDlvOpnSts" type="string"/>
+							<element minOccurs="0" name="pcrCreditId" type="string"/>
+							<element minOccurs="0" name="pcrCaseNo" type="string"/>
+							<element minOccurs="0" name="leadId" type="integer"/>
+							<element name="suppliersQuantity" type="integer"/>
+							<element maxOccurs="5" name="supplyArr">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="rowSeqNo" type="integer"/>
+										<element minOccurs="0" name="supplyCode" type="string"/>
+										<element minOccurs="0" name="distribCode" type="string"/>
+										<element minOccurs="0" name="distPointCode" type="string"/>
+										<element minOccurs="0" name="trxType" type="string"/>
+										<element minOccurs="0" name="processId" type="integer"/>
+										<element minOccurs="0" name="addReturnEqpInd" type="string"/>
+										<element minOccurs="0" name="existSubInd" type="string"/>
+										<element minOccurs="0" name="presentPkgCd" type="string"/>
+										<element minOccurs="0" name="city" type="string"/>
+										<element minOccurs="0" name="streetName" type="string"/>
+										<element minOccurs="0" name="houseNo" type="string"/>
+										<element minOccurs="0" name="aptFloor" type="string"/>
+										<element minOccurs="0" name="aptNumber" type="string"/>
+										<element minOccurs="0" name="aptEntrance" type="string"/>
+										<element minOccurs="0" name="postCode" type="string"/>
+										<element minOccurs="0" name="cellContactNo" type="string"/>
+										<element minOccurs="0" name="cellContactNo2" type="string"/>
+										<element minOccurs="0" name="deliveryDateFrom" type="string"/>
+										<element minOccurs="0" name="deliveryDateTo" type="string"/>
+										<element minOccurs="0" name="userOpenId" type="string"/>
+										<element minOccurs="0" name="userConfirmId" type="string"/>
+										<element minOccurs="0" name="nazigComments" type="string"/>
+										<element minOccurs="0" name="remarkForSupplier" type="string"/>
+										<element minOccurs="0" name="priority" type="integer"/>
+										<element minOccurs="0" name="getWindowSuccessInd" type="string"/>
+										<element minOccurs="0" name="windowReturnErrorCd" type="string"/>
+										<element minOccurs="0" name="missionId" type="integer"/>
+										<element minOccurs="0" name="ben" type="integer"/>
+										<element minOccurs="0" name="dlvShowIdInd" type="string"/>
+										<element name="equipmentQuantity" type="integer"/>
+										<element maxOccurs="20" name="equipmentArr">
+											<complexType>
+												<sequence>
+													<element name="paymentType" type="string"/>
+													<element minOccurs="0" name="paymentSubType" type="string"/>
+													<element minOccurs="0" name="saleSeqNo" type="integer"/>
+													<element name="activity" type="string"/>
+													<element name="saleStatus" type="string"/>
+													<element name="saleType" type="string"/>
+													<element name="saleDate" type="date"/>
+													<element name="saleStatusDate" type="date"/>
+													<element name="installmentNum" type="integer"/>
+													<element name="totalSaleAmount" type="float"/>
+													<element minOccurs="0" name="equipmentSequence" type="integer"/>
+													<element name="itemSts" type="string"/>
+													<element minOccurs="0" name="itemStatusReason" type="string"/>
+													<element minOccurs="0" name="orgEntSeqNo" type="integer"/>
+													<element minOccurs="0" name="orgItemSeqNum" type="integer"/>
+													<element name="equipmentCode" type="string"/>
+													<element minOccurs="0" name="featureCode" type="string"/>
+													<element minOccurs="0" name="soc" type="string"/>
+													<element minOccurs="0" name="discountSoc" type="string"/>
+													<element minOccurs="0" name="providerCode" type="string"/>
+													<element minOccurs="0" name="customerPrice" type="float"/>
+													<element minOccurs="0" name="banPriceNoTax" type="float"/>
+													<element minOccurs="0" name="taxCode" type="integer"/>
+													<element minOccurs="0" name="taxPercentRate" type="float"/>
+													<element minOccurs="0" name="taxEffectiveDate" type="date"/>
+													<element minOccurs="0" name="taxAmount" type="float"/>
+													<element minOccurs="0" name="costPrice" type="float"/>
+													<element minOccurs="0" name="comissionPercent" type="float"/>
+													<element name="promotionSeqNo" type="integer"/>
+													<element minOccurs="0" name="promotionCostPrice" type="float"/>
+													<element minOccurs="0" name="promotionDiscountPercent" type="float"/>
+													<element minOccurs="0" name="promotionDiscountNoTax" type="float"/>
+													<element minOccurs="0" name="promotionDiscountTaxAmount" type="float"/>
+													<element minOccurs="0" name="managerDiscountNoTax" type="float"/>
+													<element minOccurs="0" name="managerDiscountTaxAmount" type="float"/>
+													<element minOccurs="0" name="managerDiscountPercent" type="float"/>
+													<element minOccurs="0" name="serialNo" type="string"/>
+													<element minOccurs="0" name="imei" type="string"/>
+													<element minOccurs="0" name="sellerId" type="integer"/>
+													<element name="origQuantity" type="integer"/>
+													<element minOccurs="0" name="promoEqpPosition" type="integer"/>
+													<element minOccurs="0" name="promoEqpFriend" type="string"/>
+													<element minOccurs="0" name="rtrnEqpCd" type="string"/>
+													<element minOccurs="0" name="rtrnSerialNo" type="string"/>
+													<element minOccurs="0" name="damageCd" type="string"/>
+													<element minOccurs="0" name="familyCode" type="integer"/>
+													<element minOccurs="0" name="subFamilyCd" type="integer"/>
+													<element minOccurs="0" name="prodType" type="string"/>
+													<element minOccurs="0" name="prodSubType" type="string"/>
+													<element minOccurs="0" name="saleCreatedInd" type="string"/>
+													<element minOccurs="0" name="cmp" type="string"/>
+													<element minOccurs="0" name="couponId" type="string"/>
+<element minOccurs="0" name="coupDiscValue" type="float"/>
+                    <element minOccurs="0" name="coupPriceAfterDisc" type="float"/>
+
+
+												</sequence>
+											</complexType>
+										</element>
+										<element minOccurs="0" name="dlvCost">
+											<complexType>
+												<sequence>
+													<element name="featureCode" type="string"/>
+													<element name="soc" type="string"/>
+													<element minOccurs="0" name="saleCreatedInd" type="string"/>
+													<element minOccurs="0" name="dlvCostInd" type="string"/>
+													<element name="paymentType" type="string"/>
+													<element minOccurs="0" name="paymentSubType" type="string"/>
+													<element name="saleType" type="string"/>
+													<element minOccurs="0" name="deliveryRateAmount" type="double"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="paymentQuantity" type="integer"/>
+							<element maxOccurs="10" minOccurs="0" name="paymentArr">
+								<complexType>
+									<sequence>
+										<element name="paymentType" type="string"/>
+										<element minOccurs="0" name="paymentSubType" type="string"/>
+										<element name="originalAmount" type="float"/>
+										<element name="amountDue" type="float"/>
+										<element name="sourceType" type="string"/>
+										<element minOccurs="0" name="sourceId" type="string"/>
+										<element minOccurs="0" name="chequeUniqueId" type="string"/>
+										<element minOccurs="0" name="chequeDrawerName" type="string"/>
+										<element minOccurs="0" name="oneOffInd" type="string"/>
+										<element minOccurs="0" name="ccIssueDate" type="date"/>
+										<element minOccurs="0" name="ccInstallmentsNum" type="integer"/>
+										<element minOccurs="0" name="paymentText" type="string"/>
+										<element minOccurs="0" name="paymentAmount" type="float"/>
+										<element minOccurs="0" name="activityCode" type="string"/>
+										<element minOccurs="0" name="changeAmount" type="float"/>
+										<element minOccurs="0" name="svSerialNumber" type="string"/>
+										<element minOccurs="0" name="crCardNo" type="string"/>
+										<element minOccurs="0" name="crCardAuth" type="string"/>
+										<element minOccurs="0" name="crCardExpDt" type="date"/>
+										<element minOccurs="0" name="ccMethod" type="integer"/>
+										<element minOccurs="0" name="transactionCode" type="integer"/>
+										<element minOccurs="0" name="ccHolderName" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="memoUserText" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

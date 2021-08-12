@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:INFInfra="http://www.bezeq.co.il/XMLSchema/INFInfra"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/INFInfra"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="INFInfra">
+		<complexType>
+			<sequence>
+				<element name="SubscriberId" type="xsd:string" minOccurs="0"/>
+				<element name="Heker" type="xsd:string" minOccurs="0"/>
+				<element name="InfRedback" type="xsd:string" minOccurs="0"/>
+				<element name="InfPort" type="xsd:string" minOccurs="0"/>
+				<element name="InfVp" type="xsd:string" minOccurs="0"/>
+				<element name="InfVc" type="xsd:string" minOccurs="0"/>
+				<element name="InfCustStatus" type="xsd:string" minOccurs="0"/>
+				<element name="Blocked" type="xsd:string" minOccurs="0"/>
+				<element name="SiteStatusDt" type="xsd:date" minOccurs="0"/>
+				<element name="codeSapak" type="xsd:integer" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

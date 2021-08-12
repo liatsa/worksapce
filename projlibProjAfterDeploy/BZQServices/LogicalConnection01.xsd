@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:LogicalConnection01="http://www.bezeq.co.il/XMLSchema/LogicalConnection01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/LogicalConnection01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderType" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountName" type="xs:string"/>
+							<xs:element minOccurs="0" name="actionCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="msagCloset" type="xs:string"/>
+							<xs:element minOccurs="0" name="pairNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="msagCard" type="xs:string"/>
+							<xs:element minOccurs="0" name="tag" type="xs:string"/>
+							<xs:element minOccurs="0" name="systemNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="bridgeRouteIndication" type="xs:string"/>
+							<xs:element minOccurs="0" name="bundelCodeMarketing" type="xs:string"/>
+							<xs:element minOccurs="0" name="upstreamRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="downstreamRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="qosCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="vp" type="xs:string"/>
+							<xs:element minOccurs="0" name="vc" type="xs:string"/>
+							<xs:element minOccurs="0" name="msagIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="msagCVlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="msagSVlanAtm" type="xs:string"/>
+							<xs:element minOccurs="0" name="msagSVlanL3" type="xs:string"/>
+							<xs:element minOccurs="0" name="gsrM7iVlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="gsrM7iVrf" type="xs:string"/>
+							<xs:element minOccurs="0" name="groupCodeMarketing" type="xs:string"/>
+							<xs:element minOccurs="0" name="logicBindCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceType" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineCodeBSide" type="xs:string"/>
+							<xs:element minOccurs="0" name="rt" type="xs:string"/>
+							<xs:element minOccurs="0" name="rt2" type="xs:string"/>
+							<xs:element minOccurs="0" name="gsrM7iPort" type="xs:string"/>
+							<xs:element minOccurs="0" name="gsrM7iIpElement" type="xs:string"/>
+							<xs:element minOccurs="0" name="gsrM7iIpInterface" type="xs:string"/>
+							<xs:element minOccurs="0" name="gsrM7iSN" type="xs:string"/>
+							<xs:element minOccurs="0" name="protocol" type="xs:string"/>
+							<xs:element minOccurs="0" name="naPassword" type="xs:string"/>
+							<xs:element minOccurs="0" name="peerGroup" type="xs:string"/>
+							<xs:element minOccurs="0" name="oldIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="oldLineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="oldPort" type="xs:string"/>
+							<xs:element minOccurs="0" name="oldVpVc" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeWan" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeLoopback" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeLoopbackWan" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeLan" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeSubnetLan" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeRemoteAs" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeMng" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeOldManagement" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeEquipmentVersion" type="xs:string"/>
+							<xs:element minOccurs="0" name="cpeManagementConfiguration" type="xs:string"/>
+							<xs:element minOccurs="0" name="meVpM7i" type="xs:string"/>
+							<xs:element minOccurs="0" name="meRing" type="xs:string"/>
+							<xs:element minOccurs="0" name="me7750" type="xs:string"/>
+							<xs:element minOccurs="0" name="me7750Port" type="xs:string"/>
+							<xs:element minOccurs="0" name="meMt" type="xs:string"/>
+							<xs:element minOccurs="0" name="meSVlanAtm" type="xs:string"/>
+							<xs:element minOccurs="0" name="meSVlanL3" type="xs:string"/>
+							<xs:element minOccurs="0" name="meCVlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="meVlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineCodeInterconnect" type="xs:string"/>
+							<xs:element minOccurs="0" name="portInterconnect" type="xs:string"/>
+							<xs:element minOccurs="0" name="ipInterconnect" type="xs:string"/>
+							<xs:element minOccurs="0" name="vpInterconnect" type="xs:string"/>
+							<xs:element minOccurs="0" name="vcInterconnect" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cpeDone" type="xs:string"/>
+							<xs:element minOccurs="0" name="managementDone" type="xs:string"/>
+							<xs:element minOccurs="0" name="msagDone" type="xs:string"/>
+							<xs:element minOccurs="0" name="metroDone" type="xs:string"/>
+							<xs:element minOccurs="0" name="m7iDone" type="xs:string"/>
+							<xs:element minOccurs="0" name="interconnectDone" type="xs:string"/>
+
+							<xs:element minOccurs="0" name="aggUpstreamRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="aggDownStreamRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="comment" type="xs:string"/>
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

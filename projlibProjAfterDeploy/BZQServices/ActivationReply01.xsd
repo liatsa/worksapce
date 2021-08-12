@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ActivationReply01="http://www.bezeq.co.il/XMLSchema/ActivationReply01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ActivationReply01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="targetSystem" type="xs:string"/>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageSendTimestamp" type="xs:dateTime"/>
+							<xs:element name="dn" type="xs:integer"/>
+							<xs:element name="requestId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="actionType" type="xs:string"/>
+							<xs:element name="returnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="returnDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="features" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

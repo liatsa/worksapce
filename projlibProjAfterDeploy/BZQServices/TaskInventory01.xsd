@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:TaskInventory01="http://www.bezeq.co.il/XMLSchema/TaskInventory01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/TaskInventory01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="taskId" type="integer"/>
+							<element name="taskType" type="integer"/>
+							<element name="employeeId" type="string"/>
+							<element name="isWithDamaged" type="string"/>
+							<element name="damagedDescription" type="string"/>
+							<element minOccurs="0" name="isCauseKnown" type="integer"/>
+							<element minOccurs="0" name="orderingPartner" type="string"/>
+							<element name="createdOnDate" type="string"/>
+							<element name="createdOnTime" type="string"/>
+							<element minOccurs="0" name="city" type="string"/>
+							<element minOccurs="0" name="streetHouse" type="string"/>
+							<element minOccurs="0" name="zipCode" type="string"/>
+							<element minOccurs="0" name="isContractor" type="integer"/>
+							<element minOccurs="0" name="brokenId" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="taskId" type="integer"/>
+							<element name="taskType" type="integer"/>
+							<element minOccurs="0" name="errorStatus" type="integer"/>
+							<element minOccurs="0" name="errorStatusDescription" type="string"/>
+							<element minOccurs="0" name="networkNo" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

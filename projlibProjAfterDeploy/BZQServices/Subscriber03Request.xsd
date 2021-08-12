@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Subscriber03Request="http://www.bezeq.co.il/XMLSchema/Subscriber03Request" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Subscriber03Request">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="reqMsgType" type="xs:string"/>
+							<xs:element name="rutineType" type="xs:integer"/>
+							<xs:element name="accessType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="bezeqSubId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="equipCDInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="lrnCntrInd" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="repMsgType" type="xs:string"/>
+							<xs:element name="returnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="errorDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="numOfSubs" type="xs:string"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="subRecArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="shortMsgType" type="xs:string"/>
+										<xs:element minOccurs="0" name="subNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="bezeqSubId" type="xs:string"/>
+										<xs:element minOccurs="0" name="recType" type="xs:string"/>
+										<xs:element minOccurs="0" name="shortName" type="xs:string"/>
+										<xs:element minOccurs="0" name="subType" type="xs:string"/>
+										<xs:element minOccurs="0" name="custNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="accountType" type="xs:string"/>
+										<xs:element minOccurs="0" name="accountSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="publishInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="updDate" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="subMsgType" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="bezeqSubId" type="xs:string"/>
+							<xs:element minOccurs="0" name="cdc" type="xs:string"/>
+							<xs:element minOccurs="0" name="division" type="xs:string"/>
+							<xs:element minOccurs="0" name="recType" type="xs:string"/>
+							<xs:element minOccurs="0" name="susType" type="xs:string"/>
+							<xs:element minOccurs="0" name="susDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="rstType" type="xs:string"/>
+							<xs:element minOccurs="0" name="rstDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="sysUpdDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="expDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="reqDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="installDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="subType" type="xs:string"/>
+							<xs:element minOccurs="0" name="mainSubNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="city" type="xs:string"/>
+							<xs:element minOccurs="0" name="floor" type="xs:string"/>
+							<xs:element minOccurs="0" name="aptNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="entrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="ot" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="street" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterType" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterPostCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterCity" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterFloor" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterAptNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterEntrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterOt" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterHouseNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterStreet" type="xs:string"/>
+							<xs:element minOccurs="0" name="mailBox" type="xs:string"/>
+							<xs:element minOccurs="0" name="pob" type="xs:string"/>
+							<xs:element minOccurs="0" name="letterName" type="xs:string"/>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="mainCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="personalId" type="xs:string"/>
+							<xs:element minOccurs="0" name="taxInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="emergencyCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="numOfSus" type="xs:string"/>
+							<xs:element minOccurs="0" name="prvCtn" type="xs:string"/>
+							<xs:element minOccurs="0" name="followMeNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="mosadCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="armyOrdNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="registerNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="cycle" type="xs:string"/>
+							<xs:element minOccurs="0" name="publishInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountType" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountSubType" type="xs:string"/>
+							<xs:element minOccurs="0" name="convNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="deptName" type="xs:string"/>
+							<xs:element minOccurs="0" name="payInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="renewalDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="cityCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="integrator" type="xs:string"/>
+							<xs:element minOccurs="0" name="portInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="benInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="armyOrd" type="xs:string"/>
+							<xs:element minOccurs="0" name="billInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="convertNgnDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="custLinkTp" type="xs:string"/>
+							<xs:element minOccurs="0" name="ngnInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="suspRsSts" type="xs:string"/>
+							<xs:element minOccurs="0" name="EmergencyCustInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="otherBan" type="xs:string"/>
+							<xs:element minOccurs="0" name="otherBen" type="xs:string"/>
+							<xs:element minOccurs="0" name="cmpInd" type="xs:string"/>
+							<xs:element minOccurs="0" name="wsCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipQty" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipArr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:WorkOrderReply02="http://www.bezeq.co.il/XMLSchema/WorkOrderReply02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/WorkOrderReply02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceID" type="xs:string"/>
+							<xs:element minOccurs="0" name="soID" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtManuiNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtOrderID" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtOrderNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtSlaStartDT" type="xs:date"/>
+							<xs:element minOccurs="0" name="mtSlaStartTM" type="xs:time"/>
+							<xs:element minOccurs="0" name="mtSlaEndDT" type="xs:date"/>
+							<xs:element minOccurs="0" name="mtSlaEndTM" type="xs:time"/>
+							<xs:element minOccurs="0" name="bmCstCrdStDT" type="xs:date"/>
+							<xs:element minOccurs="0" name="bmCstCrdStTM" type="xs:time"/>
+							<xs:element minOccurs="0" name="bmCstCrdEnDT" type="xs:date"/>
+							<xs:element minOccurs="0" name="bmCstCrdEnTM" type="xs:time"/>
+							<xs:element minOccurs="0" name="mtTimeReq" type="xs:string"/>
+							<xs:element minOccurs="0" name="personID" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OpticalLineDetails01="http://www.bezeq.co.il/XMLSchema/OpticalLineDetails01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OpticalLineDetails01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="phoneNumber" type="string"/>
+							<element minOccurs="0" name="actionCode" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="returnCode" type="string"/>
+							<element minOccurs="0" name="returnCodeDescription" type="string"/>
+							<element minOccurs="0" name="lineNumber" type="string"/>
+							<element minOccurs="0" name="lineTense" type="string"/>
+							<element minOccurs="0" name="lineStatus" type="string"/>
+							<element minOccurs="0" name="lineType" type="string"/>
+							<element minOccurs="0" name="primaryLine" type="string"/>
+							<element minOccurs="0" name="secondaryLine" type="string"/>
+							<element minOccurs="0" name="secondaryLineCount" type="string"/>
+							<element minOccurs="0" name="backupLineParent" type="string"/>
+							<element minOccurs="0" name="backupLineChild" type="string"/>
+							<element minOccurs="0" name="trunkId" type="string"/>
+							<element minOccurs="0" name="trunkTense" type="string"/>
+							<element minOccurs="0" name="trunkStatus" type="string"/>
+							<element minOccurs="0" name="trunkPhysicalLength" type="string"/>
+							<element minOccurs="0" name="customerEndAB" type="string"/>
+							<element minOccurs="0" name="equipmentSiteA" type="string"/>
+							<element minOccurs="0" name="equipmentTypeSiteA" type="string"/>
+							<element minOccurs="0" name="equipmentNumberSiteA" type="string"/>
+							<element minOccurs="0" name="spfDescriptionSiteA" type="string"/>
+							<element minOccurs="0" name="equipmentSiteB" type="string"/>
+							<element minOccurs="0" name="equipmentTypeSiteB" type="string"/>
+							<element minOccurs="0" name="equipmentNumberSiteB" type="string"/>
+							<element minOccurs="0" name="spfDescriptionSiteB" type="string"/>
+							<element minOccurs="0" name="transmissionInd" type="string"/>
+							<element minOccurs="0" name="workorderAndParagraph" type="string"/>
+							<element minOccurs="0" name="orderNumber" type="string"/>
+							<element minOccurs="0" name="orderType" type="string"/>
+							<element minOccurs="0" name="lineInProcessDescription" type="string"/>
+							<element minOccurs="0" name="trunkInProcessDescription" type="string"/>
+							<element minOccurs="0" name="routeLinesCount" type="integer"/>
+							<element minOccurs="0" name="siteLinesCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="routeLines">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="routeLineNumber" type="integer"/>
+										<element minOccurs="0" name="routeLineTense" type="string"/>
+										<element minOccurs="0" name="routeLineSite" type="string"/>
+										<element minOccurs="0" name="routeLineEquipmentType" type="string"/>
+										<element minOccurs="0" name="routeLineEquipmemtNumber" type="string"/>
+										<element minOccurs="0" name="routeLinePort" type="string"/>
+										<element minOccurs="0" name="routeLineIp" type="string"/>
+										<element minOccurs="0" name="routeLineTrunkOrCable" type="string"/>
+										<element minOccurs="0" name="routeLineOdfDetails" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="siteLines">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="siteLineSiteName" type="string"/>
+										<element minOccurs="0" name="siteStreetName" type="string"/>
+										<element minOccurs="0" name="siteBuildingNumber" type="string"/>
+										<element minOccurs="0" name="siteFloor" type="string"/>
+										<element minOccurs="0" name="siteCity" type="string"/>
+										<element minOccurs="0" name="siteZipCode" type="string"/>
+										<element minOccurs="0" name="siteLinePhoneNumber" type="string"/>
+										<element minOccurs="0" name="siteLineRegion" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

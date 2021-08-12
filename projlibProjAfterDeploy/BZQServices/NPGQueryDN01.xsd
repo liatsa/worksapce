@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NPGBase="http://www.bezeq.co.il/XMLSchema/NPGBase" xmlns:NPGQueryDN01="http://www.bezeq.co.il/XMLSchema/NPGQueryDN01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NPGQueryDN01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NPGBase" schemaLocation="../BZQSchemas/NPGBase.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" ref="NPGBase:messageType"/>
+							<xs:element ref="NPGBase:messageSendTimestamp"/>
+							<xs:element name="requestType" type="xs:string"/>
+							<xs:element name="dnNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="dateFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="dateTo" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" ref="NPGBase:messageType"/>
+							<xs:element ref="NPGBase:messageSendTimestamp"/>
+							<xs:element name="dnNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="pnp1" type="xs:string"/>
+							<xs:element minOccurs="0" name="pnp2" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="routingRecord">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="currNetworkId" type="xs:string"/>
+										<xs:element name="prevNetworkId" type="xs:string"/>
+										<xs:element name="validFrom" type="xs:date"/>
+										<xs:element minOccurs="0" name="validTo" type="xs:date"/>
+										<xs:element name="routeDate" type="xs:dateTime"/>
+										<xs:element name="routeType" type="xs:string"/>
+										<xs:element minOccurs="0" name="lrn" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="NPGBase:messageStatus"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ApiOrder011010001="http://www.bezeq.co.il/XMLSchema/ApiOrder011010001" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ApiOrder011010001">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="makor" type="xs:string"/>
+							<xs:element name="misparHazmana" type="xs:string"/>
+							<xs:element name="shurotBehazmana" type="xs:string"/>
+							<xs:element name="sugHazmana" type="xs:string"/>
+							<xs:element name="misparLakuah" type="xs:string"/>
+							<xs:element minOccurs="0" name="mishpahaTaagid" type="xs:string"/>
+							<xs:element minOccurs="0" name="shemPrati" type="xs:string"/>
+							<xs:element name="IshuvIr" type="xs:string"/>
+							<xs:element name="rehov" type="xs:string"/>
+							<xs:element name="bait" type="xs:string"/>
+							<xs:element minOccurs="0" name="sug" type="xs:string"/>
+							<xs:element minOccurs="0" name="ot" type="xs:string"/>
+							<xs:element minOccurs="0" name="knisa" type="xs:string"/>
+							<xs:element minOccurs="0" name="koma" type="xs:string"/>
+							<xs:element minOccurs="0" name="dira" type="xs:string"/>
+							<xs:element name="aizorHiugTelLeTeum" type="xs:string"/>
+							<xs:element name="misparTelLeTeum" type="xs:string"/>
+							<xs:element minOccurs="0" name="mDivuah" type="xs:string"/>
+							<xs:element minOccurs="0" name="aizorHiugEkuvMetugi" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparEkuvMetugi" type="xs:string"/>
+							<xs:element minOccurs="0" name="kHaavara" type="xs:string"/>
+							<xs:element minOccurs="0" name="bakaratPticha" type="xs:string"/>
+							<xs:element name="sugKav" type="xs:string"/>
+							<xs:element name="taarihBitsua" type="xs:date"/>
+							<xs:element minOccurs="0" name="taktsiv" type="xs:string"/>
+							<xs:element name="sugManui" type="xs:string"/>
+							<xs:element minOccurs="0" name="aizorHiugTelKaiam" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparTelKaiam" type="xs:string"/>
+							<xs:element name="aizorHiugManuiMuhtav" type="xs:string"/>
+							<xs:element name="misparManuiMuhtav" type="xs:string"/>
+							<xs:element minOccurs="0" name="aizorHiugReshetShmura" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparReshetShmura" type="xs:string"/>
+							<xs:element name="bMatkin" type="xs:string"/>
+							<xs:element name="kodPersum" type="xs:string"/>
+							<xs:element minOccurs="0" name="hovaHKeva" type="xs:string"/>
+							<xs:element minOccurs="0" name="sNaiadut" type="xs:string"/>
+							<xs:element minOccurs="0" name="aizorHiugTelRashi" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparTelRashi" type="xs:string"/>
+							<xs:element minOccurs="0" name="aizorHiugKvutsa" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparKvutsa" type="xs:string"/>
+							<xs:element minOccurs="0" name="aizorHiugKodBezeq" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparKodBezeq" type="xs:string"/>
+							<xs:element minOccurs="0" name="hazmanaGagTsava" type="xs:string"/>
+							<xs:element name="sugMispar" type="xs:string"/>
+							<xs:element minOccurs="0" name="sibatHatkana" type="xs:string"/>
+							<xs:element minOccurs="0" name="hafakatMichtav" type="xs:string"/>
+							<xs:element minOccurs="0" name="technaiADSL" type="xs:string"/>
+							<xs:element minOccurs="0" name="maslulModem" type="xs:string"/>
+							<xs:element minOccurs="0" name="mivtsaADSL" type="xs:string"/>
+							<xs:element minOccurs="0" name="meshalemBasis" type="xs:string"/>
+							<xs:element minOccurs="0" name="meshalemKishur" type="xs:string"/>
+							<xs:element minOccurs="0" name="flatTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="hasumLe" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="tsiudADSLInputVector">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="kodSugPeula" type="xs:string"/>
+										<xs:element minOccurs="0" name="sugPeula" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="tsiudInputVector">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="kodTsiud" type="xs:string"/>
+										<xs:element minOccurs="0" name="kamut" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="tzMohran" type="xs:string"/>
+							<xs:element minOccurs="0" name="diler" type="xs:string"/>
+							<xs:element minOccurs="0" name="temhurBsisit" type="xs:string"/>
+							<xs:element minOccurs="0" name="meshalem" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="optsionaliutVector">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="temhurOptsionaliut" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

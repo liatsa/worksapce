@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Mission01="http://www.bezeq.co.il/XMLSchema/Mission01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Mission01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="soId" type="xs:string"/>
+							<xs:element name="missionNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="soStatusDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="soTypeDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="soMissionStatusCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineTypeDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="soSource" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerName" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerGrade" type="xs:string"/>
+							<xs:element minOccurs="0" name="installationAddress" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionDays" type="xs:integer"/>
+							<xs:element minOccurs="0" name="missionCurrentDays" type="xs:integer"/>
+							<xs:element minOccurs="0" name="missionPlacementDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="missionPlacementTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="fullRoute" type="xs:string"/>
+							<xs:element minOccurs="0" name="centerForNetwork" type="xs:integer"/>
+							<xs:element minOccurs="0" name="lastArk" type="xs:integer"/>
+							<xs:element minOccurs="0" name="saafArkAddress" type="xs:string"/>
+							<xs:element minOccurs="0" name="inspectionDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="soCreationDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="divisionDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="sectionDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="departmentDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="team" type="xs:string"/>
+							<xs:element minOccurs="0" name="employeeId" type="xs:string"/>
+							<xs:element minOccurs="0" name="providerGroupId" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceGroupType" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionAddDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="missionComments" type="xs:string"/>
+							<xs:element minOccurs="0" name="soComment" type="xs:string"/>
+							<xs:element minOccurs="0" name="caseContactname" type="xs:string"/>
+							<xs:element minOccurs="0" name="caseContactPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="soContactName" type="xs:string"/>
+							<xs:element minOccurs="0" name="soContactPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="technicianName" type="xs:string"/>
+							<xs:element minOccurs="0" name="technicianPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="caseIdNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="areaTypeDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="missionType" type="xs:string"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="frame">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="frameTypeDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="frameTypeNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="frameTypeStreet" type="xs:string"/>
+										<xs:element minOccurs="0" name="frameTypeHouseNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="frameTypeLocation" type="xs:string"/>
+										<xs:element minOccurs="0" name="frameTypePlace" type="xs:string"/>
+										<xs:element minOccurs="0" name="frameTypeCity" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

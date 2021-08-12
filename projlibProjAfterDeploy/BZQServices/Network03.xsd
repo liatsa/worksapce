@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Network03="http://www.bezeq.co.il/XMLSchema/Network03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Network03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="misparSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugGisha" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugPniya" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="nlnMisparMeaged" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnSugMishMeaged" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnMisgeretMeaged" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnTagMeaged" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnMerkazMeaged" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnMisparKiteyKav" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnNituvAruch" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnSachNekudotSaf" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="saafPntA">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nlnTavMerkaz" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavMisgeret" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavSugMisg" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavTeurMisg" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnTavMisNituv" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numSaafPntA" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="addrFrameA">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nlnKtvTeurMisg" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvMisgeret" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnKtvShemRechov" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvMisparBait" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnKtvMikum" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvMakom" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvShemIshuv" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnMerchak" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nmkKitzurAniva" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numAddrFrameA" type="xs:integer"/>
+							<xs:element minOccurs="0" name="SachMenuim" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="totalLines">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ezorChiyug" type="xs:string"/>
+										<xs:element minOccurs="0" name="manuy" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sherutFiller" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="SivugBitchoni" type="xs:integer"/>
+							<xs:element minOccurs="0" name="TeurSivugBitchoni" type="xs:string"/>
+							<xs:element minOccurs="0" name="SivugBitchoniB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="TeurSivugBitB" type="xs:string"/>
+							<xs:element minOccurs="0" name="tzmSugPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnHamara" type="xs:string"/>
+							<xs:element minOccurs="0" name="tzmMerkaz5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMerkezet5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmKodTziud5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMisgeretDslam5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMisgeretShelf5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMisgeretSlot5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmTag5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmSugTag5xx" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmTziud940Len" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMisgeret940Len" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmTag940Len" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmTziud940Natich" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMisgeret940Natich" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmTag940Natich" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="msag">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="tzmMerkazMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmMerkezetMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmKodTziudMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmUnitMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmCageMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmSlotMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmTagMsag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmSugTagMsag" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numMsag" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="specEquip">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="tzmKodTziudMeiuchad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmMisgeretMeiuchad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmTagMeiuchad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmShemMeiuchad" type="xs:string"/>
+										<xs:element minOccurs="0" name="tzmStatusMeiuchad" type="xs:string"/>
+										<xs:element minOccurs="0" name="tzmMerkezetMeiuchad" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmMerkazMeiuchad" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numSpecEquip" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="specEquipA">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="tzmKTziudMeiuchadA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmMisgeretMeiuchadA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmTagMeiuchadA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmShemMeiuchadA" type="xs:string"/>
+										<xs:element minOccurs="0" name="tzmStatusMeiuchadA" type="xs:string"/>
+										<xs:element minOccurs="0" name="tzmMerkezetMeiuchadA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmMerkazMeiuchadA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmCardTypeA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmCardDescA" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numSpecEquipA" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMerkazLen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMerkezetLen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmMisgeretLen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmTagLen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmSugTagLen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nbiKtovetIpDslam" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiKtovetIpRu" type="xs:string"/>
+							<xs:element minOccurs="0" name="tzmVp" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmVc" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nbiSvlan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmCvlan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmSugAdsl" type="xs:string"/>
+							<xs:element minOccurs="0" name="tzmSugData" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMisRb" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nbiPortRb" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiVpRb" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nbiVcRb" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nbiSugMishak" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="mainProp">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nlnTeurSugKav" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnMerkazReshet" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnSugKav" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmUpstream" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmDownstream" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnNtvRavMenuim" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnTaarichIdkun" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numMainProp" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="specEquipB">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="tzmKTziudMeiuchadB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmMisgeretMeiuchadB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmTagMeiuchadB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmShemMeiuchadB" type="xs:string"/>
+										<xs:element minOccurs="0" name="tzmStatusMeiuchadB" type="xs:string"/>
+										<xs:element minOccurs="0" name="tzmMerkezetMeiuchadB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmMerkazMeiuchadB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmCardTypeB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tzmCardDescB" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numSpecEquipB" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="saafPntB">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nlnTavMerkazB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavMisgeretB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavTagB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavSugMisgB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavTeurMisgB" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnTavMisNituvB" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numSaafPntB" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="saafPntMA">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nlnTavMerkazM" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavMisgeretM" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavTagM" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavSugMisgM" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnTavTeurMisgM" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numSaafPntMA" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="addrFrameB">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nlnKtvTeurMisgB" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvMisgeretB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnKtvShemRechovB" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvMisparBaitB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnKtvMikumB" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvMakomB" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnKtvShemIshuvB" type="xs:string"/>
+										<xs:element minOccurs="0" name="nlnMerchakB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nmkKitzurAnivaB" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="numAddrFrameB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tzmDownstreamM" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnNituvAruchM" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnTavStatusKesher" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnStatusNituv" type="xs:string"/>
+							<xs:element minOccurs="0" name="ezorChiyugA" type="xs:integer"/>
+							<xs:element minOccurs="0" name="manuyA" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sherutFillerA" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnSugKavA" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnTeurSugKavA" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnMisparShutaf" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnNituvAruchB" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnTavStatusKesherB" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnStatusNituvB" type="xs:string"/>
+							<xs:element minOccurs="0" name="ezorChiyugB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="manuyB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sherutFillerB" type="xs:string"/>
+							<xs:element minOccurs="0" name="nlnSugKavB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnTeurSugKavB" type="xs:string"/>
+							<xs:element minOccurs="0" name="tzmMerchak" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="nituvAruch">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nbiKtovetIp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiHadakM" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiKodShivuki" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiHadakY" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMisParit" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiAluma" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="nzData">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nlnNzEastMitkanA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnNzNorthtMitkanA" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnNzEastMitkanB" type="xs:integer"/>
+										<xs:element minOccurs="0" name="nlnNzNorthtMitkanB" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="dpuMsagDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="dpuMsagIp" type="xs:string"/>
+										<xs:element minOccurs="0" name="dpuMsagEquipCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagShelf" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagSlot" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagPort" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagPortType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagPortDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="dpuMsagCity" type="xs:string"/>
+										<xs:element minOccurs="0" name="dpuMsagStreet" type="xs:string"/>
+										<xs:element minOccurs="0" name="dpuMsagStreetNum" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagCenter" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagFrame" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuMsagSvlan" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="dpuDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="dpuCenter" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dpuFrame" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="mxDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="mxCenter" type="xs:integer"/>
+										<xs:element minOccurs="0" name="mxFrame" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="services">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="serviceType" type="xs:string"/>
+										<xs:element minOccurs="0" name="providerCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="vpService" type="xs:string"/>
+										<xs:element minOccurs="0" name="subscriberVlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="networkSvlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="networkCvlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="rb_svlan" type="xs:string"/>
+										<xs:element minOccurs="0" name="rb_num" type="xs:string"/>
+										<xs:element minOccurs="0" name="rb_port" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="nbiMisrbIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiPortrbIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiVprbIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiVcrbIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSvlanIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="tzmCvlanIp" type="xs:string"/>
+							<xs:element minOccurs="0" name="numNituv" type="xs:integer"/>
+							<xs:element minOccurs="0" name="endCenter" type="xs:string"/>
+							<xs:element minOccurs="0" name="endFrame" type="xs:string"/>
+							<xs:element minOccurs="0" name="endPortNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="fdhFrame" type="xs:string"/>
+							<xs:element minOccurs="0" name="fdhPortNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastEndPortLightPower" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastEndTestDate" type="xs:string"/>
+							<xs:element minOccurs="0" name="admissionLightPower" type="xs:string"/>
+							<xs:element minOccurs="0" name="admissionDate" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_ip" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_shelf" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_slot" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_port" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_card_type" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_onu_id" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_onu_sfp_sn" type="xs:string"/>
+							<xs:element minOccurs="0" name="olt_onu_sfp_vendor_id" type="xs:string"/>
+							<xs:element minOccurs="0" name="routeType" type="xs:string"/>
+							<xs:element minOccurs="0" name="routeTypeDesc" type="xs:string"/>
+    					<xs:element minOccurs="0" name="endCity" type="xs:string"/>
+					<xs:element minOccurs="0" name="endStreet" type="xs:string"/>
+					<xs:element minOccurs="0" name="endHouseNumber" type="xs:string"/>
+					<xs:element minOccurs="0" name="endHouseIndication" type="xs:string"/>
+					<xs:element minOccurs="0" name="endPlaceDesc" type="xs:string"/>
+					<xs:element minOccurs="0" name="endLocationDesc" type="xs:string"/>
+							<xs:element name="nlnKodHechzer" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nlnTeurKodHechzer" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

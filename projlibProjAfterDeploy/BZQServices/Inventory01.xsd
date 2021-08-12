@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Inventory01="http://www.bezeq.co.il/XMLSchema/Inventory01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Inventory01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="updateCode" type="xs:string"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="items">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="recordNum" type="xs:string"/>
+										<xs:element name="hbType" type="xs:string"/>
+										<xs:element minOccurs="0" name="activityType" type="xs:string"/>
+										<xs:element minOccurs="0" name="kodShivuki" type="xs:string"/>
+										<xs:element name="dataSource" type="xs:string"/>
+										<xs:element minOccurs="0" name="material" type="xs:string"/>
+										<xs:element name="shoel" type="xs:string"/>
+										<xs:element minOccurs="0" name="orgUnit" type="xs:string"/>
+										<xs:element name="crmOrderNum" type="xs:string"/>
+										<xs:element name="crmOrderLine" type="xs:string"/>
+										<xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+										<xs:element name="installDate" type="xs:date"/>
+										<xs:element name="quantiry" type="xs:float"/>
+										<xs:element name="dialingArea" type="xs:string"/>
+										<xs:element name="telephoneNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="heker" type="xs:string"/>
+										<xs:element minOccurs="0" name="misRatz" type="xs:string"/>
+										<xs:element name="subscriberType" type="xs:string"/>
+										<xs:element minOccurs="0" name="inventoryType" type="xs:string"/>
+										<xs:element minOccurs="0" name="plant" type="xs:string"/>
+										<xs:element minOccurs="0" name="storageLocation" type="xs:string"/>
+										<xs:element name="batchNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="wBSElement" type="xs:string"/>
+										<xs:element minOccurs="0" name="technicaianId" type="xs:string"/>
+										<xs:element minOccurs="0" name="cancelCode" type="xs:string"/>
+										<xs:element name="crmAction" type="xs:string"/>
+										<xs:element name="crmActionReason" type="xs:string"/>
+										<xs:element name="crmOwner" type="xs:string"/>
+										<xs:element minOccurs="0" name="SaleSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ItemSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="deliveryId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="cmMissionId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="cashRegisterCode" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

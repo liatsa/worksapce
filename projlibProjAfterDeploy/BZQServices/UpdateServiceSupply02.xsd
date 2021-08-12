@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateServiceSupply02="http://www.bezeq.co.il/XMLSchema/UpdateServiceSupply02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateServiceSupply02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="interfacenumber" type="string"/>
+							<element name="orderId" type="string"/>
+							<element name="orderAction" type="string"/>
+							<element minOccurs="0" name="orderNumber" type="string"/>
+							<element minOccurs="0" name="serialNumber" type="string"/>
+							<element name="componentZoneNo" type="string"/>
+							<element name="componentNo" type="string"/>
+							<element minOccurs="0" name="userIdentityNo" type="string"/>
+							<element maxOccurs="30" minOccurs="0" name="equipment">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="side" type="string"/>
+										<element minOccurs="0" name="equipment_code" type="string"/>
+										<element minOccurs="0" name="quantity" type="string"/>
+										<element minOccurs="0" name="equipment_type" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="10" minOccurs="0" name="parameter">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="field_name" type="string"/>
+										<element minOccurs="0" name="field_value" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="orderId" type="string"/>
+							<element minOccurs="0" name="orderNumber" type="string"/>
+							<element minOccurs="0" name="serialNumber" type="string"/>
+							<element name="componentZone_no" type="string"/>
+							<element name="componentNo" type="string"/>
+							<element maxOccurs="10" minOccurs="0" name="parameter">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="field_name" type="string"/>
+										<element minOccurs="0" name="field_value" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="criticalEror" type="string"/>
+							<element minOccurs="0" name="errorCode" type="string"/>
+							<element minOccurs="0" name="errorText" type="string"/>
+							<element minOccurs="0" name="messageSetNbr" type="integer"/>
+							<element name="messageNbr" type="integer"/>
+							<element minOccurs="0" name="messageDescr" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

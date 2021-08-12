@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTNaTechnician="http://www.bezeq.co.il/XMLSchema/KRTNaTechnician" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTNaTechnician">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="naTechnician">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTNaTechnician:request"/>
+				<xs:element ref="KRTNaTechnician:reply"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="action" type="xs:string"/>
+							<xs:element minOccurs="0" name="key" type="xs:int"/>
+							<xs:element name="start" type="xs:dateTime"/>
+							<xs:element name="finish" type="xs:dateTime"/>
+							<xs:element maxOccurs="unbounded" name="engineerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="reason" type="xs:string"/>
+							<xs:element minOccurs="0" name="reasonCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="comment" type="xs:string"/>
+							<xs:element minOccurs="0" name="longtitude" type="xs:int"/>
+							<xs:element minOccurs="0" name="latitude" type="xs:int"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="assignmentKey" type="xs:int"/>
+							<xs:element minOccurs="0" name="nonAvailabilityKey" type="xs:int"/>
+							<xs:element minOccurs="0" name="taskKey" type="xs:int"/>
+							<xs:element minOccurs="0" name="error">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="errorNumber" type="xs:string"/>
+										<xs:element name="errorSource" type="xs:string"/>
+										<xs:element name="errorDescription" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

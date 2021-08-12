@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderDetails09="http://www.bezeq.co.il/XMLSchema/OrderDetails09" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderDetails09">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="actionType" type="integer"/>
+							<element minOccurs="0" name="orderNo" type="string"/>
+							<element minOccurs="0" name="orderStatus" type="string"/>
+							<element minOccurs="0" name="projectCounter" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="projects">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="projectNo" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceid" type="string"/>
+							<element minOccurs="0" name="projectCounter" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="projects">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="projectno" type="integer"/>
+										<element minOccurs="0" name="projectOrderCounter" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="area" type="string"/>
+							<element minOccurs="0" name="areaDesc" type="string"/>
+							<element minOccurs="0" name="center" type="string"/>
+							<element minOccurs="0" name="centerDesc" type="string"/>
+							<element minOccurs="0" name="serviceArea" type="string"/>
+							<element minOccurs="0" name="status01" type="string"/>
+							<element minOccurs="0" name="status01Desc" type="string"/>
+							<element minOccurs="0" name="orderType" type="string"/>
+							<element minOccurs="0" name="orderTypeDesc" type="string"/>
+							<element minOccurs="0" name="orderAdslType" type="string"/>
+							<element minOccurs="0" name="orderAdslDesc" type="string"/>
+							<element minOccurs="0" name="orderNum" type="string"/>
+							<element minOccurs="0" name="telephoneNumber" type="string"/>
+							<element minOccurs="0" name="cityId" type="string"/>
+							<element minOccurs="0" name="cityName" type="string"/>
+							<element minOccurs="0" name="streetId" type="string"/>
+							<element minOccurs="0" name="streetName" type="string"/>
+							<element minOccurs="0" name="house" type="string"/>
+							<element minOccurs="0" name="houseIndication" type="string"/>
+							<element minOccurs="0" name="entrance" type="string"/>
+							<element minOccurs="0" name="floor" type="string"/>
+							<element minOccurs="0" name="apartment" type="string"/>
+							<element minOccurs="0" name="dateOfOpenOrder" type="date"/>
+							<element minOccurs="0" name="noteOrder1" type="string"/>
+							<element minOccurs="0" name="noteOrder2" type="string"/>
+							<element minOccurs="0" name="name" type="string"/>
+							<element minOccurs="0" name="firstName" type="string"/>
+							<element minOccurs="0" name="lineType" type="string"/>
+							<element minOccurs="0" name="lineTypeDesc" type="string"/>
+							<element minOccurs="0" name="subscriberType" type="string"/>
+							<element minOccurs="0" name="subscriberTypeDesc" type="string"/>
+							<element minOccurs="0" name="customerGrade" type="string"/>
+							<element minOccurs="0" name="customerType" type="string"/>
+							<element minOccurs="0" name="completionDate" type="date"/>
+							<element minOccurs="0" name="categoryClass" type="string"/>
+							<element minOccurs="0" name="categoryClassDesc" type="string"/>
+							<element minOccurs="0" name="contactPhone" type="string"/>
+							<element minOccurs="0" name="customerNum" type="string"/>
+							<element minOccurs="0" name="planningDate" type="date"/>
+							<element minOccurs="0" name="implementDate" type="date"/>
+							<element minOccurs="0" name="responsibleParty" type="string"/>
+							<element minOccurs="0" name="responsiblePartyDesc" type="string"/>
+							<element minOccurs="0" name="requiredSpeed" type="string"/>
+							<element minOccurs="0" name="agentNo" type="integer"/>
+							<element minOccurs="0" name="maxPackage" type="integer"/>
+							<element minOccurs="0" name="waste" type="string"/>
+        <element minOccurs="0" name="projectNoOrder" type="integer"/>
+        <element minOccurs="0" name="portabilityReasonDesc" type="string"/>
+        <element minOccurs="0" name="identifier" type="integer"/>
+        <element minOccurs="0" name="orderServiceOrderType" type="integer"/>
+        <element minOccurs="0" name="contactPhoneNumber" type="integer"/>
+        <element minOccurs="0" name="zipCode" type="integer"/>
+        <element minOccurs="0" name="integratedYes" type="string"/>
+        <element minOccurs="0" name="abandonedOperator" type="string"/>
+        <element minOccurs="0" name="portInNum" type="integer"/>
+							<element minOccurs="0" name="numberOfEquipments" type="integer"/>
+							<element maxOccurs="60" minOccurs="0" name="equipments">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="equipmentCode" type="integer"/>
+										<element minOccurs="0" name="equipmentDesc" type="string"/>
+										<element minOccurs="0" name="serviceCode" type="integer"/>
+										<element minOccurs="0" name="amountInstalled" type="integer"/>
+										<element minOccurs="0" name="amountRemoved" type="integer"/>
+										<element minOccurs="0" name="amountCopied" type="integer"/>
+										<element minOccurs="0" name="catalogNumber" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="messageNum" type="integer"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

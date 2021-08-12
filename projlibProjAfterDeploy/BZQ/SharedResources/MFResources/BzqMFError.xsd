@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns:BzqMFError="http://www.bezeq.co.il/XMLSchema/BzqMFError"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/BzqMFError"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="MFError">
+		<complexType>
+			<sequence>
+				<element name="InterfaceId" type="xsd:string" minOccurs="0"/>
+				<element name="ErrorCode" type="xsd:string"/>
+				<element name="Type" type="xsd:string" minOccurs="0"/>
+				<element name="ErrorDesc" type="xsd:string"/>
+				<element name="OriginalMessage" type="xsd:string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

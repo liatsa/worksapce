@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CustomerMemo01="http://www.bezeq.co.il/XMLSchema/CustomerMemo01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CustomerMemo01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="ban" type="integer"/>
+							<element name="billingSysdate" type="dateTime"/>
+							<element name="operatorId" type="integer"/>
+							<element name="memoType" type="string"/>
+							<element minOccurs="0" name="subscriber" type="string"/>
+							<element minOccurs="0" name="systemText" type="string"/>
+							<element minOccurs="0" name="manualText" type="string"/>
+							<element name="crmCaseId" type="integer"/>
+							<element minOccurs="0" name="amount" type="float"/>
+							<element minOccurs="0" name="ccAuthCode" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

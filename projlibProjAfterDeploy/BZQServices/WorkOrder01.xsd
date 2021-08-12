@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:WorkOrder01="http://www.bezeq.co.il/XMLSchema/WorkOrder01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/WorkOrder01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceID" type="xs:string"/>
+							<xs:element name="activityType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="projectId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:integer"/>
+							<xs:element name="orderNum" type="xs:integer"/>
+							<xs:element name="subOrderNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="ezorChiyug" type="xs:string"/>
+							<xs:element minOccurs="0" name="misKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="status" type="xs:integer"/>
+							<xs:element minOccurs="0" name="serviceTypeId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugHazmanaRashi" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugHazmanaMishni" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmCaseId" type="xs:string"/>
+							<xs:element minOccurs="0" name="OrderHeaderId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ProductId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ComponentId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="Action" type="xs:string"/>
+							<xs:element minOccurs="0" name="ComponentProcessId" type="xs:integer"/>
+							<xs:element name="twoSideLine">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="sideCount" type="xs:integer"/>
+										<xs:element maxOccurs="2" name="sideDetails">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="side" type="xs:integer"/>
+													<xs:element minOccurs="0" name="merkaz" type="xs:integer"/>
+													<xs:element minOccurs="0" name="machoz" type="xs:integer"/>
+													<xs:element minOccurs="0" name="yasham" type="xs:integer"/>
+													<xs:element minOccurs="0" name="rova" type="xs:integer"/>
+													<xs:element minOccurs="0" name="ishuv" type="xs:string"/>
+													<xs:element minOccurs="0" name="rechov" type="xs:string"/>
+													<xs:element minOccurs="0" name="misBait" type="xs:integer"/>
+													<xs:element name="workOrderNumber" type="xs:string"/>
+													<xs:element name="missionNumber" type="xs:string"/>
+													<xs:element name="missionType" type="xs:string"/>
+													<xs:element name="startDate" type="xs:string"/>
+													<xs:element name="missionStatus" type="xs:string"/>
+													<xs:element minOccurs="0" name="techStatus" type="xs:string"/>
+													<xs:element minOccurs="0" name="techId" type="xs:string"/>
+													<xs:element minOccurs="0" name="cancelMissionReason" type="xs:string"/>
+													<xs:element name="withTech" type="xs:string"/>
+													<xs:element minOccurs="0" name="userRemarks" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

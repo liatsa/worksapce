@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ApiSubscriberActivities01="http://www.bezeq.co.il/XMLSchema/ApiSubscriberActivities01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ApiSubscriberActivities01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="ordMsg">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+										<xs:element name="transactionId" type="xs:string"/>
+										<xs:element name="custId" type="xs:string"/>
+										<xs:element minOccurs="0" name="captureId" type="xs:string"/>
+										<xs:element minOccurs="0" name="idfNbr" type="xs:integer"/>
+										<xs:element name="msgLvl" type="xs:string"/>
+										<xs:element minOccurs="0" name="ordSubs">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="fullPhoneNbr" type="xs:string"/>
+													<xs:element name="interfaceAct" type="xs:string"/>
+													<xs:element minOccurs="0" name="activityCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="actvRsnCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="csaChargeCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="paymentType" type="xs:string"/>
+													<xs:element minOccurs="0" name="paymentNum" type="xs:integer"/>
+													<xs:element minOccurs="0" name="discountValue" type="xs:float"/>
+													<xs:element name="canclePriceOc" type="xs:string"/>
+													<xs:element minOccurs="0" name="cnclOcReason" type="xs:string"/>
+													<xs:element minOccurs="0" name="custIdOc" type="xs:integer"/>
+													<xs:element minOccurs="0" name="rbtAcctNoOc" type="xs:integer"/>
+													<xs:element minOccurs="0" name="billingService" type="xs:string"/>
+													<xs:element minOccurs="0" name="billingServSc" type="xs:string"/>
+													<xs:element minOccurs="0" name="bmDate" type="xs:date"/>
+													<xs:element minOccurs="0" name="primPhoneNbr" type="xs:string"/>
+													<xs:element minOccurs="0" name="additPhoneNbr" type="xs:string"/>
+													<xs:element minOccurs="0" name="emplId" type="xs:string"/>
+													<xs:element minOccurs="0" name="dealerCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+													<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+													<xs:element minOccurs="0" name="mtId" type="xs:string"/>
+													<xs:element minOccurs="0" name="mtIdType" type="xs:string"/>
+													<xs:element minOccurs="0" name="mtIdNum" type="xs:integer"/>
+													<xs:element minOccurs="0" name="amdPic" type="xs:string"/>
+													<xs:element minOccurs="0" name="prevCustId" type="xs:integer"/>
+													<xs:element minOccurs="0" name="noTax" type="xs:string"/>
+													<xs:element minOccurs="0" name="reInvoice" type="xs:string"/>
+													<xs:element minOccurs="0" name="oldPhoneNbr" type="xs:string"/>
+													<xs:element minOccurs="0" name="taxndInd" type="xs:string"/>
+													<xs:element name="manaNext" type="xs:string"/>
+													<xs:element minOccurs="0" name="ordPay">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="isChanged" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtAcctNoOc" type="xs:integer"/>
+																<xs:element minOccurs="0" name="rbtAcctNoRc" type="xs:string"/>
+																<xs:element name="rbtAcctNoUc" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element minOccurs="0" name="ordFlds">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="isChanged" type="xs:string"/>
+																<xs:element name="subsType" type="xs:integer"/>
+																<xs:element name="publishType" type="xs:string"/>
+																<xs:element name="mlhCode" type="xs:integer"/>
+																<xs:element name="custDept" type="xs:integer"/>
+																<xs:element minOccurs="0" name="mtDeptName" type="xs:string"/>
+																<xs:element name="private" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="ordAdd">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="addrType" type="xs:string"/>
+																<xs:element name="adrFormat" type="xs:string"/>
+																<xs:element minOccurs="0" name="city" type="xs:string"/>
+																<xs:element minOccurs="0" name="cityAc" type="xs:string"/>
+																<xs:element minOccurs="0" name="address1" type="xs:string"/>
+																<xs:element minOccurs="0" name="address1Ac" type="xs:string"/>
+																<xs:element minOccurs="0" name="num1" type="xs:string"/>
+																<xs:element minOccurs="0" name="postal" type="xs:string"/>
+																<xs:element minOccurs="0" name="num2" type="xs:string"/>
+																<xs:element minOccurs="0" name="addrField3" type="xs:string"/>
+																<xs:element minOccurs="0" name="address3" type="xs:string"/>
+																<xs:element minOccurs="0" name="addrField2" type="xs:string"/>
+																<xs:element minOccurs="0" name="geoCode" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="ordSrv">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="isChanged" type="xs:string"/>
+													<xs:element name="custIdForBilling" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="ordPp">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="interfaceAct" type="xs:string"/>
+																<xs:element minOccurs="0" name="actvRsnCode" type="xs:string"/>
+																<xs:element minOccurs="0" name="billingSoc" type="xs:string"/>
+																<xs:element minOccurs="0" name="billPromoSoc" type="xs:string"/>
+																<xs:element minOccurs="0" name="commitStartDt" type="xs:date"/>
+																<xs:element minOccurs="0" name="commitEndDate" type="xs:date"/>
+																<xs:element minOccurs="0" name="commitReason" type="xs:string"/>
+																<xs:element name="fineCncel" type="xs:string"/>
+																<xs:element minOccurs="0" name="reasonFnCncel" type="xs:string"/>
+																<xs:element name="removeInd" type="xs:string"/>
+																<xs:element name="mana" type="xs:string"/>
+																<xs:element minOccurs="0" name="bmDate" type="xs:date"/>
+																<xs:element name="campgnReNew" type="xs:string"/>
+																<xs:element minOccurs="0" name="custIdFine" type="xs:integer"/>
+																<xs:element minOccurs="0" name="acctNoFine" type="xs:integer"/>
+																<xs:element minOccurs="0" name="gpEndDate" type="xs:date"/>
+																<xs:element minOccurs="0" name="emplId" type="xs:string"/>
+																<xs:element minOccurs="0" name="periodFwd" type="xs:string"/>
+																<xs:element maxOccurs="unbounded" minOccurs="0" name="ordFtr">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="interfaceAct" type="xs:string"/>
+																			<xs:element name="billingAttrCod" type="xs:string"/>
+																			<xs:element minOccurs="0" name="rbtAcctNoRc" type="xs:string"/>
+																			<xs:element minOccurs="0" name="custIdRc" type="xs:integer"/>
+																			<xs:element minOccurs="0" name="paymentType" type="xs:string"/>
+																			<xs:element minOccurs="0" name="paymentsNum" type="xs:integer"/>
+																			<xs:element minOccurs="0" name="ftrOcAmout" type="xs:float"/>
+																			<xs:element minOccurs="0" name="discountValue" type="xs:float"/>
+																			<xs:element minOccurs="0" name="custIdOc" type="xs:integer"/>
+																			<xs:element minOccurs="0" name="rbtAcctNoOc" type="xs:integer"/>
+																			<xs:element name="cancelPriceOc" type="xs:string"/>
+																			<xs:element minOccurs="0" name="cnclOcReason" type="xs:string"/>
+																			<xs:element name="newInd" type="xs:string"/>
+																			<xs:element minOccurs="0" name="dealerCode" type="xs:string"/>
+																			<xs:element maxOccurs="unbounded" minOccurs="0" name="ordAttr">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="interfaceAct" type="xs:string"/>
+																						<xs:element name="billingAttrCod" type="xs:string"/>
+																						<xs:element minOccurs="0" name="bilPrmValue" type="xs:string"/>
+																						<xs:element minOccurs="0" name="attributeValue" type="xs:string"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element maxOccurs="unbounded" minOccurs="0" name="ordProm">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element minOccurs="0" name="billingSoc" type="xs:string"/>
+																			<xs:element name="startDate" type="xs:date"/>
+																			<xs:element minOccurs="0" name="endDate" type="xs:date"/>
+																			<xs:element name="campaignPeriod" type="xs:integer"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="ordOc">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="isChanged" type="xs:string"/>
+													<xs:element name="custIdForBilling" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="ordOcth">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="interfaceAct" type="xs:string"/>
+																<xs:element name="billingAttrCod" type="xs:string"/>
+																<xs:element minOccurs="0" name="listPrice" type="xs:float"/>
+																<xs:element minOccurs="0" name="bmDate" type="xs:date"/>
+																<xs:element minOccurs="0" name="paymentsNum" type="xs:integer"/>
+																<xs:element minOccurs="0" name="srvSupCode" type="xs:string"/>
+																<xs:element minOccurs="0" name="emplid" type="xs:string"/>
+																<xs:element name="rbtAcctNoOc" type="xs:integer"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="ordDisc">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="custIdForBilling" type="xs:string"/>
+													<xs:element name="isChanged" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="ordDd">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="interfaceAct" type="xs:string"/>
+																<xs:element name="lineDiscuntId" type="xs:integer"/>
+																<xs:element minOccurs="0" name="billingSoc" type="xs:string"/>
+																<xs:element minOccurs="0" name="bmDate" type="xs:date"/>
+																<xs:element minOccurs="0" name="endDate" type="xs:date"/>
+																<xs:element name="mana" type="xs:string"/>
+																<xs:element name="manaNext" type="xs:string"/>
+																<xs:element minOccurs="0" name="actvRsnCode" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtAcctNoDiscount" type="xs:string"/>
+																<xs:element minOccurs="0" name="avgConsumCost" type="xs:float"/>
+																<xs:element name="bonus" type="xs:string"/>
+																<xs:element minOccurs="0" name="custId" type="xs:string"/>
+																<xs:element minOccurs="0" name="discMemamen" type="xs:integer"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="ordCsr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="isChanged" type="xs:string"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="ordCsrd">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="interfaceAct" type="xs:string"/>
+																<xs:element name="lineDiscuntId" type="xs:integer"/>
+																<xs:element minOccurs="0" name="discountValue" type="xs:float"/>
+																<xs:element name="payComp" type="xs:string"/>
+																<xs:element minOccurs="0" name="bmDate" type="xs:date"/>
+																<xs:element minOccurs="0" name="endDate" type="xs:date"/>
+																<xs:element minOccurs="0" name="billingSoc" type="xs:string"/>
+																<xs:element minOccurs="0" name="billPropGroup" type="xs:string"/>
+																<xs:element minOccurs="0" name="billingService" type="xs:string"/>
+																<xs:element minOccurs="0" name="billingServSc" type="xs:string"/>
+																<xs:element minOccurs="0" name="invoiceDescr" type="xs:string"/>
+																<xs:element minOccurs="0" name="rbtAcctNoDiscount" type="xs:string"/>
+																<xs:element name="manaNext" type="xs:string"/>
+																<xs:element maxOccurs="unbounded" minOccurs="0" name="ordDftr">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="billingAttrCod" type="xs:string"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

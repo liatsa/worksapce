@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:DiscountDetails02="http://www.bezeq.co.il/XMLSchema/DiscountDetails02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/DiscountDetails02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="customerId" type="integer"/>
+							<element minOccurs="0" name="siteNo" type="integer"/>
+							<element minOccurs="0" name="requestTimestamp" type="dateTime"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="acctDiscableBuf">
+								<complexType>
+									<sequence>
+										<element name="discountSoc" type="string"/>
+										<element minOccurs="0" name="acctDiscAbleCd" type="string"/>
+										<element name="existsDiscountSoc" type="string"/>
+										<element name="subscriberNo" type="string"/>
+										<element minOccurs="0" name="productType" type="string"/>
+										<element minOccurs="0" name="productSubType" type="string"/>
+										<element minOccurs="0" name="soc" type="string"/>
+										<element minOccurs="0" name="featureCode" type="string"/>
+										<element minOccurs="0" name="combinationNo" type="integer"/>
+										<element minOccurs="0" name="qty" type="integer"/>
+										<element minOccurs="0" name="cmpCode" type="string"/>
+										<element minOccurs="0" name="existsSubDiscInd" type="string"/>
+										<element minOccurs="0" name="dscExistsSub" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

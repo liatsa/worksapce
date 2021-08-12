@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTInstallerReport01="http://www.bezeq.co.il/XMLSchema/KRTInstallerReport01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTInstallerReport01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="installerReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTInstallerReport01:request"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNumber" type="xs:int"/>
+							<xs:element minOccurs="0" name="hekerNumber" type="xs:int"/>
+							<xs:element name="mainOrderNumber" type="xs:int"/>
+							<xs:element name="runOrderNumber" type="xs:int"/>
+							<xs:element minOccurs="0" name="reportDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="reportTime" type="xs:time"/>
+							<xs:element minOccurs="0" name="operationId" type="xs:int"/>
+							<xs:element minOccurs="0" name="supplayId" type="xs:int"/>
+							<xs:element name="operationLabel" type="xs:int"/>
+							<xs:element minOccurs="0" name="isEquipmentManagedInCM" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="billRemark">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="remark" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="orderRemark">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="remark" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="buildingType" type="xs:string"/>
+							<xs:element minOccurs="0" name="assetFiberInd" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

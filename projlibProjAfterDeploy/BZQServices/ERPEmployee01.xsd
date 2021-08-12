@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ERPEmployee01="http://www.bezeq.co.il/XMLSchema/ERPEmployee01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ERPEmployee01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="employee">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ERPEmployee01:request"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="action" type="xs:string"/>
+							<xs:element name="employeeId" type="xs:string"/>
+							<xs:element name="startDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="endDate" type="xs:date"/>
+							<xs:element name="hebrewFirstName" type="xs:string"/>
+							<xs:element name="hebrewLastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="hebrewNiceName" type="xs:string"/>
+							<xs:element name="englishFirstName" type="xs:string"/>
+							<xs:element name="englishLastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="birthdayDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="driverLicenseNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="driverLicenseType" type="xs:string"/>
+							<xs:element name="employeeNumber" type="xs:string"/>
+							<xs:element name="status" type="xs:string"/>
+							<xs:element name="statusDescription" type="xs:string"/>
+							<xs:element name="class" type="xs:string"/>
+							<xs:element name="classDescription" type="xs:string"/>
+							<xs:element name="subClass" type="xs:string"/>
+							<xs:element name="subClassDescription" type="xs:string"/>
+							<xs:element name="bzqProfession" type="xs:string"/>
+							<xs:element name="bzqProfessionDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="classification" type="xs:string"/>
+							<xs:element minOccurs="0" name="classificationDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzqManagerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzqManagerLevel" type="xs:string"/>
+							<xs:element minOccurs="0" name="employer" type="xs:string"/>
+							<xs:element minOccurs="0" name="division" type="xs:string"/>
+							<xs:element minOccurs="0" name="divisionDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="divisionLegacy" type="xs:string"/>
+							<xs:element minOccurs="0" name="divisionLegacyDescription" type="xs:string"/>
+							<xs:element name="divisionSapCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="divisionMFCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="department" type="xs:string"/>
+							<xs:element minOccurs="0" name="departmentDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="departmentLegacy" type="xs:string"/>
+							<xs:element minOccurs="0" name="departmentLegacyDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="departmentMFCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="departmentSapCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="GroupLineSapCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="GroupLineDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="section" type="xs:string"/>
+							<xs:element minOccurs="0" name="sectionDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="sectionSAPCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="sectionSAPName" type="xs:string"/>
+							<xs:element minOccurs="0" name="officeCity" type="xs:string"/>
+							<xs:element minOccurs="0" name="officeCityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="officeStreet" type="xs:string"/>
+							<xs:element minOccurs="0" name="officeBuilding" type="xs:string"/>
+							<xs:element minOccurs="0" name="officeZipCode" type="xs:string"/>
+							<xs:element name="costCenter" type="xs:string"/>
+							<xs:element name="costCenterDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="geoZone" type="xs:string"/>
+							<xs:element name="city" type="xs:string"/>
+							<xs:element name="cityName" type="xs:string"/>
+							<xs:element name="street" type="xs:string"/>
+							<xs:element minOccurs="0" name="zipCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="officePhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzqMirsPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzqCellularPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="homePhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="cellularPhone" type="xs:string"/>
+							<xs:element name="updateDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="userType" type="xs:string"/>
+							<xs:element minOccurs="0" name="userTypeDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

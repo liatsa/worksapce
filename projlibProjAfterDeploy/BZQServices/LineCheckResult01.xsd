@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:LineCheckResult01="http://www.bezeq.co.il/XMLSchema/LineCheckResult01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/LineCheckResult01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="phone" type="xs:string"/>
+							<xs:element name="timestamp" type="xs:dateTime"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="results">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dateTime" type="xs:dateTime"/>
+										<xs:element name="testIndex" type="xs:integer"/>
+										<xs:element name="testType" type="xs:integer"/>
+										<xs:element name="testName" type="xs:string"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="analyzeMsgs">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="analyzeMsg" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

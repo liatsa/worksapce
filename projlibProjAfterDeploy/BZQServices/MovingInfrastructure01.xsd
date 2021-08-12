@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:MovingInfrastructure01="http://www.bezeq.co.il/XMLSchema/MovingInfrastructure01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/MovingInfrastructure01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="providerId" type="string"/>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="providerRequestId" type="string"/>
+							<element minOccurs="0" name="providerMessageSendTime" type="dateTime"/>
+							<element minOccurs="0" name="authorityId" type="string"/>
+							<element minOccurs="0" name="authorityName" type="string"/>
+							<element minOccurs="0" name="authorityDetails" type="string"/>
+							<element minOccurs="0" name="contactName" type="string"/>
+							<element minOccurs="0" name="contactPhoneNum" type="string"/>
+							<element minOccurs="0" name="contactEmail" type="string"/>
+							<element minOccurs="0" name="authorityTime" type="dateTime"/>
+							<element minOccurs="0" name="locationCode" type="string"/>
+							<element minOccurs="0" name="workDesc" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="lines">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="lineCode" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="techMessageCode" type="string"/>
+							<element minOccurs="0" name="techMessageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

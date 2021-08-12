@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Planning02="http://www.bezeq.co.il/XMLSchema/Planning02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Planning02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="requestType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nttRequestId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="portalRequestPassword" type="xs:string"/>
+							<xs:element minOccurs="0" name="shana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparTik" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="portalRequestId" type="xs:integer"/>
+							<xs:element name="nttRequestId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparTik" type="xs:integer"/>
+							<xs:element name="openDateString" type="xs:string"/>
+							<xs:element minOccurs="0" name="updateDateString" type="xs:string"/>
+							<xs:element name="assigneeName" type="xs:string"/>
+							<xs:element name="assigneePhone" type="xs:string"/>
+							<xs:element name="assigneeMail" type="xs:string"/>
+							<xs:element name="assigneeAddr" type="xs:string"/>
+							<xs:element name="requestStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="buildingNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="buildingLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="zipCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="gush" type="xs:integer"/>
+							<xs:element minOccurs="0" name="chelka" type="xs:integer"/>
+							<xs:element minOccurs="0" name="migrash" type="xs:string"/>
+							<xs:element minOccurs="0" name="lonLat" type="xs:string"/>
+							<xs:element minOccurs="0" name="numApartments" type="xs:integer"/>
+							<xs:element minOccurs="0" name="addedApartments" type="xs:integer"/>
+							<xs:element minOccurs="0" name="floors" type="xs:integer"/>
+							<xs:element minOccurs="0" name="addedFloors" type="xs:integer"/>
+							<xs:element minOccurs="0" name="numBusns" type="xs:integer"/>
+							<xs:element minOccurs="0" name="addedBusns" type="xs:integer"/>
+							<xs:element minOccurs="0" name="startBuildDateString" type="xs:string"/>
+							<xs:element minOccurs="0" name="finishBuildDateString" type="xs:string"/>
+							<xs:element minOccurs="0" name="sqmArea" type="xs:float"/>
+							<xs:element minOccurs="0" name="populationDateString" type="xs:string"/>
+							<xs:element minOccurs="0" name="baalutNehes" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugAvoda" type="xs:integer"/>
+							<xs:element minOccurs="0" name="primaryUsage" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugBniya" type="xs:integer"/>
+							<xs:element minOccurs="0" name="siyumTashtit" type="xs:integer"/>
+							<xs:element minOccurs="0" name="comments" type="xs:string"/>
+							<xs:element minOccurs="0" name="tama" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalArea" type="xs:float"/>
+							<xs:element minOccurs="0" name="buildPersantage" type="xs:float"/>
+							<xs:element minOccurs="0" name="useageChange" type="xs:string"/>
+							<xs:element name="contactCount" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="contactList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="contactName" type="xs:string"/>
+										<xs:element minOccurs="0" name="contactLastName" type="xs:string"/>
+										<xs:element name="teudatZehut" type="xs:string"/>
+										<xs:element name="contactType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+										<xs:element minOccurs="0" name="buildingNumber" type="xs:integer"/>
+										<xs:element minOccurs="0" name="buildingLetter" type="xs:string"/>
+										<xs:element minOccurs="0" name="zipCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="poBox" type="xs:integer"/>
+										<xs:element name="telephone1" type="xs:string"/>
+										<xs:element minOccurs="0" name="telephone2" type="xs:string"/>
+										<xs:element minOccurs="0" name="fax" type="xs:string"/>
+										<xs:element name="cellular" type="xs:string"/>
+										<xs:element name="email" type="xs:string"/>
+										<xs:element minOccurs="0" name="comments" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="fileCount" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="fileList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="fileName" type="xs:string"/>
+								<xs:element minOccurs="0" name="fileExtention" type="xs:string"/>
+										<xs:element minOccurs="0" name="fileSize" type="xs:integer"/>
+										<xs:element minOccurs="0" name="fileType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="fileStatus" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="returnCode" type="xs:string"/>
+							<xs:element name="returnCodeDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

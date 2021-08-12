@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:TaskDetails01="http://www.bezeq.co.il/XMLSchema/TaskDetails01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/TaskDetails01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="taskId" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="projectid" type="integer"/>
+							<element name="projectType" type="integer"/>
+							<element name="projectType_desc" type="string"/>
+							<element minOccurs="0" name="taskId" type="integer"/>
+							<element minOccurs="0" name="description" type="string"/>
+							<element minOccurs="0" name="cityCode" type="integer"/>
+							<element minOccurs="0" name="streetCode" type="integer"/>
+							<element minOccurs="0" name="buildingNumber" type="integer"/>
+							<element minOccurs="0" name="buildingLetter" type="string"/>
+							<element minOccurs="0" name="addressFid" type="integer"/>
+							<element minOccurs="0" name="xCoord" type="float"/>
+							<element minOccurs="0" name="yCoord" type="float"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="customerName" type="string"/>
+							<element minOccurs="0" name="coordDate" type="date"/>
+							<element minOccurs="0" name="netNo" type="string"/>
+							<element minOccurs="0" name="infrastructureType" type="integer"/>
+							<element minOccurs="0" name="coNum" type="integer"/>
+							<element minOccurs="0" name="branchId" type="integer"/>
+							<element minOccurs="0" name="assessmentNum" type="integer"/>
+							<element minOccurs="0" name="assessmentRequestNum" type="integer"/>
+							<element minOccurs="0" name="projectManagerName" type="string"/>
+							<element minOccurs="0" name="telCel1" type="string"/>
+							<element minOccurs="0" name="provider" type="integer"/>
+							<element minOccurs="0" name="orderType" type="integer"/>
+							<element minOccurs="0" name="subscriberNum" type="integer"/>
+							<element minOccurs="0" name="cabelSize" type="integer"/>
+							<element minOccurs="0" name="fiberCount" type="integer"/>
+							<element name="taskStatus" type="integer"/>
+							<element name="taskStatusDesc" type="string"/>
+							<element minOccurs="0" name="projectName" type="string"/>
+							<element minOccurs="0" name="orderTypeDesc" type="string"/>
+							<element minOccurs="0" name="taskType" type="integer"/>
+							<element minOccurs="0" name="taskTypeDesc" type="string"/>
+							<element minOccurs="0" name="msagId" type="integer"/>
+							<element minOccurs="0" name="solutionId" type="integer"/>
+							<element minOccurs="0" name="solutionDesc" type="string"/>
+							<element minOccurs="0" name="hgAssessmentNum" type="integer"/>
+							<element minOccurs="0" name="subtypeId" type="integer"/>
+							<element minOccurs="0" name="subtypeDesc" type="string"/>
+							<element minOccurs="0" name="projectCityCode" type="integer"/>
+							<element minOccurs="0" name="installation" type="string"/>
+							<element minOccurs="0" name="custInstallation" type="string"/>
+							<element minOccurs="0" name="isCloseWithCoordDate" type="string"/>
+							<element minOccurs="0" name="taskWBS" type="string"/>
+							<element minOccurs="0" name="taskCableCode" type="integer"/>
+							<element minOccurs="0" name="isRemoveFromNet" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="contacts">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="contactType" type="integer"/>
+										<element minOccurs="0" name="contactTypeDesc" type="string"/>
+										<element minOccurs="0" name="contacteName" type="string"/>
+										<element minOccurs="0" name="contactMobileNumber" type="string"/>
+										<element minOccurs="0" name="phoneNumber" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="requestStsRsn" type="integer"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

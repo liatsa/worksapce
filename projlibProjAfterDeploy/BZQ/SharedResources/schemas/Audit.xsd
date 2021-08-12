@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="AuditRequest">
+		<complexType>
+			<sequence>
+				<element name="auditId" type="string" minOccurs="0"/>
+				<element name="auditTime" type="string"/>
+				<element name="creationTime" type="string" minOccurs="0"/>
+				<element name="categoryCode" type="integer"/>
+				<element name="componentName" type="string"/>
+				<element name="auditPointCode" type="integer"/>
+				<element name="severityCode" type="integer"/>
+				<element name="interfaceId" type="string"/>
+				<element name="source" type="string" minOccurs="0"/>
+				<element name="sourceRequestId" type="string" minOccurs="0"/>
+				<element name="sourceSendTime" type="string" minOccurs="0"/>
+				<element name="techMessageCode" type="string" minOccurs="0"/>
+				<element name="techMessageDescription" type="string" minOccurs="0"/>
+				<element name="appMessageCode" type="string" minOccurs="0"/>
+				<element name="appMessageDescription" type="string" minOccurs="0"/>
+				<element name="applicationDataId1" type="string" minOccurs="0"/>
+				<element name="applicationDataId2" type="string" minOccurs="0"/>
+				<element name="applicationDataId3" type="string" minOccurs="0"/>
+				<element name="applicationDataId4" type="string" minOccurs="0"/>
+				<element name="data" type="string" minOccurs="0"/>
+				<element name="remark" type="string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

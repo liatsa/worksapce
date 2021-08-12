@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Customer04="http://www.bezeq.co.il/XMLSchema/Customer04" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Customer04">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="destination" type="xs:string"/>
+							<xs:element name="mode" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrType" type="xs:string"/>
+							<xs:element minOccurs="0" name="recordIdentifier" type="xs:string"/>
+							<xs:element minOccurs="0" name="msgDatetime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="actvCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="actvRsnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="issueDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="trxSeqNo" type="xs:string"/>
+							<xs:element name="ban" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountType" type="xs:string"/>
+							<xs:element minOccurs="0" name="accountSubType" type="xs:string"/>
+							<xs:element minOccurs="0" name="banStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="statusLastDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="custPersonalId" type="xs:string"/>
+							<xs:element minOccurs="0" name="custPersonalId2nd" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerGrade" type="xs:string"/>
+							<xs:element minOccurs="0" name="regionCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="defaultBen" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerContactMngr" type="xs:string"/>
+							<xs:element minOccurs="0" name="companyType" type="xs:string"/>
+							<xs:element minOccurs="0" name="b1CorporateId" type="xs:string"/>
+							<xs:element minOccurs="0" name="corporateName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastBusinessName" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrAttention" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrCity" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrHouseNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrStreetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrDistrict" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrPob" type="xs:string"/>
+							<xs:element minOccurs="0" name="apartmentNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrAptFloor" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrAptEntrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="additionalHouseLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="adrPostCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="additionalStreetCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="additionalCityCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="atSecClass" type="xs:string"/>
+							<xs:element minOccurs="0" name="creditClass" type="xs:string"/>
+							<xs:element minOccurs="0" name="startServiceDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="maxDatetime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="indActRsnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastBusinessName2nd" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName2nd" type="xs:string"/>
+							<xs:element minOccurs="0" name="homeTelno" type="xs:string"/>
+							<xs:element minOccurs="0" name="workTelno" type="xs:string"/>
+							<xs:element minOccurs="0" name="eMailAddr" type="xs:string"/>
+                                <xs:element minOccurs="0" name="EmergencyCustInd" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

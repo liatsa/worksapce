@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NTLEquipments01="http://www.bezeq.co.il/XMLSchema/NTL/Equipments01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NTL/Equipments01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="AtarDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Atar">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="atarId" type="xs:integer"/>
+							<xs:element name="customerNumber" type="xs:integer"/>
+							<xs:element name="semelIshuv" type="xs:integer"/>
+							<xs:element name="semelRechov" type="xs:integer"/>
+							<xs:element name="misparBait" type="xs:integer"/>
+							<xs:element minOccurs="0" name="otBait" type="xs:string"/>
+							<xs:element minOccurs="0" name="knisa" type="xs:string"/>
+							<xs:element minOccurs="0" name="koma" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dira" type="xs:integer"/>
+							<xs:element name="userId" type="xs:string"/>
+							<xs:element name="userFirstName" type="xs:string"/>
+							<xs:element name="userLastName" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="40" minOccurs="0" name="Tziyud">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="tziyudType" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

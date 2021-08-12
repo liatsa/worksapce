@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ActivationStatus03="http://www.bezeq.co.il/XMLSchema/ActivationStatus03" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ActivationStatus03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="orderHeaderId" type="xs:integer"/>
+							<xs:element name="productId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="componentId" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="rangesNumberDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="paramGroupRowNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="paramRowNo" type="xs:string"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="parametersDetails">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="componentParamId" type="xs:string"/>
+													<xs:element minOccurs="0" name="componentParamValue" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="systemStatusDetails">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="systemName" type="xs:string"/>
+													<xs:element minOccurs="0" name="status" type="xs:string"/>
+													<xs:element minOccurs="0" name="errorDescription" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+
+<xs:element maxOccurs="1" minOccurs="0" name="characteristicsDetails">
+					<xs:complexType>
+						<xs:sequence>
+					
+							
+							
+							<xs:element minOccurs="0" name="featureId" type="xs:integer"/>
+					
+					
+						
+							
+							<xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+					
+					
+							
+							
+							<xs:element minOccurs="0" name="activationSystemName" type="xs:string"/>
+					
+					
+							
+							
+							<xs:element minOccurs="0" name="activationStatus" type="xs:string"/>
+					
+					
+							
+							
+							<xs:element minOccurs="0" name="activationErrorDescription" type="xs:string"/>
+					
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

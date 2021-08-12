@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NTLAllocateIP01="http://www.bezeq.co.il/XMLSchema/NTLAllocateIP01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLAllocateIP01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="AllocateIP">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NTLAllocateIP01:request"/>
+				<xs:element ref="NTLAllocateIP01:reply"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element name="sherutType" type="xs:integer"/>
+							<xs:element name="atarId" type="xs:integer"/>
+							<xs:element name="Group">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="subNetMask" type="xs:integer"/>
+										<xs:element name="extensionsAmount" type="xs:integer"/>
+										<xs:element name="operationalExtensionsAmount" type="xs:integer"/>
+										<xs:element name="groupNumber" type="xs:integer"/>
+										<xs:element name="userId" type="xs:string"/>
+										<xs:element name="userFirstName" type="xs:string"/>
+										<xs:element name="userLastName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="atarId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="Group">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="groupNumber" type="xs:integer"/>
+										<xs:element name="subNetMask" type="xs:integer"/>
+										<xs:element name="extensionsAmount" type="xs:integer"/>
+										<xs:element name="operationalExtensionsAmount" type="xs:integer"/>
+										<xs:element name="fromIpAddress" type="xs:string"/>
+										<xs:element name="toIpAddress" type="xs:string"/>
+										<xs:element name="userId" type="xs:string"/>
+										<xs:element name="userFirstName" type="xs:string"/>
+										<xs:element name="userLastName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="code" type="xs:integer"/>
+							<xs:element minOccurs="0" name="description" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

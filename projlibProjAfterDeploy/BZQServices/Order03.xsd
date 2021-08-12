@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Order03="http://www.bezeq.co.il/XMLSchema/Order03" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Order03">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="extRecordType" type="string"/>
+							<element name="extOrderSystem" type="string"/>
+							<element name="extOrderNo" type="string"/>
+							<element name="customerId" type="string"/>
+							<element name="subscriberNo" type="string"/>
+							<element name="extOrderType" type="string"/>
+							<element name="extRsnCd" type="string"/>
+							<element name="extProductType" type="string"/>
+							<element name="extLineType" type="string"/>
+							<element name="extProdTpSys" type="string"/>
+							<element minOccurs="0" name="personalId" type="string"/>
+							<element minOccurs="0" name="spouseId" type="string"/>
+							<element name="numOfSubscribers" type="string"/>
+							<element name="numOfRemarks" type="string"/>
+							<element name="extPaymentType" type="string"/>
+							<element name="extOrdOpenDt" type="date"/>
+							<element name="extOrdActDate" type="date"/>
+							<element minOccurs="0" name="extCancelDt" type="date"/>
+							<element name="extOrdCloseDt" type="dateTime"/>
+							<element minOccurs="0" name="extDealerId" type="string"/>
+							<element minOccurs="0" name="extLead" type="string"/>
+							<element minOccurs="0" name="extRepId" type="string"/>
+							<element minOccurs="0" name="extOrdUserId" type="string"/>
+							<element minOccurs="0" name="extLoanId" type="string"/>
+							<element minOccurs="0" name="regionCd" type="string"/>
+							<element minOccurs="0" name="divisionCd" type="string"/>
+							<element minOccurs="0" name="ben" type="string"/>
+							<element minOccurs="0" name="extBudgetCode" type="string"/>
+							<element minOccurs="0" name="ppCompansation" type="string"/>
+							<element minOccurs="0" name="compansationDesc" type="string"/>
+							<element minOccurs="0" name="paymentAmount" type="string"/>
+							<element minOccurs="0" name="paymentDate" type="date"/>
+							<element minOccurs="0" name="paymentStatus" type="string"/>
+							<element minOccurs="0" name="discountPercent" type="string"/>
+							<element minOccurs="0" name="extPromo" type="string"/>
+							<element minOccurs="0" name="extPromoGroup" type="string"/>
+							<element minOccurs="0" name="extMilitaryOrderNo" type="string"/>
+							<element minOccurs="0" name="extLength" type="string"/>
+							<element minOccurs="0" name="callForward" type="string"/>
+							<element minOccurs="0" name="contactTelNo" type="string"/>
+							<element minOccurs="0" name="extContactName" type="string"/>
+							<element minOccurs="0" name="extSubsDef" type="string"/>
+							<element minOccurs="0" name="extSubsType" type="string"/>
+							<element minOccurs="0" name="extRemovalReason" type="string"/>
+							<element minOccurs="0" name="extInsallerVisit" type="string"/>
+							<element minOccurs="0" name="extGroupCode" type="string"/>
+							<element minOccurs="0" name="bpp" type="string"/>
+							<element maxOccurs="5" minOccurs="0" name="oppArr">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="opp" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="extModemCd" type="string"/>
+							<element minOccurs="0" name="extRcOcBenCd" type="string"/>
+							<element minOccurs="0" name="extRcBenCd" type="string"/>
+							<element minOccurs="0" name="extOrdOpenId" type="string"/>
+							<element name="numOfRanges" type="string"/>
+							<element minOccurs="0" name="extShopCd" type="string"/>
+							<element minOccurs="0" name="benAdrChangeInd" type="string"/>
+							<element minOccurs="0" name="extPackageInd" type="string"/>
+							<element name="extRangeType" type="string"/>
+							<element minOccurs="0" name="extRequestNo" type="string"/>
+							<element minOccurs="0" name="replaceSocInd" type="string"/>
+							<element maxOccurs="5" minOccurs="0" name="extPkgPpIndArr">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="extPkgPpInd" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="4" minOccurs="0" name="rcArr">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="rcBan" type="string"/>
+										<element minOccurs="0" name="rcBen" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="20" minOccurs="0" name="Remarks">
+								<complexType>
+									<sequence>
+										<element name="rmkRecordType" type="string"/>
+										<element minOccurs="0" name="rmkUpdateDate" type="date"/>
+										<element minOccurs="0" name="soRemarkCode" type="string"/>
+										<element name="SoRemarkDesc" type="string"/>
+										<element minOccurs="0" name="remarkOwnerId" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="10" name="Subscriber">
+								<complexType>
+									<sequence>
+										<element name="subRecordType" type="string"/>
+										<element name="bezeqSubId" type="string"/>
+										<element name="subSubscriberNo" type="string"/>
+										<element minOccurs="0" name="relOldSubno" type="string"/>
+										<element minOccurs="0" name="mainSubscriber" type="string"/>
+										<element minOccurs="0" name="mainSubscriberB" type="string"/>
+										<element minOccurs="0" name="extProdSubType" type="string"/>
+										<element minOccurs="0" name="firstName" type="string"/>
+										<element minOccurs="0" name="lastBusinessName" type="string"/>
+										<element minOccurs="0" name="adrCity" type="string"/>
+										<element minOccurs="0" name="streetNameAdr" type="string"/>
+										<element minOccurs="0" name="adrHouseNo" type="string"/>
+										<element minOccurs="0" name="additionalHouseLetter" type="string"/>
+										<element minOccurs="0" name="aptEntranceAdr" type="string"/>
+										<element minOccurs="0" name="apartmentNumber" type="string"/>
+										<element minOccurs="0" name="adrAptFloor" type="string"/>
+										<element minOccurs="0" name="adrPob" type="string"/>
+										<element minOccurs="0" name="postCode" type="string"/>
+										<element minOccurs="0" name="additionalCityCd" type="string"/>
+										<element minOccurs="0" name="additionalStreetCd" type="string"/>
+										<element minOccurs="0" name="firstNameB" type="string"/>
+										<element minOccurs="0" name="lastBusinessNmB" type="string"/>
+										<element minOccurs="0" name="adrCityB" type="string"/>
+										<element minOccurs="0" name="adrStreetNameB" type="string"/>
+										<element minOccurs="0" name="adrHouseNoB" type="string"/>
+										<element minOccurs="0" name="adrAptEntranceB" type="string"/>
+										<element minOccurs="0" name="additionalHouseLetterB" type="string"/>
+										<element minOccurs="0" name="apartmentNumberB" type="string"/>
+										<element minOccurs="0" name="adrAptFloorB" type="string"/>
+										<element minOccurs="0" name="adrPobB" type="string"/>
+										<element minOccurs="0" name="postCodeB" type="string"/>
+										<element name="numOfEquip" type="string"/>
+										<element name="numOfRelations" type="string"/>
+										<element minOccurs="0" name="taxdnInd" type="string"/>
+										<element minOccurs="0" name="integrator" type="string"/>
+										<element maxOccurs="30" minOccurs="0" name="Relations">
+											<complexType>
+												<sequence>
+													<element name="relRecordType" type="string"/>
+													<element name="secSubscriber" type="string"/>
+													<element name="extActivity" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="60" minOccurs="0" name="Equipment">
+											<complexType>
+												<sequence>
+													<element name="equipRecordType" type="string"/>
+													<element name="equipCd" type="string"/>
+													<element name="extActivityCode" type="string"/>
+													<element name="quantity" type="string"/>
+													<element name="equipPaymentType" type="string"/>
+													<element minOccurs="0" name="installmentsNum" type="string"/>
+													<element minOccurs="0" name="equipPaymentAmount" type="string"/>
+													<element minOccurs="0" name="equipDiscountPercent" type="string"/>
+													<element minOccurs="0" name="serialNumber" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="30" minOccurs="0" name="Ranges">
+								<complexType>
+									<sequence>
+										<element name="rangeRecordType" type="string"/>
+										<element name="msnExtensionNoFrom" type="string"/>
+										<element name="msnExtensionNoTo" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

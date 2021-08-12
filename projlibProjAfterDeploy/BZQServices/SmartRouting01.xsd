@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SmartRouting01="http://www.bezeq.co.il/XMLSchema/SmartRouting01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SmartRouting01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="telphonIvr" type="xs:string"/>
+							<xs:element minOccurs="0" name="custIdIvr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugHaz" type="xs:integer"/>
+							<xs:element name="degelHazmana" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sibatNiud" type="xs:integer"/>
+							<xs:element minOccurs="0" name="indAdsl" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sherut" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sameNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="OpenDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="RequestDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="StatusHaz" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProvisionDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="ProvisionCategory" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndInvUpgrade" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndActivateIfn" type="xs:string"/>
+							<xs:element minOccurs="0" name="IndTechnician" type="xs:string"/>
+							<xs:element minOccurs="0" name="InvBrowsRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="CurrentBrowsRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="DwhBrowsRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="ban" type="xs:string"/>
+							<xs:element minOccurs="0" name="custMark" type="xs:string"/>							
+							<xs:element minOccurs="0" name="coordinatedDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="reshetShmoraInd" type="xs:string"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="MessageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

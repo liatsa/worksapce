@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Script01="http://www.bezeq.co.il/XMLSchema/Script01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Script01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="groupcode" type="string"/>
+							<element name="physicalLineNumber" type="string"/>
+							<element name="logicalLineNumber" type="string"/>
+							<element name="ordernumber" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="createScriptFlag" type="string"/>
+							<element maxOccurs="10" minOccurs="0" name="equipments">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="equipType" type="string"/>
+										<element minOccurs="0" name="equipName" type="string"/>
+										<element minOccurs="0" name="mngIpAddress" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="6" minOccurs="0" name="Lans">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="lanIpAddress" type="string"/>
+										<element minOccurs="0" name="lanSubnetMask" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="serviceType" type="string"/>
+							<element minOccurs="0" name="wanA" type="string"/>
+							<element minOccurs="0" name="wanB" type="string"/>
+							<element minOccurs="0" name="wanSubnetMask" type="string"/>
+							<element minOccurs="0" name="loopBack" type="string"/>
+							<element minOccurs="0" name="cpeAs" type="string"/>
+							<element minOccurs="0" name="remoteAs" type="string"/>
+							<element minOccurs="0" name="mngConfig" type="string"/>
+							<element minOccurs="0" name="workConfig" type="string"/>
+							<element minOccurs="0" name="domain" type="string"/>
+							<element minOccurs="0" name="tunnel1" type="string"/>
+							<element minOccurs="0" name="tunnel2" type="string"/>
+							<element minOccurs="0" name="tunnel3" type="string"/>
+							<element minOccurs="0" name="tunnel4" type="string"/>
+							<element minOccurs="0" name="nat" type="string"/>
+							<element minOccurs="0" name="dhcpStart" type="string"/>
+							<element minOccurs="0" name="dhcpEnd" type="string"/>
+							<element minOccurs="0" name="dns1" type="string"/>
+							<element minOccurs="0" name="dns2" type="string"/>
+							<element minOccurs="0" name="ipHelper" type="string"/>
+							<element minOccurs="0" name="celluser" type="string"/>
+							<element minOccurs="0" name="cellPass" type="string"/>
+							<element minOccurs="0" name="cellApn" type="string"/>
+							<element minOccurs="0" name="cellGateway" type="string"/>
+							<element minOccurs="0" name="cellDomain" type="string"/>
+							<element minOccurs="0" name="dialerUser" type="string"/>
+							<element minOccurs="0" name="dialerPass" type="string"/>
+							<element minOccurs="0" name="ssidName" type="string"/>
+							<element minOccurs="0" name="ssidPassword" type="string"/>
+							<element minOccurs="0" name="cVlanWork" type="string"/>
+							<element minOccurs="0" name="controllerIpAddress" type="string"/>
+							<element minOccurs="0" name="ssid1" type="string"/>
+							<element minOccurs="0" name="ssid1SubnetMask" type="string"/>
+							<element minOccurs="0" name="ssid2" type="string"/>
+							<element minOccurs="0" name="ssid2SubnetMask" type="string"/>
+							<element minOccurs="0" name="ssid3" type="string"/>
+							<element minOccurs="0" name="ssid3SubnetMask" type="string"/>
+							<element minOccurs="0" name="scriptName" type="string"/>
+							<element minOccurs="0" name="config" type="string"/>
+							<element minOccurs="0" name="messageSetNbr" type="integer"/>
+							<element minOccurs="0" name="messagenbr" type="integer"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

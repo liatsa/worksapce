@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:DisplayRouting01="http://www.bezeq.co.il/XMLSchema/DisplayRouting01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/DisplayRouting01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="ezChiyugKodBzq" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparKodBzq" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="kodHechzer" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurKodHechzer" type="xs:string"/>
+							<xs:element minOccurs="0" name="counterNituvim" type="xs:integer"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="Nituvim">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="merkaz" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgeret" type="xs:integer"/>
+										<xs:element minOccurs="0" name="meTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="adTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sugMisgeret" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurSugMisgeret" type="xs:string"/>
+										<xs:element minOccurs="0" name="merkazLen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="merkezetLen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tziyudLen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgertLen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tagLen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurSugTagLen" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

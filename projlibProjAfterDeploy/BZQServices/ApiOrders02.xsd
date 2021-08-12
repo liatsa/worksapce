@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ApiOrders02="http://www.bezeq.co.il/XMLSchema/ApiOrders02" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ApiOrders02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="ordSysType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="orderingSyst" type="xs:string"/>
+										<xs:element minOccurs="0" name="ordInfoUpd">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="captureId" type="xs:string"/>
+													<xs:element name="orderNum" type="xs:string"/>
+													<xs:element minOccurs="0" name="identRemove" type="xs:integer"/>
+													<xs:element name="ordAction" type="xs:string"/>
+													<xs:element minOccurs="0" name="startDt" type="xs:date"/>
+													<xs:element minOccurs="0" name="beginTime" type="xs:time"/>
+													<xs:element minOccurs="0" name="endTime" type="xs:time"/>
+													<xs:element minOccurs="0" name="endFreeze" type="xs:date"/>
+													<xs:element minOccurs="0" name="mrkField" type="xs:string"/>
+													<xs:element minOccurs="0" name="actEndDate" type="xs:date"/>
+													<xs:element minOccurs="0" name="techEmplId" type="xs:string"/>
+													<xs:element minOccurs="0" name="techInstInd" type="xs:string"/>
+													<xs:element minOccurs="0" name="clsInstDt" type="xs:date"/>
+													<xs:element minOccurs="0" name="salesmanEmplId" type="xs:integer"/>
+													<xs:element minOccurs="0" name="emplId" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:FrameworkUpdate01="http://www.bezeq.co.il/XMLSchema/FrameworkUpdate01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/FrameworkUpdate01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="kodPeula" type="xs:integer"/>
+							<xs:element minOccurs="0" name="userId" type="xs:string"/>
+							<xs:element minOccurs="0" name="callFrom" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="newMisparMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="newMisparMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="newSugMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="semelIshuv" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shemIshuv" type="xs:string"/>
+							<xs:element minOccurs="0" name="semelRechov" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shemRechov" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparBait" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugBait" type="xs:string"/>
+							<xs:element minOccurs="0" name="otBait" type="xs:string"/>
+							<xs:element minOccurs="0" name="knisa" type="xs:string"/>
+							<xs:element minOccurs="0" name="koma" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dira" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMikum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMakom" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodStatus" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodChasima" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugAchzaka" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugRechush" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugPrisatTagim" type="xs:integer"/>
+							<xs:element minOccurs="0" name="bikurTechnai" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMizug" type="xs:integer"/>
+							<xs:element minOccurs="0" name="simunHatzlala" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugKitzurAniva" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMishpacha" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tatRova" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kibolet" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nitzul" type="xs:integer"/>
+							<xs:element minOccurs="0" name="goremMeyuad" type="xs:string"/>
+							<xs:element minOccurs="0" name="klaser" type="xs:string"/>
+							<xs:element minOccurs="0" name="upStreem" type="xs:integer"/>
+							<xs:element minOccurs="0" name="downStreem" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparTagim" type="xs:integer"/>
+							<xs:element minOccurs="0" name="merkazMeagedMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misgeretMeagedMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="merkezetMeagedMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodMitkanManrab" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodTziudManrab" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparShotefManrab" type="xs:string"/>
+							<xs:element minOccurs="0" name="merkazEzorSherut" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparEzorSherut" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugKesherEzorSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="teurSugKesherEzorSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="moedKesherEzorSherut" type="xs:date"/>
+							<xs:element minOccurs="0" name="kodMisgeretYashan" type="xs:string"/>
+							<xs:element minOccurs="0" name="kidometBchina" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="kodHechzer" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurKodHechzer" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="newMisparMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="newMisparMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugMisgeret" type="xs:string"/>
+							<xs:element minOccurs="0" name="newSugMisgeret" type="xs:integer"/>
+							<xs:element minOccurs="0" name="semelIshuv" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shemIshuv" type="xs:string"/>
+							<xs:element minOccurs="0" name="semelRechov" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shemRechov" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparBait" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugBait" type="xs:string"/>
+							<xs:element minOccurs="0" name="teurSugBait" type="xs:string"/>
+							<xs:element minOccurs="0" name="otBait" type="xs:string"/>
+							<xs:element minOccurs="0" name="knisa" type="xs:string"/>
+							<xs:element minOccurs="0" name="koma" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dira" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMikum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugMikum" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugMakom" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugMakom" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodStatus" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurKodStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodChasima" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurKodChasima" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugAchzaka" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugAchzaka" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugRechush" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugRechush" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugPrisatTagim" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugPrisatTagim" type="xs:string"/>
+							<xs:element minOccurs="0" name="bikurTechnai" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurBikurTechnai" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugMizug" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugMizug" type="xs:string"/>
+							<xs:element minOccurs="0" name="simunHatzlala" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSimunHatzlala" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugKitzurAniva" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugKitzurAniva" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugMishpacha" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tatRova" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kibolet" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nitzul" type="xs:integer"/>
+							<xs:element minOccurs="0" name="goremMeyuad" type="xs:string"/>
+							<xs:element minOccurs="0" name="klaser" type="xs:string"/>
+							<xs:element minOccurs="0" name="upStreem" type="xs:integer"/>
+							<xs:element minOccurs="0" name="downStreem" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparTagim" type="xs:integer"/>
+							<xs:element minOccurs="0" name="merkazMeagedMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misgeretMeagedMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="merkezetMeagedMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodMitkanManrab" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodTziudManrab" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparShotefManrab" type="xs:string"/>
+							<xs:element minOccurs="0" name="merkazEzorSherut" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparEzorSherut" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugKesherEzorSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="teurSugKesherEzorSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="moedKesherEzorSherut" type="xs:date"/>
+							<xs:element minOccurs="0" name="taarichIdkun" type="xs:date"/>
+							<xs:element minOccurs="0" name="taarichHakama" type="xs:date"/>
+							<xs:element minOccurs="0" name="kodMisgeretYashan" type="xs:string"/>
+							<xs:element minOccurs="0" name="kidometBchina" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparBaitShachen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugBaitShachen" type="xs:string"/>
+							<xs:element minOccurs="0" name="teurSugBaitShachen" type="xs:string"/>
+							<xs:element minOccurs="0" name="otBaitShachen" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugMeaged" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurSugMeaged" type="xs:string"/>
+							<xs:element minOccurs="0" name="tagimTzadMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tagimTzadAnaf" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

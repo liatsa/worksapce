@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateMission01="http://www.bezeq.co.il/XMLSchema/UpdateMission01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateMission01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="projectId" type="integer"/>
+							<element name="taskType" type="integer"/>
+							<element minOccurs="0" name="objectType" type="integer"/>
+							<element minOccurs="0" name="objectId" type="string"/>
+							<element minOccurs="0" name="description" type="string"/>
+							<element minOccurs="0" name="cityCode" type="integer"/>
+							<element minOccurs="0" name="streetCode" type="integer"/>
+							<element minOccurs="0" name="buildingNumber" type="integer"/>
+							<element minOccurs="0" name="buildingLetter" type="string"/>
+
+				<element minOccurs="0" name="xCoord" type="string"/>
+				<element minOccurs="0" name="yCoord" type="string"/>
+		
+				
+							<element minOccurs="0" name="coNum" type="integer"/>
+							<element minOccurs="0" name="branchId" type="integer"/>
+							<element minOccurs="0" name="addressFID" type="integer"/>
+							<element minOccurs="0" name="populationDate" type="string"/>
+							<element minOccurs="0" name="coordDate" type="string"/>
+							<element minOccurs="0" name="executiveType" type="integer"/>
+							<element minOccurs="0" name="infrastructureType" type="integer"/>
+							<element minOccurs="0" name="requestType" type="integer"/>
+							<element minOccurs="0" name="responseId" type="integer"/>
+							<element name="employeeId" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="taskId" type="integer"/>
+							<element name="errorCode" type="integer"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

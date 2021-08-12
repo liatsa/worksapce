@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTTable="http://www.bezeq.co.il/XMLSchema/KRTTable"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTable"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="KRTTable">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="interfaceId" type="xs:string" minOccurs="0"/>
+				<xs:element name="type" type="xs:integer"/>
+				<xs:element name="code" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+       <xs:element name="businessRule" type="xs:string" minOccurs="0"/>
+        <xs:element name="parentTypeId" type="xs:integer" minOccurs="0"/>
+        <xs:element name="parentCode" type="xs:string" minOccurs="0"/>
+  			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

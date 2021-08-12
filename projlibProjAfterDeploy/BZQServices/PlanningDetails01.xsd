@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:PlanningDetails01="http://www.bezeq.co.il/XMLSchema/PlanningDetails01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/PlanningDetails01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="projectId" type="long"/>
+							<element minOccurs="0" name="taskId" type="long"/>
+							<element minOccurs="0" name="kodMitcham" type="integer"/>
+							<element minOccurs="0" name="shana" type="integer"/>
+							<element minOccurs="0" name="misparTikChadash" type="integer"/>
+							<element minOccurs="0" name="tazpitanId" type="string"/>
+							<element name="actionType" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="projectId" type="long"/>
+							<element minOccurs="0" name="taskId" type="long"/>
+							<element minOccurs="0" name="kodMitcham" type="integer"/>
+							<element minOccurs="0" name="teurMitcham" type="string"/>
+							<element name="tikCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="pmpData">
+								<complexType>
+									<sequence>
+										<element name="atarId" type="long"/>
+										<element name="shana" type="integer"/>
+										<element name="misparTikChadash" type="integer"/>
+										<element minOccurs="0" name="shemTik" type="string"/>
+										<element name="status" type="string"/>
+										<element minOccurs="0" name="addressFid" type="long"/>
+										<element minOccurs="0" name="cityCode" type="long"/>
+										<element minOccurs="0" name="cityName" type="string"/>
+										<element minOccurs="0" name="streetCode" type="long"/>
+										<element minOccurs="0" name="streetName" type="string"/>
+										<element minOccurs="0" name="buildingNumber" type="long"/>
+										<element minOccurs="0" name="buildingLetter" type="string"/>
+										<element minOccurs="0" name="teurPeilut" type="string"/>
+										<element minOccurs="0" name="appartmentcount" type="integer"/>
+										<element minOccurs="0" name="populationDate" type="string"/>
+										<element minOccurs="0" name="avodatKablan" type="string"/>
+										<element minOccurs="0" name="structureType" type="string"/>
+										<element minOccurs="0" name="tama" type="string"/>
+										<element minOccurs="0" name="teudatZehut" type="string"/>
+										<element name="taarichPticha" type="string"/>
+										<element minOccurs="0" name="nttRequestId" type="integer"/>
+										<element minOccurs="0" name="bezeqOrderCount" type="integer"/>
+										<element minOccurs="0" name="generalOrderCount" type="integer"/>
+										<element name="contactCount" type="integer"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="contact">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="contactName" type="string"/>
+													<element minOccurs="0" name="contactLastName" type="string"/>
+													<element minOccurs="0" name="teudatZehut" type="string"/>
+													<element minOccurs="0" name="cityName" type="string"/>
+													<element minOccurs="0" name="cityCode" type="long"/>
+													<element minOccurs="0" name="streetName" type="string"/>
+													<element minOccurs="0" name="streetCode" type="long"/>
+													<element minOccurs="0" name="buildingNumber" type="long"/>
+													<element minOccurs="0" name="buildingLetter" type="string"/>
+													<element minOccurs="0" name="zipCode" type="integer"/>
+													<element minOccurs="0" name="poBox" type="integer"/>
+													<element minOccurs="0" name="telephone1" type="string"/>
+													<element minOccurs="0" name="telephone2" type="string"/>
+													<element minOccurs="0" name="cellular" type="string"/>
+													<element minOccurs="0" name="fax" type="string"/>
+													<element minOccurs="0" name="email" type="string"/>
+													<element minOccurs="0" name="comments" type="string"/>
+													<element minOccurs="0" name="contactTypeDesc" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="jobCount" type="integer"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="jobTask">
+											<complexType>
+												<sequence>
+													<element name="jobIdentifier" type="string"/>
+													<element minOccurs="0" name="jobDescription" type="string"/>
+													<element name="jobCreation" type="string"/>
+													<element name="jobOwner" type="string"/>
+													<element minOccurs="0" name="jobStatus" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+							<element name="requestStsRsn" type="integer"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

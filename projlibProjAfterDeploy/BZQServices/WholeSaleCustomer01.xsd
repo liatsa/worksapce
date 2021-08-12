@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:WholeSaleCustomer01="http://www.bezeq.co.il/XMLSchema/WholeSaleCustomer01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/WholeSaleCustomer01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="subscriberNo" type="string"/>
+							<element minOccurs="0" name="cableNo" type="string"/>
+							<element name="providerCode" type="string"/>
+							<element name="reqType" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="providerWsInd" type="string"/>
+							<element minOccurs="0" name="subscriberNo" type="string"/>
+							<element minOccurs="0" name="cableNo" type="string"/>
+							<element name="providerCode" type="string"/>
+							<element minOccurs="0" name="subAdrId" type="integer"/>
+							<element minOccurs="0" name="subAdrType" type="string"/>
+							<element minOccurs="0" name="subAdrPostCode" type="string"/>
+							<element minOccurs="0" name="subAdrCity" type="string"/>
+							<element minOccurs="0" name="subAdrAptFloor" type="integer"/>
+							<element minOccurs="0" name="subApartmentNumber" type="string"/>
+							<element minOccurs="0" name="subAdrAptEntrance" type="string"/>
+							<element minOccurs="0" name="subAdditionalHouseLetter" type="string"/>
+							<element minOccurs="0" name="subAdrHouseNo" type="string"/>
+							<element minOccurs="0" name="subAdrStreetName" type="string"/>
+							<element minOccurs="0" name="longitude" type="float"/>
+							<element minOccurs="0" name="latitude" type="float"/>
+							<element minOccurs="0" name="valueFrom" type="string"/>
+							<element minOccurs="0" name="subStatus" type="string"/>
+							<element name="status" type="integer"/>
+							<element minOccurs="0" name="msgCode" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

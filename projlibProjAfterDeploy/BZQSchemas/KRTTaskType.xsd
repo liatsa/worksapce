@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTTaskType="http://www.bezeq.co.il/XMLSchema/KRTTaskType"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTaskType"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="KRTTaskType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="interfaceId" type="xs:string" minOccurs="0"/>
+				<xs:element name="actionType" type="xs:string"/>
+				<xs:element name="code" type="xs:string"/>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="duration" type="xs:int"/>
+				<xs:element name="engineerType" type="xs:string"/>
+				<xs:element name="requiredSkills" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="skillKey" type="xs:string"/>
+							<xs:element name="skillLevel" type="xs:int"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="messageSetNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="messageNumber" type="xs:integer"/>
+				<xs:element name="messageDescription" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:PLNServiceArea01="http://www.bezeq.co.il/XMLSchema/PLNServiceArea01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/PLNServiceArea01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="ServiceArea">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PLNServiceArea01:request"/>
+				<xs:element ref="PLNServiceArea01:reply"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="cityCode" type="xs:int"/>
+							<xs:element name="streetCode" type="xs:int"/>
+							<xs:element minOccurs="0" name="houseNumber" type="xs:int"/>
+							<xs:element minOccurs="0" name="bldgLetter" type="xs:string"/>
+							<xs:element name="centralOfice" type="xs:int"/>
+							<xs:element name="frame" type="xs:int"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interface" type="xs:string"/>
+							<xs:element minOccurs="0" name="x" type="xs:int"/>
+							<xs:element minOccurs="0" name="y" type="xs:int"/>
+							<xs:element minOccurs="0" name="privateServiceLog" type="xs:string"/>
+							<xs:element minOccurs="0" name="privateEquipmentType" type="xs:string"/>
+							<xs:element minOccurs="0" name="privateCoordinateQuality" type="xs:int"/>
+							<xs:element minOccurs="0" name="privateAreaCode" type="xs:int"/>
+							<xs:element minOccurs="0" name="BuisnessServiceLog" type="xs:string"/>
+							<xs:element minOccurs="0" name="BuisnessEquipmentType" type="xs:string"/>
+							<xs:element minOccurs="0" name="BuisnessCoordinateQuality" type="xs:int"/>
+							<xs:element minOccurs="0" name="BuisnessAreaCode" type="xs:int"/>
+							<xs:element minOccurs="0" name="GeneralServiceLog" type="xs:string"/>
+							<xs:element minOccurs="0" name="GeneralEquipmentType" type="xs:string"/>
+							<xs:element minOccurs="0" name="GeneralCoordinateQuality" type="xs:int"/>
+							<xs:element minOccurs="0" name="GeneralAreaCode" type="xs:int"/>
+							<xs:element minOccurs="0" name="Quality" type="xs:string"/>
+							<xs:element name="Code" type="xs:int"/>
+							<xs:element minOccurs="0" name="Description" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:NPGBase="http://www.bezeq.co.il/XMLSchema/NPGBase"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/NPGBase"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="messageSendTimestamp" type="xs:dateTime"/>
+	<xs:element name="messageType" type="xs:string"/>
+	<xs:element name="messageStatus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestStatus" type="xs:string"/>
+				<xs:element name="requestReasonCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="requestReasonMessage" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

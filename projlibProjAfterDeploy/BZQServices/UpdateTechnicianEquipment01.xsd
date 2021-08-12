@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateTechnicianEquipment01="http://www.bezeq.co.il/XMLSchema/UpdateTechnicianEquipment01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateTechnicianEquipment01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="source" type="xs:string"/>
+							<xs:element name="subscriberAreaCode" type="xs:string"/>
+							<xs:element name="subscriberNumber" type="xs:string"/>
+							<xs:element name="missionId" type="xs:integer"/>
+							<xs:element name="customerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderNumber" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" name="equipmentArray">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="recordId" type="xs:string"/>
+										<xs:element name="actionType" type="xs:string"/>
+										<xs:element name="activityType" type="xs:string"/>
+										<xs:element name="subscriberType" type="xs:string"/>
+										<xs:element name="equipmentOwnerId" type="xs:string"/>
+										<xs:element name="installationDate" type="xs:date"/>
+										<xs:element name="catalogNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+										<xs:element name="amount" type="xs:integer"/>
+										<xs:element name="useLevel" type="xs:string"/>
+										<xs:element minOccurs="0" name="refundReasonId" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="subscriberAreaCode" type="xs:string"/>
+							<xs:element name="subscriberNumber" type="xs:string"/>
+							<xs:element name="missionId" type="xs:integer"/>
+							<xs:element name="customerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderNumber" type="xs:integer"/>
+							<xs:element name="requestSts" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

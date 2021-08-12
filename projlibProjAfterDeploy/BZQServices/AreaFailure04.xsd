@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:AreaFailure04="http://www.bezeq.co.il/XMLSchema/AreaFailure04" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AreaFailure04">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="failureId" type="xs:string"/>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element name="failureStatus" type="xs:string"/>
+							<xs:element name="failureType" type="xs:string"/>
+							<xs:element name="failureCause" type="xs:string"/>
+							<xs:element name="elementType" type="xs:string"/>
+							<xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+							<xs:element name="shortDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="description" type="xs:string"/>
+							<xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="creationTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="subscribersCount" type="xs:integer"/>
+							<xs:element minOccurs="0" name="center" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frame" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tagSstart" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tagEnd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="facility" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="systemStart" type="xs:string"/>
+							<xs:element minOccurs="0" name="systemEnd" type="xs:string"/>
+							<xs:element minOccurs="0" name="redBack" type="xs:string"/>
+							<xs:element minOccurs="0" name="redbackPort" type="xs:string"/>
+							<xs:element minOccurs="0" name="vp" type="xs:string"/>
+							<xs:element minOccurs="0" name="vc" type="xs:string"/>
+							<xs:element minOccurs="0" name="vcStart" type="xs:integer"/>
+							<xs:element minOccurs="0" name="vcEnd" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ip" type="xs:string"/>
+							<xs:element minOccurs="0" name="shelf" type="xs:string"/>
+							<xs:element minOccurs="0" name="slot" type="xs:string"/>
+							<xs:element minOccurs="0" name="ispCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="closeTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="stimatedTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="isCancelSo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cancelSoTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="isSendSms" type="xs:integer"/>
+							<xs:element minOccurs="0" name="isAutomaticCloseCase" type="xs:integer"/>
+							<xs:element minOccurs="0" name="isPrivateTransferToRepresentative" type="xs:integer"/>
+							<xs:element minOccurs="0" name="isPrivateAutomaticCaseOpen" type="xs:integer"/>
+							<xs:element minOccurs="0" name="isSuspicion" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="subscriber">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="subscriberNumber" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="ufid" type="xs:integer"/>
+							<xs:element minOccurs="0" name="coordinates" type="xs:string"/>
+							<xs:element minOccurs="0" name="wazeCoordinates" type="xs:string"/>
+							<xs:element minOccurs="0" name="sddress" type="xs:string"/>
+							<xs:element minOccurs="0" name="ufidName" type="xs:string"/>
+							<xs:element minOccurs="0" name="alemenType" type="xs:string"/>
+							<xs:element minOccurs="0" name="remark" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

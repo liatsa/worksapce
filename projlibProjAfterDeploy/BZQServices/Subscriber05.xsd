@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Subscriber05="http://www.bezeq.co.il/XMLSchema/Subscriber05" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Subscriber05">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="InterfaceId" type="xs:string"/>
+							<xs:element name="CustomerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="FromSubscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProductType" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProductSubTYpe" type="xs:string"/>
+							<xs:element minOccurs="0" name="MainSubscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="SubscriberStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="siteNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityCode " type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNo" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="InterfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustomerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ProductType" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProductSubTYpe" type="xs:string"/>
+							<xs:element minOccurs="0" name="MainSubscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="NoOfSubscribers" type="xs:integer"/>
+							<xs:element minOccurs="0" name="FromSubscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="BufferQtyRows" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="SubscriberArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ban" type="xs:integer"/>
+										<xs:element minOccurs="0" name="SubscriberNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="mainSubNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="prodType" type="xs:string"/>
+										<xs:element minOccurs="0" name="prodSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="SecBan" type="xs:integer"/>
+										<xs:element minOccurs="0" name="InitActDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="SubStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubStatusRsnCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubStatusLastAct" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubStatusDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="UcBen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="OcBen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="RcBen" type="xs:integer"/>
+										<xs:element minOccurs="0" name="SubProductType" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubProductSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="Heker" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubNameType" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubLastBusinessName" type="xs:string"/>
+										<xs:element minOccurs="0" name="SubFirstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="siteNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="siteName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RequestSts" type="xs:string"/>
+							<xs:element minOccurs="0" name="RequestStsRsn" type="xs:string"/>
+							<xs:element minOccurs="0" name="ErrorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

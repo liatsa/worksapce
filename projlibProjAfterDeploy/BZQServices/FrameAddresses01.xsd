@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:FrameAddresses01="http://www.bezeq.co.il/XMLSchema/FrameAddresses01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/FrameAddresses01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="msMerkaz" type="xs:integer"/>
+							<xs:element name="msMisgeret" type="xs:integer"/>
+							<xs:element name="lastRecNo" type="xs:integer"/>
+							<xs:element name="totalRecNumber" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="kamutKtovotMezinot" type="xs:integer"/>
+							<xs:element name="fromKtovetNo" type="xs:integer"/>
+							<xs:element name="toKtovetNo" type="xs:integer"/>
+							<xs:element name="moneKtovotMezinot" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="ktovot">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ufid" type="xs:long"/>
+										<xs:element minOccurs="0" name="msChativa" type="xs:string"/>
+										<xs:element minOccurs="0" name="msMerchav" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sugKesher" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurSugKesher" type="xs:string"/>
+										<xs:element minOccurs="0" name="ramatKtovet" type="xs:integer"/>
+										<xs:element minOccurs="0" name="semelIshuv" type="xs:integer"/>
+										<xs:element minOccurs="0" name="shemIshuv" type="xs:string"/>
+										<xs:element minOccurs="0" name="semelRechov" type="xs:integer"/>
+										<xs:element minOccurs="0" name="shemRechov" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparBait" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sugBait" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurSugBait" type="xs:string"/>
+										<xs:element minOccurs="0" name="ot" type="xs:string"/>
+										<xs:element minOccurs="0" name="knisa" type="xs:string"/>
+										<xs:element minOccurs="0" name="koma" type="xs:integer"/>
+										<xs:element minOccurs="0" name="dira" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element name="returnCodeDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

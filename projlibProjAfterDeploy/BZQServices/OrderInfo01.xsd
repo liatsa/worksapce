@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderInfo01="http://www.bezeq.co.il/XMLSchema/OrderInfo01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderInfo01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="projectNo" type="integer"/>
+							<element minOccurs="0" name="cityId" type="string"/>
+							<element minOccurs="0" name="streetId" type="string"/>
+							<element minOccurs="0" name="house" type="string"/>
+							<element minOccurs="0" name="houseIndication" type="string"/>
+							<element minOccurs="0" name="serviceCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="services">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="service" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="orderStatusCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="orderstatuses">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderstatus" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="pagesize" type="integer"/>
+							<element minOccurs="0" name="customerNum" type="integer"/>
+							<element minOccurs="0" name="orderNum" type="string"/>
+							<element minOccurs="0" name="telephoneNumber" type="string"/>
+							<element minOccurs="0" name="fromOpenOrderDate" type="date"/>
+							<element minOccurs="0" name="toOpenOrderDate" type="date"/>
+							<element minOccurs="0" name="fromCoordDate" type="date"/>
+							<element minOccurs="0" name="toCoordDate" type="date"/>
+							<element minOccurs="0" name="fromActivDate" type="date"/>
+							<element minOccurs="0" name="toActivDate" type="date"/>
+							<element minOccurs="0" name="orderSwitch" type="string"/>
+							<element minOccurs="0" name="techSwitch" type="integer"/>
+							<element minOccurs="0" name="mobilityType" type="string"/>
+							<element minOccurs="0" name="telNumberVPN" type="string"/>
+							<element minOccurs="0" name="orderTypeCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="ordertypes">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderType" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="lineTypeCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="linetypes">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="lineType" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="downSpeedCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="downspeeds">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="downSpeed" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="upSpeedCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="upspeeds">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="upSpeed" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="nextRowNum" type="integer"/>
+							<element minOccurs="0" name="rowsNum" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="projectNo" type="integer"/>
+							<element minOccurs="0" name="allOrdersCount" type="integer"/>
+							<element minOccurs="0" name="lastRowNum" type="integer"/>
+							<element minOccurs="0" name="buffer" type="string"/>
+							<element minOccurs="0" name="projectOrderCounter" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="orders">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderDetails" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="messageNum" type="integer"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

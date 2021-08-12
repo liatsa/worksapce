@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateTimeFrame02="http://www.bezeq.co.il/XMLSchema/UpdateTimeFrame02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateTimeFrame02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="windowDetails">
+								<complexType>
+									<sequence>
+										<element name="custName" type="string"/>
+										<element name="cityName" type="string"/>
+										<element name="streetName" type="string"/>
+										<element name="houseNumber" type="integer"/>
+										<element name="telNo1" type="string"/>
+										<element minOccurs="0" name="windowDate" type="date"/>
+										<element minOccurs="0" name="fromHour" type="time"/>
+										<element minOccurs="0" name="toHour" type="time"/>
+										<element name="priority" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="deliveryGeneralDetails">
+								<complexType>
+									<sequence>
+										<element name="requestNumber" type="integer"/>
+										<element name="bonusInd" type="integer"/>
+										<element name="subscriberNumber" type="string"/>
+										<element name="customerNumber" type="integer"/>
+										<element name="personalId" type="string"/>
+										<element minOccurs="0" name="zipCode" type="string"/>
+										<element minOccurs="0" name="floorNumber" type="integer"/>
+										<element minOccurs="0" name="appNumber" type="string"/>
+										<element name="status" type="integer"/>
+										<element name="msgDesc" type="string"/>
+										<element name="orderRef" type="string"/>
+										<element name="processId" type="integer"/>
+										<element name="rentModel" type="integer"/>
+										<element name="equipReturn" type="integer"/>
+										<element name="deliveryCost" type="integer"/>
+										<element name="userDeliveryConfirm" type="string"/>
+										<element name="IsExistingSubscriber" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="10" name="DeliveryEquipDetails">
+								<complexType>
+									<sequence>
+										<element name="family" type="integer"/>
+										<element name="subFamily" type="integer"/>
+										<element minOccurs="0" name="sapEquipCode" type="string"/>
+										<element name="equipBonusInd" type="integer"/>
+										<element name="supplyReturnEquipInd" type="integer"/>
+										<element name="quantity" type="integer"/>
+										<element name="promotion" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="deliveryId" type="integer"/>
+							<element name="taskDetailsReturn" type="string"/>
+							<element name="status" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

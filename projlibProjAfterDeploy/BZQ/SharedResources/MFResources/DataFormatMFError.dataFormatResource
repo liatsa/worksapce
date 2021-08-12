@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BzqMFError="http://www.bezeq.co.il/XMLSchema/BzqMFError" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_vsnu0PqYEeuc-43zW8XOWA" name="BZQ.SharedResources.MFResources.DataFormatMFError" type="dataformat:DataFormat">
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_vsnu0fqYEeuc-43zW8XOWA" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" schemaElement="BzqMFError.xsd#//MFError;XSDElementDeclaration" schemaElementQName="BzqMFError:MFError" lineLength="1451" fieldOffsetsStr="InterfaceId(0,20)&#xA;ErrorCode(20,40)&#xA;Type(40,50)&#xA;ErrorDesc(50,450)&#xA;OriginalMessage(450,1450)">
+    <fieldOffsets xmi:id="_vsnu0vqYEeuc-43zW8XOWA" name="InterfaceId" end="20"/>
+    <fieldOffsets xmi:id="_vsnu0_qYEeuc-43zW8XOWA" name="ErrorCode" start="20" end="40"/>
+    <fieldOffsets xmi:id="_vsnu1PqYEeuc-43zW8XOWA" name="Type" start="40" end="50"/>
+    <fieldOffsets xmi:id="_vsnu1fqYEeuc-43zW8XOWA" name="ErrorDesc" start="50" end="450"/>
+    <fieldOffsets xmi:id="_vsnu1vqYEeuc-43zW8XOWA" name="OriginalMessage" start="450" end="1450"/>
+  </jndi:configuration>
+</jndi:namedResource>

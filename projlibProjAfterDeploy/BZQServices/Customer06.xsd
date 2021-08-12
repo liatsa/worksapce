@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Customer06="http://www.bezeq.co.il/XMLSchema/Customer06" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Customer06">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="inputPersonalId" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="heker" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="inputPersonalId" type="string"/>
+							<element minOccurs="0" name="customerId" type="integer"/>
+							<element minOccurs="0" name="recCount" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="custSubArr">
+								<complexType>
+									<sequence>
+										<element name="customerId" type="integer"/>
+										<element minOccurs="0" name="custPersonalId" type="string"/>
+										<element name="banStatus" type="string"/>
+										<element name="custName" type="string"/>
+										<element minOccurs="0" name="arBalance" type="float"/>
+										<element minOccurs="0" name="paymentMethod" type="string"/>
+										<element minOccurs="0" name="woDebitInd" type="string"/>
+										<element minOccurs="0" name="subscriberNo" type="string"/>
+										<element minOccurs="0" name="subPersonalId" type="string"/>
+										<element minOccurs="0" name="subStatus" type="string"/>
+										<element minOccurs="0" name="subName" type="string"/>
+										<element minOccurs="0" name="creditClass" type="string"/>
+										<element minOccurs="0" name="colDelinqStatus" type="string"/>
+										<element minOccurs="0" name="productType" type="string"/>
+										<element minOccurs="0" name="productSubType" type="string"/>
+										<element minOccurs="0" name="statusActvRsnCode" type="string"/>
+										<element minOccurs="0" name="subStatusRsnCode" type="string"/>
+										<element minOccurs="0" name="benetoInd" type="string"/>
+										<element minOccurs="0" name="WSInd" type="string"/>
+										<element minOccurs="0" name="accountType" type="string"/>
+										<element minOccurs="0" name="accountSubType" type="string"/>
+										<element minOccurs="0" name="customerGrade" type="string"/>
+										<element minOccurs="0" name="securityClassification" type="integer"/>
+										<element minOccurs="0" name="heker" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="status" type="integer"/>
+							<element minOccurs="0" name="msgCode" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

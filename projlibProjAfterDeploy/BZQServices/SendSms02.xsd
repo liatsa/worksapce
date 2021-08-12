@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SendSms02="http://www.bezeq.co.il/XMLSchema/SendSms02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SendSms02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="from" type="xs:string"/>
+							<xs:element name="app" type="xs:string"/>
+							<xs:element name="appUser" type="xs:string"/>
+							<xs:element name="appPassword" type="xs:string"/>
+							<xs:element name="cmd" type="xs:string"/>
+							<xs:element minOccurs="0" name="url" type="xs:string"/>
+							<xs:element name="sender" type="xs:string"/>
+							<xs:element name="content" type="xs:string"/>
+							<xs:element maxOccurs="10" name="destinationList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="to" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageId" type="xs:string"/>
+							<xs:element minOccurs="0" name="category" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

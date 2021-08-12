@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:PreliminarySurvey01="http://www.bezeq.co.il/XMLSchema/PreliminarySurvey01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/PreliminarySurvey01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="providerId" type="string"/>
+							<element name="interfaceId" type="string"/>
+							<element name="providerRequestId" type="string"/>
+							<element name="providerMessageSendTime" type="dateTime"/>
+							<element name="activityCode" type="string"/>
+							<element minOccurs="0" name="requestedDate" type="dateTime"/>
+							<element minOccurs="0" name="requestTime" type="string"/>
+							<element minOccurs="0" name="locationCode" type="string"/>
+							<element minOccurs="0" name="streetCode" type="string"/>
+							<element minOccurs="0" name="houseNum" type="string"/>
+							<element minOccurs="0" name="contractorName" type="string"/>
+							<element minOccurs="0" name="contactName" type="string"/>
+							<element minOccurs="0" name="contactPhoneNum" type="string"/>
+							<element minOccurs="0" name="contactEmail" type="string"/>
+							<element minOccurs="0" name="techMessageCode" type="string"/>
+							<element minOccurs="0" name="techMessageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="providerId" type="string"/>
+							<element name="interfaceId" type="string"/>
+							<element name="providerRequestId" type="string"/>
+							<element name="providerMessageSendTime" type="dateTime"/>
+							<element minOccurs="0" name="messageSendTimeReturn" type="dateTime"/>
+							<element name="messageCode" type="string"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+							<element minOccurs="0" name="techMessageCode" type="string"/>
+							<element minOccurs="0" name="techMessageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

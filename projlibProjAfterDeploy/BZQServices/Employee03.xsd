@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Employee03="http://www.bezeq.co.il/XMLSchema/Employee03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Employee03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="employeeID" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="personnelArea" type="xs:string"/>
+							<xs:element minOccurs="0" name="personnelSubarea" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+				<xs:element minOccurs="0" name="Details">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="iDNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="personnelArea" type="xs:string"/>
+							<xs:element minOccurs="0" name="personnelSubarea" type="xs:string"/>
+							<xs:element minOccurs="0" name="organizationalUnit" type="xs:string"/>
+							<xs:element minOccurs="0" name="building" type="xs:string"/>
+							<xs:element minOccurs="0" name="floor" type="xs:string"/>
+							<xs:element minOccurs="0" name="room" type="xs:string"/>
+							<xs:element minOccurs="0" name="cellular" type="xs:string"/>
+							<xs:element minOccurs="0" name="internetMail" type="xs:string"/>
+							<xs:element minOccurs="0" name="jobTitle" type="xs:string"/>
+							<xs:element minOccurs="0" name="privatePhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="workPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="buildingAddress" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" name="AppError">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="errorDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

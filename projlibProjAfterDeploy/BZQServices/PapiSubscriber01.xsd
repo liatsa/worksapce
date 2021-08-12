@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:PapiSubscriber01="http://www.bezeq.co.il/XMLSchema/PapiSubscriber01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/PapiSubscriber01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="application" type="xs:string"/>
+							<xs:element name="actionType" type="xs:string"/>
+							<xs:element name="phoneNumber" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="application" type="xs:string"/>
+							<xs:element name="response" type="xs:string"/>
+							<xs:element name="status" type="xs:string"/>
+							<xs:element name="phoneNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="isFamily" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="isVirtual" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="isExtendedQuota" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="isExtended20M" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="isConfidential" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="isDirectAccess" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="isCallback" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="mwidType" type="xs:string"/>
+							<xs:element minOccurs="0" name="isEnableSms" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="smsNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="mailBoxType" type="xs:string"/>
+							<xs:element minOccurs="0" name="language" type="xs:string"/>
+							<xs:element minOccurs="0" name="guiLang" type="xs:string"/>
+							<xs:element minOccurs="0" name="vf2EmailMode" type="xs:string"/>
+							<xs:element minOccurs="0" name="vf2EmailBackMwiMode" type="xs:string"/>
+							<xs:element minOccurs="0" name="vf2Email" type="xs:string"/>
+							<xs:element minOccurs="0" name="userName" type="xs:string"/>
+							<xs:element minOccurs="0" name="isWebAccess" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

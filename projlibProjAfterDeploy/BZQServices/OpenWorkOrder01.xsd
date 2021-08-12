@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OpenWorkOrder01="http://www.bezeq.co.il/XMLSchema/OpenWorkOrder01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OpenWorkOrder01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="sdeWorkOrderId" type="integer"/>
+							<element minOccurs="0" name="sdeStatus" type="string"/>
+							<element minOccurs="0" name="sdeIncidentNum" type="string"/>
+							<element minOccurs="0" name="incidentName" type="string"/>
+							<element minOccurs="0" name="responsibleSdeWorkOrder" type="string"/>
+							<element minOccurs="0" name="employeeId" type="string"/>
+							<element minOccurs="0" name="oldSection" type="string"/>
+							<element minOccurs="0" name="details" type="string"/>
+							<element minOccurs="0" name="incidentDetails" type="string"/>
+							<element minOccurs="0" name="siteCode" type="string"/>
+							<element minOccurs="0" name="technology" type="string"/>
+							<element minOccurs="0" name="equipmentType" type="string"/>
+							<element minOccurs="0" name="equipmentNum" type="string"/>
+							<element minOccurs="0" name="cardType" type="string"/>
+							<element minOccurs="0" name="responsibleSdeReferral" type="string"/>
+							<element minOccurs="0" name="responsibleEmployee" type="string"/>
+							<element minOccurs="0" name="network" type="string"/>
+							<element minOccurs="0" name="implementDate" type="dateTime"/>
+							<element minOccurs="0" name="createdBy" type="string"/>
+							<element minOccurs="0" name="contactName" type="string"/>
+							<element minOccurs="0" name="contactPhone" type="string"/>
+							<element minOccurs="0" name="sdeCategory" type="string"/>
+							<element minOccurs="0" name="sdeFullCategory" type="string"/>
+							<element minOccurs="0" name="SlotNum" type="integer"/>		
+							<element minOccurs="0" name="SuddenCallIndication" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NPGBase="http://www.bezeq.co.il/XMLSchema/NPGBase" xmlns:NPGPortoutCheck01="http://www.bezeq.co.il/XMLSchema/NPGPortoutCheck01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NPGPortoutCheck01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NPGBase" schemaLocation="../BZQSchemas/NPGBase.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" ref="NPGBase:messageType"/>
+							<xs:element ref="NPGBase:messageSendTimestamp"/>
+							<xs:element name="recordType" type="xs:string"/>
+							<xs:element minOccurs="0" name="npgRequestId" type="xs:string"/>
+							<xs:choice>
+								<xs:element name="portedDn" type="xs:string"/>
+								<xs:sequence>
+									<xs:element name="fromNumber" type="xs:string"/>
+									<xs:element name="toNumber" type="xs:string"/>
+								</xs:sequence>
+							</xs:choice>
+							<xs:element name="numberType" type="xs:string"/>
+							<xs:element name="identificationValue" type="xs:string"/>
+							<xs:element minOccurs="0" name="identificationValue2" type="xs:string"/>
+							<xs:element minOccurs="0" name="identificationValue3" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" ref="NPGBase:messageType"/>
+							<xs:element ref="NPGBase:messageSendTimestamp"/>
+							<xs:element name="recordType" type="xs:string"/>
+							<xs:element name="npgRequestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="leadingDn" type="xs:string"/>
+							<xs:element minOccurs="0" name="productType" type="xs:string"/>
+							<xs:element minOccurs="0" name="productSubtype" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerType" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderAutoLevel" type="xs:string"/>
+							<xs:element minOccurs="0" name="omSystem" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmDiscRepMode">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="N"/>
+										<xs:pattern value="Y"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:choice>
+								<xs:element name="portedDn" type="xs:string"/>
+								<xs:sequence>
+									<xs:element name="fromNumber" type="xs:string"/>
+									<xs:element name="toNumber" type="xs:string"/>
+								</xs:sequence>
+							</xs:choice>
+							<xs:element minOccurs="0" name="essentialInfo1" type="xs:string"/>
+							<xs:element minOccurs="0" name="essentialInfo2" type="xs:string"/>
+							<xs:element minOccurs="0" name="essentialInfo3" type="xs:string"/>
+							<xs:element minOccurs="0" name="essentialInfo4" type="xs:string"/>
+							<xs:element minOccurs="0" name="essentialInfo5" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo1" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo2" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo3" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo4" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo5" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo6" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo7" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo8" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo9" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmInfo10" type="xs:string"/>
+							<xs:element ref="NPGBase:messageStatus"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CustomerSites01="http://www.bezeq.co.il/XMLSchema/CustomerSites01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CustomerSites01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="requestType" type="xs:string"/>
+							<xs:element name="ban" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="siteNo" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="ban" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriber_No" type="xs:string"/>
+							<xs:element maxOccurs="100" minOccurs="0" name="siteDetArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="siteNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="siteName" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="houseNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="houseLtr" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="numBufRec" type="xs:integer"/>
+        <xs:element maxOccurs="100" minOccurs="0" name="sitePrdTpArr">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="productType" type="xs:string"/>
+              <xs:element minOccurs="0" name="productSubType" type="xs:string"/>
+              <xs:element minOccurs="0" name="qty" type="xs:integer"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" name="numProdBufRec" type="xs:integer"/>
+							<xs:element name="moreRows_Ind" type="xs:string"/>
+							<xs:element name="exactAdrInd" type="xs:string"/>
+							<xs:element name="status" type="xs:integer"/>
+							<xs:element minOccurs="0" name="msgCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="msgDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

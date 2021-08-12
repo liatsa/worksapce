@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:IpAddress01="http://www.bezeq.co.il/XMLSchema/IpAddress01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/IpAddress01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="actionCode" type="string"/>
+							<element minOccurs="0" name="independedClient" type="string"/>
+							<element minOccurs="0" name="searchField" type="string"/>
+							<element minOccurs="0" name="ipVersion" type="string"/>
+							<element minOccurs="0" name="client" type="string"/>
+							<element minOccurs="0" name="network" type="string"/>
+							<element minOccurs="0" name="bm" type="string"/>
+							<element minOccurs="0" name="rootNet" type="integer"/>
+							<element minOccurs="0" name="description" type="string"/>
+							<element minOccurs="0" name="comment" type="string"/>
+							<element minOccurs="0" name="site" type="string"/>
+							<element minOccurs="0" name="netCategory" type="string"/>
+							<element minOccurs="0" name="sync" type="string"/>
+							<element minOccurs="0" name="element1" type="string"/>
+							<element minOccurs="0" name="element2" type="string"/>
+							<element minOccurs="0" name="element3" type="string"/>
+							<element minOccurs="0" name="element4" type="string"/>
+							<element minOccurs="0" name="element5" type="string"/>
+							<element minOccurs="0" name="element6" type="string"/>
+							<element minOccurs="0" name="element7" type="string"/>
+							<element minOccurs="0" name="element8" type="string"/>
+							<element minOccurs="0" name="element9" type="string"/>
+							<element minOccurs="0" name="element10" type="string"/>
+							<element minOccurs="0" name="status" type="string"/>
+							<element minOccurs="0" name="properties1" type="string"/>
+							<element minOccurs="0" name="properties2" type="string"/>
+							<element minOccurs="0" name="properties3" type="string"/>
+							<element minOccurs="0" name="properties4" type="string"/>
+							<element minOccurs="0" name="properties5" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="netCounter" type="integer"/>
+							<element minOccurs="0" name="returns" type="integer"/>
+							<element maxOccurs="20" minOccurs="0" name="net">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="client" type="string"/>
+										<element minOccurs="0" name="network" type="string"/>
+										<element minOccurs="0" name="bm" type="string"/>
+										<element minOccurs="0" name="rootNet" type="integer"/>
+										<element minOccurs="0" name="description" type="string"/>
+										<element minOccurs="0" name="comment" type="string"/>
+										<element minOccurs="0" name="site" type="string"/>
+										<element minOccurs="0" name="netCategory" type="string"/>
+										<element minOccurs="0" name="sync" type="string"/>
+										<element minOccurs="0" name="element1" type="string"/>
+										<element minOccurs="0" name="element2" type="string"/>
+										<element minOccurs="0" name="element3" type="string"/>
+										<element minOccurs="0" name="element4" type="string"/>
+										<element minOccurs="0" name="element5" type="string"/>
+										<element minOccurs="0" name="element6" type="string"/>
+										<element minOccurs="0" name="element7" type="string"/>
+										<element minOccurs="0" name="element8" type="string"/>
+										<element minOccurs="0" name="element9" type="string"/>
+										<element minOccurs="0" name="element10" type="string"/>
+										<element minOccurs="0" name="status" type="string"/>
+										<element minOccurs="0" name="properties1" type="string"/>
+										<element minOccurs="0" name="properties2" type="string"/>
+										<element minOccurs="0" name="properties3" type="string"/>
+										<element minOccurs="0" name="properties4" type="string"/>
+										<element minOccurs="0" name="properties5" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="requestRc" type="string"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ServiceSupply02="http://www.bezeq.co.il/XMLSchema/ServiceSupply02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ServiceSupply02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="transactionId" type="string"/>
+							<element name="requestTimestamp" type="string"/>
+							<element minOccurs="0" name="orderHeaderId" type="integer"/>
+							<element name="orderSourceId" type="integer"/>
+							<element name="requestType" type="integer"/>
+							<element minOccurs="0" name="requestSubType" type="integer"/>
+							<element name="requestActionId" type="integer"/>
+							<element name="customerPersonalId" type="string"/>
+							<element minOccurs="0" name="customerFirstName" type="string"/>
+							<element minOccurs="0" name="customerLastName" type="string"/>
+							<element name="customerId" type="integer"/>
+							<element name="customerGrade" type="string"/>
+							<element minOccurs="0" name="accountType" type="string"/>
+							<element minOccurs="0" name="regionCd" type="integer"/>
+							<element minOccurs="0" name="paymentMethodId" type="integer"/>
+							<element minOccurs="0" name="accountNumber" type="string"/>
+							<element minOccurs="0" name="creditCardEncryptedData" type="string"/>
+							<element minOccurs="0" name="payerId" type="integer"/>
+							<element minOccurs="0" name="benEmailAddress" type="string"/>
+							<element name="requestedDate" type="date"/>
+							<element minOccurs="0" name="sellerId" type="string"/>
+							<element minOccurs="0" name="dealer" type="integer"/>
+							<element minOccurs="0" name="createdBy" type="string"/>
+							<element name="orderIndication" type="string"/>
+							<element minOccurs="0" name="contact">
+								<complexType>
+									<sequence>
+										<element name="name" type="string"/>
+										<element name="mobileNumber" type="string"/>
+										<element minOccurs="0" name="emailAddress" type="string"/>
+										<element minOccurs="0" name="IsPermanent" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="products">
+								<complexType>
+									<sequence>
+										<element name="actionId" type="integer"/>
+										<element name="productType" type="string"/>
+										<element minOccurs="0" name="parentProductType" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="productParams">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="productParamActionId" type="integer"/>
+													<element minOccurs="0" name="parameterGuiId" type="integer"/>
+													<element minOccurs="0" name="productParamValue" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="unbounded" minOccurs="0" name="components">
+											<complexType>
+												<sequence>
+													<element name="componentActionId" type="integer"/>
+													<element name="componentId" type="integer"/>
+													<element name="productSubType" type="string"/>
+													<element name="heker" type="integer"/>
+													<element maxOccurs="unbounded" minOccurs="0" name="componentNumbers">
+														<complexType>
+															<sequence>
+																<element name="areaCode" type="string"/>
+																<element name="componentNumber" type="string"/>
+																<element name="componentNumberTypeId" type="integer"/>
+																<element name="isMain" type="string"/>
+																<element name="componentNumberActionId" type="integer"/>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="unbounded" minOccurs="0" name="installationAddress">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="addressLocation" type="string"/>
+																<element minOccurs="0" name="addressUfid" type="long"/>
+																<element minOccurs="0" name="cityId" type="integer"/>
+																<element minOccurs="0" name="cityName" type="string"/>
+																<element minOccurs="0" name="streetId" type="integer"/>
+																<element minOccurs="0" name="streetName" type="string"/>
+																<element minOccurs="0" name="houseNumber" type="integer"/>
+																<element minOccurs="0" name="entrance" type="string"/>
+																<element minOccurs="0" name="floor" type="integer"/>
+																<element minOccurs="0" name="letter" type="string"/>
+																<element minOccurs="0" name="apartment" type="integer"/>
+																<element minOccurs="0" name="zipCode" type="string"/>
+																<element minOccurs="0" name="addressTypeId" type="integer"/>
+																<element minOccurs="0" name="merkaz" type="integer"/>
+																<element minOccurs="0" name="serviceArea" type="integer"/>
+																<element minOccurs="0" name="buildingType" type="string"/>
+																<element minOccurs="0" name="assetHasFiber" type="string"/>
+																<element minOccurs="0" name="coordinatorName" type="string"/>
+																<element minOccurs="0" name="coordinatorPhoneNo" type="integer"/>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="unbounded" minOccurs="0" name="componentParams">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="componentParamActionId" type="integer"/>
+																<element minOccurs="0" name="parameterGuiId" type="integer"/>
+																<element minOccurs="0" name="parameterName" type="string"/>
+																<element minOccurs="0" name="componentParamValue" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="unbounded" minOccurs="0" name="services">
+														<complexType>
+															<sequence>
+																<element name="billingServiceId" type="integer"/>
+																<element name="serviceActionId" type="integer"/>
+																<element name="serviceName" type="string"/>
+																<element minOccurs="0" name="subServiceName" type="string"/>
+																<element maxOccurs="unbounded" minOccurs="0" name="serviceAttribute">
+																	<complexType>
+																		<sequence>
+																			<element minOccurs="0" name="serviceAttributesActionId" type="integer"/>
+																			<element minOccurs="0" name="serviceAttributeName" type="string"/>
+																			<element minOccurs="0" name="billingAttributeValue" type="string"/>
+																			<element minOccurs="0" name="serviceAttributeValue" type="string"/>
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="unbounded" minOccurs="0" name="socs">
+														<complexType>
+															<sequence>
+																<element name="socActionId" type="integer"/>
+																<element name="soc" type="string"/>
+																<element minOccurs="0" name="billingChargeDate" type="date"/>
+																<element minOccurs="0" name="openedBy" type="string"/>
+																<element minOccurs="0" name="isRenewal" type="string"/>
+																<element minOccurs="0" name="cmpActionId" type="integer"/>
+																<element minOccurs="0" name="cmp" type="string"/>
+																<element maxOccurs="unbounded" minOccurs="0" name="features">
+																	<complexType>
+																		<sequence>
+																			<element name="featureActionId" type="integer"/>
+																			<element name="featureCode" type="string"/>
+																			<element minOccurs="0" name="serviceActiovationDate" type="string"/>
+																			<element minOccurs="0" name="billingRcBan" type="integer"/>
+																			<element minOccurs="0" name="billingRcBen" type="integer"/>
+																			<element minOccurs="0" name="rcBan" type="integer"/>
+																			<element minOccurs="0" name="rcBen" type="integer"/>
+																			<element minOccurs="0" name="rcBanBenActionId" type="integer"/>
+																			<element minOccurs="0" name="ftrOcPaymentNo" type="integer"/>
+																			<element minOccurs="0" name="combinationNo" type="integer"/>
+																			<element minOccurs="0" name="createdOn" type="date"/>
+																			<element minOccurs="0" name="billingChangeGroupSequence" type="integer"/>
+																			<element minOccurs="0" name="makatCode" type="string"/>
+																			<element maxOccurs="unbounded" minOccurs="0" name="featureGuiParams">
+																				<complexType>
+																					<sequence>
+																						<element minOccurs="0" name="paramActionId" type="integer"/>
+																						<element minOccurs="0" name="parameterGuiId" type="integer"/>
+																						<element minOccurs="0" name="parameterName" type="string"/>
+																						<element minOccurs="0" name="productParamValue" type="string"/>
+																					</sequence>
+																				</complexType>
+																			</element>
+																			<element maxOccurs="unbounded" minOccurs="0" name="featureParams">
+																				<complexType>
+																					<sequence>
+																						<element minOccurs="0" name="featureParamActionId" type="integer"/>
+																						<element minOccurs="0" name="featureParamName" type="string"/>
+																						<element minOccurs="0" name="featureParamValueFrom" type="string"/>
+																						<element minOccurs="0" name="featureParamValueCode" type="string"/>
+																						<element minOccurs="0" name="featureParamValueTo" type="string"/>
+																						<element minOccurs="0" name="billingFeatureParamValueFrom" type="string"/>
+																						<element minOccurs="0" name="billingFeatureParamValueTo" type="string"/>
+																					</sequence>
+																				</complexType>
+																			</element>
+																			<element maxOccurs="999" minOccurs="0" name="featureEquipments">
+																				<complexType>
+																					<sequence>
+																						<element minOccurs="0" name="supplyChannelId" type="integer"/>
+																						<element minOccurs="0" name="mpiActivityId" type="integer"/>
+																						<element minOccurs="0" name="saleMethodId" type="integer"/>
+																						<element minOccurs="0" name="amount" type="integer"/>
+																						<element minOccurs="0" name="actionId" type="integer"/>
+																						<element minOccurs="0" name="distribChannelId" type="integer"/>
+																						<element minOccurs="0" name="deliveryDetailsId" type="integer"/>
+																						<element minOccurs="0" name="deliveryDetails">
+																							<complexType>
+																								<sequence>
+																									<element minOccurs="0" name="deliveryCityId" type="integer"/>
+																									<element minOccurs="0" name="deliveryStreetId" type="integer"/>
+																									<element minOccurs="0" name="deliveryHouseNumber" type="integer"/>
+																									<element minOccurs="0" name="deliveryProcessId" type="integer"/>
+																									<element minOccurs="0" name="deliveryId" type="integer"/>
+																									<element minOccurs="0" name="deliveryCustomerId" type="integer"/>
+																									<element minOccurs="0" name="addressId" type="integer"/>
+																									<element minOccurs="0" name="deliveryRateId" type="integer"/>
+																									<element minOccurs="0" name="returnEqipmentInd" type="string"/>
+																									<element minOccurs="0" name="distribPointId" type="integer"/>
+																									<element minOccurs="0" name="deliveryCellContactNo" type="string"/>
+																									<element minOccurs="0" name="deliveryCellContactNo2" type="string"/>
+																									<element minOccurs="0" name="deliveryDateFrom" type="string"/>
+																									<element minOccurs="0" name="deliveryDateTo" type="string"/>
+																									<element minOccurs="0" name="deliveryRemarks" type="string"/>
+																									<element minOccurs="0" name="remarkForSupplier" type="string"/>
+																									<element minOccurs="0" name="getWindowSuccessInd" type="string"/>
+																									<element minOccurs="0" name="windowReturnErrorCode" type="string"/>
+																									<element minOccurs="0" name="userConfirmId" type="string"/>
+																								</sequence>
+																							</complexType>
+																						</element>
+																					</sequence>
+																				</complexType>
+																			</element>
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="999" minOccurs="0" name="componentOc">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="ocRateId" type="integer"/>
+																<element minOccurs="0" name="numOfPayments" type="integer"/>
+																<element minOccurs="0" name="ocActionId" type="integer"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="componentLinks">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="linkId" type="integer"/>
+										<element minOccurs="0" name="linkType" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="linkedComponent">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="componentId" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="transactionId" type="string"/>
+							<element minOccurs="0" name="headerId" type="integer"/>
+							<element name="replyType" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="components">
+								<complexType>
+									<sequence>
+										<element name="productId" type="integer"/>
+										<element name="componentId" type="integer"/>
+										<element minOccurs="0" name="heker" type="integer"/>
+										<element minOccurs="0" name="subscriberNumber" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="componentParams">
+											<complexType>
+												<sequence>
+													<element name="paramName" type="string"/>
+													<element name="paramValue" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="unbounded" minOccurs="0" name="features">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="billingServiceId" type="integer"/>
+													<element name="featureCode" type="string"/>
+													<element minOccurs="0" name="soc" type="string"/>
+													<element minOccurs="0" name="supplyStatus" type="string"/>
+													<element minOccurs="0" name="supplyChannelId" type="integer"/>
+													<element maxOccurs="unbounded" minOccurs="0" name="featureParams">
+														<complexType>
+															<sequence>
+																<element name="paramName" type="string"/>
+																<element name="paramValue" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+										<element minOccurs="0" name="swInfo">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="messageSw" type="integer"/>
+													<element minOccurs="0" name="timeStamp" type="string"/>
+													<element minOccurs="0" name="orderId" type="integer"/>
+													<element minOccurs="0" name="componenetId" type="integer"/>
+													<element minOccurs="0" name="componentNumber" type="string"/>
+													<element minOccurs="0" name="componentActivationDate" type="string"/>
+													<element minOccurs="0" name="stepDetails">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="stepId" type="integer"/>
+																<element minOccurs="0" name="stepDesc" type="string"/>
+																<element minOccurs="0" name="bpmStatusId" type="integer"/>
+																<element minOccurs="0" name="stepStatusDescription" type="string"/>
+																<element minOccurs="0" name="supplyNotificationInd" type="integer"/>
+															</sequence>
+														</complexType>
+													</element>
+													<element minOccurs="0" name="activityDetails">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="processId" type="string"/>
+																<element minOccurs="0" name="toDoActivityId" type="integer"/>
+																<element minOccurs="0" name="toDoActivityDesc" type="string"/>
+																<element minOccurs="0" name="automaticClosureInd" type="integer"/>
+																<element minOccurs="0" name="unitInCharge" type="integer"/>
+																<element minOccurs="0" name="operatorId" type="string"/>
+																<element maxOccurs="unbounded" minOccurs="0" name="activityErrors">
+																	<complexType>
+																		<sequence>
+																			<element minOccurs="0" name="errorCodeId" type="integer"/>
+																			<element minOccurs="0" name="erroMsg" type="string"/>
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="unbounded" minOccurs="0" name="services">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="serviceId" type="integer"/>
+																<element minOccurs="0" name="serviceName" type="string"/>
+																<element minOccurs="0" name="serviceAction" type="string"/>
+																<element minOccurs="0" name="subServiceName" type="string"/>
+																<element minOccurs="0" name="featureStatusId" type="integer"/>
+																<element minOccurs="0" name="serviceStatusDescription" type="string"/>
+																<element minOccurs="0" name="serviceActivationDate" type="string"/>
+																<element maxOccurs="unbounded" minOccurs="0" name="serviceParams">
+																	<complexType>
+																		<sequence>
+																			<element name="paramName" type="string"/>
+																			<element name="paramValue" type="string"/>
+																		</sequence>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+													<element maxOccurs="unbounded" minOccurs="0" name="params">
+														<complexType>
+															<sequence>
+																<element name="paramName" type="string"/>
+																<element name="paramValue" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="requestStatus" type="integer"/>
+							<element minOccurs="0" name="errorId" type="integer"/>
+							<element minOccurs="0" name="errorDescription" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

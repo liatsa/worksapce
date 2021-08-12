@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:NTLItem="http://www.bezeq.co.il/XMLSchema/NTLItem"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLItem"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Item">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="tziyudType" type="xs:integer"/>
+				<xs:element name="tziyudTypeDesc" type="xs:string"/>
+				<xs:element name="makatBzq" type="xs:integer"/>
+				<xs:element name="status" type="xs:integer"/>
+				<xs:element name="statusDesc" type="xs:string"/>
+				<xs:element name="paritId" type="xs:integer"/>
+				<xs:element name="technaiId" type="xs:string" minOccurs="0"/>
+				<xs:element name="serialNumber" type="xs:string" minOccurs="0"/>
+				<xs:element name="tziyudShivukiRashiType" type="xs:integer"/>
+				<xs:element name="ownership" type="xs:integer"/>
+				<xs:element name="ownershipDesc" type="xs:string"/>
+				<xs:element name="paritForPayment" type="xs:integer" minOccurs="0"/>
+				<xs:element name="amount" type="xs:integer" minOccurs="0"/>
+				<xs:element name="paritNotRemoved" type="xs:integer" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

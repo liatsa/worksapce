@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Referrals01="http://www.bezeq.co.il/XMLSchema/Referrals01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Referrals01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="referralTypes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/>
+										<xs:element name="count" type="xs:integer"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="referralStatuses">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="status" type="xs:string"/>
+													<xs:element name="count" type="xs:integer"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="referralDetails">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Id" type="xs:integer"/>
+																<xs:element name="subject" type="xs:string"/>
+																<xs:element name="createdOn" type="xs:dateTime"/>
+																<xs:element minOccurs="0" name="subscriberNumber" type="xs:string"/>
+																<xs:element minOccurs="0" name="address" type="xs:string"/>
+																<xs:element name="createdBy" type="xs:string"/>
+																<xs:element name="status" type="xs:string"/>
+																<xs:element name="statusDate" type="xs:string"/>
+																<xs:element minOccurs="0" name="estimatedTimeFrom" type="xs:string"/>
+																<xs:element minOccurs="0" name="estimatedTimeTo" type="xs:string"/>
+																<xs:element minOccurs="0" name="descriptionForBusinessPortal" type="xs:string"/>
+																<xs:element minOccurs="0" name="closedOn" type="xs:dateTime"/>
+																<xs:element name="updatedOn" type="xs:dateTime"/>
+																<xs:element maxOccurs="unbounded" minOccurs="0" name="closedReferralActions">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="action" type="xs:string"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="requestStsRsn" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

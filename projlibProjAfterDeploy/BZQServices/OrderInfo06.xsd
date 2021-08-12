@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderInfo06="http://www.bezeq.co.il/XMLSchema/OrderInfo06" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderInfo06">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderSource" type="xs:string"/>
+							<xs:element minOccurs="0" name="projectId">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="projectId" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="orderStatus">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="orderStatus" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="orderType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="orderType" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="lineType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="lineType" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="serviceType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="serviceType" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="openDateFrom" type="xs:date"/>
+							<xs:element minOccurs="0" name="openDateTo" type="xs:date"/>
+							<xs:element minOccurs="0" name="operationDateFrom" type="xs:date"/>
+							<xs:element minOccurs="0" name="operationDateTo" type="xs:date"/>
+							<xs:element minOccurs="0" name="logiGisha" type="xs:integer"/>
+							<xs:element minOccurs="0" name="speedUp">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="speedUp" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="speedDown">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="speedDown" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="technicianNeeded" type="xs:integer"/>
+							<xs:element minOccurs="0" name="mobility" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="houseNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="letter" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="vrfGroup" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="updateDateTo" type="xs:dateTime"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="orders">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="orderSource" type="xs:string"/>
+										<xs:element minOccurs="0" name="lineNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="projectId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="address" type="xs:string"/>
+										<xs:element minOccurs="0" name="serviceTypeDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="orderTypeDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="orderStatusDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="statusStay" type="xs:integer"/>
+										<xs:element minOccurs="0" name="speedUp" type="xs:string"/>
+										<xs:element minOccurs="0" name="speedDown" type="xs:string"/>
+										<xs:element minOccurs="0" name="orderStay" type="xs:integer"/>
+										<xs:element minOccurs="0" name="activationDate" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="projectName" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerName" type="xs:string"/>
+										<xs:element minOccurs="0" name="projectManagerName" type="xs:string"/>
+										<xs:element minOccurs="0" name="missionCountCM" type="xs:integer"/>
+										<xs:element minOccurs="0" name="statusTechnicianDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="orderNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="openDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="operationDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="placeName" type="xs:string"/>
+										<xs:element minOccurs="0" name="technicianName" type="xs:string"/>
+										<xs:element minOccurs="0" name="workorderNumber" type="xs:integer"/>
+										<xs:element minOccurs="0" name="vrfNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="mobility" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teamName" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityId" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetId" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+										<xs:element minOccurs="0" name="houseNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="letter" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="estimatedTime" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="orderStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="tzad" type="xs:string"/>
+										<xs:element minOccurs="0" name="technicianNeeded" type="xs:integer"/>
+										<xs:element minOccurs="0" name="orderType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceType" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="requestSts" type="xs:integer"/>
+							<xs:element minOccurs="0" name="requestStsRsn" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Details02="http://www.bezeq.co.il/XMLSchema/Details02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Details02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="providerId" type="xs:string"/>
+							<xs:element name="providerMessageSendTime" type="xs:dateTime"/>
+							<xs:element name="providerRequestId" type="xs:string"/>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="identityId" type="xs:string"/>
+							<xs:element minOccurs="0" name="passport" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="Last4numbersCC" type="xs:string"/>
+							<xs:element minOccurs="0" name="mobilePhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="locationCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="locationName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="letter" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="providerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="providerMessageSendTime" type="xs:dateTime"/>
+							<xs:element name="providerRequestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="actualBitRate" type="xs:string"/>
+							<xs:element minOccurs="0" name="maxAttainable" type="xs:string"/>
+							<xs:element minOccurs="0" name="packageRateCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="packageRateMessage" type="xs:string"/>
+							<xs:element minOccurs="0" name="bezeqOwnedModem" type="xs:string"/>
+							<xs:element minOccurs="0" name="preSaleModemType" type="xs:string"/>
+							<xs:element minOccurs="0" name="portType" type="xs:string"/>
+							<xs:element minOccurs="0" name="locatingLineCodeParam" type="xs:string"/>
+							<xs:element minOccurs="0" name="sloteType" type="xs:string"/>
+							<xs:element minOccurs="0" name="telephoneInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="25" minOccurs="0" name="telServices">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="featureCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="cmProductDesc" type="xs:string"/>
+													<xs:element maxOccurs="15" minOccurs="0" name="telPrmServices">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="parameterName" type="xs:string"/>
+																<xs:element minOccurs="0" name="paramDescription" type="xs:string"/>
+																<xs:element minOccurs="0" name="parameterValue" type="xs:string"/>
+																<xs:element minOccurs="0" name="paramValueDesc" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="subStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="internationalOpr" type="xs:string"/>
+										<xs:element minOccurs="0" name="provicderName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="messageCode" type="xs:string"/>
+							<xs:element name="messageDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="gponInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="gponExsist" type="xs:string"/>
+										<xs:element minOccurs="0" name="gponBuildingType" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="techMessageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="techMessageDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

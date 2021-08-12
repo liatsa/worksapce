@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BundleActivation01="http://www.bezeq.co.il/XMLSchema/BundleActivation01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/BundleActivation01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="transactionId" type="string"/>
+							<element minOccurs="0" name="ispCode" type="string"/>
+							<element minOccurs="0" name="keepUserPasswordInd" type="string"/>
+							<element minOccurs="0" name="sendSmsInd" type="string"/>
+							<element minOccurs="0" name="csrDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="userFirstName" type="string"/>
+										<element minOccurs="0" name="userLastName" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="customerDetails">
+								<complexType>
+									<sequence>
+										<element name="customerId" type="int"/>
+										<element name="firstName" type="string"/>
+										<element name="familyName" type="string"/>
+										<element name="subPersonalId" type="string"/>
+										<element minOccurs="0" name="subEmailAdsress" type="string"/>
+										<element minOccurs="0" name="areaOrderPhoneNum" type="string"/>
+										<element name="orderPhoneNum" type="string"/>
+										<element minOccurs="0" name="areaContactPhoneNum" type="string"/>
+										<element minOccurs="0" name="contactPhoneNum" type="string"/>
+										<element minOccurs="0" name="cityId" type="string"/>
+										<element minOccurs="0" name="cityName" type="string"/>
+										<element minOccurs="0" name="streetId" type="string"/>
+										<element minOccurs="0" name="streetName" type="string"/>
+										<element minOccurs="0" name="houseNumber" type="string"/>
+										<element name="ispIdentityCode" type="string"/>
+										<element name="ispIdntCodeType" type="string"/>
+										<element name="ispUserExistsInd" type="integer"/>
+										<element name="paymentMethod" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="productDetails">
+								<complexType>
+									<sequence>
+										<element name="hekerNo" type="string"/>
+										<element minOccurs="0" name="oldSoc" type="string"/>
+										<element name="soc" type="string"/>
+										<element name="ftrProdSubType" type="string"/>
+										<element name="orderNum" type="string"/>
+										<element name="requestSource" type="string"/>
+										<element minOccurs="0" name="internetInd" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="transactionId" type="string"/>
+							<element name="msgCode" type="integer"/>
+							<element minOccurs="0" name="msgdescription" type="string"/>
+							<element name="ispAlertCode" type="integer"/>
+							<element minOccurs="0" name="ispAlertDesc" type="string"/>
+							<element name="orderDetails">
+								<complexType>
+									<sequence>
+										<element name="ispErrorTech" type="string"/>
+										<element name="ispOutSysOrderId" type="string"/>
+										<element minOccurs="0" name="ispInternetUser" type="string"/>
+										<element minOccurs="0" name="ispInternetPass" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="requestSts" type="integer"/>
+							<element minOccurs="0" name="requestStsRsn" type="integer"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

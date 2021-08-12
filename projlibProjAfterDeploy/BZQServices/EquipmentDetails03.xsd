@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:EquipmentDetails03="http://www.bezeq.co.il/XMLSchema/EquipmentDetails03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/EquipmentDetails03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+							<xs:element name="messageSw" type="xs:string"/>
+							<xs:element name="creationDate" type="xs:dateTime"/>
+							<xs:element name="componentId" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="BPMData">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="interfaceId" type="xs:string"/>
+
+										<xs:element name="componentZoneNo" type="xs:string"/>
+										<xs:element name="componentNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerName" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerNumber" type="xs:string"/>
+										<xs:element maxOccurs="5" minOccurs="0" name="linesParams">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="logiZoneNo" type="xs:string"/>
+													<xs:element minOccurs="0" name="logiNo" type="xs:string"/>
+													<xs:element minOccurs="0" name="actionCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="upRate" type="xs:string"/>
+													<xs:element minOccurs="0" name="upUnit" type="xs:string"/>
+													<xs:element minOccurs="0" name="downRate" type="xs:string"/>
+													<xs:element minOccurs="0" name="downUnit" type="xs:string"/>
+													<xs:element minOccurs="0" name="expProductType" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="cityId" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetId" type="xs:string"/>
+										<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+										<xs:element minOccurs="0" name="houserNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="entrance" type="xs:string"/>
+										<xs:element minOccurs="0" name="zipCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="floor" type="xs:string"/>
+										<xs:element minOccurs="0" name="letter" type="xs:string"/>
+										<xs:element minOccurs="0" name="apartment" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="CMErrorMessage">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="cmMessageSetNumber" type="xs:string"/>
+										<xs:element name="cmMessageNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="cmMessageDescription" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="BPMErrorMessage">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="bpmMessageSetNumber" type="xs:string"/>
+										<xs:element name="bpmMessageNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="bpmMessageDescription" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageSetNumber" type="xs:string"/>
+							<xs:element name="messageNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

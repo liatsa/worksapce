@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SendSMS01="http://www.bezeq.co.il/XMLSchema/SendSMS01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SendSMS01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="head">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="auth">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="account" type="xs:string"/>
+													<xs:element name="user" type="xs:string"/>
+													<xs:element name="pass" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="action" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="DeliveryNotifications" type="xs:boolean"/>
+							<xs:element name="body">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="addr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="from" type="xs:string"/>
+													<xs:element name="to">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element maxOccurs="20" name="cli" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="data">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="msgtype" type="xs:string"/>
+													<xs:element name="text" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="billing">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="port" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="optional">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="expires" type="xs:string"/>
+													<xs:element minOccurs="0" name="url" type="xs:string"/>
+													<xs:element minOccurs="0" name="dlr_url" type="xs:string"/>
+													<xs:element minOccurs="0" name="msg_id" type="xs:string"/>
+													<xs:element minOccurs="0" name="toCharge" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="response">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="status">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="code" type="xs:string"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="reason" type="xs:string"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="message">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="status">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="code" type="xs:string"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element maxOccurs="unbounded" name="recipients">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element maxOccurs="unbounded" name="recipient">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="status">
+																				<xs:complexType>
+																					<xs:simpleContent>
+																						<xs:extension base="xs:string">
+																							<xs:attribute name="code" type="xs:string"/>
+																						</xs:extension>
+																					</xs:simpleContent>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element minOccurs="0" name="reason" type="xs:string"/>
+																		</xs:sequence>
+																		<xs:attribute name="cli" type="xs:string"/>
+																		<xs:attribute name="mcc" type="xs:string"/>
+																		<xs:attribute name="mnc" type="xs:string"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="count" type="xs:string"/>
+															<xs:attribute name="successful_count" type="xs:string"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="queue_id" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="duration" type="xs:string"/>
+									<xs:attribute name="end" type="xs:string"/>
+									<xs:attribute name="queries" type="xs:string"/>
+									<xs:attribute name="start" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

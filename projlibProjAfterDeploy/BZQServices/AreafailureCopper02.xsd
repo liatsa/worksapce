@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:AreafailureCopper02="http://www.bezeq.co.il/XMLSchema/AreafailureCopper02" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AreafailureCopper02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="requestid" type="xs:integer"/>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="telephoneTrigger" type="xs:string"/>
+							<xs:element name="switchCenter" type="xs:integer"/>
+							<xs:element name="frameNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frameTag" type="xs:integer"/>
+							<xs:element name="frameType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="buildingNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="mark1" type="xs:string"/>
+							<xs:element minOccurs="0" name="mark2" type="xs:string"/>
+							<xs:element minOccurs="0" name="mark3" type="xs:string"/>
+							<xs:element minOccurs="0" name="mark4" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="requestId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="mark1" type="xs:string"/>
+							<xs:element minOccurs="0" name="mark2" type="xs:string"/>
+							<xs:element minOccurs="0" name="mark3" type="xs:string"/>
+							<xs:element minOccurs="0" name="mark4" type="xs:string"/>
+							<xs:element name="tevotCount" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="vektorTevot">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="inputFlag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sourceUfid" type="xs:integer"/>
+										<xs:element name="sourceCenter" type="xs:integer"/>
+										<xs:element name="sourceFrame" type="xs:integer"/>
+										<xs:element name="sourceType" type="xs:integer"/>
+										<xs:element name="sourceLow_tag" type="xs:integer"/>
+										<xs:element name="sourceHiTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sourceAddressFid" type="xs:integer"/>
+										<xs:element minOccurs="0" name="targetUfid" type="xs:integer"/>
+										<xs:element name="targetCenter" type="xs:integer"/>
+										<xs:element name="targetFrame" type="xs:integer"/>
+										<xs:element name="targetType" type="xs:integer"/>
+										<xs:element name="targetLowTag" type="xs:integer"/>
+										<xs:element name="targetHiTag" type="xs:integer"/>
+										<xs:element minOccurs="0" name="targetAddressFid" type="xs:integer"/>
+										<xs:element minOccurs="0" name="targetMark1" type="xs:string"/>
+										<xs:element minOccurs="0" name="targetMark2" type="xs:string"/>
+										<xs:element minOccurs="0" name="targetMark3" type="xs:string"/>
+										<xs:element minOccurs="0" name="targetMark4" type="xs:string"/>
+										<xs:element name="manuiCount" type="xs:integer"/>
+										<xs:element maxOccurs="100" minOccurs="0" name="vektorManuy">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="manuyNum" type="xs:string"/>
+													<xs:element minOccurs="0" name="manuyTag" type="xs:integer"/>
+													<xs:element minOccurs="0" name="manuySugKav" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element name="returnText" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

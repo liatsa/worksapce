@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateExecutionSurvey01="http://www.bezeq.co.il/XMLSchema/UpdateExecutionSurvey01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateExecutionSurvey01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="rosettaId" type="string"/>
+							<element minOccurs="0" name="workTaskId" type="string"/>
+							<element minOccurs="0" name="cityCode" type="string"/>
+							<element minOccurs="0" name="streetCode" type="string"/>
+							<element minOccurs="0" name="houseNumber" type="string"/>
+							<element minOccurs="0" name="houseIndication" type="string"/>
+							<element minOccurs="0" name="networkNumber" type="string"/>
+							<element minOccurs="0" name="contractorId" type="string"/>
+							<element minOccurs="0" name="endCount" type="string"/>
+							<element minOccurs="0" name="endCountSource" type="string"/>
+							<element minOccurs="0" name="endSplitter1Type" type="string"/>
+							<element minOccurs="0" name="endSplitter2Type" type="string"/>
+							<element minOccurs="0" name="endSplitter1Type_source" type="string"/>
+							<element minOccurs="0" name="endSplitter2Type_source" type="string"/>
+							<element minOccurs="0" name="endSplittersTagCount" type="string"/>
+							<element minOccurs="0" name="endSplittersTagRange" type="string"/>
+							<element minOccurs="0" name="floorsTagCount" type="string"/>
+							<element minOccurs="0" name="floorsTagRange" type="string"/>
+							<element minOccurs="0" name="floorAmount" type="string"/>
+							<element minOccurs="0" name="floorAmountSource" type="string"/>
+							<element minOccurs="0" name="apartmentsPerFloor" type="string"/>
+							<element minOccurs="0" name="apartmentsPerFloorSource" type="string"/>
+							<element minOccurs="0" name="floorAmountFinal" type="string"/>
+							<element minOccurs="0" name="apartmentsAmountFinal" type="string"/>
+							<element minOccurs="0" name="cabinetMakat" type="string"/>
+							<element minOccurs="0" name="cabinetType" type="string"/>
+							<element minOccurs="0" name="cabinetSize" type="string"/>
+							<element minOccurs="0" name="cabinetfiberCount" type="string"/>
+							<element minOccurs="0" name="cabinetDesc" type="string"/>
+							<element minOccurs="0" name="cabinetComment" type="string"/>
+							<element minOccurs="0" name="sapReportStatus" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="updateHistory">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="execSurveyDate" type="string"/>
+										<element minOccurs="0" name="execSurveyTime" type="string"/>
+										<element minOccurs="0" name="userIdn" type="string"/>
+										<element minOccurs="0" name="userName" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="floorMapping">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="floorMumber" type="string"/>
+										<element minOccurs="0" name="apartmentsPerFloor" type="string"/>
+										<element minOccurs="0" name="floorTagRange" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="floorTags">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="tag" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="ends_data">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="endCenter" type="string"/>
+										<element minOccurs="0" name="endFrame" type="string"/>
+										<element minOccurs="0" name="chainStatus" type="string"/>
+										<element minOccurs="0" name="chainStatusDesc" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="returnCode" type="string"/>
+							<element minOccurs="0" name="returnCodeDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

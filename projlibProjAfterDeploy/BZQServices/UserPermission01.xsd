@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UserPermission01="http://www.bezeq.co.il/XMLSchema/UserPermission01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UserPermission01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="requestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="ycomment" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestStart" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="updateDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="actionDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="approverJobDes" type="xs:string"/>
+							<xs:element minOccurs="0" name="userId" type="xs:string"/>
+						
+							<xs:element minOccurs="0" name="userJobDesc" type="xs:string"/>
+						
+							<xs:element minOccurs="0" name="systemCode" type="xs:string"/>
+						
+							<xs:element minOccurs="0" name="requestDetails" type="xs:string"/>
+							<xs:element minOccurs="0" name="reqoiresSod" type="xs:integer"/>
+							<xs:element minOccurs="0" name="approverId" type="xs:string"/>
+							
+							<xs:element minOccurs="0" name="sodSuccess" type="xs:integer"/>
+							<xs:element minOccurs="0" name="stageDesc" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="roles">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="role" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

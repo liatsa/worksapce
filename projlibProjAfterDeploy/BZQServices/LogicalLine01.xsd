@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:LogicalLine01="http://www.bezeq.co.il/XMLSchema/LogicalLine01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/LogicalLine01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="lineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineInstance" type="xs:integer"/>
+							<xs:element name="logicalLineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="logicalLineInstance" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="managmentMode" type="xs:string"/>
+							<xs:element minOccurs="0" name="domain" type="xs:string"/>
+							<xs:element minOccurs="0" name="networhType" type="xs:string"/>
+							<xs:element minOccurs="0" name="lanAddresses" type="xs:string"/>
+							<xs:element minOccurs="0" name="subnetLan" type="xs:string"/>
+							<xs:element minOccurs="0" name="loopBack" type="xs:string"/>
+							<xs:element minOccurs="0" name="routingProtocol" type="xs:string"/>
+							<xs:element minOccurs="0" name="peerGroup" type="xs:string"/>
+							<xs:element minOccurs="0" name="remoteAccess" type="xs:string"/>
+							<xs:element minOccurs="0" name="vp" type="xs:string"/>
+							<xs:element minOccurs="0" name="vc" type="xs:string"/>
+							<xs:element minOccurs="0" name="returnCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

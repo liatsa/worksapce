@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:AllocateNumbersRange01="http://www.bezeq.co.il/XMLSchema/AllocateNumbersRange01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AllocateNumbersRange01">
+	<xsd:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xsd:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xsd:element name="request">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xsd:element minOccurs="0" name="Data">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="interfaceId" type="xsd:string"/>
+							<xsd:element name="ordeServType" type="xsd:integer"/>
+							<xsd:element name="egedGroup" type="xsd:integer"/>
+							<xsd:element minOccurs="0" name="meracezetNum" type="xsd:integer"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="reply">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xsd:element minOccurs="0" name="Data">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="interfaceId" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="areaCode" type="xsd:integer"/>
+							<xsd:element minOccurs="0" name="areaCdDisplay" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="phoneNbr" type="xsd:integer"/>
+							<xsd:element minOccurs="0" name="areaCdTaxdn" type="xsd:integer"/>
+							<xsd:element minOccurs="0" name="areaTaxdnDspl" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="phoneNbrTaxdn" type="xsd:integer"/>
+							<xsd:element minOccurs="0" name="areaCdTzir" type="xsd:integer"/>
+							<xsd:element minOccurs="0" name="areaTzirDspl" type="xsd:string"/>
+							<xsd:element name="kamuttzirim" type="xsd:integer"/>
+							<xsd:element maxOccurs="unbounded" minOccurs="0" name="rowTzir">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element minOccurs="0" name="phoneNbrTzir" type="xsd:integer"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="monetvachim" type="xsd:integer"/>
+							<xsd:element maxOccurs="unbounded" minOccurs="0" name="rowRng">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element minOccurs="0" name="areaCdRng" type="xsd:integer"/>
+										<xsd:element minOccurs="0" name="areaCdRngDsp" type="xsd:string"/>
+										<xsd:element minOccurs="0" name="phoneNbrFrom" type="xsd:integer"/>
+										<xsd:element minOccurs="0" name="phoneNbrTo" type="xsd:integer"/>
+										<xsd:element minOccurs="0" name="phoneStatus" type="xsd:string"/>
+										<xsd:element minOccurs="0" name="descr20" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="messageSetNbr" type="xsd:integer"/>
+							<xsd:element name="messageNbr" type="xsd:integer"/>
+							<xsd:element minOccurs="0" name="messageDescr" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

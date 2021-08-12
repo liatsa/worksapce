@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:BILPayer="http://www.bezeq.co.il/XMLSchema/BILPayer"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/BILPayer"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="BILPayer">
+		<complexType>
+			<sequence>
+				<element name="RecordIdentifier" type="xsd:string" minOccurs="0"/>
+				<element name="MsgDatetime" type="xsd:dateTime" minOccurs="0"/>
+				<element name="ActvCode" type="xsd:string" minOccurs="0"/>
+				<element name="ActvRsnCode" type="xsd:string" minOccurs="0"/>
+				<element name="IssueDate" type="xsd:date" minOccurs="0"/>
+				<element name="TrxSeqNo" type="xsd:string" minOccurs="0"/>
+				<element name="Ban" type="xsd:string"/>
+				<element name="Ben" type="xsd:string" minOccurs="0"/>
+				<element name="LastBusinessName" type="xsd:string" minOccurs="0"/>
+				<element name="FirstName" type="xsd:string" minOccurs="0"/>
+				<element name="AdrType" type="xsd:string" minOccurs="0"/>
+				<element name="AdrPostCode" type="xsd:string" minOccurs="0"/>
+				<element name="AdrCity" type="xsd:string" minOccurs="0"/>
+				<element name="AdrAptFloor" type="xsd:string" minOccurs="0"/>
+				<element name="ApartmentNumber" type="xsd:string" minOccurs="0"/>
+				<element name="AdrAptEntrance" type="xsd:string" minOccurs="0"/>
+				<element name="AdditionalHouseLetter" type="xsd:string" minOccurs="0"/>
+				<element name="AdrHouseNo" type="xsd:string" minOccurs="0"/>
+				<element name="AdrStreetName" type="xsd:string" minOccurs="0"/>
+				<element name="AdditionalCityCd" type="xsd:string" minOccurs="0"/>
+				<element name="AdditionalStreetCd" type="xsd:string" minOccurs="0"/>
+				<element name="BenStatus" type="xsd:string" minOccurs="0"/>
+				<element name="BenStatusDate" type="xsd:date" minOccurs="0"/>
+				<element name="PaymentMethod" type="xsd:string" minOccurs="0"/>
+				<element name = "EmailAddr" type = "xsd:string" minOccurs = "0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:LdapDetails02="http://www.bezeq.co.il/XMLSchema/LdapDetails02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/LdapDetails02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="phoneNumber" type="string"/>
+							<element minOccurs="0" name="ppp4i" type="string"/>
+							<element minOccurs="0" name="ip4i" type="string"/>
+							<element minOccurs="0" name="pppSlid" type="string"/>
+							<element minOccurs="0" name="ipSlid" type="string"/>
+							<element minOccurs="0" name="optionalField1" type="string"/>
+							<element minOccurs="0" name="optionalField2" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="phoneNumber" type="string"/>
+							<element minOccurs="0" name="customerId" type="string"/>
+							<element minOccurs="0" name="ppp4i" type="string"/>
+							<element minOccurs="0" name="ip4i" type="string"/>
+							<element minOccurs="0" name="serviceRa" type="string"/>
+							<element minOccurs="0" name="pppIp" type="string"/>
+							<element minOccurs="0" name="pppShelf" type="string"/>
+							<element minOccurs="0" name="pppSlot" type="string"/>
+							<element minOccurs="0" name="pppPort" type="string"/>
+							<element minOccurs="0" name="ipIp" type="string"/>
+							<element minOccurs="0" name="ipShelf" type="string"/>
+							<element minOccurs="0" name="ipSlot" type="string"/>
+							<element minOccurs="0" name="ipPort" type="string"/>
+							<element minOccurs="0" name="accountBundleCode" type="string"/>
+							<element minOccurs="0" name="serviceBundleCode" type="string"/>
+							<element minOccurs="0" name="hsiBundleCodeNGN" type="string"/>
+							<element minOccurs="0" name="serviceRateUp" type="string"/>
+							<element minOccurs="0" name="serviceRateDown" type="string"/>
+							<element minOccurs="0" name="blockServices" type="string"/>
+							<element minOccurs="0" name="accountStatus" type="string"/>
+							<element minOccurs="0" name="servicesStatus" type="string"/>
+							<element minOccurs="0" name="ngnDslam" type="integer"/>
+							<element minOccurs="0" name="orderFlag" type="integer"/>
+							<element name="statusCode" type="string"/>
+							<element name="errorCode" type="integer"/>
+							<element minOccurs="0" name="errorType" type="string"/>
+							<element minOccurs="0" name="optionalField1" type="string"/>
+							<element minOccurs="0" name="optionalField2" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

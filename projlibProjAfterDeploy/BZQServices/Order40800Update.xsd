@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Order40800Update="http://www.bezeq.co.il/XMLSchema/Order40800Update" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Order40800Update">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="appCode" type="xs:string"/>
+							<xs:element name="userId" type="xs:string"/>
+							<xs:element name="orderId" type="xs:integer"/>
+							<xs:element name="orderType" type="xs:integer"/>
+							<xs:element name="phoneNumber" type="xs:integer"/>
+				<xs:element minOccurs="0" name="backupMessages" type="xs:string"/>
+				<xs:element minOccurs="0" name="emailAddress" type="xs:string"/>
+					<xs:element minOccurs="0" name="cellularNumber" type="xs:string"/>
+				<xs:element minOccurs="0" name="havila" type="xs:string"/>
+					<xs:element minOccurs="0" name="formNumber" type="xs:string"/>
+				<xs:element minOccurs="0" name="dateForm" type="xs:date"/>
+					<xs:element minOccurs="0" name="hourForm" type="xs:string"/>
+
+							<xs:element minOccurs="0" name="pricePlanBase" type="xs:string"/>
+							<xs:element maxOccurs="5" minOccurs="0" name="PricePlanDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="pricePlan" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="20" name="ServiceDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="serviceCode" type="xs:string"/>
+										<xs:element name="actionType" type="xs:string"/>
+										<xs:element name="serviceQuantity" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="dealerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="salespersonId" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

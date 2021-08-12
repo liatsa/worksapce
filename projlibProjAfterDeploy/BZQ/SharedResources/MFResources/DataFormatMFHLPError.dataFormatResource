@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataFormatMFHLPError.xsd="http://ns.tibco.com/bw/palette/dataformat/BZQ/SharedResources/MFResources/DataFormatMFHLPError.xsd" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_vwpTMPqYEeuc-43zW8XOWA" name="BZQ.SharedResources.MFResources.DataFormatMFHLPError" type="dataformat:DataFormat">
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_vwpTMfqYEeuc-43zW8XOWA" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" schemaElement="DataFormatMFHLPError.xsd#//root;XSDElementDeclaration" schemaElementQName="DataFormatMFHLPError.xsd:root" lineLength="720" fieldOffsetsStr="user_id(0,35)&#xA;interface_id(35,70)&#xA;failed_interfaceid(70,105)&#xA;quick_cd(105,108)&#xA;mt_equip_code(108,138)&#xA;descrlong(138,438)&#xA;mt_datetime(438,452)&#xA;message_set_nbr(452,457)&#xA;message_nbr(457,462)&#xA;message_descr(462,718)">
+    <fieldOffsets xmi:id="_vwpTMvqYEeuc-43zW8XOWA" name="user_id" end="35"/>
+    <fieldOffsets xmi:id="_vwpTM_qYEeuc-43zW8XOWA" name="interface_id" start="35" end="70"/>
+    <fieldOffsets xmi:id="_vwpTNPqYEeuc-43zW8XOWA" name="failed_interfaceid" start="70" end="105"/>
+    <fieldOffsets xmi:id="_vwpTNfqYEeuc-43zW8XOWA" name="quick_cd" start="105" end="108"/>
+    <fieldOffsets xmi:id="_vwpTNvqYEeuc-43zW8XOWA" name="mt_equip_code" start="108" end="138"/>
+    <fieldOffsets xmi:id="_vwpTN_qYEeuc-43zW8XOWA" name="descrlong" start="138" end="438"/>
+    <fieldOffsets xmi:id="_vwpTOPqYEeuc-43zW8XOWA" name="mt_datetime" start="438" end="452"/>
+    <fieldOffsets xmi:id="_vwpTOfqYEeuc-43zW8XOWA" name="message_set_nbr" start="452" end="457"/>
+    <fieldOffsets xmi:id="_vwpTOvqYEeuc-43zW8XOWA" name="message_nbr" start="457" end="462"/>
+    <fieldOffsets xmi:id="_vwpTO_qYEeuc-43zW8XOWA" name="message_descr" start="462" end="718"/>
+  </jndi:configuration>
+</jndi:namedResource>

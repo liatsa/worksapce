@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NetworkInfra02="http://www.bezeq.co.il/XMLSchema/NetworkInfra02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NetworkInfra02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="processId" type="string"/>
+							<element name="cmOrderNumber" type="string"/>
+							<element minOccurs="0" name="heker" type="string"/>
+							<element name="componentAction" type="string"/>
+							<element name="componentSubAction" type="string"/>
+							<element name="componentType" type="string"/>
+							<element minOccurs="0" name="swCancel" type="string"/>
+							<element minOccurs="0" name="componentNumber" type="string"/>
+							<element maxOccurs="15" minOccurs="0" name="services">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="serviceComponentNumber" type="string"/>
+										<element minOccurs="0" name="billingServiceId" type="string"/>
+										<element minOccurs="0" name="serviceAction" type="string"/>
+										<element maxOccurs="15" minOccurs="0" name="servicesAttribute">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="attributeName" type="string"/>
+													<element minOccurs="0" name="attributeValue" type="string"/>
+													<element minOccurs="0" name="attributeAction" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="30" minOccurs="0" name="params">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="paramName" type="string"/>
+										<element minOccurs="0" name="paramValue" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="processId" type="string"/>
+							<element name="cmOrderNumber" type="string"/>
+							<element minOccurs="0" name="activationRequired" type="string"/>
+							<element minOccurs="0" name="componentNumber" type="string"/>
+							<element minOccurs="0" name="lineType" type="string"/>
+							<element minOccurs="0" name="upgradedRate" type="string"/>
+							<element minOccurs="0" name="upgradedUnits" type="string"/>
+							<element minOccurs="0" name="downGradedRate" type="string"/>
+							<element minOccurs="0" name="downGradedUnits" type="string"/>
+							<element minOccurs="0" name="upSummedRate" type="string"/>
+							<element minOccurs="0" name="upSummedUnits" type="string"/>
+							<element minOccurs="0" name="downSummedRate" type="string"/>
+							<element minOccurs="0" name="downSummedUnits" type="string"/>
+							<element maxOccurs="5" minOccurs="0" name="paramsArray">
+								<complexType>
+									<sequence>
+										<element maxOccurs="unbounded" minOccurs="0" name="params">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="fieldName" type="string"/>
+													<element minOccurs="0" name="fieldValue" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="criticalError" type="string"/>
+							<element maxOccurs="10" minOccurs="0" name="errorArray">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="systemSourceError" type="string"/>
+										<element minOccurs="0" name="errorCode" type="string"/>
+										<element minOccurs="0" name="errorText" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="messageSetNbr" type="string"/>
+							<element minOccurs="0" name="messageNbr" type="string"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

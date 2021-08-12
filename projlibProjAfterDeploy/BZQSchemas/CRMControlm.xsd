@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:CRMControlm="http://www.bezeq.co.il/XMLSchema/CRMControlm"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/CRMControlm"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="CRMControlm">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="processType" type="xs:string"/>
+				<xs:element name="processName" type="xs:string"/>
+				<xs:element name="runControld" type="xs:string" minOccurs="0"/>
+				<xs:element name="serverName" type="xs:string" minOccurs="0"/>
+				<xs:element name="outDestType" type="xs:string" minOccurs="0"/>
+				<xs:element name="outDestFormat" type="xs:string" minOccurs="0"/>
+				<xs:element name="outDest" type="xs:string" minOccurs="0"/>
+				<xs:element name="runDate" type="xs:dateTime" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

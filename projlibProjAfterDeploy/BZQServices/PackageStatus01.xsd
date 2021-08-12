@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:PackageStatus01="http://www.bezeq.co.il/XMLSchema/PackageStatus01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/PackageStatus01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="ban" type="integer"/>
+							<element minOccurs="0" name="cmp" type="string"/>
+							<element minOccurs="1" name="reqType" type="string"/>
+							<element minOccurs="0" name="productType" type="string"/>
+							<element minOccurs="0" name="productSubType" type="string"/>
+							<element minOccurs="0" name="cmpStatus" type="string"/>
+							<element minOccurs="0" name="cmpLevel" type="string"/>
+							<element minOccurs="0" name="ben" type="integer"/>
+							<element minOccurs="0" name="siteNo" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="ban" type="integer"/>
+							<element minOccurs="0" name="newCmpSeqNo" type="integer"/>
+							<element maxOccurs="100" minOccurs="0" name="cmpDetArr">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="cmp" type="string"/>
+										<element minOccurs="0" name="cmpDesc" type="string"/>
+										<element minOccurs="0" name="cmpSeqNo" type="integer"/>
+										<element minOccurs="0" name="subscriberNo" type="string"/>
+										<element minOccurs="0" name="soc" type="string"/>
+										<element minOccurs="0" name="socDesc" type="string"/>
+										<element minOccurs="0" name="cmpStatus" type="string"/>
+										<element minOccurs="0" name="productType" type="string"/>
+										<element minOccurs="0" name="productSubType" type="string"/>
+										<element minOccurs="0" name="cmpLevel" type="string"/>
+										<element minOccurs="0" name="Ben" type="integer"/>
+										<element minOccurs="0" name="SiteNo" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="numBufRec" type="integer"/>
+							<element name="status" type="integer"/>
+							<element minOccurs="0" name="msgCode" type="integer"/>
+							<element minOccurs="0" name="msgDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

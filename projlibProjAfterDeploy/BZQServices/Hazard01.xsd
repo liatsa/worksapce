@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Hazard01="http://www.bezeq.co.il/XMLSchema/Hazard01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Hazard01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="hazardId" type="xs:string"/>
+							<xs:element minOccurs="0" name="hazardType" type="xs:integer"/>
+							<xs:element name="actionCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="status" type="xs:integer"/>
+							<xs:element minOccurs="0" name="center" type="xs:string"/>
+							<xs:element minOccurs="0" name="frame" type="xs:string"/>
+							<xs:element minOccurs="0" name="tagStart" type="xs:string"/>
+							<xs:element minOccurs="0" name="tagEnd" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="buildingNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="remark" type="xs:string"/>
+							<xs:element minOccurs="0" name="divisionSapCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="divisionDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="hazardId" type="xs:string"/>
+							<xs:element name="spHazardId" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

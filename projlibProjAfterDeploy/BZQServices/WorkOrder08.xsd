@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:WorkOrder08="http://www.bezeq.co.il/XMLSchema/WorkOrder08" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/WorkOrder08">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="houseNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="letter" type="xs:string"/>
+							<xs:element minOccurs="0" name="soStatus" type="xs:integer"/>
+							<xs:element minOccurs="0" name="serviceOrderId" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="project">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="projectId" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="soCount" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="workOrdersDetails">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="projectId" type="xs:string"/>
+										<xs:element minOccurs="0" name="serviceOrderSource" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceOrderSourceDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="serviceOrderId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="missionCount" type="xs:integer"/>
+										<xs:element minOccurs="0" name="orderNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="houseNumber" type="xs:integer"/>
+										<xs:element minOccurs="0" name="letter" type="xs:string"/>
+										<xs:element minOccurs="0" name="serviceOrderDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="slaFrom" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="slaTo" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="estimatedTimeFrom" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="estimatedTimeTo" type="xs:dateTime"/>
+										<xs:element minOccurs="0" name="technicianStatus" type="xs:integer"/>
+										<xs:element minOccurs="0" name="technicianName" type="xs:string"/>
+										<xs:element minOccurs="0" name="technicianPhone" type="xs:string"/>
+										<xs:element minOccurs="0" name="technicianTeam" type="xs:string"/>
+										<xs:element minOccurs="0" name="missionId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceOrderStatusId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serviceOrderStatusDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="requestSts" type="xs:integer"/>
+							<xs:element minOccurs="0" name="requestStsRsn" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

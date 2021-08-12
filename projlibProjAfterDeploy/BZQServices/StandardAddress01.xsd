@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:StandardAddress01="http://www.bezeq.co.il/XMLSchema/StandardAddress01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/StandardAddress01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interface_Id" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="houseLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="appartmentEnterance" type="xs:string"/>
+							<xs:element minOccurs="0" name="appartmentFloor" type="xs:integer"/>
+							<xs:element minOccurs="0" name="appartmentNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="region" type="xs:integer"/>
+							<xs:element minOccurs="0" name="section" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ground" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseName" type="xs:string"/>
+							<xs:element minOccurs="0" name="pob" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interface_Id" type="xs:string"/>
+							<xs:element minOccurs="0" name="addressFid" type="xs:long"/>
+							<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="houseLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="appartmentEnterance" type="xs:string"/>
+							<xs:element minOccurs="0" name="appartmentFloor" type="xs:integer"/>
+							<xs:element minOccurs="0" name="appartmentNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="region" type="xs:integer"/>
+							<xs:element minOccurs="0" name="section" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ground" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseName" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="pob" type="xs:integer"/>
+							<xs:element minOccurs="0" name="postCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="postCityType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="agaf" type="xs:integer"/>
+							<xs:element minOccurs="0" name="merkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shemMerkaz" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceArea" type="xs:integer"/>
+							<xs:element minOccurs="0" name="servicePrivateSla" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceBusinessSla" type="xs:string"/>
+							<xs:element minOccurs="0" name="xCoord" type="xs:integer"/>
+							<xs:element minOccurs="0" name="yCoord" type="xs:integer"/>
+							<xs:element minOccurs="0" name="coordType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="bldgFid" type="xs:integer"/>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element name="returnCodeDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

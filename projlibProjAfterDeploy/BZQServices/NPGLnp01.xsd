@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NPGBase="http://www.bezeq.co.il/XMLSchema/NPGBase" xmlns:NPGLnp01="http://www.bezeq.co.il/XMLSchema/NPGLnp01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NPGLnp01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/NPGBase" schemaLocation="../BZQSchemas/NPGBase.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" ref="NPGBase:messageType"/>
+							<xs:element ref="NPGBase:messageSendTimestamp"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerType" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmRecordId" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmFormId" type="xs:string"/>
+							<xs:element name="requestType" type="xs:string"/>
+							<xs:choice>
+								<xs:element name="portedDn" type="xs:string"/>
+								<xs:sequence>
+									<xs:element name="fromNumber" type="xs:string"/>
+									<xs:element name="toNumber" type="xs:string"/>
+								</xs:sequence>
+							</xs:choice>
+							<xs:element minOccurs="0" name="lrnCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="originalSwitchInd" type="xs:string"/>
+							<xs:element name="action">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="1"/>
+										<xs:pattern value="2"/>
+										<xs:pattern value="3"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element minOccurs="0" name="portingTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="productType" type="xs:string"/>
+							<xs:element minOccurs="0" name="productSubType" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Mission06="http://www.bezeq.co.il/XMLSchema/Mission06" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Mission06">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="actionType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="jobID" type="xs:string"/>
+							<xs:element minOccurs="0" name="pricingCategory" type="xs:string"/>
+							<xs:element minOccurs="0" name="cmWorkTaskId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="planningFile" type="xs:string"/>
+							<xs:element minOccurs="0" name="bdeskProjectNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="network" type="xs:string"/>
+							<xs:element minOccurs="0" name="taksWorld" type="xs:integer"/>
+							<xs:element minOccurs="0" name="workTaskSubType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="workTaskSource" type="xs:integer"/>
+							<xs:element minOccurs="0" name="workTaskDetails" type="xs:string"/>
+							<xs:element minOccurs="0" name="tatzpitFile" type="xs:string"/>
+							<xs:element minOccurs="0" name="installation" type="xs:string"/>
+							<xs:element minOccurs="0" name="centerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="StreetId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="House" type="xs:integer"/>
+							<xs:element minOccurs="0" name="HouseIndication" type="xs:string"/>
+							<xs:element minOccurs="0" name="IsContractor" type="xs:integer"/>
+							<xs:element minOccurs="0" name="IsWorkOrder" type="xs:integer"/>
+							<xs:element minOccurs="0" name="Isapproval" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ImplementDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="CreatedBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="coordinate" type="xs:string"/>
+							<xs:element minOccurs="0" name="urlPlanningFile" type="xs:string"/>
+							<xs:element minOccurs="0" name="reconnaissanceDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="contractorOrder" type="xs:string"/>
+							<xs:element minOccurs="0" name="jobRelatedIdCounter" type="xs:integer"/>
+							<xs:element maxOccurs="99" minOccurs="0" name="jobs">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="jobRelatedId" type="xs:string"/>
+										<xs:element minOccurs="0" name="relatedPricingCategory" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="quatationId" type="xs:string"/>
+							<xs:element minOccurs="0" name="referralId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="receiverNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="urlSiteSurveyFile" type="xs:string"/>
+							<xs:element minOccurs="0" name="apartmentsAmount" type="xs:integer"/>
+							<xs:element minOccurs="0" name="floorAmount" type="xs:integer"/>
+
+							<xs:element minOccurs="0" name="bsmartApartmentsAmount" type="xs:integer"/>
+							<xs:element minOccurs="0" name="bsmartFloorAmount" type="xs:integer"/>
+
+							<xs:element minOccurs="0" name="frameWorkLocationType" type="xs:string"/>
+							<xs:element minOccurs="0" name="ufidRosetta" type="xs:integer"/>
+							<xs:element maxOccurs="50" minOccurs="0" name="drawers">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="planetDrawerId" type="xs:string"/>
+										<xs:element minOccurs="0" name="isDrawerRequired" type="xs:string"/>
+										<xs:element minOccurs="0" name="drawerMakat" type="xs:string"/>
+										<xs:element minOccurs="0" name="drawerDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="drawerLocation" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="50" minOccurs="0" name="splitters">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="splittersTypeDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="ItemNumber" type="xs:integer"/>
+										<xs:element minOccurs="0" name="splitterFrame" type="xs:string"/>
+										<xs:element minOccurs="0" name="fiberNumber" type="xs:integer"/>
+										<xs:element minOccurs="0" name="splitterLow" type="xs:integer"/>
+										<xs:element minOccurs="0" name="splitterHigh" type="xs:integer"/>
+										<xs:element minOccurs="0" name="boardLow" type="xs:integer"/>
+										<xs:element minOccurs="0" name="boardHigh" type="xs:integer"/>
+										<xs:element minOccurs="0" name="feedDirection" type="xs:string"/>
+										<xs:element minOccurs="0" name="planetDrawerId" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="50" minOccurs="0" name="Providers">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ProviderId" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+				<xs:element maxOccurs="50" minOccurs="0" name="fdt">
+					<xs:complexType>
+						<xs:sequence>
+						
+							<xs:element minOccurs="0" name="fdtNumber" type="xs:string"/>
+					
+							<xs:element minOccurs="0" name="fdtLocation" type="xs:integer"/>
+					
+						
+							<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+					
+							<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+					
+							<xs:element minOccurs="0" name="house" type="xs:integer"/>
+					
+							<xs:element minOccurs="0" name="houseIndication" type="xs:string"/>
+					
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

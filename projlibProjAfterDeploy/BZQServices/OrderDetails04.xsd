@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderDetails04="http://www.bezeq.co.il/XMLSchema/OrderDetails04" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderDetails04">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="mainOrderNum" type="string"/>
+							<element minOccurs="0" name="runOrderNum" type="string"/>
+							<element minOccurs="0" name="lineCode" type="string"/>
+							<element minOccurs="0" name="applicationType" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element maxOccurs="20" minOccurs="0" name="orderTree">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="groupPhoneNum" type="string"/>
+										<element minOccurs="0" name="phoneNumber" type="string"/>
+										<element minOccurs="0" name="phoneNumA" type="string"/>
+										<element minOccurs="0" name="phoneNumB" type="string"/>
+										<element minOccurs="0" name="mainOrderNum" type="string"/>
+										<element minOccurs="0" name="runOrderNum" type="string"/>
+										<element minOccurs="0" name="lineTypeCode" type="string"/>
+										<element minOccurs="0" name="orderTypeCode" type="string"/>
+										<element minOccurs="0" name="serviceTypeCode" type="string"/>
+										<element minOccurs="0" name="orderStatus" type="string"/>
+										<element minOccurs="0" name="orderCharacter" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="generalDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="phoneNum" type="string"/>
+										<element minOccurs="0" name="marketingGroupCode" type="string"/>
+										<element minOccurs="0" name="interfaceType" type="string"/>
+										<element minOccurs="0" name="lineTypeCode" type="string"/>
+										<element minOccurs="0" name="orderTypeCode" type="string"/>
+										<element minOccurs="0" name="serviceTypeCode" type="string"/>
+										<element minOccurs="0" name="orderTime" type="string"/>
+										<element minOccurs="0" name="custOrderDate" type="date"/>
+										<element minOccurs="0" name="openOrderDate" type="date"/>
+										<element minOccurs="0" name="mainOrderNum" type="string"/>
+										<element minOccurs="0" name="runOrderNum" type="string"/>
+										<element minOccurs="0" name="vantiveCaseNum" type="string"/>
+										<element minOccurs="0" name="orderOpener" type="string"/>
+										<element minOccurs="0" name="orderStatus" type="string"/>
+										<element minOccurs="0" name="sellerId" type="string"/>
+										<element maxOccurs="2" minOccurs="0" name="installAdress">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="side" type="string"/>
+													<element minOccurs="0" name="citySymbol" type="string"/>
+													<element minOccurs="0" name="cityName" type="string"/>
+													<element minOccurs="0" name="streetSymbol" type="string"/>
+													<element minOccurs="0" name="streetName" type="string"/>
+													<element minOccurs="0" name="houseNumber" type="string"/>
+													<element minOccurs="0" name="letter" type="string"/>
+													<element minOccurs="0" name="center" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="contactsDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderContactPerson" type="string"/>
+										<element maxOccurs="2" minOccurs="0" name="sideContactDestails">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="contactsToSide" type="string"/>
+													<element minOccurs="0" name="siteContactPerson" type="string"/>
+													<element minOccurs="0" name="siteContactPhone" type="string"/>
+													<element minOccurs="0" name="CoordinatorConPer" type="string"/>
+													<element minOccurs="0" name="coordinatorPhone" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="20" minOccurs="0" name="orderActivities">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="actionStatus" type="string"/>
+										<element minOccurs="0" name="actionCode" type="string"/>
+										<element minOccurs="0" name="actionDesc" type="string"/>
+										<element minOccurs="0" name="actionWaitingDate" type="date"/>
+										<element minOccurs="0" name="actionExecDate" type="date"/>
+										<element minOccurs="0" name="actionSide" type="string"/>
+										<element minOccurs="0" name="unitNumber" type="integer"/>
+										<element minOccurs="0" name="unitName" type="string"/>
+										<element minOccurs="0" name="actionState" type="string"/>
+										<element minOccurs="0" name="actionCloserId" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="lineData">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="subnetAddress" type="string"/>
+										<element minOccurs="0" name="downloadSpeedCode" type="string"/>
+										<element minOccurs="0" name="uploadSpeedCode" type="string"/>
+										<element maxOccurs="2" minOccurs="0" name="lineDataForSide">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="side" type="string"/>
+													<element minOccurs="0" name="ipAddress" type="string"/>
+													<element minOccurs="0" name="svlan" type="string"/>
+													<element minOccurs="0" name="cvlan" type="string"/>
+													<element minOccurs="0" name="vc" type="string"/>
+													<element minOccurs="0" name="vp" type="string"/>
+													<element minOccurs="0" name="dlci" type="string"/>
+													<element minOccurs="0" name="lan" type="string"/>
+													<element minOccurs="0" name="manageConfig" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="20" minOccurs="0" name="orderEquipment">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="catalogueNumber" type="string"/>
+										<element minOccurs="0" name="equipmentCode" type="string"/>
+										<element minOccurs="0" name="equipmentDescription" type="string"/>
+										<element minOccurs="0" name="side" type="string"/>
+										<element minOccurs="0" name="existEquipQuantity" type="integer"/>
+										<element minOccurs="0" name="addEquipQuantity" type="string"/>
+										<element minOccurs="0" name="remEquipQuantity" type="integer"/>
+										<element minOccurs="0" name="owner" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="20" minOccurs="0" name="additionalServices">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="additionalServiceID" type="integer"/>
+										<element minOccurs="0" name="additionalServiceAction" type="string"/>
+										<element minOccurs="0" name="additionalServiceAmount" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="20" minOccurs="0" name="orderRemarks">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="remarkCode" type="string"/>
+										<element minOccurs="0" name="remarkDate" type="date"/>
+										<element minOccurs="0" name="remarkContent" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="centrexData">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="extensionQuantity" type="integer"/>
+										<element minOccurs="0" name="numDigitDial" type="string"/>
+										<element minOccurs="0" name="branchAreaCode" type="string"/>
+										<element minOccurs="0" name="OperationExtQuan" type="string"/>
+										<element maxOccurs="20" minOccurs="0" name="centrexDataChange">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="fromNumber" type="string"/>
+													<element minOccurs="0" name="toNumber" type="string"/>
+													<element minOccurs="0" name="allocatedExtQuan" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element minOccurs="0" name="sumOfCopiedExtensions" type="integer"/>
+										<element maxOccurs="30" minOccurs="0" name="centrexDataCopy">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="fromExtension" type="string"/>
+													<element minOccurs="0" name="toExtension" type="string"/>
+													<element minOccurs="0" name="remark" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="customerId" type="string"/>
+							<element minOccurs="0" name="providerCode" type="string"/>
+							<element minOccurs="0" name="requestSts" type="integer"/>
+							<element name="requestStsRsn" type="integer"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="centrexExtensionsMapping">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="action" type="string"/>
+										<element minOccurs="0" name="packageDesc" type="string"/>
+										<element minOccurs="0" name="extensionNum" type="string"/>
+										<element minOccurs="0" name="equipmentDesc" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="backupLineSwitch" type="string"/>
+							<element minOccurs="0" name="backupLineNumber" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

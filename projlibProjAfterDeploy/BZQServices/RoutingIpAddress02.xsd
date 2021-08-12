@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:RoutingIpAddress02="http://www.bezeq.co.il/XMLSchema/RoutingIpAddress02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/RoutingIpAddress02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="misparSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodPeula" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="shemGrp" type="xs:string"/>
+							<xs:element minOccurs="0" name="ipA" type="xs:string"/>
+							<xs:element minOccurs="0" name="lanIP" type="xs:string"/>
+							<xs:element minOccurs="0" name="vlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="mngIP" type="xs:string"/>
+							<xs:element minOccurs="0" name="ipB" type="xs:string"/>
+							<xs:element minOccurs="0" name="lanSubnetMask" type="xs:string"/>
+							<xs:element minOccurs="0" name="vLanA" type="xs:string"/>
+							<xs:element minOccurs="0" name="routBridge" type="xs:string"/>
+							<xs:element minOccurs="0" name="pingIP" type="xs:string"/>
+							<xs:element minOccurs="0" name="destinationIP" type="xs:string"/>
+							<xs:element minOccurs="0" name="vlanB" type="xs:string"/>
+							<xs:element minOccurs="0" name="swmngIP" type="xs:string"/>
+							<xs:element minOccurs="0" name="subnetMask" type="xs:string"/>
+							<xs:element minOccurs="0" name="destinationPort" type="xs:string"/>
+							<xs:element minOccurs="0" name="aggrMitkan" type="xs:string"/>
+							<xs:element minOccurs="0" name="aggrMisparit" type="xs:string"/>
+							<xs:element minOccurs="0" name="aggrSugTziud" type="xs:string"/>
+							<xs:element minOccurs="0" name="aggrHadak" type="xs:string"/>
+							<xs:element minOccurs="0" name="aggrIP" type="xs:string"/>
+							<xs:element minOccurs="0" name="mitkanMotzaA" type="xs:string"/>
+							<xs:element minOccurs="0" name="mitkanYaadA" type="xs:string"/>
+							<xs:element minOccurs="0" name="mitkanMotzaB" type="xs:string"/>
+							<xs:element minOccurs="0" name="mitkanYaadB" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugHazmanaKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="matzavKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="zman" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugNativ" type="xs:string"/>
+							<xs:element minOccurs="0" name="tagShinui" type="xs:string"/>
+							<xs:element minOccurs="0" name="horafal" type="xs:string"/>
+							<xs:element minOccurs="0" name="mitkanKavFiziKatzeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="merkazKavFiziKatzeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="eastMerkaz" type="xs:integer"/>
+							<xs:element minOccurs="0" name="northMerkazA" type="xs:integer"/>
+							<xs:element minOccurs="0" name="eastMitkan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="northMitkanA" type="xs:integer"/>
+							<xs:element minOccurs="0" name="mitkanKavFiziKatzeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="merkazKavFiziKatzeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="eastMerkazB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="northMerkazB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="eastMitkanB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="northMitkanB" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodTzir" type="xs:integer"/>
+							<xs:element minOccurs="0" name="swKavGibuyLe" type="xs:string"/>
+							<xs:element minOccurs="0" name="swKavGibui" type="xs:string"/>
+							<xs:element minOccurs="0" name="swHerum" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodKavGibuyLe" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodKavGibui" type="xs:integer"/>
+							<xs:element minOccurs="0" name="meafyenKav1" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav2" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav3" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav4" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav5" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav6" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav7" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav8" type="xs:string"/>
+							<xs:element minOccurs="0" name="meafyenKav9" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparTziudA" type="xs:string"/>
+							<xs:element minOccurs="0" name="shemManuyKatzeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="irKatzeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="rechoveKatzeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="tlfKatzeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparTziudB" type="xs:string"/>
+							<xs:element minOccurs="0" name="shemManuyKatzeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="irKatzeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="rechovKatzeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="tlfKatzeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="nosafimMisGrp" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodHechzer" type="xs:string"/>
+							<xs:element minOccurs="0" name="teurKodHechzer" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

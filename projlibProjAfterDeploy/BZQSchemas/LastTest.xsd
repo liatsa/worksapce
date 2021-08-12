@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:LastTest="http://www.bezeq.co.il/XMLSchema/LastTest"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/LastTest"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="LastTest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="userName" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="30"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="metallic" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="metallicTestDateTime" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="testStatus">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="8"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="failDescription">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="256"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="acv" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="tg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="rg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tr" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dcv" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="tg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="rg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tr" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="res" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="tg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="rg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tr" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="cap" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="tg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="rg" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tr" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="analyzeMsg" minOccurs="0" maxOccurs="10">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="256"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dsl" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dslTestDateTime" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="testStatus">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="8"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="failDescription">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="256"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="portStat" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="20"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="syncStat" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="10"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="lastChange" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="17"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="modulationType" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="10"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="channelType" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="10"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="profileName" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="30"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="bitRate" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="maxUp" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="minUp" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="plannedUp" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="maxDown" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="minDown" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="plannedDown" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="upStream" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="capacity" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="3"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="max" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="nm" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="4"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="attenuation" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="downStream" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="capacity" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="3"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="max" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="nm" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="4"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="attenuation" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:float">
+													<xs:totalDigits value="5"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="analyzeMsg" minOccurs="0" maxOccurs="10">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="256"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="qdn" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="testStatus">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="8"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="failDescription">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="256"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="singleFeature" minOccurs="0" maxOccurs="30">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="featureCode">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="10"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="featureName">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="50"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="property" minOccurs="0" maxOccurs="20">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="256"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+<xs:element name="analyzeCodes" minOccurs="0" maxOccurs="20">
+          <xs:complexType>
+  	      <xs:sequence>
+				     	<xs:element name="analyzeCode" type="xs:string" minOccurs="1"/>
+           </xs:sequence>
+          </xs:complexType>
+     </xs:element>
+
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

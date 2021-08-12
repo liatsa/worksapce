@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTCreateTask01="http://www.bezeq.co.il/XMLSchema/KRTCreateTask01" xmlns:KRTTask="http://www.bezeq.co.il/XMLSchema/KRTTask" xmlns:TagList="http://www.bezeq.co.il/XMLSchema/TagList" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTCreateTask01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/TagList" schemaLocation="../BZQSchemas/TagList.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/KRTTask" schemaLocation="../BZQSchemas/KRTTask.xsd"/>
+	<xs:element name="CreateTask">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTCreateTask01:request"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="accessNetData" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestType" type="xs:integer"/>
+                       					<xs:element minOccurs="0" name="mmis307" type="xs:string"/>
+							<xs:element ref="KRTTask:Task"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

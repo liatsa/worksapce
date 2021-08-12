@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Facility03="http://www.bezeq.co.il/XMLSchema/Facility03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Facility03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="teudatZehut" type="xs:string"/>
+							<xs:element name="kodMitkan" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="teudatZehut" type="xs:string"/>
+							<xs:element name="sourceCode" type="xs:integer"/>
+							<xs:element name="kodMitkan" type="xs:integer"/>
+							<xs:element name="shemMitkan" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodLoazi" type="xs:string"/>
+							<xs:element minOccurs="0" name="semelMitkan" type="xs:string"/>
+							<xs:element name="kazarSemSug" type="xs:string"/>
+							<xs:element name="sugMitkan" type="xs:integer"/>
+							<xs:element name="statusMitkan" type="xs:integer"/>
+							<xs:element name="ifunMitkan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugMerkezet" type="xs:string"/>
+							<xs:element name="yehidaMitkan" type="xs:integer"/>
+							<xs:element name="baalutMitkan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="hearatMitkan" type="xs:string"/>
+							<xs:element minOccurs="0" name="tarHakama" type="xs:date"/>
+							<xs:element minOccurs="0" name="tzHakama" type="xs:string"/>
+							<xs:element minOccurs="0" name="tarIdkun" type="xs:date"/>
+							<xs:element minOccurs="0" name="tzIdkun" type="xs:string"/>
+							<xs:element minOccurs="0" name="tamchir" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodBitul" type="xs:string"/>
+							<xs:element minOccurs="0" name="helki" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugNadlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="baalutNadlan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarKodem" type="xs:integer"/>
+							<xs:element minOccurs="0" name="merkazAlutMitkan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="iyush" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarCityCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarStreetCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarBuildingNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarBuildingLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarHeaaratKtovet" type="xs:string"/>
+							<xs:element minOccurs="0" name="tarStatus" type="xs:date"/>
+							<xs:element name="atarKod" type="xs:integer"/>
+							<xs:element name="atarShem" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarNzX" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarNzY" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarShiuchIrguni" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarKodYasham" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarMikud" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarKodBakara" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarRamatTiknun" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarBaalut" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarTarHakama" type="xs:date"/>
+							<xs:element minOccurs="0" name="atarTzHakama" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarTarIdkun" type="xs:date"/>
+							<xs:element minOccurs="0" name="atarTzIdkun" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarKodBitul" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarKodNadlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarMerkazAlut" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarStatusNadlan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="atarTarStatusNadlan" type="xs:date"/>
+							<xs:element minOccurs="0" name="atarOldAddressDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarTeurHadash" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:integer"/>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="returnText" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

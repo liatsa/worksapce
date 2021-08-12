@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateDiggingPermit01="http://www.bezeq.co.il/XMLSchema/UpdateDiggingPermit01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateDiggingPermit01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="portalRequestId" type="xs:integer"/>
+							<xs:element name="requestKey" type="xs:string"/>
+							<xs:element name="requestTimeString" type="xs:string"/>
+							<xs:element name="modeType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="requestDate" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="buildingNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="buildingLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="lonLat" type="xs:string"/>
+							<xs:element minOccurs="0" name="tarshimNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="tikNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="workDepth" type="xs:float"/>
+							<xs:element minOccurs="0" name="workLength" type="xs:integer"/>
+							<xs:element minOccurs="0" name="placeDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="workDetailsDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="fromMap" type="xs:string"/>
+							<xs:element minOccurs="0" name="toMap" type="xs:string"/>
+							<xs:element name="workCount" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="workVector">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="workType" type="xs:integer"/>
+										<xs:element name="workTypeSec" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="contactCount" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="contactVektor">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="customerName" type="xs:string"/>
+										<xs:element minOccurs="0" name="contactName" type="xs:string"/>
+										<xs:element name="contactType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="companyId" type="xs:string"/>
+										<xs:element name="contactPhone" type="xs:string"/>
+										<xs:element name="contactCellular" type="xs:string"/>
+										<xs:element name="contactEmail" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="fileCount" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="fileVector">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="fileName" type="xs:string"/>
+										<xs:element name="fileExtention" type="xs:string"/>
+										<xs:element name="fileSize" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="portalRequestId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="portalRequestPassword" type="xs:string"/>
+							<xs:element minOccurs="0" name="fullPermitNum" type="xs:string"/>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element name="returnCodeDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

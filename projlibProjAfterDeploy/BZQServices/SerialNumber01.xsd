@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SerialNumber01="http://www.bezeq.co.il/XMLSchema/SerialNumber01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SerialNumber01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="subscriberNumber" type="string"/>
+							<element name="technicianId" type="string"/>
+							<element name="technicianName" type="string"/>
+							<element minOccurs="0" name="customerType" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="equipmentArray">
+								<complexType>
+									<sequence>
+										<element name="equipmentCode" type="string"/>
+										<element name="equipmentName" type="string"/>
+										<element name="serialNumber" type="string"/>
+										<element name="actionType" type="integer"/>
+										<element name="installationDate" type="dateTime"/>
+										<element name="trSupport" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

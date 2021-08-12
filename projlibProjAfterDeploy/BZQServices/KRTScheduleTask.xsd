@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.tibco.com/schemas/BZQSchemasProject/BZQServices/ScheduleTask.xsd" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTScheduleTask="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/BZQSchemasProject/BZQServices/ScheduleTask.xsd">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment" schemaLocation="../BZQSchemas/KRTScheduleTask.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceid" type="xs:string"/>
+							<xs:element ref="KRTScheduleTask:ScheduleTask"/>
+							<xs:element minOccurs="0" name="forceunschedule" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="taskinsert" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="commitonruleviolations" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="returnassignment" type="xs:boolean"/>
+							<xs:element minOccurs="0" name="SchadualeTask" type="xs:boolean"/>
+							<xs:element name="Schedulingpolicy" type="xs:string"/>
+							<xs:element minOccurs="0" name="SLADescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="PrioriyyDescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="teurSugKav" type="xs:string"/>
+							<xs:element minOccurs="0" name="sugSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="descr254" type="xs:string"/>
+							<xs:element minOccurs="0" name="bmSide" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerTypeDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="matalName" type="xs:string"/>
+							<xs:element minOccurs="0" name="matalPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastMerkezet" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProjectNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProjectName" type="xs:string"/>
+							<xs:element minOccurs="0" name="ProjectManager" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastPlanner" type="xs:string"/>
+							<xs:element minOccurs="0" name="comAdviser" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastDefiner" type="xs:string"/>
+							<xs:element minOccurs="0" name="custEquip" type="xs:string"/>
+							<xs:element minOccurs="0" name="statusReasonDscr" type="xs:string"/>
+							<xs:element minOccurs="0" name="rowAddedOprid" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastmantOprid" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="phone" type="xs:string"/>
+							<xs:element minOccurs="0" name="phone30" type="xs:string"/>
+							<xs:element minOccurs="0" name="sundayTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="mondayTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="tuesdayTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="wednesdayTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="thursdayTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="fridayTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="saturdayTime" type="xs:string"/>
+							<xs:element minOccurs="0" name="twentyFourHours" type="xs:string"/>
+							<xs:element minOccurs="0" name="descrReason" type="xs:string"/>
+							<xs:element minOccurs="0" name="priorityBusiness" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmServiceOrderTimeCreated" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="returncode" type="xs:string"/>
+							<xs:element minOccurs="0" name="error">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="errorNumber" type="xs:string"/>
+										<xs:element name="errorSource" type="xs:string"/>
+										<xs:element name="errorDescription" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageNumber" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScheduleTask">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="request"/>
+				<xs:element ref="reply"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

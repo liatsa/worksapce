@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:RoutingIpAddress03="http://www.bezeq.co.il/XMLSchema/RoutingIpAddress03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/RoutingIpAddress03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="misparSherut" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodPeula" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiPlldbkeyp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSethemshechp" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="nbiIpParitMotzaa" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMitkanParitMotzaa" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSugTziudMotzaa" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMisRatzMotzaa" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMisPortMotzaa" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiIpParitYaada" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMitkanParitYaada" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSugTziudYaada" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMisRatzYaada" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMisPortYaada" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiIpa" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMitkanParita" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSugTziuda" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMisRatza" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiPorta" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiIpb" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMitkanParitb" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSugTziudb" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMisRatzb" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiPortb" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMehirutFiziup" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiKodMehirutFiziup" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiMehirutFiziDown" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiKodMehirutFiziDown" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSugTziudKatze1" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSugTziudKatze2" type="xs:string"/>
+							<xs:element minOccurs="0" name="ring" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="linesSrv">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="nbiKodKvutzaShivukit1" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiShemGrp1" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiKodKvutzaShivukit2" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiShemGrp2" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiPingIp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiKodKavPvc" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSugSherut" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiKodIntegratzia" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMehirutLogiUp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiKodMehirutLogiUp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMehirutLogiDown" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiKodMehirutLogiDown" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSvlana" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiCvlana" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSvlanb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiCvlanb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSvlanCpe" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiCvlanCpe" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiRoutBridge" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSubnetMask" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiIpKava" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiIpKavb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMngIp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiDestinationIp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiDestinationPort" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSwmngIp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiLanIp" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiLanSubnetMask" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiKodKavb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiIpParitMotzab" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMitkanParitMotzab" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSugTziudMotzab" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMisRatzMotzab" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMisPortMotzab" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiIpParitYaadb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMitkanParitYaadb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiSugTziudYaadb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMisRatzYaadb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbiMisPortYaadb" type="xs:string"/>
+										<xs:element minOccurs="0" name="nbisugqos" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="nbiPlldbkeyp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiSethemshechp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiKodHechzer" type="xs:string"/>
+							<xs:element minOccurs="0" name="nbiTeurKodHechzer" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

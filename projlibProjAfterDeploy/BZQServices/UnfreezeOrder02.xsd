@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UnfreezeOrder02="http://www.bezeq.co.il/XMLSchema/UnfreezeOrder02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UnfreezeOrder02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="closeTaskUser" type="xs:string"/>
+							<xs:element name="actionType" type="xs:string"/>
+							<xs:element name="orderNumber" type="xs:string"/>
+							<xs:element name="subOrderNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="projectNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="side" type="xs:string"/>
+							<xs:element minOccurs="0" name="freezeReason" type="xs:string"/>
+							<xs:element minOccurs="0" name="unfreezeDate" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

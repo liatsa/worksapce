@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:MissionResponse01="http://www.bezeq.co.il/XMLSchema/MissionResponse01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/MissionResponse01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="projectNo" type="xs:long"/>
+							<xs:element minOccurs="0" name="taskId" type="xs:long"/>
+							<xs:element name="objectType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="objectId" type="xs:long"/>
+							<xs:element minOccurs="0" name="addObjectId" type="xs:long"/>
+							<xs:element name="actionType" type="xs:integer"/>
+							<xs:element name="valueCounter" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="value">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="valueType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="valueCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="valueDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="employeeId" type="xs:string"/>
+							<xs:element name="updateDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="rowCounter" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="row">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="rowValueType" type="xs:integer"/>
+										<xs:element minOccurs="0" name="rowValueCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="rowNum" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Failure01="http://www.bezeq.co.il/XMLSchema/Failure01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Failure01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="brokenId" type="xs:string"/>
+							<xs:element name="brokenStatus" type="xs:string"/>
+							<xs:element name="brokenType" type="xs:string"/>
+							<xs:element name="brokenCause" type="xs:string"/>
+							<xs:element name="unitType" type="xs:string"/>
+							<xs:element minOccurs="0" name="brokenFactor" type="xs:string"/>
+							<xs:element name="shortDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="description" type="xs:string"/>
+							<xs:element minOccurs="0" name="startDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="startTime" type="xs:time"/>
+							<xs:element minOccurs="0" name="creationDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="creationTime" type="xs:time"/>
+							<xs:element minOccurs="0" name="numberOfSubscribers" type="xs:integer"/>
+							<xs:element minOccurs="0" name="numberOfCalls" type="xs:integer"/>
+							<xs:element minOccurs="0" name="centerForNetwork" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frameId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frameType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="fromTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="toTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="centerForSpecialEquipment" type="xs:integer"/>
+							<xs:element minOccurs="0" name="facility" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="system1" type="xs:string"/>
+							<xs:element minOccurs="0" name="system2" type="xs:string"/>
+							<xs:element minOccurs="0" name="system3" type="xs:string"/>
+							<xs:element minOccurs="0" name="system4" type="xs:string"/>
+							<xs:element minOccurs="0" name="system5" type="xs:string"/>
+							<xs:element minOccurs="0" name="fromSystem" type="xs:string"/>
+							<xs:element minOccurs="0" name="toSystem" type="xs:string"/>
+							<xs:element minOccurs="0" name="redback" type="xs:string"/>
+							<xs:element minOccurs="0" name="port" type="xs:string"/>
+							<xs:element minOccurs="0" name="vp" type="xs:string"/>
+							<xs:element minOccurs="0" name="vc" type="xs:string"/>
+							<xs:element minOccurs="0" name="vcFrom" type="xs:integer"/>
+							<xs:element minOccurs="0" name="vcTo" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

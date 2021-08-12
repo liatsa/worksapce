@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tns="http://ns.tibco.com/bw/palette/dataformat/BZQ/SharedResources/MFResources/DataFormatMFHLPError.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.tibco.com/bw/palette/dataformat/BZQ/SharedResources/MFResources/DataFormatMFHLPError.xsd">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="user_id" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="interface_id" type="xsd:string"/>
+                <xsd:element name="failed_interfaceid" type="xsd:string"/>
+                <xsd:element name="quick_cd" type="xsd:string"/>
+                <xsd:element name="mt_equip_code" type="xsd:string"/>
+                <xsd:element name="descrlong" type="xsd:string"/>
+                <xsd:element name="mt_datetime" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="message_set_nbr" type="xsd:string"/>
+                <xsd:element name="message_nbr" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="message_descr" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Rows" type="tns:rowsType"/>
+    <xsd:complexType name="rowsType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns:root"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

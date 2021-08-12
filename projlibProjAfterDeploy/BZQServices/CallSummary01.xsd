@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CallSummary01="http://www.bezeq.co.il/XMLSchema/CallSummary01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CallSummary01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="appId" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="phoneNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="hekerId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="fromPeriod" type="xs:string"/>
+							<xs:element minOccurs="0" name="toPeriod" type="xs:string"/>
+							<xs:element minOccurs="0" name="taxCode" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="numVector" type="xs:integer"/>
+							<xs:element maxOccurs="80" minOccurs="0" name="callGroupsVec">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="group" type="xs:integer"/>
+										<xs:element minOccurs="0" name="groupDescription" type="xs:string"/>
+										<xs:element minOccurs="0" name="callCounter" type="xs:integer"/>
+										<xs:element minOccurs="0" name="secondsCounter" type="xs:integer"/>
+										<xs:element minOccurs="0" name="noTaxCost" type="xs:float"/>
+										<xs:element minOccurs="0" name="fullCost" type="xs:float"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="callsTotal" type="xs:integer"/>
+							<xs:element minOccurs="0" name="secondsTotal" type="xs:integer"/>
+							<xs:element minOccurs="0" name="noTaxTotal" type="xs:float"/>
+							<xs:element minOccurs="0" name="fullTotal" type="xs:float"/>
+							<xs:element minOccurs="0" name="firstCallDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="lastCallDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="CycleCloseDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="status" type="xs:integer"/>
+							<xs:element minOccurs="0" name="reason" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

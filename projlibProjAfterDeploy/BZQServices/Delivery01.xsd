@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Delivery01="http://www.bezeq.co.il/XMLSchema/Delivery01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Delivery01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="sapDlvReqCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNbr" type="xs:string"/>
+							<xs:element minOccurs="0" name="date" type="xs:date"/>
+							<xs:element minOccurs="0" name="dlvTime" type="xs:time"/>
+							<xs:element name="sapDlvOrig" type="xs:string"/>
+							<xs:element minOccurs="0" name="address1" type="xs:string"/>
+							<xs:element minOccurs="0" name="num1" type="xs:string"/>
+							<xs:element minOccurs="0" name="address3" type="xs:string"/>
+							<xs:element minOccurs="0" name="city" type="xs:string"/>
+							<xs:element minOccurs="0" name="geoCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="sapDlvNote" type="xs:string"/>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="dlvBarcode" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmDlvId" type="xs:string"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="sapDlvItem">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="dlvEquipLine" type="xs:integer"/>
+										<xs:element minOccurs="0" name="makat" type="xs:integer"/>
+										<xs:element minOccurs="0" name="usebilityLvlCd" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sapAmount" type="xs:integer"/>
+										<xs:element minOccurs="0" name="actvMode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="typeChange" type="xs:integer"/>
+										<xs:element minOccurs="0" name="captureId" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="dlvPkgNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="retPkgNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dlvBarcode" type="xs:string"/>
+							<xs:element minOccurs="0" name="dlvStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmDlvId" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="dlvItemRp">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dlvEquipLine" type="xs:integer"/>
+										<xs:element name="makat" type="xs:integer"/>
+										<xs:element name="usebilityLvlCd" type="xs:integer"/>
+										<xs:element minOccurs="0" name="secMakat" type="xs:string"/>
+										<xs:element name="sapRetCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="sapErrDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="sapErrCode" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

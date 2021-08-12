@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Fraud01="http://www.bezeq.co.il/XMLSchema/Fraud01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Fraud01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="custId" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtId" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtIdType" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtId2" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtIdType2" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtId3" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtIdType3" type="xs:string"/>
+							<xs:element minOccurs="0" name="rbtBankAccNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="branch" type="xs:string"/>
+							<xs:element minOccurs="0" name="bank" type="xs:string"/>
+							<xs:element minOccurs="0" name="cardNbr" type="xs:string"/>
+							<xs:element minOccurs="0" name="MtId" type="xs:string"/>
+							<xs:element minOccurs="0" name="cardExpMo" type="xs:string"/>
+							<xs:element minOccurs="0" name="cardExpYr" type="xs:string"/>
+							<xs:element maxOccurs="3" minOccurs="0" name="frdChkAddr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="frdAddrType" type="xs:string"/>
+										<xs:element minOccurs="0" name="city" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityAc" type="xs:integer"/>
+										<xs:element minOccurs="0" name="address1" type="xs:string"/>
+										<xs:element minOccurs="0" name="address1Ac" type="xs:string"/>
+										<xs:element minOccurs="0" name="num1" type="xs:string"/>
+										<xs:element minOccurs="0" name="address3" type="xs:string"/>
+										<xs:element minOccurs="0" name="geoCode" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="10" minOccurs="0" name="frdChkTel">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="cmCocat" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="userId" type="xs:string"/>
+							<xs:element name="applicationId" type="xs:string"/>
+							<xs:element name="user" type="xs:string"/>
+							<xs:element minOccurs="0" name="password" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

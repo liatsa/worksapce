@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Documents01="http://www.bezeq.co.il/XMLSchema/Documents01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Documents01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="logicalDate" type="xs:date"/>
+							<xs:element name="reqNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cellNum" type="xs:string"/>
+							<xs:element name="numOfDocs" type="xs:integer"/>
+							<xs:element minOccurs="0" name="equipmentId" type="xs:string"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="documentRequestArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="docNo" type="xs:integer"/>
+										<xs:element name="template_Num" type="xs:string"/>
+										<xs:element name="fileName" type="xs:string"/>
+										<xs:element name="arcPath" type="xs:string"/>
+										<xs:element minOccurs="0" name="origFileName" type="xs:string"/>
+										<xs:element minOccurs="0" name="origFilePath" type="xs:string"/>
+										<xs:element minOccurs="0" name="emailAddress" type="xs:string"/>
+										<xs:element name="docRqstSignInd" type="xs:string"/>
+										<xs:element name="comdaSignInd" type="xs:string"/>
+										<xs:element maxOccurs="1000" minOccurs="0" name="invoiceDataRow">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="tableNum" type="xs:integer"/>
+													<xs:element minOccurs="0" name="tableName" type="xs:string"/>
+													<xs:element minOccurs="0" name="rowNum" type="xs:integer"/>
+													<xs:element minOccurs="0" name="colNum" type="xs:integer"/>
+													<xs:element minOccurs="0" name="paramSeq" type="xs:integer"/>
+													<xs:element minOccurs="0" name="paramName" type="xs:string"/>
+													<xs:element minOccurs="0" name="paramValue" type="xs:string"/>
+													<xs:element minOccurs="0" name="correspondingParamSeq" type="xs:integer"/>
+													<xs:element minOccurs="0" name="populateType" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

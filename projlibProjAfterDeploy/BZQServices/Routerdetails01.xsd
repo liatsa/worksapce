@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Routerdetails01="http://www.bezeq.co.il/XMLSchema/Routerdetails01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Routerdetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="serial" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="returnCode" type="xs:int"/>
+							<xs:element name="returnDescription" type="xs:string"/>
+							<xs:element name="routerDataType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="serialNo" type="xs:string"/>
+										<xs:element name="manufacturer" type="xs:string"/>
+										<xs:element name="model" type="xs:string"/>
+										<xs:element name="firmwareVersion" type="xs:string"/>
+										<xs:element name="qoeStatus" type="xs:string"/>
+										<xs:element name="previousFirmware_version" type="xs:string"/>
+										<xs:element name="firmwareUpdateDate" type="xs:string"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="last24HoursType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="sampleDate" type="xs:string"/>
+										<xs:element name="sampleHour" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="avg30DaysType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="sampleDate" type="xs:string"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts_24" type="xs:float"/>
+										<xs:element name="wifiNumHosts_5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="sundayAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dayOfWeek" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="mondayAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dayOfWeek" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="tuesdayAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dayOfWeek" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="wednesdayAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dayOfWeek" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="thursdayAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dayOfWeek" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="fridayAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dayOfWeek" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="saturdayAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dayOfWeek" type="xs:integer"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="monthsAvgType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="sampleDate" type="xs:string"/>
+										<xs:element name="totalMemMb" type="xs:float"/>
+										<xs:element name="freeMemMb" type="xs:float"/>
+										<xs:element name="freeMemPct" type="xs:float"/>
+										<xs:element name="usageMemMb" type="xs:float"/>
+										<xs:element name="usageMemPct" type="xs:float"/>
+										<xs:element name="usageCpuPct" type="xs:float"/>
+										<xs:element name="cpuTemp" type="xs:float"/>
+										<xs:element name="pppDownMb" type="xs:float"/>
+										<xs:element name="pppUpMb" type="xs:float"/>
+										<xs:element name="totalNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts" type="xs:float"/>
+										<xs:element name="wifiNumHosts24" type="xs:float"/>
+										<xs:element name="wifiNumHosts5" type="xs:float"/>
+										<xs:element name="lanNumHosts" type="xs:float"/>
+										<xs:element name="param1" type="xs:string"/>
+										<xs:element name="param2" type="xs:string"/>
+										<xs:element name="param3" type="xs:string"/>
+										<xs:element name="param4" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

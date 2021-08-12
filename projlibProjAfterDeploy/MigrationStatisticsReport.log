@@ -1,0 +1,21 @@
+2021-08-11 14:39:29,554 [Worker-10] INFO  com.tibco.bw.migration.stats  - Migrating Business Works 5.x projects to version 6 using arguments:: 
+[Target Project Directory: c:\tibco6\home/projlibProjAfterDeploy ]
+[Source Project Directory: C:\Users\LiatS\Desktop\בזק\New folder\projlibProjAfterDeploy ]
+[Project Name: projlibProjAfterDeploy ]
+
+
+------------------ Migration Statistics ----------------
+
+Project Migration Time [Millisecond]: 33505
+
+Process Migration Time [Millisecond]
+1. C:/Users/LiatS/Desktop/בזק/New folder/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqSendMail.process: 1126
+2. C:/Users/LiatS/Desktop/בזק/New folder/projlibProjAfterDeploy/BZQ/ShredProcesses/MFHLPError.process: 2266
+3. C:/Users/LiatS/Desktop/בזק/New folder/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqErrorHandler.process: 2625
+4. C:/Users/LiatS/Desktop/בזק/New folder/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqAuditSender.process: 1172
+
+Artifacts Migrated [Count]
+1. Process(& Service Agent) Migrated:4
+2. WSDL Migrated:0
+3. Schema Migrated:773
+4. XSLT Migrated:0

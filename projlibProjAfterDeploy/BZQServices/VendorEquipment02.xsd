@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:VendorEquipment02="http://www.bezeq.co.il/XMLSchema/VendorEquipment02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/VendorEquipment02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="mode" type="xs:string"/>
+							<xs:element name="soType" type="xs:string"/>
+							<xs:element name="soId" type="xs:string"/>
+							<xs:element name="missionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="mainOrderId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="problemId" type="xs:string"/>
+							<xs:element name="techId" type="xs:string"/>
+							<xs:element minOccurs="0" name="sellerId" type="xs:integer"/>
+							<xs:element name="dateCreate" type="xs:date"/>
+							<xs:element name="timeCreate" type="xs:time"/>
+							<xs:element name="cusId" type="xs:string"/>
+							<xs:element name="phoneNo" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" name="Item">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ItemCode" type="xs:string"/>
+										<xs:element name="featureCode" type="xs:string"/>
+										<xs:element name="payments" type="xs:integer"/>
+										<xs:element minOccurs="0" name="cost" type="xs:float"/>
+										<xs:element name="priceNoVat" type="xs:float"/>
+										<xs:element name="vat" type="xs:float"/>
+										<xs:element name="price" type="xs:float"/>
+										<xs:element name="amout" type="xs:integer"/>
+										<xs:element name="isOnSale" type="xs:string"/>
+										<xs:element minOccurs="0" name="saleId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="percentDiscount" type="xs:float"/>
+										<xs:element minOccurs="0" name="priceSaleNoVat" type="xs:float"/>
+										<xs:element minOccurs="0" name="priceSale" type="xs:float"/>
+										<xs:element minOccurs="0" name="comment" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CableRoute01="http://www.bezeq.co.il/XMLSchema/CableRoute01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CableRoute01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="requestType" type="integer"/>
+							<element name="actionType" type="integer"/>
+							<element minOccurs="0" name="startDevice" type="integer"/>
+							<element minOccurs="0" name="startCableNum" type="integer"/>
+							<element minOccurs="0" name="startFiberNum" type="integer"/>
+							<element minOccurs="0" name="startOblikNum" type="integer"/>
+							<element minOccurs="0" name="startFrameNum" type="string"/>
+							<element minOccurs="0" name="startTag" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="cableUfid" type="integer"/>
+							<element minOccurs="0" name="cableSize" type="integer"/>
+							<element minOccurs="0" name="cableLength" type="double"/>
+      <element maxOccurs="1" minOccurs="0" name="gov0Type" type="integer"/>
+        <element maxOccurs="1" minOccurs="1" name="gov0Ufid" type="integer"/>
+        <element maxOccurs="1" minOccurs="0" name="gov0Description" type="string"/>
+        <element maxOccurs="1" minOccurs="0" name="gov0Number" type="string"/>
+        <element maxOccurs="1" minOccurs="0" name="gov0Location" type="string"/>
+        <element maxOccurs="1" minOccurs="0" name="gov0Floor" type="integer"/>
+							<element name="routeItemsCount" type="integer"/>
+							<element minOccurs="0" name="routeItems">
+								<complexType>
+									<sequence>
+										<element maxOccurs="unbounded" minOccurs="0" name="singleItem">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="itemType" type="integer"/>
+													<element minOccurs="0" name="itemUfid" type="integer"/>
+													<element minOccurs="0" name="itemDescription" type="string"/>
+													<element minOccurs="0" name="itemNumber" type="string"/>
+													<element minOccurs="0" name="itemLocation" type="string"/>
+													<element minOccurs="0" name="itemFloor" type="integer"/>
+													<element minOccurs="0" name="itemLength" type="double"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="messageNum" type="integer"/>
+							<element name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

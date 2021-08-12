@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:EquipmentList="http://www.bezeq.co.il/XMLSchema/EquipmentList"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/EquipmentList"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="EquipmentList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="equipment" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:int" minOccurs="0"/>
+							<xs:element name="amount" type="xs:int" minOccurs="0"/>
+							<xs:element name="description" type="xs:string" minOccurs="0"/>
+							<xs:element name="buydate" type="xs:string" minOccurs="0"/>
+							<xs:element name="warranty" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

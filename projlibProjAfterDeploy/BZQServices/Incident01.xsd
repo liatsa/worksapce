@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Incident01="http://www.bezeq.co.il/XMLSchema/Incident01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Incident01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="sdeIncidentNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="incidentDetails" type="xs:string"/>
+							<xs:element minOccurs="0" name="workStartTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="workEndTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="oldSection" type="xs:string"/>
+							<xs:element minOccurs="0" name="technology" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentType" type="xs:string"/>
+							<xs:element minOccurs="0" name="sdeStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="urgencyID" type="xs:integer"/>
+							<xs:element minOccurs="0" name="installation" type="xs:string"/>
+							<xs:element minOccurs="0" name="toInstallation" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="responsible" type="xs:string"/>
+							<xs:element minOccurs="0" name="responsibleEmployee" type="xs:string"/>
+							<xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="implementDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="responseDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="equipmentAddress" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscriberNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="incidentName" type="xs:string"/>
+							<xs:element minOccurs="0" name="incidentWorklog" type="xs:string"/>
+
+							<xs:element minOccurs="0" name="sfamSartTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="unitType" type="xs:string"/>
+							<xs:element minOccurs="0" name="slotNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="shelfNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cardTypeId" type="xs:string"/>
+							<xs:element minOccurs="0" name="shelftType" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscribersNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="firstTag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="isMaintenance" type="xs:string"/>
+							<xs:element minOccurs="0" name="maintenanceEmployeeName" type="xs:string"/>
+							<xs:element minOccurs="0" name="filterInFanShelf" type="xs:string"/>
+							<xs:element minOccurs="0" name="cardFaultNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="incidentType" type="xs:string"/>
+							<xs:element minOccurs="0" name="cardCatalogNumber" type="xs:string"/>
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

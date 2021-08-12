@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SubscribersFrame01="http://www.bezeq.co.il/XMLSchema/SubscribersFrame01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SubscribersFrame01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="techUserId" type="xs:string"/>
+							<xs:element minOccurs="0" name="updateDateTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="actionId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="phoneZip" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneExt" type="xs:string"/>
+							<xs:element minOccurs="0" name="center" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frame" type="xs:integer"/>
+							<xs:element minOccurs="0" name="oldTagNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="oldTagStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="newTagNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="newTagStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="changeFullRoute" type="xs:string"/>
+							<xs:element minOccurs="0" name="frameStatusTiuv" type="xs:integer"/>
+							<xs:element minOccurs="0" name="serviceOrderNum" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneZip" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="phoneExt" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageSetNbr" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

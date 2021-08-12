@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:AreaFailure05="http://www.bezeq.co.il/XMLSchema/AreaFailure05" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AreaFailure05">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element minOccurs="0" name="failureNumber" type="integer"/>
+							<element name="requestId" type="string"/>
+							<element name="testName" type="integer"/>
+							<element minOccurs="0" name="userName" type="string"/>
+							<element minOccurs="0" name="closeState" type="string"/>
+							<element minOccurs="0" name="closeReason" type="string"/>
+							<element minOccurs="0" name="closeSolution" type="string"/>
+							<element minOccurs="0" name="closeRemark" type="string"/>
+							<element minOccurs="0" name="switchCenter" type="integer"/>
+							<element minOccurs="0" name="frameNum" type="integer"/>
+
+							<element minOccurs="0" name="ufid" type="integer"/>
+							<element minOccurs="0" name="planetLocation" type="string"/>
+							<element minOccurs="0" name="wazeLocation" type="string"/>
+
+							<element minOccurs="0" name="frameType" type="integer"/>
+							<element minOccurs="0" name="frameTag" type="integer"/>
+							<element minOccurs="0" name="lowTag" type="integer"/>
+
+							<element minOccurs="0" name="failureCause" type="string"/>
+							<element minOccurs="0" name="AnaId" type="string"/>
+
+							<element minOccurs="0" name="serviceOrderID" type="integer"/>
+							<element minOccurs="0" name="mark1" type="string"/>
+							<element minOccurs="0" name="mark2" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="requestId" type="string"/>
+							<element name="brokenId" type="integer"/>
+							<element name="reqStatus" type="integer"/>
+							<element minOccurs="0" name="telephoneTrigger" type="string"/>
+							<element minOccurs="0" name="analyzeCode" type="integer"/>
+							<element name="testName" type="integer"/>
+							<element minOccurs="0" name="switchCenter" type="integer"/>
+							<element minOccurs="0" name="frameNum" type="integer"/>
+							<element minOccurs="0" name="frameType" type="integer"/>
+							<element minOccurs="0" name="frameTag" type="integer"/>
+							<element minOccurs="0" name="lowTag" type="integer"/>
+							<element minOccurs="0" name="mark1" type="string"/>
+							<element minOccurs="0" name="boxesContainer">
+								<complexType>
+									<sequence>
+										<element maxOccurs="50" minOccurs="0" name="boxes">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="inputFlag" type="integer"/>
+													<element minOccurs="0" name="switchCenter" type="integer"/>
+													<element minOccurs="0" name="frameNum" type="integer"/>
+													<element maxOccurs="100" minOccurs="0" name="subscribers">
+														<complexType>
+															<sequence>
+																<element minOccurs="0" name="manuyNum" type="string"/>
+																<element minOccurs="0" name="analyzeCode" type="integer"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="general" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

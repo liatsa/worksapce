@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:TechnicianSale02="http://www.bezeq.co.il/XMLSchema/TechnicianSale02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/TechnicianSale02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceID" type="xs:string"/>
+							<xs:element name="date" type="xs:date"/>
+							<xs:element minOccurs="0" name="missionId" type="xs:integer"/>
+							<xs:element name="ban" type="xs:integer"/>
+							<xs:element name="customerType" type="xs:string"/>
+							<xs:element minOccurs="0" name="ben" type="xs:integer"/>
+							<xs:element minOccurs="0" name="emailAddress" type="xs:string"/>
+							<xs:element name="equipmentQuantity" type="xs:integer"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="equipment">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="saleSeqNo" type="xs:integer"/>
+										<xs:element name="activity" type="xs:string"/>
+										<xs:element name="saleStatus" type="xs:string"/>
+										<xs:element name="storeCode" type="xs:integer"/>
+										<xs:element name="cashRegCode" type="xs:integer"/>
+										<xs:element name="subscriberNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="personalId" type="xs:string"/>
+										<xs:element minOccurs="0" name="banName" type="xs:string"/>
+										<xs:element minOccurs="0" name="banAddress" type="xs:string"/>
+										<xs:element name="saleType" type="xs:string"/>
+										<xs:element name="saleDate" type="xs:date"/>
+										<xs:element name="saleStatusDate" type="xs:date"/>
+										<xs:element name="installmentNum" type="xs:integer"/>
+										<xs:element name="totalSaleAmount" type="xs:float"/>
+										<xs:element minOccurs="0" name="zNum" type="xs:integer"/>
+										<xs:element minOccurs="0" name="equipmentSequence" type="xs:integer"/>
+										<xs:element name="itemStatus" type="xs:string"/>
+										<xs:element name="itemStatusReason" type="xs:string"/>
+										<xs:element minOccurs="0" name="orgEntSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="orgItemSeqNum" type="xs:integer"/>
+										<xs:element name="equipmentCode" type="xs:string"/>
+										<xs:element name="featureCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="soc" type="xs:string"/>
+										<xs:element minOccurs="0" name="discountSoc" type="xs:string"/>
+										<xs:element minOccurs="0" name="providerCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerPrice" type="xs:float"/>
+										<xs:element minOccurs="0" name="banPriceNoTax" type="xs:float"/>
+										<xs:element minOccurs="0" name="taxCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="taxPercentRate" type="xs:float"/>
+										<xs:element minOccurs="0" name="taxEffectiveDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="taxAmount" type="xs:float"/>
+										<xs:element name="costPrice" type="xs:float"/>
+										<xs:element minOccurs="0" name="commissionPercent" type="xs:float"/>
+										<xs:element name="promotionSequenceNum" type="xs:integer"/>
+										<xs:element minOccurs="0" name="promoCostPrice" type="xs:float"/>
+										<xs:element minOccurs="0" name="discPrecnet" type="xs:float"/>
+										<xs:element minOccurs="0" name="promoDiscNoTax" type="xs:float"/>
+										<xs:element minOccurs="0" name="promoDiscTax" type="xs:float"/>
+										<xs:element minOccurs="0" name="mngDiscNoTax" type="xs:float"/>
+										<xs:element minOccurs="0" name="mngDiscTax" type="xs:float"/>
+										<xs:element minOccurs="0" name="mngDiscPercent" type="xs:float"/>
+										<xs:element minOccurs="0" name="serialNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="imeiNum" type="xs:string"/>
+										<xs:element name="sellerId" type="xs:integer"/>
+										<xs:element name="origQuantity" type="xs:integer"/>
+										<xs:element minOccurs="0" name="promoEqpPosition" type="xs:integer"/>
+										<xs:element minOccurs="0" name="promoEqpFriend" type="xs:string"/>
+										<xs:element minOccurs="0" name="rtrnEqpCd" type="xs:string"/>
+										<xs:element minOccurs="0" name="rtrnSerialNo" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="paymentQuantity" type="xs:integer"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="payment">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="paymentType" type="xs:string"/>
+										<xs:element minOccurs="0" name="paymentSubType" type="xs:string"/>
+										<xs:element name="originalAmount" type="xs:float"/>
+										<xs:element name="amount" type="xs:float"/>
+										<xs:element name="sourceType" type="xs:string"/>
+										<xs:element minOccurs="0" name="sourceId" type="xs:string"/>
+										<xs:element minOccurs="0" name="chequeUniqueId" type="xs:string"/>
+										<xs:element minOccurs="0" name="chequeDrawerName" type="xs:string"/>
+										<xs:element minOccurs="0" name="oneOffInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="cCIssueDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="instalmentsNum" type="xs:integer"/>
+										<xs:element minOccurs="0" name="paymentText" type="xs:string"/>
+										<xs:element minOccurs="0" name="paymentAmount" type="xs:float"/>
+										<xs:element minOccurs="0" name="activityCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="changeAmount" type="xs:float"/>
+										<xs:element minOccurs="0" name="svSerialNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="crCardNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="crCardAuth" type="xs:string"/>
+										<xs:element minOccurs="0" name="crCardExpDt" type="xs:date"/>
+										<xs:element minOccurs="0" name="ccMethod" type="xs:integer"/>
+										<xs:element minOccurs="0" name="transactionCode" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ccHolderName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="text" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Activities01="http://www.bezeq.co.il/XMLSchema/Activities01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Activities01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="updateType" type="string"/>
+							<element name="orderHeaderId" type="integer"/>
+							<element name="productId" type="integer"/>
+							<element minOccurs="0" name="productType" type="string"/>
+							<element minOccurs="0" name="productSubType" type="string"/>
+							<element minOccurs="0" name="componentId" type="integer"/>
+							<element minOccurs="0" name="componentNumber" type="string"/>
+							<element minOccurs="0" name="action" type="string"/>
+							<element minOccurs="0" name="componentProcessId" type="integer"/>
+							<element minOccurs="0" name="addressLocation" type="string"/>
+							<element minOccurs="0" name="startDate" type="date"/>
+							<element minOccurs="0" name="startTime" type="string"/>
+							<element minOccurs="0" name="finishDate" type="date"/>
+							<element minOccurs="0" name="finishTime" type="string"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="rangesNumberDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="paramGroupRowNo" type="string"/>
+										<element minOccurs="0" name="paramRowNo" type="string"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="parametersDetails">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="componentParamId" type="string"/>
+													<element minOccurs="0" name="componentParamValue" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="1" minOccurs="0" name="equipmentScriptDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="featureId" type="integer"/>
+										<element minOccurs="0" name="equipmentCode" type="string"/>
+										<element minOccurs="0" name="serialNumber" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="techCell" type="string"/>
+							<element minOccurs="0" name="techName" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

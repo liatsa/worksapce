@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTTaskAppointment="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Task">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="callID" type="xs:string"/>
+				<xs:element name="number" type="xs:int"/>
+				<xs:element name="earlyStart" type="xs:dateTime"/>
+				<xs:element name="dueDate" type="xs:string" minOccurs="0"/>
+				<xs:element name="lateStart" type="xs:dateTime"/>
+				<xs:element name="securityLevel" type="xs:string" minOccurs="0"/>
+				<xs:element name="region" type="xs:string"/>
+				<xs:element name="district" type="xs:string"/>
+				<xs:element name="subDistrict" type="xs:string"/>
+				<xs:element name="team" type="xs:string"/>
+				<xs:element name="taskType" type="xs:string"/>
+				<xs:element name="status" type="xs:string"/>
+				<xs:element name="priority" type="xs:int"/>
+				<xs:element name="longitude" type="xs:int"/>
+				<xs:element name="latitude" type="xs:int"/>
+				<xs:element name="numberOfRequiredEngineers" type="xs:int"/>
+				<xs:element name="engineerType" type="xs:string" minOccurs="0"/>
+				<xs:element name="calendar" type="xs:string" minOccurs="0"/>
+				<xs:element name="workOrderType" type="xs:string" minOccurs="0"/>
+				<xs:element name="dayLightCalendar" type="xs:string" minOccurs="0"/>
+				<xs:element name="numOfRepeatCall" type="xs:int" minOccurs="0"/>
+				<xs:element name="preferredEngineers" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="preferredEngineer" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="requiredEngineers" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="requiredEngineer" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="excludedEngineers" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="excludedEngineer" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="requiredTools" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="requierdToolNumber" type="xs:integer"/>
+							<xs:element name="RequierdTool" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:NKKAddress="http://www.bezeq.co.il/XMLSchema/NKKAddress"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/NKKAddress"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Address">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="semelIshuv" type="xs:integer" minOccurs="0"/>
+				<xs:element name="shemIshuv" type="xs:string" minOccurs="0"/>
+				<xs:element name="semelRechov" type="xs:string" minOccurs="0"/>
+				<xs:element name="shemRechov" type="xs:string" minOccurs="0"/>
+				<xs:element name="misparBait" type="xs:integer" minOccurs="0"/>
+				<xs:element name="sugBait" type="xs:string" minOccurs="0"/>
+				<xs:element name="otBait" type="xs:string" minOccurs="0"/>
+				<xs:element name="knisa" type="xs:string" minOccurs="0"/>
+				<xs:element name="koma" type="xs:integer" minOccurs="0"/>
+				<xs:element name="dira" type="xs:integer" minOccurs="0"/>
+				<xs:element name="ktovetId" type="xs:string" minOccurs="0"/>
+				<xs:element name="gush" type="xs:string" minOccurs="0"/>
+				<xs:element name="chelka" type="xs:string" minOccurs="0"/>
+				<xs:element name="migrash" type="xs:string" minOccurs="0"/>
+				<xs:element name="shemMosad" type="xs:string" minOccurs="0"/>
+				<xs:element name="taDoar" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

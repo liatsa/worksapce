@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTAppointments="http://www.bezeq.co.il/XMLSchema/KRTAppointments"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTAppointments"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Appointments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="optionalAppointments" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="timeInterval" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="start" type="xs:dateTime"/>
+										<xs:element name="finish" type="xs:dateTime"/>
+										<xs:element name="grade" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

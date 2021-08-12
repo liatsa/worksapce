@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:LastLineCheck02="http://www.bezeq.co.il/XMLSchema/LastLineCheck02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/LastLineCheck02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="phoneNumber" type="xs:string"/>
+							<xs:element name="testDateTime" type="xs:dateTime"/>
+							<xs:element name="testName" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="phoneNumber" type="xs:string"/>
+							<xs:element name="testDateTime" type="xs:dateTime"/>
+							<xs:element name="testName" type="xs:string"/>
+							<xs:element name="reqStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineStatus" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="analyzeCodesList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="analyzeCode" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="mainanalyzeCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="operationCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="sync" type="xs:string"/>
+							<xs:element minOccurs="0" name="abrDown" type="xs:string"/>
+							<xs:element minOccurs="0" name="abrUp" type="xs:string"/>
+							<xs:element minOccurs="0" name="maxDown" type="xs:string"/>
+							<xs:element minOccurs="0" name="maxUp" type="xs:string"/>
+							<xs:element minOccurs="0" name="attDown" type="xs:string"/>
+							<xs:element minOccurs="0" name="attUp" type="xs:string"/>
+							<xs:element minOccurs="0" name="nmDown" type="xs:string"/>
+							<xs:element minOccurs="0" name="nmUp" type="xs:string"/>
+							<xs:element minOccurs="0" name="pppStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="expect" type="xs:string"/>
+							<xs:element name="testStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="failDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="metallicResults">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="testStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="failDescription" type="xs:string"/>
+										<xs:element minOccurs="0" name="acv">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="tg" type="xs:float"/>
+													<xs:element minOccurs="0" name="rg" type="xs:float"/>
+													<xs:element minOccurs="0" name="tr" type="xs:float"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="dcv">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="tg" type="xs:float"/>
+													<xs:element minOccurs="0" name="rg" type="xs:float"/>
+													<xs:element minOccurs="0" name="tr" type="xs:float"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="res">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="tg" type="xs:float"/>
+													<xs:element minOccurs="0" name="rg" type="xs:float"/>
+													<xs:element minOccurs="0" name="tr" type="xs:float"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="cap">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="tg" type="xs:float"/>
+													<xs:element minOccurs="0" name="rg" type="xs:float"/>
+													<xs:element minOccurs="0" name="tr" type="xs:float"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="10" minOccurs="0" name="analyzeMsgArray">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="analyzeMsg" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="dslResults">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="testStatus" type="xs:string"/>
+										<xs:element minOccurs="0" name="failDescription" type="xs:string"/>
+										<xs:element minOccurs="0" name="portStat" type="xs:string"/>
+										<xs:element minOccurs="0" name="syncStat" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastChange" type="xs:string"/>
+										<xs:element minOccurs="0" name="modulationType" type="xs:string"/>
+										<xs:element minOccurs="0" name="channelType" type="xs:string"/>
+										<xs:element minOccurs="0" name="profileName" type="xs:string"/>
+										<xs:element minOccurs="0" name="bitRate">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="maxUp" type="xs:float"/>
+													<xs:element minOccurs="0" name="minUp" type="xs:float"/>
+													<xs:element minOccurs="0" name="plannedUp" type="xs:float"/>
+													<xs:element minOccurs="0" name="maxDown" type="xs:float"/>
+													<xs:element minOccurs="0" name="minDown" type="xs:float"/>
+													<xs:element minOccurs="0" name="plannedDown" type="xs:float"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="upStream">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="capacity" type="xs:float"/>
+													<xs:element minOccurs="0" name="max" type="xs:float"/>
+													<xs:element minOccurs="0" name="nm" type="xs:float"/>
+													<xs:element minOccurs="0" name="attenuation" type="xs:float"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="downStream">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="capacity" type="xs:float"/>
+													<xs:element minOccurs="0" name="max" type="xs:float"/>
+													<xs:element minOccurs="0" name="nm" type="xs:float"/>
+													<xs:element minOccurs="0" name="attenuation" type="xs:float"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="10" minOccurs="0" name="analyzeMsgArray">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="analyzeMsg" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

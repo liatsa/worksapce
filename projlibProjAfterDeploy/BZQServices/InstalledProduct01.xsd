@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:InstalledProduct01="http://www.bezeq.co.il/XMLSchema/InstalledProduct01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/InstalledProduct01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element name="ban" type="string"/>
+							<element name="subscriberNo" type="string"/>
+							<element maxOccurs="50" name="actArr">
+								<complexType>
+									<sequence>
+										<element name="actvCode" type="string"/>
+										<element name="actvRsnCode" type="string"/>
+										<element name="effectiveDate" type="date"/>
+										<element name="trxSeqNo" type="integer"/>
+										<element name="soc" type="string"/>
+										<element name="socEffDate" type="date"/>
+										<element minOccurs="0" name="socExpDate" type="date"/>
+										<element minOccurs="0" name="removedSoc" type="string"/>
+										<element name="renewalInd" type="string"/>
+										<element minOccurs="0" name="commitStartDate" type="date"/>
+										<element minOccurs="0" name="commitEndDate" type="date"/>
+										<element minOccurs="0" name="relatedSoc" type="string"/>
+										<element maxOccurs="100" minOccurs="0" name="ftrArr">
+											<complexType>
+												<sequence>
+													<element name="featureCode" type="string"/>
+													<element name="ftrMode" type="string"/>
+													<element minOccurs="0" name="ftrEffDate" type="date"/>
+													<element minOccurs="0" name="ftrExpDate" type="date"/>
+													<element minOccurs="0" name="rcBan" type="integer"/>
+													<element minOccurs="0" name="rcBen" type="integer"/>
+													<element maxOccurs="100" minOccurs="0" name="paramArr">
+														<complexType>
+															<sequence>
+																<element name="parameterName" type="string"/>
+																<element name="paramMode" type="string"/>
+																<element minOccurs="0" name="paramValueCd" type="string"/>
+																<element minOccurs="0" name="paramValue" type="string"/>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="50" minOccurs="0" name="promoArr">
+											<complexType>
+												<sequence>
+													<element name="promoSoc" type="string"/>
+													<element name="promoStartDate" type="date"/>
+													<element name="promoEndDate" type="date"/>
+													<element name="promoSeqNo" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

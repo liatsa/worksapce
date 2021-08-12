@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ApiCustomerUpdate01="http://www.bezeq.co.il/XMLSchema/ApiCustomerUpdate01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ApiCustomerUpdate01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="transactionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="chgCustName">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="lastBusinessName" type="xs:string"/>
+										<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+										<xs:element minOccurs="0" name="lastName2" type="xs:string"/>
+										<xs:element minOccurs="0" name="firstName2" type="xs:string"/>
+										<xs:element minOccurs="0" name="asCompanyRegisterNum" type="xs:string"/>
+										<xs:element minOccurs="0" name="asPersonalId2" type="xs:string"/>
+										<xs:element minOccurs="0" name="custPersonalIdType" type="xs:string"/>
+										<xs:element minOccurs="0" name="custPersonalIdType2nd" type="xs:string"/>
+										<xs:element minOccurs="0" name="asCompanyType" type="xs:string"/>
+										<xs:element minOccurs="0" name="asActivityReason" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgAccountType">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="accountType" type="xs:string"/>
+										<xs:element minOccurs="0" name="accountSubType" type="xs:string"/>
+										<xs:element minOccurs="0" name="activityReason" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgCustomerGrade">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="customerGrade" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerGradeRsn" type="xs:string"/>
+										<xs:element minOccurs="0" name="customerGradeUpdDate" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="blNewProdFreq">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="blNewProdFreq" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgRegionCd">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="regionCd" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgCreditClass">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="creditClass" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditClassRsn" type="xs:string"/>
+										<xs:element minOccurs="0" name="creditUpdDate" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="chgBanAddress">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="linkType" type="xs:string"/>
+										<xs:element minOccurs="0" name="strName">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="lastBusiness" type="xs:string"/>
+													<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="0" name="strAddress">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="adrType" type="xs:string"/>
+													<xs:element minOccurs="0" name="secondary" type="xs:string"/>
+													<xs:element minOccurs="0" name="city" type="xs:string"/>
+													<xs:element minOccurs="0" name="postCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="houseNo" type="xs:string"/>
+													<xs:element minOccurs="0" name="district" type="xs:string"/>
+													<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+													<xs:element minOccurs="0" name="pob" type="xs:string"/>
+													<xs:element minOccurs="0" name="apartmentNo" type="xs:string"/>
+													<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="cityCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="apartmentFloor" type="xs:integer"/>
+													<xs:element minOccurs="0" name="apartmentEntrance" type="xs:string"/>
+													<xs:element minOccurs="0" name="houseLetter" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="banCloseBan">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="closeActReason" type="xs:string"/>
+										<xs:element minOccurs="0" name="closeActivityDate" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="banChangeDep">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="actvMode" type="xs:string"/>
+										<xs:element minOccurs="0" name="banDepNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="newBanDepNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="newDepartmentPrmName" type="xs:string"/>
+										<xs:element minOccurs="0" name="newDepartmentSecName" type="xs:string"/>
+										<xs:element minOccurs="0" name="newExpirationDate" type="xs:date"/>
+										<xs:element minOccurs="0" name="newEffectiveDate" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="banChgDefBen">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="actvRsnCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="newDefualtBen" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="banChgCorporate">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="asActReason" type="xs:string"/>
+										<xs:element minOccurs="0" name="alCorporateId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="alReportingId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="asCorpName" type="xs:string"/>
+										<xs:element minOccurs="0" name="asGroupName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgApprovalAdvrt">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="voiseInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="voiseUpdateDt" type="xs:date"/>
+										<xs:element minOccurs="0" name="emailInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="emailUpdateDt" type="xs:date"/>
+										<xs:element minOccurs="0" name="smsInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="smsUpdateDt" type="xs:date"/>
+										<xs:element minOccurs="0" name="directInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="directUpdateDt" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgTaxInd">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="cityTaxInd" type="xs:string"/>
+										<xs:element minOccurs="0" name="cityTaxDeployInd" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgConvInd">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="interfaceAct" type="xs:string"/>
+										<xs:element minOccurs="0" name="delConvBanInd" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgCycle">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="cycleCode" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="chgBusinessFamily">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="businessFamily" type="xs:string"/>
+										<xs:element minOccurs="0" name="businessSubFamily" type="xs:string"/>
+
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

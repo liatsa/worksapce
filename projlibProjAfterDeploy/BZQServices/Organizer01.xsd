@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Organizer01="http://www.bezeq.co.il/XMLSchema/Organizer01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Organizer01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="kodPeula" type="xs:string"/>
+							<xs:element minOccurs="0" name="teudatZehut" type="xs:string"/>
+							<xs:element name="misparMitkan" type="xs:integer"/>
+							<xs:element name="sugTziudOrganizer" type="xs:integer"/>
+							<xs:element name="misparOrganizer" type="xs:string"/>
+							<xs:element minOccurs="0" name="degemParit" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugConnector" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="kodPeula" type="xs:string"/>
+							<xs:element minOccurs="0" name="teudatZehut" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparMitkan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugTziudOrganizer" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparOrganizer" type="xs:string"/>
+							<xs:element minOccurs="0" name="degemParit" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sugConnector" type="xs:integer"/>
+							<xs:element minOccurs="0" name="returnCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="returnText" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

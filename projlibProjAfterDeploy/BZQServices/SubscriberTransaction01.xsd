@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SubscriberTransaction01="http://www.bezeq.co.il/XMLSchema/SubscriberTransaction01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SubscriberTransaction01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="systemDateTime" type="xs:dateTime"/>
+							<xs:element name="actCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="actvRsnCode" type="xs:string"/>
+							<xs:element name="issueDate" type="xs:date"/>
+							<xs:element name="effectiveDate" type="xs:date"/>
+							<xs:element name="trxSeqNo" type="xs:integer"/>
+							<xs:element name="ban" type="xs:string"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="subStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="suspType" type="xs:string"/>
+							<xs:element minOccurs="0" name="noOfSuspend" type="xs:integer"/>
+							<xs:element minOccurs="0" name="billCycle" type="xs:integer"/>
+							<xs:element minOccurs="0" name="soc" type="xs:string"/>
+							<xs:element minOccurs="0" name="featureCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="rcBan" type="xs:string"/>
+							<xs:element minOccurs="0" name="rcBen" type="xs:string"/>
+							<xs:element minOccurs="0" name="internationalOpr" type="xs:string"/>
+							<xs:element minOccurs="0" name="bilProdFreq" type="xs:integer"/>
+							<xs:element minOccurs="0" name="crossBanName" type="xs:string"/>
+							<xs:element minOccurs="0" name="crossBenName" type="xs:string"/>
+							<xs:element minOccurs="0" name="crmSeqNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sendRequest" type="xs:string"/>
+  <xs:element minOccurs="0" name="paymentMethod" type="xs:string"/> 
+  <xs:element minOccurs="0" name="bankCode" type="xs:string"/> 
+  <xs:element minOccurs="0" name="bankAcctNo" type="xs:string"/> 
+  <xs:element minOccurs="0" name="bankAcctHolders" type="xs:string"/> 
+  <xs:element minOccurs="0" name="ddMandateStatus" type="xs:string"/> 
+  <xs:element minOccurs="0" name="ddMandateStatusDt" type="xs:date"/> 
+  <xs:element minOccurs="0" name="creditCardType" type="xs:string"/> 
+  <xs:element minOccurs="0" name="creditCardNum" type="xs:string"/> 
+  <xs:element minOccurs="0" name="creditCardExprDt" type="xs:date"/> 
+  <xs:element minOccurs="0" name="creditCardAuthCode" type="xs:string"/> 
+  <xs:element minOccurs="0" name="sendByEmailInd" type="xs:string"/> 
+  <xs:element minOccurs="0" name="emailAddress" type="xs:string"/> 
+  <xs:element minOccurs="0" name="personalId" type="xs:string"/>
+
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

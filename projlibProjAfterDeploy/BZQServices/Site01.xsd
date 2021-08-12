@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Site01="http://www.bezeq.co.il/XMLSchema/Site01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Site01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="teudatZehut" type="xs:string"/>
+							<xs:element name="actCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodAtar" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="buildingNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="buildingLetter" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="teudatZehut" type="xs:string"/>
+							<xs:element name="kodAtar" type="xs:integer"/>
+							<xs:element name="shemAtar" type="xs:string"/>
+							<xs:element minOccurs="0" name="kodAgaf" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cityName" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="buildingNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="buildingLetter" type="xs:string"/>
+							<xs:element minOccurs="0" name="mikud" type="xs:integer"/>
+							<xs:element minOccurs="0" name="kodBakara" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ramatTiknun" type="xs:integer"/>
+							<xs:element minOccurs="0" name="hearatKtovet" type="xs:string"/>
+							<xs:element minOccurs="0" name="nzX" type="xs:integer"/>
+							<xs:element minOccurs="0" name="nzY" type="xs:integer"/>
+							<xs:element minOccurs="0" name="baalutAtar" type="xs:integer"/>
+							<xs:element name="tarHakama" type="xs:date"/>
+							<xs:element name="tzHakama" type="xs:string"/>
+							<xs:element minOccurs="0" name="tarIdkun" type="xs:date"/>
+							<xs:element minOccurs="0" name="tzIdkun" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarKodBitul" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarKodNadlan" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarMerkazAlut" type="xs:string"/>
+							<xs:element minOccurs="0" name="atarShuihIrguni" type="xs:integer"/>
+							<xs:element minOccurs="0" name="statusNadlan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tarStatusNadlan" type="xs:date"/>
+							<xs:element minOccurs="0" name="ramatHashivut" type="xs:string"/>
+							<xs:element minOccurs="0" name="oldAddressDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="teurHadash" type="xs:string"/>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="returnText" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

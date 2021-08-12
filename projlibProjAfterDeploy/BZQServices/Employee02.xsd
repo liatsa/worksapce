@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Employee02="http://www.bezeq.co.il/XMLSchema/Employee02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Employee02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="personnelIdNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="actionCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="password" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="idNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+							<xs:element minOccurs="0" name="operator" type="xs:string"/>
+							<xs:element minOccurs="0" name="street" type="xs:string"/>
+							<xs:element minOccurs="0" name="city" type="xs:string"/>
+							<xs:element minOccurs="0" name="zipCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="telephoneNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="employeeStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="StatusDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="endStatusDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="updateStatusDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="workStartDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="closingCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="closingDate" type="xs:date"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="partialnessLine">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="partialnessCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="partialnessDate" type="xs:date"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="professionCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="professionDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="carDrivingLicense" type="xs:string"/>
+							<xs:element minOccurs="0" name="motorcycleDrivingLicense" type="xs:string"/>
+							<xs:element minOccurs="0" name="governmentDrivingLicense" type="xs:string"/>
+							<xs:element minOccurs="0" name="emergencyDrivingLicense" type="xs:string"/>
+							<xs:element minOccurs="0" name="militaryDrivingLicense" type="xs:string"/>
+							<xs:element minOccurs="0" name="securityCheck" type="xs:string"/>
+							<xs:element minOccurs="0" name="securityCheckDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="mobilitySymbol" type="xs:string"/>
+							<xs:element minOccurs="0" name="mobilityBeginDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="mobilityEndDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="requestNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="returnCode" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:CallDetails02="http://www.bezeq.co.il/XMLSchema/CallDetails02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/CallDetails02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+							<xs:element name="reqType" type="xs:string"/>
+							<xs:element name="rtrvType" type="xs:string"/>
+							<xs:element name="retrieveTimeOrder" type="xs:string"/>
+							<xs:element minOccurs="0" name="maxRecords" type="xs:string"/>
+							<xs:element minOccurs="0" name="maxRecInFile" type="xs:string"/>
+							<xs:element minOccurs="0" name="ban" type="xs:string"/>
+							<xs:element minOccurs="0" name="periodFrom" type="xs:string"/>
+							<xs:element minOccurs="0" name="periodTo" type="xs:string"/>
+							<xs:element minOccurs="0" name="dateFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="dateTo" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="hourFrom" type="xs:string"/>
+							<xs:element minOccurs="0" name="hourTo" type="xs:string"/>
+							<xs:element minOccurs="0" name="durationFrom" type="xs:string"/>
+							<xs:element minOccurs="0" name="durationTo" type="xs:string"/>
+							<xs:element minOccurs="0" name="totalFrom" type="xs:string"/>
+							<xs:element minOccurs="0" name="totalTo" type="xs:string"/>
+							<xs:element minOccurs="0" name="callToTn" type="xs:string"/>
+							<xs:element minOccurs="0" name="callingNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzqInitiateLineType" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzqLineTypeDest" type="xs:string"/>
+							<xs:element minOccurs="0" name="specialCallAttribute" type="xs:string"/>
+							<xs:element minOccurs="0" name="segmentNo" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="subscribers">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ben" type="xs:string"/>
+										<xs:element minOccurs="0" name="subscriber" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="callTypes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="callTypeCode" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="providers">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="providerCode" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="sugeySapak">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="sugSapak" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="dialedDigits">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="dialedDigits" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="auxFields">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="key" type="xs:string"/>
+										<xs:element minOccurs="0" name="val" type="xs:string"/>
+										<xs:element minOccurs="0" name="val2" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="reqId" type="xs:string"/>
+							<xs:element minOccurs="0" name="status" type="xs:string"/>
+							<xs:element minOccurs="0" name="statusDesc" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="auxFields">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="key" type="xs:string"/>
+										<xs:element minOccurs="0" name="val" type="xs:string"/>
+										<xs:element minOccurs="0" name="val2" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

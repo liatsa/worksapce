@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:InfrastructureFailure01="http://www.bezeq.co.il/XMLSchema/InfrastructureFailure01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/InfrastructureFailure01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="providerId" type="xs:string"/>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="providerRequestId" type="xs:string"/>
+							<xs:element name="providerMessageSendTime" type="xs:dateTime"/>
+							<xs:element name="requestType" type="xs:string"/>
+							<xs:element minOccurs="0" name="faultId" type="xs:string"/>
+							<xs:element name="lineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="faultTypeCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaContactName" type="xs:string"/>
+							<xs:element minOccurs="0" name="areaContactPhoneNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="infrastructureTypeNearestA" type="xs:string"/>
+							<xs:element minOccurs="0" name="infrastructureIdNearestA" type="xs:string"/>
+							<xs:element minOccurs="0" name="infrastructureTypeNearestB" type="xs:string"/>
+							<xs:element minOccurs="0" name="infrastructureIdNearestB" type="xs:string"/>
+							<xs:element minOccurs="0" name="x" type="xs:string"/>
+							<xs:element minOccurs="0" name="y" type="xs:string"/>
+							<xs:element minOccurs="0" name="locationCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="streetCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="providerComments" type="xs:string"/>
+							<xs:element minOccurs="0" name="techMessageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="techMessageDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="providerId" type="xs:string"/>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="providerRequestId" type="xs:string"/>
+							<xs:element minOccurs="0" name="providerMessageSendTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="messageSendTimeReturn" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="requestType" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="faultId" type="xs:string"/>
+							<xs:element minOccurs="0" name="faultTypeDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="faultStatusCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="faultStatusDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="techMessageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="techMessageDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_vqiEIPqYEeuc-43zW8XOWA" name="BZQ.SharedResources.JMS.JMS-Connection-ADTJNDI" type="jms:JNDIConnection">
+  <jndi:configuration xsi:type="jms:JNDIConnectionConfiguration" xmi:id="_vqiEIfqYEeuc-43zW8XOWA" providerUrl="%%BZQEMSJNDIContext/ADT/Url%%">
+    <substitutionBindings xmi:id="_vqiEI_qYEeuc-43zW8XOWA" template="providerUrl" propName="/BZQEMSJNDIContext/ADT/Url"/>
+    <userCredentials xmi:id="_vqiEIvqYEeuc-43zW8XOWA" username="%%BZQEMSJNDIContext/ADT/User%%" password="%%BZQEMSJNDIContext/ADT/Password%%">
+      <substitutionBindings xmi:id="_vqiEJPqYEeuc-43zW8XOWA" template="username" propName="/BZQEMSJNDIContext/ADT/User"/>
+      <substitutionBindings xmi:id="_vqiEJfqYEeuc-43zW8XOWA" template="password" propName="/BZQEMSJNDIContext/ADT/Password"/>
+    </userCredentials>
+  </jndi:configuration>
+</jndi:namedResource>

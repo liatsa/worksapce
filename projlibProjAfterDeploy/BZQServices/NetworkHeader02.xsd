@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:NetworkHeader02="http://www.bezeq.co.il/XMLSchema/NetworkHeader02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/NetworkHeader02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="jobNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="bdeskNumber" type="xs:string"/>
+							<xs:element name="network" type="xs:string"/>
+							<xs:element minOccurs="0" name="central" type="xs:string"/>
+							<xs:element minOccurs="0" name="centralNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceArea" type="xs:string"/>
+							<xs:element minOccurs="0" name="city" type="xs:string"/>
+							<xs:element minOccurs="0" name="street" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="aronSaafAddress" type="xs:string"/>
+							<xs:element minOccurs="0" name="nameOfCordinator" type="xs:string"/>
+							<xs:element minOccurs="0" name="telephone" type="xs:string"/>
+							<xs:element minOccurs="0" name="plannerID" type="xs:string"/>
+							<xs:element name="workSubject" type="xs:string"/>
+							<xs:element minOccurs="0" name="accommodationUnits" type="xs:string"/>
+							<xs:element minOccurs="0" name="observation" type="xs:string"/>
+							<xs:element minOccurs="0" name="workEssence" type="xs:string"/>
+							<xs:element minOccurs="0" name="internalNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="endDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="ensuringNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="workingOrderNumber" type="xs:string"/>
+							<xs:element name="actionPlanningNumber" type="xs:string"/>
+							<xs:element name="actionNumber" type="xs:string"/>
+							<xs:element name="performer" type="xs:string"/>
+							<xs:element name="actionsAmount" type="xs:float"/>
+							<xs:element minOccurs="0" name="activityUnit" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="reservation" type="xs:string"/>
+							<xs:element minOccurs="0" name="paka" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="returnMessages">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="messageType" type="xs:string"/>
+										<xs:element minOccurs="0" name="messageCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="messageText" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

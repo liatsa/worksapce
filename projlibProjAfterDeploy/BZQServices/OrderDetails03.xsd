@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderDetails03="http://www.bezeq.co.il/XMLSchema/OrderDetails03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderDetails03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="makorHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparPniya" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="misTelefonKayam" type="xs:string"/>
+							<xs:element minOccurs="0" name="misparHeker" type="xs:integer"/>
+							<xs:element minOccurs="0" name="misparLakoach" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageTimeStamp" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="makorHazmana" type="xs:string"/>
+							<xs:element minOccurs="0" name="kamutHazmanot" type="xs:integer"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="orderList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="misparPniya" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparHazmana" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misparTelefon" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparHeker" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misparLakoach" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sugHazmana" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurSugHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="sugHazmanaAdsl" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurSugHazmanaAdsl" type="xs:string"/>
+										<xs:element minOccurs="0" name="taarichHazmana" type="xs:date"/>
+										<xs:element minOccurs="0" name="statusHazmana" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurStatusHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="telefonLeberur" type="xs:string"/>
+										<xs:element minOccurs="0" name="taarichMetoam" type="xs:date"/>
+										<xs:element minOccurs="0" name="fromTime" type="xs:string"/>
+										<xs:element minOccurs="0" name="toTime" type="xs:string"/>
+										<xs:element minOccurs="0" name="telefonMuktze" type="xs:string"/>
+										<xs:element minOccurs="0" name="taarichBitzua" type="xs:date"/>
+										<xs:element minOccurs="0" name="taarichHasara" type="xs:date"/>
+										<xs:element minOccurs="0" name="taarichHaavaraLeMenuim" type="xs:date"/>
+										<xs:element minOccurs="0" name="timeHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="technaiTashtit" type="xs:integer"/>
+										<xs:element minOccurs="0" name="kategory" type="xs:integer"/>
+										<xs:element minOccurs="0" name="kodMatzavHazmana" type="xs:integer"/>
+										<xs:element minOccurs="0" name="teurMatzavHazmana" type="xs:string"/>
+										<xs:element minOccurs="0" name="kamutKodeyTziud" type="xs:integer"/>
+										<xs:element maxOccurs="60" minOccurs="0" name="equipmentList">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="kodTziyud" type="xs:integer"/>
+													<xs:element minOccurs="0" name="kamutTziyud" type="xs:integer"/>
+													<xs:element minOccurs="0" name="kodPelula" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageSetNb" type="xs:integer"/>
+							<xs:element name="messageNbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="messageDescr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

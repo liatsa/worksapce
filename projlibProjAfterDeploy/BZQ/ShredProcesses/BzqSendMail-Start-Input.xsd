@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqSendMail-Start-Input.xsd" xmlns:ns="http://www.tibco.com/namespaces/tnt/plugins/jms" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:ns2="http://xmlns.example.com/unique/default/namespace/1143371495589" xmlns:ns3="http://xmlns.tibco.com/bw/activity/xml/render/bytesEnvelope/2003/05" xmlns:ns4="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:ns5="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:ns6="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns7="http://www.bezeq.co.il/XMLSchema/BzqMFHeader" xmlns:ns8="http://www.bezeq.co.il/XMLSchema/BzqMFError" xmlns:ns9="http://www.tibco.com/namespaces/tnt/plugins/mail" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx="http://xmlns.example.com/unique/default/namespace/1143437771797" xmlns:pfx2="http://www.tibco.com/ns/no_namespace_schema_location/SharedResources/schemas/CRMCustomerOrdersRequest.xsd" xmlns:pfx3="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:pfx4="http://xmlns.example.com/unique/default/namespace/1144244833094" xmlns:pfx5="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:pfx6="http://xmlns.tibco.com/body" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="/projlibProjAfterDeploy/BZQ/ShredProcesses/BzqSendMail-Start-Input.xsd">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="env" type="xsd:string"/>
+                <xsd:element name="subject" type="xsd:string"/>
+                <xsd:element name="from" type="xsd:string"/>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="to" type="xsd:string"/>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="cc" type="xsd:string"/>
+                <xsd:element name="body" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

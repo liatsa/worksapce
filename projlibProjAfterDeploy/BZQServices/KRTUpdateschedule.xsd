@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTUpdateschedule="http://www.bezeq.co.il/XMLSchema/KRTUpdateschedule" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTUpdateschedule">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="updateschedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTUpdateschedule:request"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="soId" type="xs:string"/>
+							<xs:element minOccurs="0" name="soLine" type="xs:string"/>
+							<xs:element minOccurs="0" name="status" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineCancelRsn" type="xs:string"/>
+							<xs:element minOccurs="0" name="handlingTeam" type="xs:string"/>
+							<xs:element minOccurs="0" name="id" type="xs:string"/>
+							<xs:element minOccurs="0" name="startDttm" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="endDttm" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="orderStatus" type="xs:integer"/>
+							<xs:element minOccurs="0" name="startAppointment" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="endAppointment" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="metricDate" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

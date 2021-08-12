@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Delivery03="http://www.bezeq.co.il/XMLSchema/Delivery03" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Delivery03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="saleChannelCd" type="xs:string"/>
+							<xs:element name="runDate" type="xs:dateTime"/>
+							<xs:element name="ban" type="xs:integer"/>
+							<xs:element minOccurs="0" name="subscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="personalId" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="missionId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="requestNo" type="xs:integer"/>
+							<xs:element name="dlvAnswerType" type="xs:string"/>
+							<xs:element minOccurs="0" name="currentBan" type="xs:integer"/>
+							<xs:element minOccurs="0" name="currentSubscriber" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="deliveryArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="deliveryId" type="xs:integer"/>
+										<xs:element minOccurs="0" name="rowSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="bzqDlvSts" type="xs:string"/>
+										<xs:element minOccurs="0" name="bzqStsDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="returnSts" type="xs:string"/>
+										<xs:element minOccurs="0" name="suppErrDesc" type="xs:string"/>
+										<xs:element minOccurs="0" name="dateAnswered" type="xs:date"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="dlvEqpArr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="equipCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="promoSeqNo" type="xs:integer"/>
+													<xs:element minOccurs="0" name="familyCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="subFamilyCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="itemStatus" type="xs:string"/>
+													<xs:element minOccurs="0" name="otherOpenDeliveryInd" type="xs:string"/>
+													<xs:element minOccurs="0" name="otherOpenDeliveryId" type="xs:string"/>
+													<xs:element minOccurs="0" name="soc" type="xs:string"/>
+													<xs:element minOccurs="0" name="featureCode" type="xs:string"/>
+													<xs:element minOccurs="0" name="quantity" type="xs:integer"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="saleArr">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="equipmentSeq" type="xs:integer"/>
+													<xs:element maxOccurs="unbounded" minOccurs="0" name="equipmentArr">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element minOccurs="0" name="saleEquipmentCode" type="xs:string"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

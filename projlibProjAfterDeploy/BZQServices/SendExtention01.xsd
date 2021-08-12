@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SendExtention01="http://www.bezeq.co.il/XMLSchema/SendExtention01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SendExtention01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="misHazmana" type="integer"/>
+							<element name="misRatz" type="integer"/>
+							<element name="sugHazmana" type="integer"/>
+							<element name="sugSherut" type="integer"/>
+							<element name="projectId" type="integer"/>
+							<element name="customerId" type="integer"/>
+							<element name="misOved" type="integer"/>
+							<element name="rangeCount" type="integer"/>
+							<element maxOccurs="50" minOccurs="0" name="range">
+								<complexType>
+									<sequence>
+										<element name="fromRange" type="integer"/>
+										<element name="toRange" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="extNoTifulCount" type="integer"/>
+							<element name="extTifulCount" type="integer"/>
+							<element name="havilaCount" type="integer"/>
+							<element maxOccurs="50" minOccurs="0" name="havila">
+								<complexType>
+									<sequence>
+										<element name="kodHavila" type="integer"/>
+										<element name="havilaCount" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="tchunotCount" type="integer"/>
+							<element maxOccurs="50" minOccurs="0" name="tchunot">
+								<complexType>
+									<sequence>
+										<element name="kodTchuna" type="integer"/>
+										<element name="tchunaCount" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="tosefetSihotBoZmanitBetashlum" type="integer"/>
+							<element name="tosefetMisForSaveBetashlum" type="integer"/>
+							<element name="numOfDigitForDialing" type="integer"/>
+							<element name="kodMafilInt" type="integer"/>
+							<element name="kidometSnif" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

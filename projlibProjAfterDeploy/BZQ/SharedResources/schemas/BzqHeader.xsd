@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/BzqHeader"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="BzqHeader">
+		<complexType>
+			<sequence>
+				<element name="ApplicationId" type="xsd:string" minOccurs="0"/>
+				<element name="User" type="xsd:string"/>
+				<element name="Password" type="xsd:string" minOccurs="0"/>
+				<element name="EndUser" type="xsd:string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

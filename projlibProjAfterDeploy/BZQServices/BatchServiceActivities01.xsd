@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BatchServiceActivities01="http://www.bezeq.co.il/XMLSchema/BatchServiceActivities01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/BatchServiceActivities01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="transactionId" type="xs:string"/>
+							<xs:element name="messageSendTimeStamp" type="xs:string"/>
+							<xs:element name="actionCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerId" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerName" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerGrade" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerType" type="xs:string"/>
+							<xs:element name="lineNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="requestedDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="heker" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="params">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="paramName" type="xs:string"/>
+										<xs:element minOccurs="0" name="paramValue" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="transactionId" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="stepId" type="xs:string"/>
+							<xs:element minOccurs="0" name="stepDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="stepResultId" type="xs:string"/>
+							<xs:element minOccurs="0" name="stepResultDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="finalStep" type="xs:string"/>
+							<xs:element name="stepStatus" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="stepErrors">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="errorDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="params">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="paramName" type="xs:string"/>
+										<xs:element minOccurs="0" name="paramValue" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

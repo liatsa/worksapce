@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderDetails05="http://www.bezeq.co.il/XMLSchema/OrderDetails05" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderDetails05">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="mainOrderNum" type="string"/>
+							<element minOccurs="0" name="runOrderNum" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							<element minOccurs="0" name="orderStatus" type="string"/>
+							<element minOccurs="0" name="orderCharacter" type="string"/>
+							<element minOccurs="0" name="openOrderData" type="date"/>
+							<element minOccurs="0" name="workOrderBus" type="string"/>
+							<element minOccurs="0" name="workOrderPriv" type="string"/>
+							<element minOccurs="0" name="requestType" type="string"/>
+							<element minOccurs="0" name="prefInstallationDate" type="date"/>
+							<element maxOccurs="1" minOccurs="0" name="busBundle" type="string"/>
+							<element minOccurs="0" name="generalDetails">
+								<complexType>
+									<sequence>
+										<element maxOccurs="2" minOccurs="0" name="installAdress">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="side" type="string"/>
+													<element minOccurs="0" name="citySymbol" type="string"/>
+													<element minOccurs="0" name="cityName" type="string"/>
+													<element minOccurs="0" name="streetSymbol" type="string"/>
+													<element minOccurs="0" name="streetName" type="string"/>
+													<element minOccurs="0" name="houseNumber" type="string"/>
+													<element minOccurs="0" name="letter" type="string"/>
+													<element minOccurs="0" name="center" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="contactsDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="orderContactPerson" type="string"/>
+										<element maxOccurs="2" minOccurs="0" name="sideContactDestails">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="contactsToSide" type="string"/>
+													<element minOccurs="0" name="siteContactPerson" type="string"/>
+													<element minOccurs="0" name="siteContactPhone" type="string"/>
+													<element minOccurs="0" name="coordinatorConContacPerson" type="string"/>
+													<element minOccurs="0" name="coordinatorPhone" type="string"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="requestSts" type="integer"/>
+							<element name="requestStsRsn" type="integer"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

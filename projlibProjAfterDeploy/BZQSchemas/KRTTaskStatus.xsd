@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTTaskStatus="http://www.bezeq.co.il/XMLSchema/KRTTaskStatus"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTaskStatus"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="KRTTaskStatus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="interfaceId" type="xs:string" minOccurs="0"/>
+				<xs:element name="techId" type="xs:string"/>
+				<xs:element name="soId" type="xs:string"/>
+				<xs:element name="soLine" type="xs:int"/>
+				<xs:element name="taskStatus" type="xs:string"/>
+				<xs:element name="statusDate" type="xs:dateTime"/>
+				<xs:element name="nextTask" type="xs:string" minOccurs="0"/>
+				<xs:element name="nextTaskDescr" type="xs:string" minOccurs="0"/>
+				<xs:element name="externalData" type="xs:string" minOccurs="0"/>
+				<xs:element name="taskComments" type="xs:string" minOccurs="0"/>
+				<xs:element name="startDttm" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="endDttm" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="messageSetNumber" type="xs:integer" minOccurs="0"/>
+				<xs:element name="messageNumber" type="xs:integer"/>
+				<xs:element name="messageDescription" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

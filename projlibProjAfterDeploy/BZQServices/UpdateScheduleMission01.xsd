@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateScheduleMission01="http://www.bezeq.co.il/XMLSchema/UpdateScheduleMission01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateScheduleMission01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceID" type="string"/>
+							<element name="assignType" type="integer"/>
+							<element maxOccurs="100" name="taskDetailsRequest">
+								<complexType>
+									<sequence>
+										<element name="serviceOrderSourceTypeID" type="integer"/>
+										<element name="taskTypeID" type="integer"/>
+										<element name="durationMultiplication" type="integer"/>
+										<element name="serviceOrderNumber" type="integer"/>
+										<element name="isException" type="string"/>
+										<element name="taskNumber" type="integer"/>
+										<element name="cMTaskID" type="integer"/>
+										<element name="categoryTypeID" type="integer"/>
+										<element minOccurs="0" name="essenceId" type="integer"/>
+										<element name="securityEquipmentTypeID" type="integer"/>
+										<element name="isSohoSMB" type="string"/>
+										<element name="isAutoAssign" type="string"/>
+										<element minOccurs="0" name="eqpLadderTypeID" type="integer"/>
+										<element minOccurs="0" name="timeFrameStart" type="string"/>
+										<element minOccurs="0" name="timeFrameEnd" type="string"/>
+										<element name="slaPeriodStart" type="string"/>
+										<element name="slaPeriodEnd" type="string"/>
+										<element minOccurs="0" name="sLADesc" type="string"/>
+										<element name="isCustomerAppointment" type="string"/>
+										<element minOccurs="0" name="splitTaskDuration" type="float"/>
+										<element minOccurs="0" name="serviceTypeBILDesc" type="string"/>
+										<element name="slaServiceLevelID" type="integer"/>
+										<element name="securityLevelID" type="integer"/>
+										<element minOccurs="0" name="lineType" type="string"/>
+										<element minOccurs="0" name="lineTypeDesc" type="string"/>
+										<element minOccurs="0" name="serviceTypeOMF" type="string"/>
+										<element minOccurs="0" name="orderNumber" type="string"/>
+										<element minOccurs="0" name="orderSerialNumber" type="integer"/>
+										<element minOccurs="0" name="taskComments" type="string"/>
+										<element minOccurs="0" name="lineSide" type="string"/>
+										<element minOccurs="0" name="customerName" type="string"/>
+										<element minOccurs="0" name="customerNumber" type="integer"/>
+										<element minOccurs="0" name="customerGrade" type="string"/>
+										<element minOccurs="0" name="matalName" type="string"/>
+										<element minOccurs="0" name="matalPhone" type="string"/>
+										<element minOccurs="0" name="contactName" type="string"/>
+										<element minOccurs="0" name="contactPhoneNumber" type="string"/>
+										<element minOccurs="0" name="contactMobileNumber" type="string"/>
+										<element minOccurs="0" name="subscriberNumber" type="string"/>
+										<element minOccurs="0" name="cityID" type="integer"/>
+										<element minOccurs="0" name="city" type="string"/>
+										<element minOccurs="0" name="streetID" type="integer"/>
+										<element minOccurs="0" name="street" type="string"/>
+										<element minOccurs="0" name="houseNumber" type="integer"/>
+										<element minOccurs="0" name="letter" type="string"/>
+										<element name="orgUnitID" type="integer"/>
+										<element minOccurs="0" name="amplifier" type="string"/>
+										<element minOccurs="0" name="vendorComments" type="string"/>
+										<element minOccurs="0" name="numOfRepeatCall" type="integer"/>
+										<element name="longitude" type="integer"/>
+										<element name="latitude" type="integer"/>
+										<element minOccurs="0" name="switchCenter" type="string"/>
+										<element minOccurs="0" name="switchBoard" type="string"/>
+										<element minOccurs="0" name="switchBox" type="string"/>
+										<element minOccurs="0" name="frameBox" type="string"/>
+										<element minOccurs="0" name="addressFrameTypeDesc" type="string"/>
+										<element minOccurs="0" name="addressFrame" type="integer"/>
+										<element minOccurs="0" name="addressFrameTypeDesc1" type="string"/>
+										<element minOccurs="0" name="addressFrame1" type="integer"/>
+										<element minOccurs="0" name="lastCenter" type="string"/>
+										<element minOccurs="0" name="fullRouting" type="string"/>
+										<element minOccurs="0" name="oldRouting" type="string"/>
+										<element minOccurs="0" name="msagAddress" type="string"/>
+										<element minOccurs="0" name="addressFrame1Address" type="string"/>
+										<element minOccurs="0" name="switchBoardAddress" type="string"/>
+										<element minOccurs="0" name="switchBoxAddress" type="string"/>
+										<element minOccurs="0" name="cardNumber" type="integer"/>
+										<element minOccurs="0" name="projectNumber" type="string"/>
+										<element minOccurs="0" name="projectName" type="string"/>
+										<element minOccurs="0" name="projectManagerId" type="string"/>
+										<element minOccurs="0" name="lastPlannerName" type="string"/>
+										<element minOccurs="0" name="commConsultantName" type="string"/>
+										<element minOccurs="0" name="lastIPDefinerName" type="string"/>
+										<element minOccurs="0" name="statusReasonDesc" type="string"/>
+										<element minOccurs="0" name="siteContactFirstName" type="string"/>
+										<element minOccurs="0" name="siteContactLastName" type="string"/>
+										<element minOccurs="0" name="siteContactLastNamePhone1" type="string"/>
+										<element minOccurs="0" name="siteContactLastNamePhone2" type="string"/>
+										<element minOccurs="0" name="iS24Hours" type="string"/>
+										<element name="isWholesale" type="string"/>
+										<element name="isResale" type="string"/>
+										<element name="isYes" type="string"/>
+										<element minOccurs="0" name="supplierId" type="integer"/>
+										<element minOccurs="0" name="customerRequestDate" type="string"/>
+										<element minOccurs="0" name="isCustomerRequestFlexible" type="string"/>
+										<element minOccurs="0" name="additionalTechnicianCMTaskID" type="integer"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="equipmentDetail">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="equipmentCatalogNumber" type="string"/>
+													<element minOccurs="0" name="equipmentDescription" type="string"/>
+													<element minOccurs="0" name="equipmentAmount" type="integer"/>
+													<element minOccurs="0" name="equipmentAmountExist" type="integer"/>
+													<element minOccurs="0" name="equipmentAmountRemove" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="unbounded" minOccurs="0" name="additionalService">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="additionalServiceID" type="integer"/>
+													<element minOccurs="0" name="additionalServiceAmount" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+										<element maxOccurs="unbounded" minOccurs="0" name="missionAttributes">
+											<complexType>
+												<sequence>
+													<element minOccurs="0" name="taskAttributeId" type="integer"/>
+													<element minOccurs="0" name="Amount" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceID" type="string"/>
+							<element minOccurs="0" name="geoDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="teamId" type="integer"/>
+										<element minOccurs="0" name="longitude" type="integer"/>
+										<element minOccurs="0" name="latitude" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element maxOccurs="unbounded" minOccurs="0" name="missionDetails">
+								<complexType>
+									<sequence>
+										<element minOccurs="0" name="missionId" type="integer"/>
+										<element minOccurs="0" name="missionDuration" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="returnStatus" type="integer"/>
+							<element minOccurs="0" name="messageDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

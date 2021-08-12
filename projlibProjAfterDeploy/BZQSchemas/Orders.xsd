@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Order="http://www.bezeq.co.il/XMLSchema/Order" xmlns:Orders="http://www.bezeq.co.il/XMLSchema/Orders" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Orders">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/Order" schemaLocation="Order.xsd"/>
+	<element name="Orders">
+		<complexType>
+			<sequence>
+				<element name="SubscriberId" type="xsd:string"/>
+				<element minOccurs="0" name="Heker" type="xsd:integer"/>
+				<element maxOccurs="unbounded" minOccurs="0" ref="Order:Order"/>
+				<element minOccurs="0" name="OrderSla1" type="xsd:date"/>
+				<element minOccurs="0" name="OrderSla2" type="xsd:date"/>
+				<element minOccurs="0" name="OrderSla3" type="xsd:date"/>
+				<element minOccurs="0" name="Num" type="xsd:string"/>
+				<element maxOccurs="unbounded" minOccurs="0" name="customerIdList">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="customerId" type="xsd:string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element maxOccurs="unbounded" minOccurs="0" name="address">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="cityId" type="xsd:string"/>
+							<element minOccurs="0" name="streetId" type="xsd:string"/>
+
+							<element minOccurs="0" name="houseNumber" type="xsd:string"/>
+							<element minOccurs="0" name="houseLetter" type="xsd:string"/>
+							<element minOccurs="0" name="houseIndication" type="xsd:string"/>
+							<element minOccurs="0" name="floor" type="xsd:string"/>
+							<element minOccurs="0" name="apartment" type="xsd:string"/>
+
+						</sequence>
+					</complexType>
+				</element>
+				<element maxOccurs="unbounded" minOccurs="0" name="sapakWs">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="kodSapakWholesale" type="xsd:string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" name="ReturnCode" type="xsd:string"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:TotalPrice01="http://www.bezeq.co.il/XMLSchema/TotalPrice01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/TotalPrice01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							
+							<element name="requestDate" type="string"/>
+							<element minOccurs="0" name="storeCode" type="integer"/>
+							<element name="equipmentQuantity" type="integer"/>
+							<element maxOccurs="unbounded" name="equipmentArr">
+								<complexType>
+									<sequence>
+										<element name="equipmentSeq" type="integer"/>
+										<element name="equipmentCode" type="string"/>
+										<element name="promotionSequenceNum" type="integer"/>
+										<element minOccurs="0" name="soc" type="string"/>
+										<element minOccurs="0" name="featureCode" type="string"/>
+										<element name="origQuantity" type="integer"/>
+										<element name="paymentType" type="string"/>
+										<element name="numOfInst" type="integer"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="couponQuantity" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="couponArr">
+								<complexType>
+									<sequence>
+										<element name="couponSeq" type="integer"/>
+										<element name="couponId" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="interfaceId" type="string"/>
+							
+							<element name="status" type="integer"/>
+							<element name="totalSaleAmt" type="float"/>
+							<element name="equipmentQuantity" type="integer"/>
+							<element maxOccurs="unbounded" name="equipmentArr">
+								<complexType>
+									<sequence>
+										<element name="equipmentSeq" type="integer"/>
+										<element name="equipmentCode" type="string"/>
+										<element name="promotionSeqenceNum" type="integer"/>
+										<element minOccurs="0" name="soc" type="string"/>
+										<element minOccurs="0" name="featureCode" type="string"/>
+										<element name="origQuantity" type="integer"/>
+										<element name="paymentType" type="string"/>
+										<element name="numOfInst" type="integer"/>
+										<element name="eqpPrice" type="float"/>
+										<element name="eqpFinalPrc" type="float"/>
+										<element minOccurs="0" name="coupAmtDis" type="float"/>
+										<element minOccurs="0" name="couponEqpQuantity" type="integer"/>
+										<element maxOccurs="unbounded" minOccurs="0" name="couponEqpArr">
+											<complexType>
+												<sequence>
+													<element name="eqpCouponId" type="string"/>
+													<element name="eqpCoupPrc" type="float"/>
+													<element name="eqpCoupSts" type="integer"/>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+							<element minOccurs="0" name="couponQuantity" type="integer"/>
+							<element maxOccurs="unbounded" minOccurs="0" name="couponArr">
+								<complexType>
+									<sequence>
+										<element name="couponSeq" type="integer"/>
+										<element name="couponId" type="string"/>
+										<element name="couponStatus" type="integer"/>
+										<element minOccurs="0" name="couponName" type="string"/>
+										<element minOccurs="0" name="couponType" type="string"/>
+										<element minOccurs="0" name="discountType" type="string"/>
+										<element minOccurs="0" name="discountValue" type="float"/>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

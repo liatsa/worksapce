@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Order="http://www.bezeq.co.il/XMLSchema/Order"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/Order"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<element name="Order">
+		<complexType>
+			<sequence>
+				<element name="OrderName" type="xsd:string" minOccurs="0"/>
+				<element name="StartDate" type="xsd:date" minOccurs="0"/>
+				<element name="Status" type="xsd:string" minOccurs="0"/>
+				<element name="subscriberId" type="xsd:string" minOccurs="0"/>
+				<element name="OrderRsn" type="xsd:string" minOccurs="0"/>
+				<element name="OrderRsnDtl" type="xsd:string" minOccurs="0"/>
+				<element name="EndDate" type="xsd:date" minOccurs="0"/>
+				<element name="FromTime" type="xsd:time" minOccurs="0"/>
+				<element name="ToTime" type="xsd:time" minOccurs="0"/>
+				<element name="OrderNum" type="xsd:string" minOccurs="0"/>
+				<element name="CodeOrder" type="xsd:string" minOccurs="0"/>
+				<element name="FuturePhone" type="xsd:string" minOccurs="0"/>
+				<element name="RemoveDate" type="xsd:date" minOccurs="0"/>
+				<element name="ActionDate" type="xsd:date" minOccurs="0"/>
+				<element name="InstallDate" type="xsd:date" minOccurs="0"/>
+				<element name="sugHazmanaAdsl" type="xsd:integer" minOccurs="0"/>
+				<element name="teurStatusHazmana" type="xsd:string" minOccurs="0"/>
+				<element name="timeHazmana" type="xsd:string" minOccurs="0"/>
+				<element name="moked" type="xsd:integer" minOccurs="0"/>
+				<element name="shinuyketzev" type="xsd:integer" minOccurs="0"/>
+				<element name="kodZiodList" minOccurs="0" maxOccurs="30">
+					<complexType>
+						<sequence>
+							<element name="kodTziud" type="xsd:integer" minOccurs="0"/>
+							<element name="kamutTziud" type="xsd:integer" minOccurs="0"/>
+							<element name="peulaTziud" type="xsd:integer" minOccurs="0"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

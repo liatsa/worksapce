@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ExecutionInstructions01="http://www.bezeq.co.il/XMLSchema/ExecutionInstructions01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ExecutionInstructions01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="counter" type="xs:integer"/>
+							<xs:element maxOccurs="100" minOccurs="0" name="horaotBitzuaBaseRequest">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ezorChiyugKodBzq" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparKodBzq" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="kodHechzer" type="xs:integer"/>
+							<xs:element minOccurs="0" name="teurKodHechzer" type="xs:string"/>
+							<xs:element name="counter" type="xs:integer"/>
+							<xs:element maxOccurs="100" minOccurs="0" name="horaotBitzuaBaseReply">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ezorChiyugKodBzq" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparKodBzq" type="xs:integer"/>
+										<xs:element minOccurs="0" name="merkazEzorSherut" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgeret1" type="xs:integer"/>
+										<xs:element minOccurs="0" name="meTag1" type="xs:integer"/>
+										<xs:element minOccurs="0" name="adTag1" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgeret2" type="xs:integer"/>
+										<xs:element minOccurs="0" name="meTag2" type="xs:integer"/>
+										<xs:element minOccurs="0" name="adTag2" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgeret3" type="xs:integer"/>
+										<xs:element minOccurs="0" name="meTag3" type="xs:integer"/>
+										<xs:element minOccurs="0" name="adTag3" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgeret4" type="xs:integer"/>
+										<xs:element minOccurs="0" name="meTag4" type="xs:integer"/>
+										<xs:element minOccurs="0" name="adTag4" type="xs:integer"/>
+										<xs:element minOccurs="0" name="misgeret5" type="xs:integer"/>
+										<xs:element minOccurs="0" name="meTag5" type="xs:integer"/>
+										<xs:element minOccurs="0" name="adTag5" type="xs:integer"/>
+										<xs:element minOccurs="0" name="len" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

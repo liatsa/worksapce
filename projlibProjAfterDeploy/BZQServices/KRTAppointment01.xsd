@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTAppointment01="http://www.bezeq.co.il/XMLSchema/KRTAppointment01" xmlns:KRTAppointments="http://www.bezeq.co.il/XMLSchema/KRTAppointments" xmlns:KRTTaskAppointment="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTAppointment01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/KRTAppointments" schemaLocation="../BZQSchemas/KRTAppointments.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment" schemaLocation="../BZQSchemas/KRTTaskAppointment.xsd"/>
+	<xs:element name="Appointment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTAppointment01:request"/>
+				<xs:element ref="KRTAppointment01:reply"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" ref="KRTTaskAppointment:Task"/>
+							<xs:element name="schedulePolicy" type="xs:string"/>
+							<xs:element name="profile" type="xs:string"/>
+							<xs:element name="period">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="start" type="xs:dateTime"/>
+										<xs:element name="finish" type="xs:dateTime"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="GradeAppointments" type="xs:boolean"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" ref="KRTAppointments:Appointments"/>
+							<xs:element minOccurs="0" name="error">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="errorNumber" type="xs:string"/>
+										<xs:element name="errorSource" type="xs:string"/>
+										<xs:element name="errorDescription" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="messageNumber" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

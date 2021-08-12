@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OpticalFiberConnection01="http://www.bezeq.co.il/XMLSchema/OpticalFiberConnection01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OpticalFiberConnection01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="numCableFeed" type="xs:integer"/>
+							<xs:element name="numOblicFeed" type="xs:integer"/>
+							<xs:element name="fromSivNumber" type="xs:integer"/>
+							<xs:element name="mitkanNum" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="numCableFeed" type="xs:integer"/>
+							<xs:element name="numOblicFeed" type="xs:integer"/>
+							<xs:element name="fromSivNumber" type="xs:integer"/>
+							<xs:element name="mitkanNum" type="xs:integer"/>
+      <xs:element minOccurs="1" name="numRecords" type="xs:integer"/>
+							<xs:element maxOccurs="10" minOccurs="0" name="sivRecords">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="numCableFed" type="xs:integer"/>
+										<xs:element name="numOblikFed" type="xs:integer"/>
+										<xs:element name="numSivFeed" type="xs:integer"/>
+										<xs:element name="numSivFed" type="xs:integer"/>
+										<xs:element minOccurs="0" name="sivService" type="xs:string"/>
+										<xs:element minOccurs="0" name="status" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="errorCode" type="xs:string"/>
+							<xs:element name="errorDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateCouplingActivation01="http://www.bezeq.co.il/XMLSchema/UpdateCouplingActivation01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateCouplingActivation01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="providerId" type="xs:string"/>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="providerRequestId" type="xs:string"/>
+							<xs:element name="providerMessageSendTime" type="xs:dateTime"/>
+							<xs:element name="processType" type="xs:string"/>
+							<xs:element name="lineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderId" type="xs:string"/>
+							<xs:element name="serialNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="planSoftware" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="providerId" type="xs:string"/>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="providerRequestId" type="xs:string"/>
+							<xs:element name="providerMessageSendTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="messageSendTimeReturn" type="xs:dateTime"/>
+							<xs:element name="processType" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderId" type="xs:string"/>
+							<xs:element name="lineCode" type="xs:string"/>
+							<xs:element name="messageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="messageDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="techMessageCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="techMessageDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

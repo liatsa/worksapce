@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:FrameDetails01="http://www.bezeq.co.il/XMLSchema/FrameDetails01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/FrameDetails01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="InterfaceID" type="string"/>
+							<element minOccurs="0" name="ActionCode" type="string"/>
+							<element minOccurs="0" name="SwitchBox" type="integer"/>
+							<element minOccurs="0" name="FrameBox" type="integer"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element minOccurs="0" name="InterfaceID" type="string"/>
+							<element minOccurs="0" name="FrameBoxCapacity" type="integer"/>
+							<element minOccurs="0" name="FrameBoxSubscribers" type="integer"/>
+							<element minOccurs="0" name="CityID" type="integer"/>
+							<element minOccurs="0" name="CityName" type="string"/>
+							<element minOccurs="0" name="StreetID" type="integer"/>
+							<element minOccurs="0" name="StreeName" type="string"/>
+							<element minOccurs="0" name="HouseNumber" type="integer"/>
+							<element minOccurs="0" name="ImprovementStatusID" type="integer"/>
+							<element name="StatusReturnCode" type="integer"/>
+							<element minOccurs="0" name="StatusReturnDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Order04="http://www.bezeq.co.il/XMLSchema/Order04" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Order04">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="area" type="xs:string"/>
+							<xs:element name="center" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceArea" type="xs:string"/>
+							<xs:element name="status01" type="xs:string"/>
+							<xs:element name="category" type="xs:string"/>
+							<xs:element name="orderType" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderAdslType" type="xs:string"/>
+							<xs:element name="orderNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="telephoneNumber" type="xs:string"/>
+							<xs:element name="cityId" type="xs:string"/>
+							<xs:element name="cityName" type="xs:string"/>
+							<xs:element name="streetId" type="xs:string"/>
+							<xs:element name="streetName" type="xs:string"/>
+							<xs:element minOccurs="0" name="house" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseIndication" type="xs:string"/>
+							<xs:element minOccurs="0" name="houseType" type="xs:string"/>
+							<xs:element minOccurs="0" name="entrance" type="xs:string"/>
+							<xs:element minOccurs="0" name="floor" type="xs:string"/>
+							<xs:element minOccurs="0" name="apartment" type="xs:string"/>
+							<xs:element name="dateOfOpenOrder" type="xs:date"/>
+							<xs:element name="dateOfUpdateOrder" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="noteOrder1" type="xs:string"/>
+							<xs:element minOccurs="0" name="noteOrder2" type="xs:string"/>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+							<xs:element name="lineType" type="xs:string"/>
+							<xs:element name="subscriberType" type="xs:string"/>
+							<xs:element name="customerGrade" type="xs:string"/>
+							<xs:element name="customerType" type="xs:string"/>
+							<xs:element minOccurs="0" name="completionDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="categoryClass" type="xs:string"/>
+							<xs:element minOccurs="0" name="contactPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="customerNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="tatzpitFile" type="xs:string"/>
+							<xs:element minOccurs="0" name="tatzpitFileDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="system" type="xs:string"/>
+							<xs:element minOccurs="0" name="taskWorld" type="xs:string"/>
+							<xs:element minOccurs="0" name="planningDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="implementDate" type="xs:date"/>
+<xs:element minOccurs="0" name="responsibleParty" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

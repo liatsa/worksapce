@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:AlternativeRoute03="http://www.bezeq.co.il/XMLSchema/AlternativeRoute03" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/AlternativeRoute03">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="center" type="xs:integer"/>
+							<xs:element name="frame" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="statusCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="frameData" type="xs:string"/>
+							<xs:element minOccurs="0" name="tagData" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="misparMofaim" type="xs:string"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="tagList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="sugKav" type="xs:string"/>
+										<xs:element minOccurs="0" name="misparTelefon" type="xs:string"/>
+										<xs:element minOccurs="0" name="tagMakor" type="xs:string"/>
+										<xs:element minOccurs="0" name="teurStatus_tag" type="xs:string"/>
+										<xs:element minOccurs="0" name="natich" type="xs:string"/>
+										<xs:element minOccurs="0" name="misgeretMakor" type="xs:string"/>
+										<xs:element minOccurs="0" name="misgeretYaad" type="xs:string"/>
+										<xs:element minOccurs="0" name="tagYaad" type="xs:string"/>
+										<xs:element minOccurs="0" name="tagStatus" type="xs:integer"/>
+										<xs:element minOccurs="0" name="tagStatusTiuv" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="center" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frame" type="xs:integer"/>
+							<xs:element minOccurs="0" name="sourceFrameType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tagTotal" type="xs:integer"/>
+							<xs:element minOccurs="0" name="tiuvUserIdn" type="xs:string"/>
+							<xs:element minOccurs="0" name="tiuvDateTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="frameStatusTiuv" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frameCity" type="xs:string"/>
+							<xs:element minOccurs="0" name="frameStreet" type="xs:string"/>
+							<xs:element minOccurs="0" name="frameStreetNum" type="xs:integer"/>
+							<xs:element minOccurs="0" name="totalFault" type="xs:integer"/>
+							<xs:element minOccurs="0" name="dateTimeLastFault" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="dateTimeLastFixNet" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="message_set_nbr" type="xs:integer"/>
+							<xs:element name="message_nbr" type="xs:integer"/>
+							<xs:element minOccurs="0" name="message_descr" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

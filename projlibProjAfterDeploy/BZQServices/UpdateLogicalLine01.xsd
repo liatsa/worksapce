@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:UpdateLogicalLine01="http://www.bezeq.co.il/XMLSchema/UpdateLogiicalLine01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/UpdateLogiicalLine01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="actionCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="logicalLineCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="logicalLineInstance" type="xs:string"/>
+							<xs:element minOccurs="0" name="managementMode" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderId35" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderIdCm" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderType" type="xs:integer"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="groups">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="groupCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="groupInstance" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="lineACode" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineAInstance" type="xs:string"/>
+							<xs:element minOccurs="0" name="facilityCodeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentTypeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentIdManravA" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceTypeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="domainA" type="xs:string"/>
+							<xs:element minOccurs="0" name="networkTypeA" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineBCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="lineBInstance" type="xs:string"/>
+							<xs:element minOccurs="0" name="facilityCodeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentTypeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="equipmentIdManravB" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceTypeB" type="xs:string"/>
+							<xs:element minOccurs="0" name="domainB" type="xs:string"/>
+							<xs:element minOccurs="0" name="networkTypeB" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="lineAEquipments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="equipmentId" type="xs:string"/>
+										<xs:element minOccurs="0" name="engineeringEquipmentType" type="xs:string"/>
+										<xs:element minOccurs="0" name="facilityCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="equipmentTypeManrav" type="xs:string"/>
+										<xs:element minOccurs="0" name="equipmentIdManrav" type="xs:string"/>
+										<xs:element minOccurs="0" name="quantity" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+										<xs:element name="equipmentReturnCode" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="lineBEquipments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="equipmentId" type="xs:string"/>
+										<xs:element minOccurs="0" name="engineeringEquipmentType" type="xs:string"/>
+										<xs:element minOccurs="0" name="facilityCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="equipmentTypeManrav" type="xs:string"/>
+										<xs:element minOccurs="0" name="equipmentIdManrav" type="xs:string"/>
+										<xs:element minOccurs="0" name="quantity" type="xs:integer"/>
+										<xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+										<xs:element name="equipmentReturnCode" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="returnCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="errorDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

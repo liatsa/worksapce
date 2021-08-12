@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:SubscriberSales01="http://www.bezeq.co.il/XMLSchema/SubscriberSales01" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/SubscriberSales01">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="runDate" type="date"/>
+							<element name="Ban" type="integer"/>
+							<element name="SubscriberNo" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="reply">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="runDate" type="date"/>
+							<element name="ban" type="integer"/>
+							<element name="subscriberNo" type="string"/>
+							<element name="saleQuantity" type="integer"/>
+							<element maxOccurs="50" minOccurs="0" name="saleArr">
+								<complexType>
+									<sequence>
+										<element name="customerId" type="string"/>
+										<element name="banName" type="string"/>
+										<element name="banAddress" type="string"/>
+										<element name="custType" type="string"/>
+										<element name="ben" type="integer"/>
+										<element name="saleSeqNo" type="integer"/>
+										<element name="saleActivity" type="string"/>
+										<element name="saleStatus" type="string"/>
+										<element name="saleDocNo" type="string"/>
+										<element name="saleDate" type="date"/>
+										<element name="saleType" type="string"/>
+										<element name="saleInstallmentNum" type="integer"/>
+										<element name="zNum" type="integer"/>
+										<element name="sapStatus" type="string"/>
+										<element name="totalSaleAmount" type="float"/>
+										<element name="itemSeqNo" type="integer"/>
+										<element name="itemSts" type="string"/>
+										<element minOccurs="0" name="itemStatusReason" type="string"/>
+										<element name="equipmentCode" type="string"/>
+										<element name="featureCode" type="string"/>
+										<element name="soc" type="string"/>
+										<element minOccurs="0" name="discountSoc" type="string"/>
+										<element minOccurs="0" name="promotionSeqNo" type="integer"/>
+										<element name="customerPrice" type="float"/>
+										<element name="taxAmount" type="float"/>
+										<element name="promotionDiscountNoTax" type="float"/>
+										<element minOccurs="0" name="managerDiscountNoTax" type="float"/>
+										<element minOccurs="0" name="managerDiscountTaxAmount" type="float"/>
+										<element name="serialNo" type="string"/>
+										<element minOccurs="0" name="imei" type="string"/>
+										<element name="sellerId" type="integer"/>
+										<element name="itemQuantity" type="integer"/>
+										<element name="requestStsRsn" type="string"/>
+										<element minOccurs="0" name="errorDesc" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="paymentQuantity" type="integer"/>
+							<element maxOccurs="20" minOccurs="0" name="paymentArr">
+								<complexType>
+									<sequence>
+										<element name="saleSeqNo" type="integer"/>
+										<element name="paymentType" type="string"/>
+										<element minOccurs="0" name="activityCode" type="string"/>
+										<element minOccurs="0" name="svSerialNumber" type="string"/>
+										<element name="paymentNumberOfInstallments" type="integer"/>
+										<element minOccurs="0" name="paymentAmount" type="float"/>
+										<element minOccurs="0" name="sourceId" type="string"/>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="requestSts" type="integer"/>
+							<element name="requestStsRsn" type="string"/>
+							<element minOccurs="0" name="errorDesc" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+				<element minOccurs="0" ref="BzqError:BzqError"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

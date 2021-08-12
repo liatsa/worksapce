@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:OrderStatus02="http://www.bezeq.co.il/XMLSchema/OrderStatus02" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/OrderStatus02">
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<element minOccurs="0" name="Data">
+					<complexType>
+						<sequence>
+							<element name="interfaceId" type="string"/>
+							<element name="orderNum" type="string"/>
+							<element minOccurs="0" name="creationDate" type="date"/>
+							<element name="orderId" type="string"/>
+							<element minOccurs="0" name="customerNum" type="integer"/>
+							<element minOccurs="0" name="phoneNum" type="string"/>
+							<element name="orderStatus" type="integer"/>
+							<element minOccurs="0" name="statusDescription" type="string"/>
+							<element name="orderType" type="integer"/>
+							<element minOccurs="0" name="infraStatusCode" type="string"/>
+							<element minOccurs="0" name="infraStatusDesc" type="string"/>
+							<element name="sysUpdateDate" type="dateTime"/>
+							<element minOccurs="0" name="idNet" type="string"/>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

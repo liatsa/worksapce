@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:ScheduleAppointment01="http://www.bezeq.co.il/XMLSchema/ScheduleAppointment01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ScheduleAppointment01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="extRequestNo" type="xs:string"/>
+							<xs:element name="serviceOrderTypeNum" type="xs:string"/>
+							<xs:element name="missionId" type="xs:integer"/>
+							<xs:element name="referralId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="estimatedTimeFrom" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="estimatedTimeTo" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="exceptionalEmbeddedReasonId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="orderCreationDate" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="ExtRequestNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="ServiceOrderTypeNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="CustomerId" type="xs:int"/>
+							<xs:element minOccurs="0" name="SubscriberNo" type="xs:string"/>
+							<xs:element minOccurs="0" name="MissionId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ReferralId" type="xs:integer"/>
+							<xs:element name="EstimatedTimeApprovedInd" type="xs:string"/>
+							<xs:element name="Status" type="xs:integer"/>
+							<xs:element minOccurs="0" name="MsgCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="MsgDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

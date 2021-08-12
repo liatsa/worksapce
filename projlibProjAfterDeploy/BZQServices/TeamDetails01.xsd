@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:TeamDetails01="http://www.bezeq.co.il/XMLSchema/TeamDetails01" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/TeamDetails01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element name="serviceAreaType" type="xs:string"/>
+							<xs:element name="inputType" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="streetId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="houseNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="letter" type="xs:string"/>
+							<xs:element minOccurs="0" name="switchCenter" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frameBox" type="xs:integer"/>
+							<xs:element minOccurs="0" name="mitkanNumber" type="xs:integer"/>
+							<xs:element minOccurs="0" name="coordinateEast" type="xs:double"/>
+							<xs:element minOccurs="0" name="coordinateNorth" type="xs:double"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="teamId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="divisionCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="slaServiceLevelId" type="xs:string"/>
+							<xs:element minOccurs="0" name="securityEquipmentTypeCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceAreaType" type="xs:string"/>
+							<xs:element minOccurs="0" name="xCoord" type="xs:integer"/>
+							<xs:element minOccurs="0" name="yCoord" type="xs:integer"/>
+							<xs:element minOccurs="0" name="latitude" type="xs:double"/>
+							<xs:element minOccurs="0" name="longitude" type="xs:double"/>
+							<xs:element minOccurs="0" name="xyType" type="xs:integer"/>
+							<xs:element minOccurs="0" name="xyTypeDesc" type="xs:string"/>
+							<xs:element name="statusReturnCode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="statusReturnDesc" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" ref="BzqError:BzqError"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

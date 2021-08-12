@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:ActivationInstruction01="http://www.bezeq.co.il/XMLSchema/ActivationInstruction01" xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/ActivationInstruction01">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="actionCode" type="xs:string"/>
+							<xs:element name="activationInstructionNumber" type="xs:string"/>
+							<xs:element minOccurs="0" name="version" type="xs:string"/>
+							<xs:element minOccurs="0" name="urlPlanningFile" type="xs:string"/>
+							<xs:element minOccurs="0" name="initiator" type="xs:string"/>
+							<xs:element minOccurs="0" name="publishDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="implementDate" type="xs:date"/>
+							<xs:element minOccurs="0" name="preparedBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="signaturedBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="subject1" type="xs:string"/>
+							<xs:element minOccurs="0" name="subject2" type="xs:string"/>
+							<xs:element minOccurs="0" name="reference1" type="xs:string"/>
+							<xs:element minOccurs="0" name="reference2" type="xs:string"/>
+							<xs:element minOccurs="0" name="description1" type="xs:string"/>
+							<xs:element minOccurs="0" name="description2" type="xs:string"/>
+							<xs:element minOccurs="0" name="description3" type="xs:string"/>
+							<xs:element minOccurs="0" name="urgency" type="xs:string"/>
+							<xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+							<xs:element minOccurs="0" name="networkCounter" type="xs:string"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="networkList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="network" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="remarkCounter" type="xs:string"/>
+							<xs:element maxOccurs="20" minOccurs="0" name="remarkList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="remark" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="activationInstructionType" type="xs:string"/>
+							<xs:element minOccurs="0" name="activationInstructionDescription" type="xs:string"/>
+							<xs:element minOccurs="0" name="isScript" type="xs:string"/>
+							<xs:element minOccurs="0" name="isImplementFinish" type="xs:string"/>
+							<xs:element minOccurs="0" name="ratasCount" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="ratasList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="ratasNumber" type="xs:string"/>
+										<xs:element minOccurs="0" name="ratasConnections" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="bdeskProjectNumber" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

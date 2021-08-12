@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:Deliverystatus02="http://www.bezeq.co.il/XMLSchema/Deliverystatus02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/Deliverystatus02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element name="supplyCd" type="xs:string"/>
+							<xs:element name="deliveryId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="updSeqNo" type="xs:integer"/>
+							<xs:element minOccurs="0" name="returnCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="stsDateTime" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="dlvCd" type="xs:string"/>
+							<xs:element minOccurs="0" name="dlvDesc" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="dlvStsGenCodes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="dlvStsGenCode" type="xs:string"/>
+										<xs:element minOccurs="0" name="dlvStsGenDesc" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="equipArr">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" name="intSeqNo" type="xs:integer"/>
+										<xs:element minOccurs="0" name="itemSts" type="xs:string"/>
+										<xs:element minOccurs="0" name="equipCd" type="xs:string"/>
+										<xs:element minOccurs="0" name="quantity" type="xs:integer"/>
+										<xs:element minOccurs="0" name="serialNo" type="xs:string"/>
+										<xs:element minOccurs="0" name="planEqpCd" type="xs:string"/>
+										<xs:element maxOccurs="unbounded" minOccurs="0" name="dlvStsEqpGenCodes">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" name="dlvEqpCd" type="xs:string"/>
+													<xs:element minOccurs="0" name="dlvEqpDesc" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

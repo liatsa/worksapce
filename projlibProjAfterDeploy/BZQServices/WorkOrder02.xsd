@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqError="http://www.bezeq.co.il/XMLSchema/BzqError" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:WorkOrder02="http://www.bezeq.co.il/XMLSchema/WorkOrder02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/WorkOrder02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqError" schemaLocation="../BZQ/SharedResources/schemas/BzqError.xsd"/>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceID" type="xs:string"/>
+							<xs:element name="bzActCode" type="xs:string"/>
+							<xs:element name="serviceID" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtManuiNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtOrderID" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtOrderNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtOrderStatus" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtOrderType" type="xs:string"/>
+							<xs:element minOccurs="0" name="startDateF" type="xs:date"/>
+							<xs:element minOccurs="0" name="contactName" type="xs:string"/>
+							<xs:element minOccurs="0" name="cntctPhone" type="xs:string"/>
+							<xs:element minOccurs="0" name="city" type="xs:string"/>
+							<xs:element minOccurs="0" name="address1" type="xs:string"/>
+							<xs:element minOccurs="0" name="num1" type="xs:string"/>
+							<xs:element minOccurs="0" name="address3" type="xs:string"/>
+							<xs:element minOccurs="0" name="addrField2" type="xs:string"/>
+							<xs:element minOccurs="0" name="addrField3" type="xs:string"/>
+							<xs:element minOccurs="0" name="geoCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="cityAC" type="xs:string"/>
+							<xs:element minOccurs="0" name="address1AC" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtMerkaz4" type="xs:integer"/>
+							<xs:element minOccurs="0" name="cmConcat1" type="xs:string"/>
+							<xs:element minOccurs="0" name="bzYesSale" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtPrimaryNum" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtDonor" type="xs:string"/>
+							<xs:element minOccurs="0" name="mtProblemDescr" type="xs:string"/>
+							<xs:element minOccurs="0" name="businessUnit" type="xs:string"/>
+							<xs:element minOccurs="0" name="rcSource" type="xs:string"/>
+							<xs:element minOccurs="0" name="rcImpact" type="xs:string"/>
+							<xs:element minOccurs="0" name="quickCD" type="xs:string"/>
+							<xs:element minOccurs="0" name="providerGrpID" type="xs:string"/>
+							<xs:element minOccurs="0" name="optional1" type="xs:string"/>
+							<xs:element minOccurs="0" name="optional2" type="xs:string"/>
+							<xs:element minOccurs="0" name="optional3" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

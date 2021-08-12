@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_vmDz0PqYEeuc-43zW8XOWA" name="BZQ.SharedResources.DataFormat.DataFormatBzqHeader" type="dataformat:DataFormat">
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_vmNk0PqYEeuc-43zW8XOWA" formatType="Fixed format" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="New Line" schemaElement="../schemas/BzqHeader.xsd#//BzqHeader;XSDElementDeclaration" schemaElementQName="BzqHeader:BzqHeader" lineLength="22" fieldOffsetsStr="ApplicationId(0,3)&#xA;User(3,12)&#xA;Password(12,22)&#xA;EndUser(0,0)">
+    <fieldOffsets xmi:id="_vmNk0fqYEeuc-43zW8XOWA" name="ApplicationId" end="3"/>
+    <fieldOffsets xmi:id="_vmNk0vqYEeuc-43zW8XOWA" name="User" start="3" end="12"/>
+    <fieldOffsets xmi:id="_vmNk0_qYEeuc-43zW8XOWA" name="Password" start="12" end="22"/>
+    <fieldOffsets xmi:id="_vmNk1PqYEeuc-43zW8XOWA" name="EndUser"/>
+  </jndi:configuration>
+</jndi:namedResource>

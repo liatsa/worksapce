@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:KRTScheduleTask="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTTaskAppointment"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="ScheduleTask">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="workOrderType" type="xs:string"/>
+				<xs:element name="taskType" type="xs:string"/>
+				<xs:element name="requiredTools" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="requierdToolNumber" type="xs:integer"/>
+							<xs:element name="RequierdTool" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="callID" type="xs:string"/>
+				<xs:element name="number" type="xs:int"/>
+				<xs:element name="status" type="xs:string"/>
+				<xs:element name="splitInd" type="xs:string" minOccurs="0"/>
+				<xs:element name="dayLightCalendar" type="xs:string" minOccurs="0"/>
+				<xs:element name="appointmentStart" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="appointmentFinish" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="earlyStart" type="xs:dateTime"/>
+				<xs:element name="lateStart" type="xs:dateTime"/>
+				<xs:element name="calendar" type="xs:string"/>
+				<xs:element name="duration" type="xs:integer" minOccurs="0"/>
+				<xs:element name="securityLevel" type="xs:string" minOccurs="0"/>
+				<xs:element name="priority" type="xs:int"/>
+				<xs:element name="numberOfRequiredEngineers" type="xs:int"/>
+				<xs:element name="preferedEngineer" type="xs:string" minOccurs="0"/>
+				<xs:element name="requiredEngineer" type="xs:string" minOccurs="0"/>
+				<xs:element name="excludedEngineer" type="xs:string" minOccurs="0"/>
+				<xs:element name="crmUrl" type="xs:string" minOccurs="0"/>
+				<xs:element name="isAppointment" type="xs:string" minOccurs="0"/>
+				<xs:element name="customerAppointmentStart" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="customerAppointmentFinish" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="showAppointment" type="xs:string" minOccurs="0"/>
+				<xs:element name="customerDetails" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="customer" type="xs:string" minOccurs="0"/>
+							<xs:element name="customerPhoneNumber" type="xs:string" minOccurs="0"/>
+							<xs:element name="customerType" type="xs:string" minOccurs="0"/>
+							<xs:element name="customerValue" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="contactDetails" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="contactName" type="xs:string" minOccurs="0"/>
+							<xs:element name="contactPhoneNumber" type="xs:string" minOccurs="0"/>
+							<xs:element name="ContactMobileNumber" type="xs:string" minOccurs="0"/>
+							<xs:element name="contactDate" type="xs:dateTime" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="subscriberDetails" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="subscriberNumber" type="xs:string" minOccurs="0"/>
+							<xs:element name="city" type="xs:string" minOccurs="0"/>
+							<xs:element name="street" type="xs:string" minOccurs="0"/>
+							<xs:element name="postCode" type="xs:string" minOccurs="0"/>
+							<xs:element name="region" type="xs:string"/>
+							<xs:element name="district" type="xs:string"/>
+							<xs:element name="subDistrict" type="xs:string"/>
+							<xs:element name="team" type="xs:string"/>
+							<xs:element name="numOfRepeatCall" type="xs:int" minOccurs="0"/>
+							<xs:element name="longitude" type="xs:int"/>
+							<xs:element name="laitude" type="xs:int"/>
+							<xs:element name="switchCenter" type="xs:string" minOccurs="0"/>
+							<xs:element name="switchBoard" type="xs:string" minOccurs="0"/>
+							<xs:element name="switchBox" type="xs:string" minOccurs="0"/>
+							<xs:element name="frameBox" type="xs:string" minOccurs="0"/>
+							<xs:element name="addressframeTypeDescr" type="xs:string" minOccurs="0"/>
+							<xs:element name="addressframe" type="xs:int" minOccurs="0"/>
+							<xs:element name="addressFrameTypeDesc1" type="xs:string" minOccurs="0"/>
+							<xs:element name="addressFrame1" type="xs:integer" minOccurs="0"/>
+							<xs:element name="numRptSoDfct" type="xs:int" minOccurs="0"/>
+							<xs:element name="chrRptCalls" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

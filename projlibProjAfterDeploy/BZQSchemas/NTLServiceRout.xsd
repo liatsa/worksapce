@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:NTLServiceRout="http://www.bezeq.co.il/XMLSchema/NTLServiceRout"
+	 targetNamespace="http://www.bezeq.co.il/XMLSchema/NTLServiceRout"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="ServiceRout">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="logicalNumber" type="xs:integer" minOccurs = "1"/>
+				<xs:element name="sherutType" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="sherutTypeDesc" type="xs:string" minOccurs = "1"/>
+                                     <xs:element name="paritNumberInAtar" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="tziyudType" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="tziyudTypeDesc" type="xs:string" minOccurs = "1"/>
+                                     <xs:element name="paritStatus" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="paritStatusDesc" type="xs:string" minOccurs = "1"/>
+                                     <xs:element name="portInOut" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="portNumber" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="portType" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="portTypeDesc" type="xs:string" minOccurs = "1"/>
+                                     <xs:element name="mimshakType" type="xs:integer" minOccurs = "1"/>
+                                      <xs:element name="mimshakTypeDesc" type="xs:string" minOccurs = "1"/>
+                                      <xs:element name="mimshak" type="xs:integer" minOccurs = "1"/>
+                                     <xs:element name="mimshakDesc" type="xs:string" minOccurs = "1"/>
+                                      <xs:element name="vpNumber" type="xs:integer" minOccurs = "0"/>
+                                      <xs:element name="vcNumber" type="xs:integer" minOccurs = "0"/>
+                                      <xs:element name="vlan" type="xs:integer" minOccurs = "0"/>
+                                      <xs:element name="dlci" type="xs:integer" minOccurs = "0"/>
+                                      <xs:element name="tatMimshak" type="xs:integer" minOccurs = "0"/>
+                                      <xs:element name="tezura" type="xs:integer" minOccurs = "0"/>
+                                       <xs:element name="ipAddress" type="xs:string" minOccurs = "0"/>
+                                       <xs:element name="subnetMask" type="xs:integer" minOccurs = "0"/>
+                                        <xs:element name="sherutPortStatus" type="xs:integer" minOccurs = "1"/>
+                                        <xs:element name="sherutPortStatusDesc" type="xs:string" minOccurs = "1"/>
+                                         <xs:element name="swPortMode" type="xs:integer" minOccurs = "0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

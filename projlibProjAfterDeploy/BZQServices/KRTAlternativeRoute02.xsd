@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:BzqHeader="http://www.bezeq.co.il/XMLSchema/BzqHeader" xmlns:KRTAlternativeRoute02="http://www.bezeq.co.il/XMLSchema/KRTAlternativeRoute02" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.bezeq.co.il/XMLSchema/KRTAlternativeRoute02">
+	<xs:import namespace="http://www.bezeq.co.il/XMLSchema/BzqHeader" schemaLocation="../BZQ/SharedResources/schemas/BzqHeader.xsd"/>
+	<xs:element name="alternativeroute">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="KRTAlternativeRoute02:request"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="BzqHeader:BzqHeader"/>
+				<xs:element minOccurs="0" name="Data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="interfaceId" type="xs:string"/>
+							<xs:element minOccurs="0" name="updatedate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="msoid" type="xs:string"/>
+							<xs:element minOccurs="0" name="mid" type="xs:string"/>
+							<xs:element minOccurs="0" name="phone" type="xs:string"/>
+							<xs:element minOccurs="0" name="center" type="xs:integer"/>
+							<xs:element minOccurs="0" name="frame" type="xs:integer"/>
+							<xs:element minOccurs="0" name="otag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="ntag" type="xs:integer"/>
+							<xs:element minOccurs="0" name="otags" type="xs:string"/>
+							<xs:element minOccurs="0" name="desccode" type="xs:integer"/>
+							<xs:element minOccurs="0" name="actionType" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceOrderSourceDesc" type="xs:string"/>
+							<xs:element minOccurs="0" name="serviceTypeCode" type="xs:string"/>
+							<xs:element minOccurs="0" name="orderHeaderId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="componentId" type="xs:integer"/>
+							<xs:element minOccurs="0" name="newFrame" type="xs:integer"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
