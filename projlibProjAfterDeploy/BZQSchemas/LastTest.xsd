@@ -43,7 +43,6 @@
 										<xs:element name="tg" minOccurs="0">
 											<xs:simpleType>
 												<xs:restriction base="xs:float">
-													
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
